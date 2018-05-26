@@ -168,6 +168,212 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hello-世界" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/year/03/28/hello-世界/">关于Github+Hexo搭建博客</a>
+    </h1>
+  
+
+        
+        <a href="/year/03/28/hello-世界/" class="archive-article-date">
+  	<time datetime="2018-03-28T12:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文章转自简书潘老师的教程<a href="https://www.jianshu.com/p/465830080ea9" target="_blank" rel="noopener">https://www.jianshu.com/p/465830080ea9</a><br>hexo是一款基于Node.js的静态博客框架, hexo github链接 ,这篇教程是针对与Mac的，参考链接，由于原文讲到的hexo是以前的老版本，所以现在的版本配置的时候会有些改动。</p>
+<p>之前是想着写博客，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。很多类似于CSDN、博客园也都可以写文章，但是页面的样式我，不是太喜欢，简书还算好点得。最近看到一些大神们的博客,貌似都是用hexo写得,我也依葫芦画瓢的搭建了一个。不罗嗦了，直接上搭建步骤。</p>
+<p>配置环境</p>
+<p>安装Node（必须）</p>
+<p>作用：用来生成静态页面的</p>
+<p>到Node.js官网下载相应平台的最新版本，一路安装即可。</p>
+<p>安装Git（必须）</p>
+<p>作用：把本地的hexo内容提交到github上去.</p>
+<p>安装Xcode就自带有Git，我就不多说了。</p>
+<p>申请GitHub（必须）</p>
+<p>作用：是用来做博客的远程创库、域名、服务器之类的，怎么与本地hexo建立连接等下讲。</p>
+<p>github账号我也不再啰嗦了,没有的话直接申请就行了，跟一般的注册账号差不多，SSH Keys，看你自己了，可以不配制，不配置的话以后每次对自己的博客有改动提交的时候就要手动输入账号密码，配置了就不需要了，怎么配置我就不多说了，网上有很多教程。</p>
+<p>正式安装Hexo</p>
+<p>Node和Git都安装好后,首先创建一个文件夹,如blog,用户存放hexo的配置文件,然后进入blog里安装Hexo。</p>
+<p>执行如下命令安装Hexo：</p>
+<p>sudo npm install -g hexo</p>
+<p>初始化然后，执行init命令初始化hexo,命令：</p>
+<p>hexo init</p>
+<p>好啦，至此，全部安装工作已经完成！blog就是你的博客根目录，所有的操作都在里面进行。</p>
+<p>生成静态页面</p>
+<p>hexo generate（hexo g也可以）</p>
+<p>本地启动</p>
+<p>启动本地服务，进行文章预览调试，命令：</p>
+<p>hexo server</p>
+<p>浏览器输入<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<p>我不知道你们能不能，反正我不能，因为我还有环境没配置好</p>
+<p>配置Github</p>
+<p>建立Repository</p>
+<p>建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】，固定写法</p>
+<p>然后建立关联，我的blog在本地/Users/leopard/blog，blog是我之前建的东西也全在这里面，有：</p>
+<pre><code>_config.yml    node_modules    public      source
+
+db.json        package.json    scaffolds  themes
+</code></pre><p>现在我们需要_config.yml文件，来建立关联，命令：</p>
+<p>vim _config.yml</p>
+<p>翻到最下面，改成我这样子的</p>
+<p>deploy:</p>
+<pre><code>type: git
+
+repo: https://github.com/leopardpan/leopardpan.github.io.git
+
+branch: master
+</code></pre><p>然后执行命令：</p>
+<p>npm install hexo-deployer-git –save</p>
+<p>网上会有很多说法，有的type是github, 还有repository最后面的后缀也不一样，是github.com.git，我也踩了很多坑，我现在的版本是hexo: 3.1.1，执行命令hexo -vsersion就出来了,貌似3.0后全部改成我上面这种格式了。</p>
+<p>忘了说了，我没用SSH Keys如果你用了SSH Keys的话直接在github里复制SSH的就行了，总共就两种协议，相信你懂的。</p>
+<p>然后，执行配置命令：</p>
+<p>hexo deploy</p>
+<p>然后再浏览器中输入<a href="http://leopardpan.github.io/就行了，我的github的账户叫leopardpan,把这个改成你github的账户名就行了" target="_blank" rel="noopener">http://leopardpan.github.io/就行了，我的github的账户叫leopardpan,把这个改成你github的账户名就行了</a></p>
+<p>部署步骤</p>
+<p>每次部署的步骤，可按以下三步来进行。</p>
+<pre><code>hexo clean
+
+hexo generate
+
+hexo deploy
+</code></pre><p>一些常用命令：</p>
+<p>hexo new”postName” #新建文章</p>
+<p>hexo new page”pageName” #新建页面</p>
+<p>hexo generate #生成静态页面至public目录</p>
+<p>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</p>
+<p>hexo deploy #将.deploy目录部署到GitHub</p>
+<p>hexo help # 查看帮助</p>
+<p>hexo version #查看Hexo的版本</p>
+<p>报错总结</p>
+<p>ERROR Deployer not found: git 或者 ERROR Deployer not found: github</p>
+<p>解决方法： npm install hexo-deployer-git –save</p>
+<p>如发生报错： ERROR Process failed: layout/.DS_Store , 那么进入主题里面layout和_partial目录下，使用删除命令：</p>
+<p>rm-rf.DS_Store</p>
+<p>ERROR Plugin load failed: hexo-server</p>
+<p>原因：</p>
+<p>Besides,utilities are separated into a standalone module.hexo.util is not reachable anymore.</p>
+<p>解决方法，执行命令：</p>
+<p>sudo npm install hexo-server</p>
+<p>执行命令hexo server，提示：Usage: hexo ….</p>
+<p>原因：</p>
+<p>我认为是没有生成本地服务</p>
+<p>解决方法，执行命令：</p>
+<p>npm install hexo-server –save</p>
+<p>提示：<a href="mailto:hexo-server@0.1.2" target="_blank" rel="noopener">hexo-server@0.1.2</a> node_modules/hexo-server</p>
+<p>….</p>
+<p>表示成功了参考</p>
+<p>这个时候再执行：</p>
+<p>hexo-server</p>
+<p>得到:</p>
+<p>INFOHexois running at <a href="http://0.0.0.0:4000/.PressCtrl+C" target="_blank" rel="noopener">http://0.0.0.0:4000/.PressCtrl+C</a> to stop.</p>
+<p>这个时候再点击<a href="http://0.0.0.0:4000，正常情况下应该是最原始的画面，但是我看到的是：" target="_blank" rel="noopener">http://0.0.0.0:4000，正常情况下应该是最原始的画面，但是我看到的是：</a></p>
+<p>白板和Cannot GET / 几个字</p>
+<p>原因：</p>
+<p>由于2.6以后就更新了，我们需要手动配置些东西，我们需要输入下面三行命令：</p>
+<p>npm install hexo-renderer-ejs –save</p>
+<p>npm install hexo-renderer-stylus –save</p>
+<p>npm install hexo-renderer-marked –save</p>
+<p>这个时候再重新生成静态文件，命令：</p>
+<p>hexo generate（或hexo g）</p>
+<p>启动本地服务器：</p>
+<p>hexo server（或hexo s）</p>
+<p>再，点击网址<a href="http://0.0.0.0:4000OK终于可以看到属于你自己的blog啦，😄，虽然很简陋，但好歹有了一个属于自己的小窝了。参考链接，本地已经简单的设置好了，但是现在域名和服务器都是基于自己的电脑，接下来需要跟github进行关联。" target="_blank" rel="noopener">http://0.0.0.0:4000OK终于可以看到属于你自己的blog啦，😄，虽然很简陋，但好歹有了一个属于自己的小窝了。参考链接，本地已经简单的设置好了，但是现在域名和服务器都是基于自己的电脑，接下来需要跟github进行关联。</a></p>
+<p>主题推荐</p>
+<p>这里有大量的主题列表使用方法里面</p>
+<p>都有详细的介绍，我就不多说了。</p>
+<p>我这里有几款个人认为不错的主题，免去你们，一个一个的选了，欢迎吐槽我的审美，😄</p>
+<p>Cover- A chic theme with facebook-like cover photo</p>
+<p>Oishi- A white theme based on Landscape plus and Writing.</p>
+<p>Sidebar- Another theme based on Light with a simple sidebar</p>
+<p>TKL- A responsive design theme for Hexo. 一个设计优雅的响应式主题</p>
+<p>Tinnypp- A clean, simple theme based on Tinny</p>
+<p>Writing- A small and simple hexo theme based on Light</p>
+<p>Yilia- Responsive and simple style 优雅简洁响应式主题，我用得就是这个。</p>
+<p>Pacman voidy- A theme with dynamic tagcloud and dynamic snow</p>
+<p>一些基本路径</p>
+<p>文章在source/_posts, 文章支持Markdown语法，可以使用一些MarkDown渲染工具。如果想修改头像可以直接在主题的_config.yml文件里面修改，友情链接，之类的都在这里。开始打理你的博客吧，有什么问题或者建议，都可以提出来，我会继续完善的。</p>
+<p>修改头像</p>
+<p>我当前的路径/Users/leopard/blog/themes/yilia，ls 你可以看到</p>
+<p>Gruntfile.js    _config.yml package.json</p>
+<p>README.md  layout      source</p>
+<p>vim _config.yml 进去，找到 #你的头像url avatar: 后接一个URL就行了，头像就修改成功了</p>
+<p>修改主题和作者名字</p>
+<p>我当前的路径/Users/leopard/blog，ls 你可以看到</p>
+<p>_config.yml  node_modules    public      source      themes</p>
+<p>db.json        package.json     scaffolds   ssh-keygen</p>
+<p>vim _config.yml 进去，找到 author: 潘柏信，修改成你自己的名字就行了</p>
+<p>修改主题，然后继续往下找到</p>
+<h1 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h1><h2 id="Plugins-http-hexo-io-plugins"><a href="#Plugins-http-hexo-io-plugins" class="headerlink" title="Plugins: http://hexo.io/plugins/"></a>Plugins: <a href="http://hexo.io/plugins/" target="_blank" rel="noopener">http://hexo.io/plugins/</a></h2><h2 id="Themes-http-hexo-io-themes"><a href="#Themes-http-hexo-io-themes" class="headerlink" title="Themes: http://hexo.io/themes/"></a>Themes: <a href="http://hexo.io/themes/" target="_blank" rel="noopener">http://hexo.io/themes/</a></h2><p>theme:yilia</p>
+<p>改成theme: yilia，theme:后面接你自己的主题名字就行了,然后分别执行</p>
+<p>部署 hexo g</p>
+<p>提交 hexo d</p>
+<p>你的主题，和名字就修改成功了</p>
+<p>Markdown语法参考链接</p>
+<p>链接一</p>
+<p>转载请注明原地址，潘柏信的博客：<a href="http://leopardpan.github.io谢谢！" target="_blank" rel="noopener">http://leopardpan.github.io谢谢！</a></p>
+<p>想修改下文章格式，发现简书上只有新发表的文章才能使用MarkDown语法，大家有什么好的建议没，求推荐。</p>
+<p>作者：潘柏信<br>链接：<a href="https://www.jianshu.com/p/465830080ea9" target="_blank" rel="noopener">https://www.jianshu.com/p/465830080ea9</a><br>來源：简书</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/year/03/28/hello-世界/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-试验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -213,68 +419,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/year/03/28/试验/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-世界" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/year/03/28/hello-世界/">hello,世界</a>
-    </h1>
-  
-
-        
-        <a href="/year/03/28/hello-世界/" class="archive-article-date">
-  	<time datetime="2018-03-28T12:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/year/03/28/hello-世界/">展开全文 >></a>
         </p>
       
 
@@ -494,11 +638,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数码</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运营</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数码</a>
               </li>
             
             <div class="clearfix"></div>
