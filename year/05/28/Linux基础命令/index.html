@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
   <title>Linux基础命令 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Linux基础命令前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。">
+  <meta name="description" content="前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础命令">
 <meta property="og:url" content="http://wangyuehan.github.io/year/05/28/Linux基础命令/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="Linux基础命令前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。">
+<meta property="og:description" content="前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/632650/201709/632650-20170905092535694-1344789880.png">
-<meta property="og:updated_time" content="2018-05-28T05:20:56.000Z">
+<meta property="og:updated_time" content="2018-10-19T06:10:21.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础命令">
-<meta name="twitter:description" content="Linux基础命令前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。">
+<meta name="twitter:description" content="前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。">
 <meta name="twitter:image" content="https://images2017.cnblogs.com/blog/632650/201709/632650-20170905092535694-1344789880.png">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
@@ -56,7 +56,7 @@ var _hmt = _hmt || [];
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #CC0000"></div>
+<div class="overlay" style="background: #715CFC"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -102,6 +102,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/0d27db48d83d" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 					<a class="douban" target="_blank" href="https://www.douban.com/people/142899573/" title="douban"><i class="icon-douban"></i></a>
@@ -121,7 +123,7 @@ var _hmt = _hmt || [];
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #CC0000"></div>
+  	<div class="overlay js-overlay" style="background: #715CFC"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -152,6 +154,8 @@ var _hmt = _hmt || [];
 						<a class="github" target="_blank" href="https://github.com/wangyr45" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/0d27db48d83d" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
@@ -210,14 +214,39 @@ var _hmt = _hmt || [];
 	
 	<!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础命令"><span class="toc-number">1.</span> <span class="toc-text">Linux基础命令</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
 <!-- 目录内容结束 -->
 
 
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><p>前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。</p>
+        <p>前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。</p>
 <a id="more"></a>
+<h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><p>前一阵子偶尔看到一位前辈的博客，总结的不错。图片新颖，对于图片敏感者是个好东西，特来转来借鉴下。</p>
 <p><img src="https://images2017.cnblogs.com/blog/632650/201709/632650-20170905092535694-1344789880.png" alt=""></p>
 <p><a href="http://www.cnblogs.com/loveincode/p/7141636.html" target="_blank" rel="noopener">前辈总结：</a></p>
 
@@ -364,6 +393,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础命令"><span class="toc-number">1.</span> <span class="toc-text">Linux基础命令</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -520,10 +562,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">影评</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数码</a>
               </li>
              
@@ -537,6 +575,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">影评</a>
               </li>
             
             <div class="clearfix"></div>
@@ -599,7 +641,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">王约翰&lt;br&gt;&lt;br&gt;本科软件工程专业，数码产品发烧友，电影爱好者。&lt;br&gt;谢谢大家来到我的博客！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">王约翰&lt;br&gt;&lt;br&gt;本科软件工程专业，Java电影爱好者。&lt;br&gt;谢谢大家来到我的博客！</div>
   	  	
     	</section>
     

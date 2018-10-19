@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
   <title>计算机操作系统-大纲 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。">
+  <meta name="description" content="根据Github众大神精简整理的计算机操作系统相关知识。持续跟进添加知识进度。ing….">
 <meta name="keywords" content="分类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机操作系统-大纲">
 <meta property="og:url" content="http://wangyuehan.github.io/year/10/18/计算机操作系统-大纲/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。">
+<meta property="og:description" content="根据Github众大神精简整理的计算机操作系统相关知识。持续跟进添加知识进度。ing….">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/tGPV0.png">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/2_14_microkernelArchitecture.jpg">
@@ -47,10 +47,10 @@
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/b396d726-b75f-4a32-89a2-03a7b6e19f6f.jpg">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/47d98583-8bb0-45cc-812d-47eefa0a4a40.jpg">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/76dc7769-1aac-4888-9bea-064f1caa8e77.jpg">
-<meta property="og:updated_time" content="2018-10-19T04:28:02.001Z">
+<meta property="og:updated_time" content="2018-10-19T06:00:53.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机操作系统-大纲">
-<meta name="twitter:description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。">
+<meta name="twitter:description" content="根据Github众大神精简整理的计算机操作系统相关知识。持续跟进添加知识进度。ing….">
 <meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/tGPV0.png">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
@@ -86,7 +86,7 @@ var _hmt = _hmt || [];
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #CC0000"></div>
+<div class="overlay" style="background: #715CFC"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -132,6 +132,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/0d27db48d83d" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 					<a class="douban" target="_blank" href="https://www.douban.com/people/142899573/" title="douban"><i class="icon-douban"></i></a>
@@ -151,7 +153,7 @@ var _hmt = _hmt || [];
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #CC0000"></div>
+  	<div class="overlay js-overlay" style="background: #715CFC"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -182,6 +184,8 @@ var _hmt = _hmt || [];
 						<a class="github" target="_blank" href="https://github.com/wangyr45" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/0d27db48d83d" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
@@ -270,9 +274,10 @@ var _hmt = _hmt || [];
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
+        <p>根据Github众大神精简整理的计算机操作系统相关知识。<br>持续跟进添加知识进度。<br>ing….<br><a id="more"></a></p>
+<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
 <p>并行需要硬件支持，如多流水线或者多处理器。</p>
-<p>操作系统通过引入进程和线程，使得程序能够并发运行。<br><a id="more"></a></p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
 <h3 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h3><p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
 <p>有两种共享方式：互斥共享和同时共享。</p>
 <p>互斥共享的资源称为临界资源，例如打印机等，在同一时间只允许一个进程访问，需要用同步机制来实现对临界资源的访问。</p>
@@ -987,10 +992,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">影评</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数码</a>
               </li>
              
@@ -1004,6 +1005,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">影评</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1066,7 +1071,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">王约翰&lt;br&gt;&lt;br&gt;本科软件工程专业，数码产品发烧友，电影爱好者。&lt;br&gt;谢谢大家来到我的博客！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">王约翰&lt;br&gt;&lt;br&gt;本科软件工程专业，Java电影爱好者。&lt;br&gt;谢谢大家来到我的博客！</div>
   	  	
     	</section>
     

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
   <title>来必力评论插件+yilia博客框架 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A.来比力评论系统众所周知，很多第三方系统都挂掉了，畅言还算不错，但是需要备案，比较麻烦。 相信很多人应该都是使用的来比力评论插件 废话不多说，直接上教程">
+  <meta name="description" content="在搭建Hexo博客时候，很多免费的评论插件都找不到，发现一个来比力评论插件可以使用，分享给有缘看到此篇文章的童鞋。">
 <meta name="keywords" content="博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="来必力评论插件+yilia博客框架">
 <meta property="og:url" content="http://wangyuehan.github.io/year/03/29/Hexo - 来必力插件/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="A.来比力评论系统众所周知，很多第三方系统都挂掉了，畅言还算不错，但是需要备案，比较麻烦。 相信很多人应该都是使用的来比力评论插件 废话不多说，直接上教程">
+<meta property="og:description" content="在搭建Hexo博客时候，很多免费的评论插件都找不到，发现一个来比力评论插件可以使用，分享给有缘看到此篇文章的童鞋。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-27T06:14:56.000Z">
+<meta property="og:updated_time" content="2018-10-19T06:10:25.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="来必力评论插件+yilia博客框架">
-<meta name="twitter:description" content="A.来比力评论系统众所周知，很多第三方系统都挂掉了，畅言还算不错，但是需要备案，比较麻烦。 相信很多人应该都是使用的来比力评论插件 废话不多说，直接上教程">
+<meta name="twitter:description" content="在搭建Hexo博客时候，很多免费的评论插件都找不到，发现一个来比力评论插件可以使用，分享给有缘看到此篇文章的童鞋。">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
   
@@ -54,7 +54,7 @@ var _hmt = _hmt || [];
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #CC0000"></div>
+<div class="overlay" style="background: #715CFC"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -100,6 +100,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/0d27db48d83d" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 					<a class="douban" target="_blank" href="https://www.douban.com/people/142899573/" title="douban"><i class="icon-douban"></i></a>
@@ -119,7 +121,7 @@ var _hmt = _hmt || [];
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #CC0000"></div>
+  	<div class="overlay js-overlay" style="background: #715CFC"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -150,6 +152,8 @@ var _hmt = _hmt || [];
 						<a class="github" target="_blank" href="https://github.com/wangyr45" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/0d27db48d83d" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
@@ -208,16 +212,41 @@ var _hmt = _hmt || [];
 	
 	<!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-来比力评论系统"><span class="toc-number">1.</span> <span class="toc-text">A.来比力评论系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤一："><span class="toc-number">1.1.</span> <span class="toc-text">步骤一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤二："><span class="toc-number">1.2.</span> <span class="toc-text">步骤二：</span></a></li></ol></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
 <!-- 目录内容结束 -->
 
 
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="A-来比力评论系统"><a href="#A-来比力评论系统" class="headerlink" title="A.来比力评论系统"></a>A.来比力评论系统</h2><p>众所周知，很多第三方系统都挂掉了，畅言还算不错，但是需要备案，比较麻烦。</p>
+        <p>在搭建Hexo博客时候，很多免费的评论插件都找不到，发现一个来比力评论插件可以使用，分享给有缘看到此篇文章的童鞋。</p>
+<a id="more"></a>
+<h2 id="A-来比力评论系统"><a href="#A-来比力评论系统" class="headerlink" title="A.来比力评论系统"></a>A.来比力评论系统</h2><p>众所周知，很多第三方系统都挂掉了，畅言还算不错，但是需要备案，比较麻烦。</p>
 <p>相信很多人应该都是使用的来比力评论插件</p>
 <p><strong>废话不多说，直接上教程</strong></p>
-<a id="more"></a>
 <h3 id="步骤一："><a href="#步骤一：" class="headerlink" title="步骤一："></a>步骤一：</h3><p>themes\yilia中的_config.yml中添加<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#### 6. 来比力 把代码管理中 data -uid中的内容复制到这里来</span></span><br><span class="line">livere_uid: "<span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span>*"</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="步骤二："><a href="#步骤二：" class="headerlink" title="步骤二："></a>步骤二：</h3><p>在目录themes\yilia\layout_partial中，在最后大括号内加入来必力的代码片段，<strong>插入位置要注意看清楚</strong>，很多小白都是在这里百思不得其解。</p>
@@ -366,6 +395,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-来比力评论系统"><span class="toc-number">1.</span> <span class="toc-text">A.来比力评论系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤一："><span class="toc-number">1.1.</span> <span class="toc-text">步骤一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤二："><span class="toc-number">1.2.</span> <span class="toc-text">步骤二：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -522,10 +564,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">影评</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数码</a>
               </li>
              
@@ -539,6 +577,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">影评</a>
               </li>
             
             <div class="clearfix"></div>
@@ -601,7 +643,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">王约翰&lt;br&gt;&lt;br&gt;本科软件工程专业，数码产品发烧友，电影爱好者。&lt;br&gt;谢谢大家来到我的博客！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">王约翰&lt;br&gt;&lt;br&gt;本科软件工程专业，Java电影爱好者。&lt;br&gt;谢谢大家来到我的博客！</div>
   	  	
     	</section>
     
