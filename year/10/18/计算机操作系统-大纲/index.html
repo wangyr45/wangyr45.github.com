@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
   <title>计算机操作系统-大纲 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。 2. 共享">
+  <meta name="description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。">
 <meta name="keywords" content="分类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机操作系统-大纲">
 <meta property="og:url" content="http://wangyuehan.github.io/year/10/18/计算机操作系统-大纲/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。 2. 共享">
+<meta property="og:description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/tGPV0.png">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/2_14_microkernelArchitecture.jpg">
@@ -47,10 +47,10 @@
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/b396d726-b75f-4a32-89a2-03a7b6e19f6f.jpg">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/47d98583-8bb0-45cc-812d-47eefa0a4a40.jpg">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/76dc7769-1aac-4888-9bea-064f1caa8e77.jpg">
-<meta property="og:updated_time" content="2018-10-18T12:15:41.475Z">
+<meta property="og:updated_time" content="2018-10-19T04:28:02.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机操作系统-大纲">
-<meta name="twitter:description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。 2. 共享">
+<meta name="twitter:description" content="一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。 并行需要硬件支持，如多流水线或者多处理器。 操作系统通过引入进程和线程，使得程序能够并发运行。">
 <meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/tGPV0.png">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
@@ -272,9 +272,8 @@ var _hmt = _hmt || [];
       
         <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
 <p>并行需要硬件支持，如多流水线或者多处理器。</p>
-<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
-<h3 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h3><a id="more"></a>
-<p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。<br><a id="more"></a></p>
+<h3 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h3><p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
 <p>有两种共享方式：互斥共享和同时共享。</p>
 <p>互斥共享的资源称为临界资源，例如打印机等，在同一时间只允许一个进程访问，需要用同步机制来实现对临界资源的访问。</p>
 <h3 id="3-虚拟"><a href="#3-虚拟" class="headerlink" title="3. 虚拟"></a>3. 虚拟</h3><p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
@@ -980,10 +979,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">端口</a>
               </li>
              
@@ -996,15 +991,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运营</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">分类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分类</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
             
             <div class="clearfix"></div>
