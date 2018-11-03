@@ -6,20 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
-  <title>产品运营笔记 | 王约翰的博客</title>
+  <title>Redis | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="六部分">
-<meta name="keywords" content="产品">
+  <meta name="description" content="根据Github整理。内容包括：数据类型、数据结构、使用场景相关介绍、Redis与Memcached、键的过期时间、数据淘汰策略、持久化、事务、事件、复制、Sentinel、分片等等。">
+<meta name="keywords" content="原理,redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="产品运营笔记">
-<meta property="og:url" content="http://wangyuehan.github.io/year/10/21/产品 - 产品运营笔记/index.html">
+<meta property="og:title" content="Redis">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/03/Redis/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="六部分">
+<meta property="og:description" content="根据Github整理。内容包括：数据类型、数据结构、使用场景相关介绍、Redis与Memcached、键的过期时间、数据淘汰策略、持久化、事务、事件、复制、Sentinel、分片等等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-21T04:03:04.859Z">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/beba612e-dc5b-4fc2-869d-0b23408ac90a.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/0ea37ee2-c224-4c79-b895-e131c6805c40.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/9ea86eb5-000a-4281-b948-7b567bd6f1d8.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png">
+<meta property="og:updated_time" content="2018-11-03T06:15:28.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="产品运营笔记">
-<meta name="twitter:description" content="六部分">
+<meta name="twitter:title" content="Redis">
+<meta name="twitter:description" content="根据Github整理。内容包括：数据类型、数据结构、使用场景相关介绍、Redis与Memcached、键的过期时间、数据淘汰策略、持久化、事务、事件、复制、Sentinel、分片等等。">
+<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
   
@@ -198,20 +212,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-产品 - 产品运营笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Redis" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      产品运营笔记
+      Redis
     </h1>
   
 
         
-        <a href="/year/10/21/产品 - 产品运营笔记/" class="archive-article-date">
-  	<time datetime="2018-10-21T03:43:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-21</time>
+        <a href="/year/11/03/Redis/" class="archive-article-date">
+  	<time datetime="2018-11-03T06:12:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
 </a>
         
       </header>
@@ -219,223 +233,249 @@ var _hmt = _hmt || [];
 	
 	<!-- 目录内容 -->
 
-    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-          <span class="btn-bg"></span>
-          <span class="btn-text">文章导航</span>
-          </p>
-    <div id="toc-article" class="toc-article">
-        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-        <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-批判思维"><span class="toc-number">1.</span> <span class="toc-text">1.批判思维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么被大V的观点左右？"><span class="toc-number">1.1.</span> <span class="toc-text">我们为什么被大V的观点左右？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是合理有效的提问？"><span class="toc-number">1.2.</span> <span class="toc-text">什么是合理有效的提问？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对问题提问"><span class="toc-number">1.3.</span> <span class="toc-text">针对问题提问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对推理过程提问"><span class="toc-number">1.4.</span> <span class="toc-text">针对推理过程提问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何总结性提问？"><span class="toc-number">1.5.</span> <span class="toc-text">如何总结性提问？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运营人的自检模型"><span class="toc-number">1.6.</span> <span class="toc-text">运营人的自检模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-文案训练手册"><span class="toc-number">2.</span> <span class="toc-text">2.文案训练手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#五类需求激发购买欲"><span class="toc-number">2.1.</span> <span class="toc-text">五类需求激发购买欲</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#卖点：简单、清晰、好记"><span class="toc-number">2.1.1.</span> <span class="toc-text">卖点：简单、清晰、好记</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高水平文案技巧"><span class="toc-number">2.2.</span> <span class="toc-text">高水平文案技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文案修改"><span class="toc-number">2.3.</span> <span class="toc-text">文案修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文案检验"><span class="toc-number">2.4.</span> <span class="toc-text">文案检验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-《定位》破解营销战略"><span class="toc-number">3.</span> <span class="toc-text">3.《定位》破解营销战略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大脑工作特点"><span class="toc-number">3.1.</span> <span class="toc-text">大脑工作特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#成为市场第一"><span class="toc-number">3.2.</span> <span class="toc-text">成为市场第一</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-让创意更有黏性"><span class="toc-number">4.</span> <span class="toc-text">4.让创意更有黏性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#观点快速简单"><span class="toc-number">4.0.1.</span> <span class="toc-text">观点快速简单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#观点与众不同"><span class="toc-number">4.0.2.</span> <span class="toc-text">观点与众不同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#具体化快速理解"><span class="toc-number">4.0.3.</span> <span class="toc-text">具体化快速理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#建立可信度"><span class="toc-number">4.0.4.</span> <span class="toc-text">建立可信度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#故事促进"><span class="toc-number">4.0.5.</span> <span class="toc-text">故事促进</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-病毒营销"><span class="toc-number">5.</span> <span class="toc-text">5.病毒营销</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#融入“社交货币”"><span class="toc-number">5.0.1.</span> <span class="toc-text">融入“社交货币”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何铸造？"><span class="toc-number">5.0.2.</span> <span class="toc-text">如何铸造？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何提及？"><span class="toc-number">5.0.3.</span> <span class="toc-text">如何提及？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何分享"><span class="toc-number">5.0.4.</span> <span class="toc-text">如何分享</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何辨识"><span class="toc-number">5.0.5.</span> <span class="toc-text">如何辨识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#品牌故事"><span class="toc-number">5.0.6.</span> <span class="toc-text">品牌故事</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-行为透视"><span class="toc-number">6.</span> <span class="toc-text">6.行为透视</span></a></li></ol>
-         </div>
-   <script type="text/javascript">
-    function showToc(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:block");
-        show_toc_btn.setAttribute("style","display:none");
-        };
-    function showBtn(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:none");
-        show_toc_btn.setAttribute("style","display:block");
-        };
-   </script>
-      
 <!-- 目录内容结束 -->
 
 
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <p>六部分</p>
-<a id="more"></a>
-<h2 id="1-批判思维"><a href="#1-批判思维" class="headerlink" title="1.批判思维"></a>1.批判思维</h2><h3 id="我们为什么被大V的观点左右？"><a href="#我们为什么被大V的观点左右？" class="headerlink" title="我们为什么被大V的观点左右？"></a>我们为什么被大V的观点左右？</h3><ul>
-<li>因为缺乏独立性和判断力</li>
-<li>推荐书籍《学会提问》</li>
-<li>提问的根源在于批判性思维</li>
-</ul>
-<h3 id="什么是合理有效的提问？"><a href="#什么是合理有效的提问？" class="headerlink" title="什么是合理有效的提问？"></a>什么是合理有效的提问？</h3><ul>
-<li>通过一套逻辑自洽的标志筛选和论证观点，并形成自己的结论</li>
-<li>大众接受式思维：海绵式（不加选择接受）、淘金式（选择接受）</li>
-<li>弱势批判性思维：抵制和驳倒那些与自己意见不同的、强势批判式性思维：过分信赖某一关键问题，并一视同仁</li>
-<li>大众常陷于价值观的堡垒而妨害了真正的讨论与思考</li>
-<li>批判性思维是为了寻找更好的结论，做出更合理的决定</li>
-</ul>
-<h3 id="针对问题提问"><a href="#针对问题提问" class="headerlink" title="针对问题提问"></a>针对问题提问</h3><ul>
-<li>论题观点：描述性（现象还原）、规定性（什么对什么错）</li>
-<li>结论围绕话题，推理最终得出</li>
-<li>理由／论据：支持结论的理由</li>
-<li>理由-结论-假设：价值观假设（警惕）、描述性假设（默认事实）</li>
-</ul>
-<h3 id="针对推理过程提问"><a href="#针对推理过程提问" class="headerlink" title="针对推理过程提问"></a>针对推理过程提问</h3><ul>
-<li>推理过程谬误：客观事实、唯一服务</li>
-<li>证据可信度：直觉、个人经历、典型案例、当事人证词、专家意见、个人观察、研究报告、类比</li>
-<li>理由不可替代性，才能有说服力，因果关系而非相关性</li>
-<li>统计数据的欺骗性：不知来历和立场偏颇</li>
-</ul>
-<h3 id="如何总结性提问？"><a href="#如何总结性提问？" class="headerlink" title="如何总结性提问？"></a>如何总结性提问？</h3><ul>
-<li>重要信息重新检视</li>
-<li>重新从结论里还能得出哪些结论</li>
-</ul>
-<h3 id="运营人的自检模型"><a href="#运营人的自检模型" class="headerlink" title="运营人的自检模型"></a>运营人的自检模型</h3><ul>
-<li>问目的：长短期、数据增长还是用户需求</li>
-<li>问理由：必须程度、为什么必须、支持的理由</li>
-<li>避免歧义和模糊：明确、指标数据、手段、流程、量化</li>
-<li>问假设：支持假设、前提假设</li>
-<li>排漏洞：自查</li>
-<li>可信度：数据和案例支持</li>
-<li>方案唯一：最优方案</li>
-<li>结论推到数据：是否影响其他数据，如何辨别</li>
-</ul>
+        <p>根据Github整理。<br>内容包括：数据类型、数据结构、使用场景相关介绍、Redis与Memcached、键的过期时间、数据淘汰策略、持久化、事务、事件、复制、Sentinel、分片等等。<br><a id="more"></a></p>
+<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>Redis 是速度非常快的非关系型（NoSQL）内存键值数据库，可以存储键和五种不同类型的值之间的映射。</p>
+<p>键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。</p>
+<p>Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，使用复制来扩展读性能，使用分片来扩展写性能。</p>
+<h1 id="二、数据类型"><a href="#二、数据类型" class="headerlink" title="二、数据类型"></a>二、数据类型</h1><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>可以存储的值</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STRING</td>
+<td>字符串、整数或者浮点数</td>
+<td>对整个字符串或者字符串的其中一部分执行操作 对整数和浮点数执行自增或者自减操作</td>
+</tr>
+<tr>
+<td>LIST</td>
+<td>列表</td>
+<td>从两端压入或者弹出元素  对单个或者多个元素 进行修剪，只保留一个范围内的元素</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>无序集合</td>
+<td>添加、获取、移除单个元素 检查一个元素是否存在于集合中 计算交集、并集、差集 从集合里面随机获取元素</td>
+</tr>
+<tr>
+<td>HASH</td>
+<td>包含键值对的无序散列表</td>
+<td>添加、获取、移除单个键值对 获取所有键值对 检查某个键是否存在</td>
+</tr>
+<tr>
+<td>ZSET</td>
+<td>有序集合</td>
+<td>添加、获取、删除元素 根据分值范围或者成员来获取元素 计算一个键的排名</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>接受还是拒绝一个立场，感情上的依恋绝不应该成为最重要的基础。</p>
-<p>一厢情愿是批判性思维的最大劲敌。</p>
-<p>在对这样的数据做出反应之前，我们先要问一声它们要怎么得出来的。</p>
+<p><a href="https://redislabs.com/ebook/part-1-getting-started/chapter-1-getting-to-know-redis/1-2-what-redis-data-structures-look-like/" target="_blank" rel="noopener">What Redis data structures look like</a></p>
 </blockquote>
-<h2 id="2-文案训练手册"><a href="#2-文案训练手册" class="headerlink" title="2.文案训练手册"></a>2.文案训练手册</h2><p>广告文案与普通文案的最大区别：<strong>它是从产品出发</strong></p>
-<p>产生强烈共鸣的文案：<strong>离不开对消费者及其生活场景的深入分析</strong></p>
-<h3 id="五类需求激发购买欲"><a href="#五类需求激发购买欲" class="headerlink" title="五类需求激发购买欲"></a>五类需求激发购买欲</h3><ul>
-<li>低价需求：不单单是追求单价足够低，更多的考虑符合自身需求的低价</li>
-<li>新颖性：服务形式与宣传形式要跟随时代发展进行更新</li>
-<li>便捷性：消费者的共性需求，不只体现在小，更体现在场景适配</li>
-<li>个人专属定制化：不同人专递一个“我懂你”的印象</li>
-<li>降低风险：每次下单都会考虑的需求，使用过程中，会遇到什么风险？如何消除？</li>
-</ul>
-<h4 id="卖点：简单、清晰、好记"><a href="#卖点：简单、清晰、好记" class="headerlink" title="卖点：简单、清晰、好记"></a>卖点：简单、清晰、好记</h4><ul>
-<li>调动足够多的感官刺激，并确保目标不偏离。</li>
-<li>文案创作更讲究单一原则，这样才能被成功记住</li>
-<li>走到产品背后的故事、闪光点、团队的文化特点和传承<br>-64宫格挖掘卖点：行业人物-目标用户、卖点-痛点和共鸣</li>
-</ul>
-<h3 id="高水平文案技巧"><a href="#高水平文案技巧" class="headerlink" title="高水平文案技巧"></a>高水平文案技巧</h3><ul>
-<li><p>力量型文案：唤起内心渴望，激发行为</p>
-<blockquote>
-<p>揭开伤疤撒盐，痛并快乐着<br>多使用动词和短句</p>
-</blockquote>
-</li>
-<li><p>诱惑性文案：利用一个可视化的场景，营造可触发想象的画面感</p>
-<blockquote>
-<p>情绪的抒发</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="文案修改"><a href="#文案修改" class="headerlink" title="文案修改"></a>文案修改</h3><ul>
-<li>先小睡一会儿，醒后仍记得的产品或者服务核心点，请记录</li>
-<li>卖点细节重写几次，反复检验，剔除弱项，再重写</li>
-<li>再看一遍，有没有耍小聪明</li>
-<li>一边写，一遍大声读，检查词语韵律</li>
-<li>过夜检测，从晚上6点到早9点</li>
-<li>段落太长或太密，吸不吸引人</li>
-<li>每一句话难以</li>
-</ul>
-<h3 id="文案检验"><a href="#文案检验" class="headerlink" title="文案检验"></a>文案检验</h3><ul>
-<li>包含产品的最大卖点</li>
-<li>直击用户痛点</li>
-<li>建立情感连接、读起来像老朋友的信</li>
-<li>给任何竞争对手都不合适</li>
-</ul>
-<blockquote>
-<p>永远不要推销一种产品或服务，而是推销一种概念</p>
-</blockquote>
-<h2 id="3-《定位》破解营销战略"><a href="#3-《定位》破解营销战略" class="headerlink" title="3.《定位》破解营销战略"></a>3.《定位》破解营销战略</h2><p>定位： <strong>如何在潜在客户的心智中实现差异化，从而建立认知优势，占领一个有价值的位置</strong>，其本质就是率先找到将<a href="https://www.alexi2015.top/?tags=2" target="_blank" rel="noopener">产品</a>植入用户心智的方法，让用户一想到某一特性、某一个品类、某一个想法，就能联想到你的产品。</p>
-<h3 id="大脑工作特点"><a href="#大脑工作特点" class="headerlink" title="大脑工作特点"></a>大脑工作特点</h3><ul>
-<li>大脑所有的信息都有防御筛选机制。看到的东西包括想记住也是记住的，而不全是实际现象</li>
-<li>大脑无法处理7件以上的信息，给进入大脑的产品和品牌分类筛选，建立“产品阶梯”</li>
-</ul>
-<h3 id="成为市场第一"><a href="#成为市场第一" class="headerlink" title="成为市场第一"></a>成为市场第一</h3><ul>
-<li>让用户认可你是第一（认知）</li>
-<li>抢占市场先机（绝对红利、短期无法撼动）</li>
-<li>巩固护城河（细分市场积累量级，产生颠覆式创新很容易突破）</li>
-</ul>
-<p>后发优势：<strong>在大公司的业务结构中寻找薄弱环节，从垂直细分领域做到极致化</strong></p>
-<p>重新定位：<strong>给竞争对手重新定位，其本质就是创造属于自己的空当。把人们脑中已有的认知或者理念挤掉，塑造新理念，重塑用户的心智</strong></p>
-<blockquote>
-<p>公司犯的最大的错误就是试图满足所有人的需求，即人人满意陷阱。</p>
-</blockquote>
-<h2 id="4-让创意更有黏性"><a href="#4-让创意更有黏性" class="headerlink" title="4.让创意更有黏性"></a>4.让创意更有黏性</h2><p><strong>观点／创意必须是便于大众理解的、简约的</strong>，选择过多会导致决策瘫痪。</p>
-<h4 id="观点快速简单"><a href="#观点快速简单" class="headerlink" title="观点快速简单"></a>观点快速简单</h4><ul>
-<li>倒金字塔阐述观点：按照轻重有序的准则，优先提炼出观点的核心。“精、准、深”保持观点的穿透力和影响力。读者最先看到的是事件中最重要最抓眼球的信息。</li>
-<li>启动蜜柚式思维模式：要想办法充分利用对方现有的知识经验和认知水平。采用类比、比喻等方式。</li>
-</ul>
-<h4 id="观点与众不同"><a href="#观点与众不同" class="headerlink" title="观点与众不同"></a>观点与众不同</h4><ul>
-<li>找出观点中与直觉相违背的部分。</li>
-<li>打破常规，意外。</li>
-<li>制造缺口，制造用户心理的缺失情绪。</li>
-</ul>
-<h4 id="具体化快速理解"><a href="#具体化快速理解" class="headerlink" title="具体化快速理解"></a>具体化快速理解</h4><ul>
-<li>对描述细节的事物、场景化的表达、情境化的营造会留下更深刻的印象</li>
-<li>将抽象的名词替换成具体的、有画面、有场景带入感的。</li>
-</ul>
-<h4 id="建立可信度"><a href="#建立可信度" class="headerlink" title="建立可信度"></a>建立可信度</h4><ul>
-<li>权威代言</li>
-<li>相信数据</li>
-<li>用户自检，亲自验证对<a href="https://www.alexi2015.top/?tags=2" target="_blank" rel="noopener">产品</a>的猜想和预判</li>
-</ul>
-<h4 id="故事促进"><a href="#故事促进" class="headerlink" title="故事促进"></a>故事促进</h4><ul>
-<li>故事鼓舞（鸡汤？）：人会倾向于将个体的人生经历置换到故事案例中，进而在大脑中虚拟出一种自我的模型</li>
-<li>故事模拟成长：挑战情节（唐家三少）、联系情节（还珠格格）、创造力情节（乔布斯传）。用户从故事中找到价值观认同。</li>
-</ul>
-<blockquote>
-<p>黏性创意要符合6歌原则，分别是简单、意外、具体、可信、情感和故事。</p>
-</blockquote>
-<h2 id="5-病毒营销"><a href="#5-病毒营销" class="headerlink" title="5.病毒营销"></a>5.病毒营销</h2><h4 id="融入“社交货币”"><a href="#融入“社交货币”" class="headerlink" title="融入“社交货币”"></a>融入“社交货币”</h4><ul>
-<li>人们更加倾向于分享自己的思想和观点</li>
-<li>“社交货币”就是谈资和共同话题</li>
-</ul>
-<h4 id="如何铸造？"><a href="#如何铸造？" class="headerlink" title="如何铸造？"></a>如何铸造？</h4><ul>
-<li>卓越制造吸引力，使人们看起来更优秀、更潇洒、更爽朗、逼格更高</li>
-<li>非常规的事情能制造许多意外，更容易充当社交货币</li>
-<li>游戏激发炫耀欲，竞争欲望和比较心理</li>
-<li>专有打造归属感，放大<a href="https://www.alexi2015.top/?tags=2" target="_blank" rel="noopener">产品</a>和服务的稀缺性和专用性，打造用户的归属感，最直观的表现就是与众不同。</li>
-</ul>
-<h4 id="如何提及？"><a href="#如何提及？" class="headerlink" title="如何提及？"></a>如何提及？</h4><ul>
-<li>把产品与生活中经常出现的“诱因”相关联</li>
-<li>一个合适的诱因最主要的特征是高频</li>
-<li>网络热点也是看得见的“高频”</li>
-<li>诱因转移，结合受众的生活环境、体验感受</li>
-</ul>
-<h4 id="如何分享"><a href="#如何分享" class="headerlink" title="如何分享"></a>如何分享</h4><ul>
-<li>通过情绪事件激发分享</li>
-<li>高唤醒特征情绪：敬畏、惊讶、消遣、兴奋；愤怒、担忧、恐惧；怀旧、</li>
-<li>人们倾向于分享他们所见到的能对自己有益的事物，因此要打磨信息的实用价值</li>
-</ul>
-<h4 id="如何辨识"><a href="#如何辨识" class="headerlink" title="如何辨识"></a>如何辨识</h4><ul>
-<li>提升可视性，公共场合被人轻易地认出来</li>
-<li>外观辨识度</li>
-<li>曝光率，频繁地出现在人们的生活中</li>
-</ul>
-<h4 id="品牌故事"><a href="#品牌故事" class="headerlink" title="品牌故事"></a>品牌故事</h4><ul>
-<li>大脑更容易记住一个跌宕起伏的故事</li>
-<li>创始人的创业故事</li>
-<li>品牌历史故事</li>
-<li>品牌理念的人设故事：目的是为了传播产品信息</li>
-</ul>
-<h2 id="6-行为透视"><a href="#6-行为透视" class="headerlink" title="6.行为透视"></a>6.行为透视</h2><p>我们心里没有价值价值衡量器，我们关注的往往是<strong>这件物品跟另外一件的相对优势</strong>，以此估值价值。</p>
-<p><strong>“诱饵效应”</strong>就是说当人们对两个不相上下的选项进行选择时，因为新选项的加入，会使某个旧选项显得更有吸引力。</p>
+<h2 id="STRING"><a href="#STRING" class="headerlink" title="STRING"></a>STRING</h2><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png" alt="img"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; set hello world</span><br><span class="line">OK</span><br><span class="line">&gt; get hello</span><br><span class="line">&quot;world&quot;</span><br><span class="line">&gt; del hello</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; get hello</span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
+<h2 id="LIST"><a href="#LIST" class="headerlink" title="LIST"></a>LIST</h2><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png" alt="img"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpush list-key item</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; rpush list-key item2</span><br><span class="line">(integer) 2</span><br><span class="line">&gt; rpush list-key item</span><br><span class="line">(integer) 3</span><br><span class="line"></span><br><span class="line">&gt; lrange list-key 0 -1</span><br><span class="line">1) &quot;item&quot;</span><br><span class="line">2) &quot;item2&quot;</span><br><span class="line">3) &quot;item&quot;</span><br><span class="line"></span><br><span class="line">&gt; lindex list-key 1</span><br><span class="line">&quot;item2&quot;</span><br><span class="line"></span><br><span class="line">&gt; lpop list-key</span><br><span class="line">&quot;item&quot;</span><br><span class="line"></span><br><span class="line">&gt; lrange list-key 0 -1</span><br><span class="line">1) &quot;item2&quot;</span><br><span class="line">2) &quot;item&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="SET"><a href="#SET" class="headerlink" title="SET"></a>SET</h2><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" alt="img"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&gt; sadd set-key item</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; sadd set-key item2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; sadd set-key item3</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; sadd set-key item</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; smembers set-key</span><br><span class="line">1) &quot;item&quot;</span><br><span class="line">2) &quot;item2&quot;</span><br><span class="line">3) &quot;item3&quot;</span><br><span class="line"></span><br><span class="line">&gt; sismember set-key item4</span><br><span class="line">(integer) 0</span><br><span class="line">&gt; sismember set-key item</span><br><span class="line">(integer) 1</span><br><span class="line"></span><br><span class="line">&gt; srem set-key item2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; srem set-key item2</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; smembers set-key</span><br><span class="line">1) &quot;item&quot;</span><br><span class="line">2) &quot;item3&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="HASH"><a href="#HASH" class="headerlink" title="HASH"></a>HASH</h2><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png" alt="img"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt; hset hash-key sub-key1 value1</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; hset hash-key sub-key2 value2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; hset hash-key sub-key1 value1</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; hgetall hash-key</span><br><span class="line">1) &quot;sub-key1&quot;</span><br><span class="line">2) &quot;value1&quot;</span><br><span class="line">3) &quot;sub-key2&quot;</span><br><span class="line">4) &quot;value2&quot;</span><br><span class="line"></span><br><span class="line">&gt; hdel hash-key sub-key2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; hdel hash-key sub-key2</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; hget hash-key sub-key1</span><br><span class="line">&quot;value1&quot;</span><br><span class="line"></span><br><span class="line">&gt; hgetall hash-key</span><br><span class="line">1) &quot;sub-key1&quot;</span><br><span class="line">2) &quot;value1&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="ZSET"><a href="#ZSET" class="headerlink" title="ZSET"></a>ZSET</h2><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png" alt="img"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&gt; zadd zset-key 728 member1</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; zadd zset-key 982 member0</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; zadd zset-key 982 member0</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; zrange zset-key 0 -1 withscores</span><br><span class="line">1) &quot;member1&quot;</span><br><span class="line">2) &quot;728&quot;</span><br><span class="line">3) &quot;member0&quot;</span><br><span class="line">4) &quot;982&quot;</span><br><span class="line"></span><br><span class="line">&gt; zrangebyscore zset-key 0 800 withscores</span><br><span class="line">1) &quot;member1&quot;</span><br><span class="line">2) &quot;728&quot;</span><br><span class="line"></span><br><span class="line">&gt; zrem zset-key member1</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; zrem zset-key member1</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; zrange zset-key 0 -1 withscores</span><br><span class="line">1) &quot;member0&quot;</span><br><span class="line">2) &quot;982&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="三、数据结构"><a href="#三、数据结构" class="headerlink" title="三、数据结构"></a>三、数据结构</h1><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>dictht 是一个散列表结构，使用拉链法保存哈希冲突。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/* This is our hash table structure. Every dictionary has two of this as we</span><br><span class="line"> * implement incremental rehashing, for the old to the new table. */</span><br><span class="line">typedef struct dictht &#123;</span><br><span class="line">    dictEntry **table;</span><br><span class="line">    unsigned long size;</span><br><span class="line">    unsigned long sizemask;</span><br><span class="line">    unsigned long used;</span><br><span class="line">&#125; dictht;</span><br><span class="line">typedef struct dictEntry &#123;</span><br><span class="line">    void *key;</span><br><span class="line">    union &#123;</span><br><span class="line">        void *val;</span><br><span class="line">        uint64_t u64;</span><br><span class="line">        int64_t s64;</span><br><span class="line">        double d;</span><br><span class="line">    &#125; v;</span><br><span class="line">    struct dictEntry *next;</span><br><span class="line">&#125; dictEntry;</span><br></pre></td></tr></table></figure>
+<p>Redis 的字典 dict 中包含两个哈希表 dictht，这是为了方便进行 rehash 操作。在扩容时，将其中一个 dictht 上的键值对 rehash 到另一个 dictht 上面，完成之后释放空间并交换两个 dictht 的角色。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedef struct dict &#123;</span><br><span class="line">    dictType *type;</span><br><span class="line">    void *privdata;</span><br><span class="line">    dictht ht[2];</span><br><span class="line">    long rehashidx; /* rehashing not in progress if rehashidx == -1 */</span><br><span class="line">    unsigned long iterators; /* number of iterators currently running */</span><br><span class="line">&#125; dict;</span><br></pre></td></tr></table></figure>
+<p>rehash 操作不是一次性完成，而是采用渐进方式，这是为了避免一次性执行过多的 rehash 操作给服务器带来过大的负担。</p>
+<p>渐进式 rehash 通过记录 dict 的 rehashidx 完成，它从 0 开始，然后每执行一次 rehash 都会递增。例如在一次 rehash 中，要把 dict[0] rehash 到 dict[1]，这一次会把 dict[0] 上 table[rehashidx] 的键值对 rehash 到 dict[1] 上，dict[0] 的 table[rehashidx] 指向 null，并令 rehashidx++。</p>
+<p>在 rehash 期间，每次对字典执行添加、删除、查找或者更新操作时，都会执行一次渐进式 rehash。</p>
+<p>采用渐进式 rehash 会导致字典中的数据分散在两个 dictht 上，因此对字典的查找操作也需要到对应的 dictht 去执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">/* Performs N steps of incremental rehashing. Returns 1 if there are still</span><br><span class="line"> * keys to move from the old to the new hash table, otherwise 0 is returned.</span><br><span class="line"> *</span><br><span class="line"> * Note that a rehashing step consists in moving a bucket (that may have more</span><br><span class="line"> * than one key as we use chaining) from the old to the new hash table, however</span><br><span class="line"> * since part of the hash table may be composed of empty spaces, it is not</span><br><span class="line"> * guaranteed that this function will rehash even a single bucket, since it</span><br><span class="line"> * will visit at max N*10 empty buckets in total, otherwise the amount of</span><br><span class="line"> * work it does would be unbound and the function may block for a long time. */</span><br><span class="line">int dictRehash(dict *d, int n) &#123;</span><br><span class="line">    int empty_visits = n * 10; /* Max number of empty buckets to visit. */</span><br><span class="line">    if (!dictIsRehashing(d)) return 0;</span><br><span class="line"></span><br><span class="line">    while (n-- &amp;&amp; d-&gt;ht[0].used != 0) &#123;</span><br><span class="line">        dictEntry *de, *nextde;</span><br><span class="line"></span><br><span class="line">        /* Note that rehashidx can&apos;t overflow as we are sure there are more</span><br><span class="line">         * elements because ht[0].used != 0 */</span><br><span class="line">        assert(d-&gt;ht[0].size &gt; (unsigned long) d-&gt;rehashidx);</span><br><span class="line">        while (d-&gt;ht[0].table[d-&gt;rehashidx] == NULL) &#123;</span><br><span class="line">            d-&gt;rehashidx++;</span><br><span class="line">            if (--empty_visits == 0) return 1;</span><br><span class="line">        &#125;</span><br><span class="line">        de = d-&gt;ht[0].table[d-&gt;rehashidx];</span><br><span class="line">        /* Move all the keys in this bucket from the old to the new hash HT */</span><br><span class="line">        while (de) &#123;</span><br><span class="line">            uint64_t h;</span><br><span class="line"></span><br><span class="line">            nextde = de-&gt;next;</span><br><span class="line">            /* Get the index in the new hash table */</span><br><span class="line">            h = dictHashKey(d, de-&gt;key) &amp; d-&gt;ht[1].sizemask;</span><br><span class="line">            de-&gt;next = d-&gt;ht[1].table[h];</span><br><span class="line">            d-&gt;ht[1].table[h] = de;</span><br><span class="line">            d-&gt;ht[0].used--;</span><br><span class="line">            d-&gt;ht[1].used++;</span><br><span class="line">            de = nextde;</span><br><span class="line">        &#125;</span><br><span class="line">        d-&gt;ht[0].table[d-&gt;rehashidx] = NULL;</span><br><span class="line">        d-&gt;rehashidx++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* Check if we already rehashed the whole table... */</span><br><span class="line">    if (d-&gt;ht[0].used == 0) &#123;</span><br><span class="line">        zfree(d-&gt;ht[0].table);</span><br><span class="line">        d-&gt;ht[0] = d-&gt;ht[1];</span><br><span class="line">        _dictReset(&amp;d-&gt;ht[1]);</span><br><span class="line">        d-&gt;rehashidx = -1;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* More to rehash... */</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="跳跃表"><a href="#跳跃表" class="headerlink" title="跳跃表"></a>跳跃表</h2><p>是有序集合的底层实现之一。</p>
+<p>跳跃表是基于多指针有序链表实现的，可以看成多个有序链表。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/beba612e-dc5b-4fc2-869d-0b23408ac90a.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/beba612e-dc5b-4fc2-869d-0b23408ac90a.png" alt="img"></a></p>
+<p>在查找时，从上层指针开始查找，找到对应的区间之后再到下一层去查找。下图演示了查找 22 的过程。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/0ea37ee2-c224-4c79-b895-e131c6805c40.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/0ea37ee2-c224-4c79-b895-e131c6805c40.png" alt="img"></a></p>
+<p>与红黑树等平衡树相比，跳跃表具有以下优点：</p>
 <ul>
-<li>非对称压倒劣势：比目标都差，与竞争者各有千秋。</li>
+<li>插入速度非常快速，因为不需要进行旋转等操作来维护平衡性；</li>
+<li>更容易实现；</li>
+<li>支持无锁操作。</li>
 </ul>
-<p><strong>“锚定效应”</strong>当人们需要对某个时间做定量估测时，会将某些特定数值作为起始值，起始值像锚一样制约着估测值。所以这个锚的位置已经大约决定了最后的结果。</p>
-<p><strong>“羊群效应”</strong>基于对其他人的行为来推断某事物的好坏，进而效仿，再把这个决定转化为长期习惯。</p>
-<p>生活的两个世界：</p>
-<ul>
-<li>社会规范：是以对人的人文关怀为出发点的</li>
-<li>市场规范：是以对人的物质奖励为出发点的<br><strong>社会规范暗藏在社会法则和共同长期目标中</strong></li>
+<h1 id="四、使用场景"><a href="#四、使用场景" class="headerlink" title="四、使用场景"></a>四、使用场景</h1><h2 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h2><p>可以对 String 进行自增自减运算，从而实现计数器功能。</p>
+<p>Redis 这种内存型数据库的读写性能非常高，很适合存储频繁读写的计数量。</p>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>将热点数据放到内存中，设置内存的最大使用量以及淘汰策略来保证缓存的命中率。</p>
+<h2 id="查找表"><a href="#查找表" class="headerlink" title="查找表"></a>查找表</h2><p>例如 DNS 记录就很适合使用 Redis 进行存储。</p>
+<p>查找表和缓存类似，也是利用了 Redis 快速的查找特性。但是查找表的内容不能失效，而缓存的内容可以失效，因为缓存不作为可靠的数据来源。</p>
+<h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><p>List 是一个双向链表，可以通过 lpop 和 lpush 写入和读取消息。</p>
+<p>不过最好使用 Kafka、RabbitMQ 等消息中间件。</p>
+<h2 id="会话缓存"><a href="#会话缓存" class="headerlink" title="会话缓存"></a>会话缓存</h2><p>可以使用 Redis 来统一存储多台应用服务器的会话信息。</p>
+<p>当应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以请求任意一个应用服务器，从而更容易实现高可用性以及可伸缩性。</p>
+<h2 id="分布式锁实现"><a href="#分布式锁实现" class="headerlink" title="分布式锁实现"></a>分布式锁实现</h2><p>在分布式场景下，无法使用单机环境下的锁来对多个节点上的进程进行同步。</p>
+<p>可以使用 Reids 自带的 SETNX 命令实现分布式锁，除此之外，还可以使用官方提供的 RedLock 分布式锁实现。</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>Set 可以实现交集、并集等操作，从而实现共同好友等功能。</p>
+<p>ZSet 可以实现有序性操作，从而实现排行榜等功能。</p>
+<h1 id="五、Redis-与-Memcached"><a href="#五、Redis-与-Memcached" class="headerlink" title="五、Redis 与 Memcached"></a>五、Redis 与 Memcached</h1><p>两者都是非关系型内存键值数据库，主要有以下不同：</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Memcached 仅支持字符串类型，而 Redis 支持五种不同的数据类型，可以更灵活地解决问题。</p>
+<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><p>Redis 支持两种持久化策略：RDB 快照和 AOF 日志，而 Memcached 不支持持久化。</p>
+<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p>Memcached 不支持分布式，只能通过在客户端使用一致性哈希来实现分布式存储，这种方式在存储和查询时都需要先在客户端计算一次数据所在的节点。</p>
+<p>Redis Cluster 实现了分布式的支持。</p>
+<h2 id="内存管理机制"><a href="#内存管理机制" class="headerlink" title="内存管理机制"></a>内存管理机制</h2><ul>
+<li>在 Redis 中，并不是所有数据都一直存储在内存中，可以将一些很久没用的 value 交换到磁盘，而 Memcached 的数据则会一直在内存中。</li>
+<li>Memcached 将内存分割成特定长度的块来存储数据，以完全解决内存碎片的问题。但是这种方式会使得内存的利用率不高，例如块的大小为 128 bytes，只存储 100 bytes 的数据，那么剩下的 28 bytes 就浪费掉了。</li>
 </ul>
-<p>好的社区运营：</p>
+<h1 id="六、键的过期时间"><a href="#六、键的过期时间" class="headerlink" title="六、键的过期时间"></a>六、键的过期时间</h1><p>Redis 可以为每个键设置过期时间，当键过期时，会自动删除该键。</p>
+<p>对于散列表这种容器，只能为整个键设置过期时间（整个散列表），而不能为键里面的单个元素设置过期时间。</p>
+<h1 id="七、数据淘汰策略"><a href="#七、数据淘汰策略" class="headerlink" title="七、数据淘汰策略"></a>七、数据淘汰策略</h1><p>可以设置内存最大使用量，当内存使用量超出时，会施行数据淘汰策略。</p>
+<p>Reids 具体有 6 种淘汰策略：</p>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>volatile-lru</td>
+<td>从已设置过期时间的数据集中挑选最近最少使用的数据淘汰</td>
+</tr>
+<tr>
+<td>volatile-ttl</td>
+<td>从已设置过期时间的数据集中挑选将要过期的数据淘汰</td>
+</tr>
+<tr>
+<td>volatile-random</td>
+<td>从已设置过期时间的数据集中任意选择数据淘汰</td>
+</tr>
+<tr>
+<td>allkeys-lru</td>
+<td>从所有数据集中挑选最近最少使用的数据淘汰</td>
+</tr>
+<tr>
+<td>allkeys-random</td>
+<td>从所有数据集中任意选择数据进行淘汰</td>
+</tr>
+<tr>
+<td>noeviction</td>
+<td>禁止驱逐数据</td>
+</tr>
+</tbody>
+</table>
+<p>作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法实际实现上并非针对所有 key，而是抽样一小部分并且从中选出被淘汰的 key。</p>
+<p>使用 Redis 缓存数据时，为了提高缓存命中率，需要保证缓存数据都是热点数据。可以将内存最大使用量设置为热点数据占用的内存量，然后启用 allkeys-lru 淘汰策略，将最近最少使用的数据淘汰。</p>
+<p>Redis 4.0 引入了 volatile-lfu 和 allkeys-lfu 淘汰策略，LFU 策略通过统计访问频率，将访问频率最少的键值对淘汰。</p>
+<h1 id="八、持久化"><a href="#八、持久化" class="headerlink" title="八、持久化"></a>八、持久化</h1><p>Redis 是内存型数据库，为了保证数据在断电后不会丢失，需要将内存中的数据持久化到硬盘上。</p>
+<h2 id="RDB-持久化"><a href="#RDB-持久化" class="headerlink" title="RDB 持久化"></a>RDB 持久化</h2><p>将某个时间点的所有数据都存放到硬盘上。</p>
+<p>可以将快照复制到其它服务器从而创建具有相同数据的服务器副本。</p>
+<p>如果系统发生故障，将会丢失最后一次创建快照之后的数据。</p>
+<p>如果数据量很大，保存快照的时间会很长。</p>
+<h2 id="AOF-持久化"><a href="#AOF-持久化" class="headerlink" title="AOF 持久化"></a>AOF 持久化</h2><p>将写命令添加到 AOF 文件（Append Only File）的末尾。</p>
+<p>使用 AOF 持久化需要设置同步选项，从而确保写命令什么时候会同步到磁盘文件上。这是因为对文件进行写入并不会马上将内容同步到磁盘上，而是先存储到缓冲区，然后由操作系统决定什么时候同步到磁盘。有以下同步选项：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>同步频率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>always</td>
+<td>每个写命令都同步</td>
+</tr>
+<tr>
+<td>everysec</td>
+<td>每秒同步一次</td>
+</tr>
+<tr>
+<td>no</td>
+<td>让操作系统来决定何时同步</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>好的激励制度</li>
-<li>内容创造者</li>
-<li>优质群<a href="https://www.alexi2015.top/?tags=6" target="_blank" rel="noopener">管理</a>者</li>
+<li>always 选项会严重减低服务器的性能；</li>
+<li>everysec 选项比较合适，可以保证系统崩溃时只会丢失一秒左右的数据，并且 Redis 每秒执行一次同步对服务器性能几乎没有任何影响；</li>
+<li>no 选项并不能给服务器性能带来多大的提升，而且也会增加系统崩溃时数据丢失的数量。</li>
 </ul>
-<p><strong>免费的东西比折扣更具有吸引力</strong>免费没有任何选择成本。为消费者提供免费商品是对品牌发展非常有效的举措。</p>
+<p>随着服务器写请求的增多，AOF 文件会越来越大。Redis 提供了一种将 AOF 重写的特性，能够去除 AOF 文件中的冗余写命令。</p>
+<h1 id="九、事务"><a href="#九、事务" class="headerlink" title="九、事务"></a>九、事务</h1><p>一个事务包含了多个命令，服务器在执行事务期间，不会改去执行其它客户端的命令请求。</p>
+<p>事务中的多个命令被一次性发送给服务器，而不是一条一条发送，这种方式被称为流水线，它可以减少客户端与服务器之间的网络通信次数从而提升性能。</p>
+<p>Redis 最简单的事务实现方式是使用 MULTI 和 EXEC 命令将事务操作包围起来。</p>
+<h1 id="十、事件"><a href="#十、事件" class="headerlink" title="十、事件"></a>十、事件</h1><p>Redis 服务器是一个事件驱动程序。</p>
+<h2 id="文件事件"><a href="#文件事件" class="headerlink" title="文件事件"></a>文件事件</h2><p>服务器通过套接字与客户端或者其它服务器进行通信，文件事件就是对套接字操作的抽象。</p>
+<p>Redis 基于 Reactor 模式开发了自己的网络事件处理器，使用 I/O 多路复用程序来同时监听多个套接字，并将到达的事件传送给文件事件分派器，分派器会根据套接字产生的事件类型调用相应的事件处理器。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/9ea86eb5-000a-4281-b948-7b567bd6f1d8.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/9ea86eb5-000a-4281-b948-7b567bd6f1d8.png" alt="img"></a></p>
+<h2 id="时间事件"><a href="#时间事件" class="headerlink" title="时间事件"></a>时间事件</h2><p>服务器有一些操作需要在给定的时间点执行，时间事件是对这类定时操作的抽象。</p>
+<p>时间事件又分为：</p>
 <ul>
-<li>体验型（领小样）</li>
-<li>平台免费，第三方收费</li>
-<li><a href="https://www.alexi2015.top/?tags=2" target="_blank" rel="noopener">产品</a>组合<a href="https://www.alexi2015.top/?tags=8" target="_blank" rel="noopener">设计</a></li>
-<li>按人群收费（一部分人免费）</li>
-<li>按时间收费（限时）</li>
+<li>定时事件：是让一段程序在指定的时间之内执行一次；</li>
+<li>周期性事件：是让一段程序每隔指定时间就执行一次。</li>
+</ul>
+<p>Redis 将所有时间事件都放在一个无序链表中，通过遍历整个链表查找出已到达的时间事件，并调用相应的事件处理器。</p>
+<h2 id="事件的调度与执行"><a href="#事件的调度与执行" class="headerlink" title="事件的调度与执行"></a>事件的调度与执行</h2><p>服务器需要不断监听文件事件的套接字才能得到待处理的文件事件，但是不能一直监听，否则时间事件无法在规定的时间内执行，因此监听时间应该根据距离现在最近的时间事件来决定。</p>
+<p>事件调度与执行由 aeProcessEvents 函数负责，伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def aeProcessEvents():</span><br><span class="line">    # 获取到达时间离当前时间最接近的时间事件</span><br><span class="line">    time_event = aeSearchNearestTimer()</span><br><span class="line">    # 计算最接近的时间事件距离到达还有多少毫秒</span><br><span class="line">    remaind_ms = time_event.when - unix_ts_now()</span><br><span class="line">    # 如果事件已到达，那么 remaind_ms 的值可能为负数，将它设为 0</span><br><span class="line">    if remaind_ms &lt; 0:</span><br><span class="line">        remaind_ms = 0</span><br><span class="line">    # 根据 remaind_ms 的值，创建 timeval</span><br><span class="line">    timeval = create_timeval_with_ms(remaind_ms)</span><br><span class="line">    # 阻塞并等待文件事件产生，最大阻塞时间由传入的 timeval 决定</span><br><span class="line">    aeApiPoll(timeval)</span><br><span class="line">    # 处理所有已产生的文件事件</span><br><span class="line">    procesFileEvents()</span><br><span class="line">    # 处理所有已到达的时间事件</span><br><span class="line">    processTimeEvents()</span><br></pre></td></tr></table></figure>
+<p>将 aeProcessEvents 函数置于一个循环里面，加上初始化和清理函数，就构成了 Redis 服务器的主函数，伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def main():</span><br><span class="line">    # 初始化服务器</span><br><span class="line">    init_server()</span><br><span class="line">    # 一直处理事件，直到服务器关闭为止</span><br><span class="line">    while server_is_not_shutdown():</span><br><span class="line">        aeProcessEvents()</span><br><span class="line">    # 服务器关闭，执行清理操作</span><br><span class="line">    clean_server()</span><br></pre></td></tr></table></figure>
+<p>从事件处理的角度来看，服务器运行流程如下：</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png" alt="img"></a></p>
+<h1 id="十一、复制"><a href="#十一、复制" class="headerlink" title="十一、复制"></a>十一、复制</h1><p>通过使用 slaveof host port 命令来让一个服务器成为另一个服务器的从服务器。</p>
+<p>一个从服务器只能有一个主服务器，并且不支持主主复制。</p>
+<h2 id="连接过程"><a href="#连接过程" class="headerlink" title="连接过程"></a>连接过程</h2><ol>
+<li>主服务器创建快照文件，发送给从服务器，并在发送期间使用缓冲区记录执行的写命令。快照文件发送完毕之后，开始向从服务器发送存储在缓冲区中的写命令；</li>
+<li>从服务器丢弃所有旧数据，载入主服务器发来的快照文件，之后从服务器开始接受主服务器发来的写命令；</li>
+<li>主服务器每执行一次写命令，就向从服务器发送相同的写命令。</li>
+</ol>
+<h2 id="主从链"><a href="#主从链" class="headerlink" title="主从链"></a>主从链</h2><p>随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" alt="img"></a></p>
+<h1 id="十二、Sentinel"><a href="#十二、Sentinel" class="headerlink" title="十二、Sentinel"></a>十二、Sentinel</h1><p>Sentinel（哨兵）可以监听集群中的服务器，并在主服务器进入下线状态时，自动从从服务器中选举出新的主服务器。</p>
+<h1 id="十三、分片"><a href="#十三、分片" class="headerlink" title="十三、分片"></a>十三、分片</h1><p>分片是将数据划分为多个部分的方法，可以将数据存储到多台机器里面，这种方法在解决某些问题时可以获得线性级别的性能提升。</p>
+<p>假设有 4 个 Reids 实例 R0，R1，R2，R3，还有很多表示用户的键 user:1，user:2，… ，有不同的方式来选择一个指定的键存储在哪个实例中。</p>
+<ul>
+<li>最简单的方式是范围分片，例如用户 id 从 0~1000 的存储到实例 R0 中，用户 id 从 1001~2000 的存储到实例 R1 中，等等。但是这样需要维护一张映射范围表，维护操作代价很高。</li>
+<li>还有一种方式是哈希分片，使用 CRC32 哈希函数将键转换为一个数字，再对实例数量求模就能知道应该存储的实例。</li>
+</ul>
+<p>根据执行分片的位置，可以分为三种分片方式：</p>
+<ul>
+<li>客户端分片：客户端使用一致性哈希等算法决定键应当分布到哪个节点。</li>
+<li>代理分片：将客户端请求发送到代理上，由代理转发请求到正确的节点上。</li>
+<li>服务器分片：Redis Cluster。</li>
+</ul>
+<h1 id="十四、一个简单的论坛系统分析"><a href="#十四、一个简单的论坛系统分析" class="headerlink" title="十四、一个简单的论坛系统分析"></a>十四、一个简单的论坛系统分析</h1><p>该论坛系统功能如下：</p>
+<ul>
+<li>可以发布文章；</li>
+<li>可以对文章进行点赞；</li>
+<li>在首页可以按文章的发布时间或者文章的点赞数进行排序显示。</li>
+</ul>
+<h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><p>文章包括标题、作者、赞数等信息，在关系型数据库中很容易构建一张表来存储这些信息，在 Redis 中可以使用 HASH 来存储每种信息以及其对应的值的映射。</p>
+<p>Redis 没有关系型数据库中的表这一概念来将同种类型的数据存放在一起，而是使用命名空间的方式来实现这一功能。键名的前面部分存储命名空间，后面部分的内容存储 ID，通常使用 : 来进行分隔。例如下面的 HASH 的键名为 article:92617，其中 article 为命名空间，ID 为 92617。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png" alt="img"></a></p>
+<h2 id="点赞功能"><a href="#点赞功能" class="headerlink" title="点赞功能"></a>点赞功能</h2><p>当有用户为一篇文章点赞时，除了要对该文章的 votes 字段进行加 1 操作，还必须记录该用户已经对该文章进行了点赞，防止用户点赞次数超过 1。可以建立文章的已投票用户集合来进行记录。</p>
+<p>为了节约内存，规定一篇文章发布满一周之后，就不能再对它进行投票，而文章的已投票集合也会被删除，可以为文章的已投票集合设置一个一周的过期时间就能实现这个规定。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png" alt="img"></a></p>
+<h2 id="对文章进行排序"><a href="#对文章进行排序" class="headerlink" title="对文章进行排序"></a>对文章进行排序</h2><p>为了按发布时间和点赞数进行排序，可以建立一个文章发布时间的有序集合和一个文章点赞数的有序集合。（下图中的 score 就是这里所说的点赞数；下面所示的有序集合分值并不直接是时间和点赞数，而是根据时间和点赞数间接计算出来的）</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" alt="img"></a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>Carlson J L. Redis in Action[J]. Media.johnwiley.com.au, 2013.</li>
+<li><a href="http://redisbook.com/index.html" target="_blank" rel="noopener">黄健宏. Redis 设计与实现 [M]. 机械工业出版社, 2014.</a></li>
+<li><a href="https://redislabs.com/ebook/foreword/" target="_blank" rel="noopener">REDIS IN ACTION</a></li>
+<li><a href="http://ticki.github.io/blog/skip-lists-done-right/" target="_blank" rel="noopener">Skip Lists: Done Right</a></li>
+<li><a href="http://www.cnblogs.com/loveincode/p/7411911.html" target="_blank" rel="noopener">论述 Redis 和 Memcached 的差异</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/redis-guide" target="_blank" rel="noopener">Redis 3.0 中文版- 分片</a></li>
+<li><a href="http://www.scienjus.com/redis-use-case/" target="_blank" rel="noopener">Redis 应用场景</a></li>
+<li><a href="https://redis.io/topics/lru-cache" target="_blank" rel="noopener">Using Redis as an LRU cache</a></li>
 </ul>
 
       
@@ -481,7 +521,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">产品</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原理</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
         		</li>
       		
 		</ul>
@@ -537,7 +581,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/10/21/产品 - 产品运营笔记/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/11/03/Redis/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -551,18 +595,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/year/10/24/java - 基础/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java基础知识
-        
-      </div>
-    </a>
   
-  
-    <a href="/year/10/21/运营 - 术语/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">运营术语</div>
+    <a href="/year/11/03/MySQL原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL原理应用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -581,19 +616,6 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-批判思维"><span class="toc-number">1.</span> <span class="toc-text">1.批判思维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么被大V的观点左右？"><span class="toc-number">1.1.</span> <span class="toc-text">我们为什么被大V的观点左右？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是合理有效的提问？"><span class="toc-number">1.2.</span> <span class="toc-text">什么是合理有效的提问？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对问题提问"><span class="toc-number">1.3.</span> <span class="toc-text">针对问题提问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对推理过程提问"><span class="toc-number">1.4.</span> <span class="toc-text">针对推理过程提问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何总结性提问？"><span class="toc-number">1.5.</span> <span class="toc-text">如何总结性提问？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运营人的自检模型"><span class="toc-number">1.6.</span> <span class="toc-text">运营人的自检模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-文案训练手册"><span class="toc-number">2.</span> <span class="toc-text">2.文案训练手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#五类需求激发购买欲"><span class="toc-number">2.1.</span> <span class="toc-text">五类需求激发购买欲</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#卖点：简单、清晰、好记"><span class="toc-number">2.1.1.</span> <span class="toc-text">卖点：简单、清晰、好记</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高水平文案技巧"><span class="toc-number">2.2.</span> <span class="toc-text">高水平文案技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文案修改"><span class="toc-number">2.3.</span> <span class="toc-text">文案修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文案检验"><span class="toc-number">2.4.</span> <span class="toc-text">文案检验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-《定位》破解营销战略"><span class="toc-number">3.</span> <span class="toc-text">3.《定位》破解营销战略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大脑工作特点"><span class="toc-number">3.1.</span> <span class="toc-text">大脑工作特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#成为市场第一"><span class="toc-number">3.2.</span> <span class="toc-text">成为市场第一</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-让创意更有黏性"><span class="toc-number">4.</span> <span class="toc-text">4.让创意更有黏性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#观点快速简单"><span class="toc-number">4.0.1.</span> <span class="toc-text">观点快速简单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#观点与众不同"><span class="toc-number">4.0.2.</span> <span class="toc-text">观点与众不同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#具体化快速理解"><span class="toc-number">4.0.3.</span> <span class="toc-text">具体化快速理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#建立可信度"><span class="toc-number">4.0.4.</span> <span class="toc-text">建立可信度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#故事促进"><span class="toc-number">4.0.5.</span> <span class="toc-text">故事促进</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-病毒营销"><span class="toc-number">5.</span> <span class="toc-text">5.病毒营销</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#融入“社交货币”"><span class="toc-number">5.0.1.</span> <span class="toc-text">融入“社交货币”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何铸造？"><span class="toc-number">5.0.2.</span> <span class="toc-text">如何铸造？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何提及？"><span class="toc-number">5.0.3.</span> <span class="toc-text">如何提及？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何分享"><span class="toc-number">5.0.4.</span> <span class="toc-text">如何分享</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何辨识"><span class="toc-number">5.0.5.</span> <span class="toc-text">如何辨识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#品牌故事"><span class="toc-number">5.0.6.</span> <span class="toc-text">品牌故事</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-行为透视"><span class="toc-number">6.</span> <span class="toc-text">6.行为透视</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
