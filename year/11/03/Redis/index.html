@@ -9,7 +9,7 @@
   <title>Redis | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="根据Github整理。内容包括：数据类型、数据结构、使用场景相关介绍、Redis与Memcached、键的过期时间、数据淘汰策略、持久化、事务、事件、复制、Sentinel、分片等等。">
-<meta name="keywords" content="原理,redis">
+<meta name="keywords" content="redis,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="http://wangyuehan.github.io/year/11/03/Redis/index.html">
@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png">
 <meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png">
-<meta property="og:updated_time" content="2018-11-03T06:15:28.601Z">
+<meta property="og:updated_time" content="2018-11-04T03:40:37.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
 <meta name="twitter:description" content="根据Github整理。内容包括：数据类型、数据结构、使用场景相关介绍、Redis与Memcached、键的过期时间、数据淘汰策略、持久化、事务、事件、复制、Sentinel、分片等等。">
@@ -233,6 +233,30 @@ var _hmt = _hmt || [];
 	
 	<!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、概述"><span class="toc-number">1.</span> <span class="toc-text">一、概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、数据类型"><span class="toc-number">2.</span> <span class="toc-text">二、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#STRING"><span class="toc-number">2.1.</span> <span class="toc-text">STRING</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LIST"><span class="toc-number">2.2.</span> <span class="toc-text">LIST</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SET"><span class="toc-number">2.3.</span> <span class="toc-text">SET</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HASH"><span class="toc-number">2.4.</span> <span class="toc-text">HASH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZSET"><span class="toc-number">2.5.</span> <span class="toc-text">ZSET</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、数据结构"><span class="toc-number">3.</span> <span class="toc-text">三、数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#字典"><span class="toc-number">3.1.</span> <span class="toc-text">字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跳跃表"><span class="toc-number">3.2.</span> <span class="toc-text">跳跃表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、使用场景"><span class="toc-number">4.</span> <span class="toc-text">四、使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#计数器"><span class="toc-number">4.1.</span> <span class="toc-text">计数器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存"><span class="toc-number">4.2.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找表"><span class="toc-number">4.3.</span> <span class="toc-text">查找表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息队列"><span class="toc-number">4.4.</span> <span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#会话缓存"><span class="toc-number">4.5.</span> <span class="toc-text">会话缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式锁实现"><span class="toc-number">4.6.</span> <span class="toc-text">分布式锁实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">4.7.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Redis-与-Memcached"><span class="toc-number">5.</span> <span class="toc-text">五、Redis 与 Memcached</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-number">5.1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据持久化"><span class="toc-number">5.2.</span> <span class="toc-text">数据持久化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式"><span class="toc-number">5.3.</span> <span class="toc-text">分布式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存管理机制"><span class="toc-number">5.4.</span> <span class="toc-text">内存管理机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、键的过期时间"><span class="toc-number">6.</span> <span class="toc-text">六、键的过期时间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、数据淘汰策略"><span class="toc-number">7.</span> <span class="toc-text">七、数据淘汰策略</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、持久化"><span class="toc-number">8.</span> <span class="toc-text">八、持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB-持久化"><span class="toc-number">8.1.</span> <span class="toc-text">RDB 持久化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF-持久化"><span class="toc-number">8.2.</span> <span class="toc-text">AOF 持久化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、事务"><span class="toc-number">9.</span> <span class="toc-text">九、事务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、事件"><span class="toc-number">10.</span> <span class="toc-text">十、事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件事件"><span class="toc-number">10.1.</span> <span class="toc-text">文件事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间事件"><span class="toc-number">10.2.</span> <span class="toc-text">时间事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件的调度与执行"><span class="toc-number">10.3.</span> <span class="toc-text">事件的调度与执行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、复制"><span class="toc-number">11.</span> <span class="toc-text">十一、复制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#连接过程"><span class="toc-number">11.1.</span> <span class="toc-text">连接过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主从链"><span class="toc-number">11.2.</span> <span class="toc-text">主从链</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十二、Sentinel"><span class="toc-number">12.</span> <span class="toc-text">十二、Sentinel</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十三、分片"><span class="toc-number">13.</span> <span class="toc-text">十三、分片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十四、一个简单的论坛系统分析"><span class="toc-number">14.</span> <span class="toc-text">十四、一个简单的论坛系统分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文章信息"><span class="toc-number">14.1.</span> <span class="toc-text">文章信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点赞功能"><span class="toc-number">14.2.</span> <span class="toc-text">点赞功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对文章进行排序"><span class="toc-number">14.3.</span> <span class="toc-text">对文章进行排序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">15.</span> <span class="toc-text">参考资料</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
 <!-- 目录内容结束 -->
 
 
@@ -521,11 +545,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		
 		</ul>
@@ -595,6 +619,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/year/11/04/系统设计-分布式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          分布式
+        
+      </div>
+    </a>
+  
   
     <a href="/year/11/03/MySQL原理/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">MySQL原理应用</div>
@@ -616,6 +649,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、概述"><span class="toc-number">1.</span> <span class="toc-text">一、概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、数据类型"><span class="toc-number">2.</span> <span class="toc-text">二、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#STRING"><span class="toc-number">2.1.</span> <span class="toc-text">STRING</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LIST"><span class="toc-number">2.2.</span> <span class="toc-text">LIST</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SET"><span class="toc-number">2.3.</span> <span class="toc-text">SET</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HASH"><span class="toc-number">2.4.</span> <span class="toc-text">HASH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZSET"><span class="toc-number">2.5.</span> <span class="toc-text">ZSET</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、数据结构"><span class="toc-number">3.</span> <span class="toc-text">三、数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#字典"><span class="toc-number">3.1.</span> <span class="toc-text">字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跳跃表"><span class="toc-number">3.2.</span> <span class="toc-text">跳跃表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、使用场景"><span class="toc-number">4.</span> <span class="toc-text">四、使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#计数器"><span class="toc-number">4.1.</span> <span class="toc-text">计数器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存"><span class="toc-number">4.2.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找表"><span class="toc-number">4.3.</span> <span class="toc-text">查找表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息队列"><span class="toc-number">4.4.</span> <span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#会话缓存"><span class="toc-number">4.5.</span> <span class="toc-text">会话缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式锁实现"><span class="toc-number">4.6.</span> <span class="toc-text">分布式锁实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">4.7.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Redis-与-Memcached"><span class="toc-number">5.</span> <span class="toc-text">五、Redis 与 Memcached</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-number">5.1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据持久化"><span class="toc-number">5.2.</span> <span class="toc-text">数据持久化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式"><span class="toc-number">5.3.</span> <span class="toc-text">分布式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存管理机制"><span class="toc-number">5.4.</span> <span class="toc-text">内存管理机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、键的过期时间"><span class="toc-number">6.</span> <span class="toc-text">六、键的过期时间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、数据淘汰策略"><span class="toc-number">7.</span> <span class="toc-text">七、数据淘汰策略</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、持久化"><span class="toc-number">8.</span> <span class="toc-text">八、持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB-持久化"><span class="toc-number">8.1.</span> <span class="toc-text">RDB 持久化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF-持久化"><span class="toc-number">8.2.</span> <span class="toc-text">AOF 持久化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、事务"><span class="toc-number">9.</span> <span class="toc-text">九、事务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、事件"><span class="toc-number">10.</span> <span class="toc-text">十、事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件事件"><span class="toc-number">10.1.</span> <span class="toc-text">文件事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间事件"><span class="toc-number">10.2.</span> <span class="toc-text">时间事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件的调度与执行"><span class="toc-number">10.3.</span> <span class="toc-text">事件的调度与执行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、复制"><span class="toc-number">11.</span> <span class="toc-text">十一、复制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#连接过程"><span class="toc-number">11.1.</span> <span class="toc-text">连接过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主从链"><span class="toc-number">11.2.</span> <span class="toc-text">主从链</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十二、Sentinel"><span class="toc-number">12.</span> <span class="toc-text">十二、Sentinel</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十三、分片"><span class="toc-number">13.</span> <span class="toc-text">十三、分片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十四、一个简单的论坛系统分析"><span class="toc-number">14.</span> <span class="toc-text">十四、一个简单的论坛系统分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文章信息"><span class="toc-number">14.1.</span> <span class="toc-text">文章信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点赞功能"><span class="toc-number">14.2.</span> <span class="toc-text">点赞功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对文章进行排序"><span class="toc-number">14.3.</span> <span class="toc-text">对文章进行排序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">15.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -748,6 +794,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
@@ -756,15 +806,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,7 +826,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -788,10 +838,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
@@ -800,11 +846,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">影评</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">影评</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -817,6 +871,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">攻击技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">集群</a>
               </li>
             
             <div class="clearfix"></div>
