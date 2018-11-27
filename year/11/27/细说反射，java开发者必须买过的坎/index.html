@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
-  <title>Archives: 2018 | 王约翰的博客</title>
+  <title>细说反射,java开发者必须买过的坎 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="王约翰的博客">
-<meta property="og:url" content="http://wangyuehan.github.io/archives/2018/page/4/index.html">
+  <meta name="description" content="很不错的关于发射的文章">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="细说反射,java开发者必须买过的坎">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/27/细说反射，java开发者必须买过的坎/index.html">
 <meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="很不错的关于发射的文章">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-27T11:11:59.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王约翰的博客">
+<meta name="twitter:title" content="细说反射,java开发者必须买过的坎">
+<meta name="twitter:description" content="很不错的关于发射的文章">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
   
@@ -187,329 +192,1347 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-细说反射，java开发者必须买过的坎" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      细说反射,java开发者必须买过的坎
+    </h1>
+  
+
+        
+        <a href="/year/11/27/细说反射，java开发者必须买过的坎/" class="archive-article-date">
+  	<time datetime="2018-11-27T10:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-27</time>
+</a>
+        
+      </header>
     
+	
+	<!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Field-generic-type-java-util-List-lt-com-frank-test-Car-gt"><span class="toc-number">1.</span> <span class="toc-text">Field generic type:java.util.List&lt;com.frank.test.Car&gt;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Field-generic-type-java-util-HashMap-lt-java-lang-Integer-java-lang-String-gt"><span class="toc-number">2.</span> <span class="toc-text">Field generic type:java.util.HashMap&lt;java.lang.Integer, java.lang.String&gt;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Field-generic-type-int"><span class="toc-number">3.</span> <span class="toc-text">Field generic type:int</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-lang-String-java-util-List-lt-java-lang-String-gt-java-util-HashMap-lt-java-lang-Integer-com-frank-test-Son-gt"><span class="toc-number"></span> <span class="toc-text"> java.lang.String[] java.util.List&lt;java.lang.String&gt; java.util.HashMap&lt;java.lang.Integer, com.frank.test.Son&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#您正在驾驶-WHITE-Nissan-汽车，小心行驶。"><span class="toc-number"></span> <span class="toc-text">您正在驾驶 WHITE Nissan 汽车，小心行驶。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自动驾驶马上开始"><span class="toc-number"></span> <span class="toc-text">自动驾驶马上开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。"><span class="toc-number">1.</span> <span class="toc-text">只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
+<!-- 目录内容结束 -->
+
+
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很不错的关于发射的文章</p>
+<a id="more"></a>
+<p>写作是门手艺，笑对需要勇气。</p>
+<p>写下这个题目的时候，我压力比较大，怕的是费力不讨好。因为反射这一块，对于大多数人员而言太熟悉了，稍微不注意就容易把方向写偏，把知识点写漏。但是，我已经写了注解和动态代理这两个知识点的博客，阅读量还可以，这两个知识点是属于反射机制中的，现在对于注解和动态代理息息相关的反射知识基础我倒是退缩了，所以说看起来很普通的东西，其实真的要一五一十地把它的门道说才方显功力。我们经常说一个人半吊子二把刀，说起来头头是道，做起来却不是那么一回事。<br>王阳明说知行合一，很多人只让自己停留在知的阶段，没有行，或者说行的能力薄弱，因为没有行来“事上练”，所以就没有办法不停检测自己的“知”是否正确，也就无法“致良知”,这就是王阳明心学，有兴趣的同学可以自行去阅读相关的书籍。听不懂的也没有关系，大体意思就是实践出真理，理论和实践相结合。对于 Java 反射这类基础知识，很多同学看了一遍就觉得懂了，其实很多时候还是没有懂，只是跟着书本被动阅读，你会产生一种错觉，这种错觉就是你以为你懂了，其实，你没有。如何检测呢？很简单，你在阅读某本书，某个章节之后，你合上书本，闭上眼睛，你试着回想一下，你刚才看过的内容，你能记住多少？别不信，你现在就可以找一本书试一试。<br>讲了这么多，我的观点其实很简单，就是认真对待你的一技之长，尽可能把每个知识点真正弄懂，带着自己的思考去学习新的概念，然后适时做一些练习来检测和巩固。</p>
+<p>下面，让我们一起认真对待之前可能没有多在意的基础知识之一—— Java 反射。</p>
+<p>注意，这篇文章因为内容太多，所以篇幅非常长。中途受不了的同学可以回到目录跳转到感兴趣的小节进行学习。</p>
+<p>向一个门外汉介绍反射<br>反射入口<br>Class<br>Class 的获取</p>
+<ol>
+<li>通过 Object.getClass()</li>
+<li>通过 .class 标识</li>
+<li>通过 Class.forName() 方法<br>Class 内容清单<br>Class 的名字<br>当 Class 代表一个引用时<br>当 Class 代表一个基本数据类型，比如 int.class 的时候<br>当 Class 代表的是基础数据类型的数组时 比如 int[][][] 这样的 3 维数组时<br>simplename 的不同<br>Class 获取修饰符<br>获取 Class 的成员<br>获取 Filed<br>获取 Method<br>获取 Constructor<br>Field 的操控<br>Field 类型的获取<br>Field 修饰符的获取<br>Field 内容的读取与赋值<br>Method 的操控<br>Method 获取方法名<br>Method 获取方法参数<br>Method 获取返回值类型<br>Method 获取修饰符<br>Method 获取异常类型<br>Method 方法的执行<br>Constructor 的操控<br>反射中的数组<br>反射中动态创建数组<br>Array 的读取与赋值<br>反射中的枚举 Enum<br>枚举的获取与设定<br>反射与自动驾驶<br>总结<br>向一个门外汉介绍反射<br>反射是什么？</li>
+</ol>
+<p>官方文档上有这么一段介绍：</p>
+<p>Reflection is commonly used by programs which require the ability to examine or modify the runtime behavior of applications running in the Java virtual machine. This is a relatively advanced feature and should be used only by developers who have a strong grasp of the fundamentals of the language. With that caveat in mind, reflection is a powerful technique and can enable applications to perform operations which would otherwise be impossible.</p>
+<p>我来翻译一下：反射技术通常被用来检测和改变应用程序在 Java 虚拟机中的行为表现。它是一个相对而言比较高级的技术，通常它应用的前提是开发者本身对于 Java 语言特性有很强的理解的基础上。值得说明的是，反射是一种强有力的技术特性，因此可以使得应用程序突破一些藩篱，执行一些常规手段无法企及的目的。</p>
+<p>我再通俗概括一下：反射是个很牛逼的功能，能够在程序运行时修改程序的行为。但反射是非常规手段，反射有风险，应用需谨慎。</p>
+<p>相信，大部分同学会有稍微清晰一点的概念了。但这还不是我的目的所在。</p>
+<p>我的目的是想，我如何向一个刚有一点点 Java 基础的初学者，或者是说毫无 Java 基础的门外汉解释清楚反射这样一种东西？</p>
+<p>直接翻译官方文档，显然是不太行。因为那仍然是抽象的，所以，最好的方法仍然是通过类比或者是拟人，用生活场景中具体的事物与抽象的概念建立相关性。</p>
+<p>把程序代码比作一辆车，因为 Java 是面向对象的语言，所以这样很容易理解，正常流程中，车子有自己的颜色、车型号、品牌这些属性，也有正常行驶、倒车、停泊这些功能操作。</p>
+<p>正常情况下，我们需要为车子配备一个司机，然后按照行为准则规范行驶。</p>
+<p>那么反射是什么呢？反射是非常规手段，正常行驶的时候，车子需要司机的驾驶，但是，反射却不需要，因为它就是车子的——自动驾驶。</p>
+<p>因为，反射牛逼，又因为反射非常规，所以，它风险未知，需要开发者极强的把控力。而汽车中的自动驾驶技术现在是热门，但是特斯拉都出过故障，所以同样在汽车领域，自动驾驶技术也需要车厂家有极牛逼的风险把控能力，这个基础就是要遵从汽车本身的结构与交通规则，不能因为运用了自动驾驶技术的汽车就不叫做汽车了，应用了反射技术的代码就不叫做代码了。</p>
+<p>自动驾驶需要遵守基础规则，同样反射也需要，下面的文章就是介绍反射技术应该遵守的规格与限制。</p>
+<p>反射入口<br>我们试想一下，如果自动驾驶要运用到一辆汽车之上，研发人员首先要拿到的是什么？</p>
+<p>肯定是汽车的规格说明书。</p>
+<p>同样，反射如果要作用于一段 Java 代码上，那么它也需要拿到一本规格说明书，那么对于反射而言，这本规格说明书是什么呢？</p>
+<p>Class<br>因为 Java 是面向对象的语言，基本上是以类为基础构造了整个程序系统，反射中要求提供的规格说明书其实就是一个类的规格说明书，它就是 Class。</p>
+<p>注意的是 Class 是首字母大写，不同于 class 小写，class 是定义类的关键字，而 Class 的本质也是一个类，因为在 Java 中一切都是对象。</p>
+<p>public final class Class<t> implements java.io.Serializable,<br>​                              GenericDeclaration,<br>​                              Type,<br>​                              AnnotatedElement {}<br>1<br>2<br>3<br>4<br>5<br>Class 就是一个对象，它用来代表运行在 Java 虚拟机中的类和接口。</t></p>
+<p>把 Java 虚拟机类似于高速公路，那么 Class 就是用来描述公路上飞驰的汽车，也就是我前面提到的规格说明书。</p>
+<p>Class 的获取<br>反射的入口是 Class，但是反射中 Class 是没有公开的构造方法的，所以就没有办法像创建一个类一样通过 new 关键字来获取一个 Class 对象。</p>
+<p>不过，不用担心，Java 反射中 Class 的获取可以通过下面 3 种方式。</p>
+<ol>
+<li>通过 Object.getClass()<br>对于一个对象而言，如果这个对象可以访问，那么调用 getClass() 方法就可以获取到了它的相应的 Class 对象。</li>
+</ol>
+<p>public class Car {}</p>
+<p>public class Test {</p>
+<pre><code>public static void main(String[] args) {
+
+    Car car = new Car();
+
+    Class clazz = car.getClass();
+}
+</code></pre><p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>值得注意的是，这种方法不适合基本类型如 int、float 等等。</p>
+<ol start="2">
+<li>通过 .class 标识<br>上面的例子中，Car 是一个类，car 是它的对象，通过 car.getClass() 就获取到了 Car 这个类的 Class 对象，也就是说通过一个类的实例的 getClass() 方法就能获取到它的 Class。如果不想创建这个类的实例的话，就需要通过 `.class 这个标识。</li>
+</ol>
+<p>public class Test {</p>
+<pre><code>public static void main(String[] args) {
+
+    Class clazz = Car.class;
+    Class cls1 = int.class;
+    Class cls2 = String.class;
+
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11</p>
+<ol start="3">
+<li>通过 Class.forName() 方法<br>有时候，我们没有办法创建一个类的实例，甚至没有办法用 Car.class 这样的方式去获取一个类的 Class 对象。</li>
+</ol>
+<p>这在 Android 开发领域很常见，因为某种目的，Android 工程师把一些类加上了 @hide 注解，所示这些类就没有出现在 SDK 当中，那么，我们要获取这个并不存在于当前开发环境中的类的 Class 对象时就没有辙了吗？答案是否定的，Java 给我们提供了 Class.forName() 这个方法。</p>
+<p>只要给这个方法中传入一个类的全限定名称就好了，那么它就会到 Java 虚拟机中去寻找这个类有没有被加载。</p>
+<p>try {<br>​    Class clz = Class.forName(“com.frank.test.Car”);<br>} catch (ClassNotFoundException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>“com.frank.test.Car” 就是 Car 这个类的全限定名称，它包括包名+类名。</p>
+<p>如果找不到时，它会抛出 ClassNotFoundException 这个异常，这个很好理解，因为如果查找的类没有在 JVM 中加载的话，自然要告诉开发者。</p>
+<p>所以，上面 3 节讲述了如何拿到一个类的 Class 对象。</p>
+<p>Class 内容清单<br>仅仅拿到 Class 对象还不够，我们感兴趣的是它的内容。</p>
+<p>在正常的代码编写中，我们如果要编写一个类，一般会定义它的属性和方法，如：</p>
+<p>public class Car {</p>
+<pre><code>private String mBand;
+
+private Color mColor;
+
+public enum Color {
+    RED,
+    WHITE,
+    BLACK,
+    BLUE,
+    YELLOR
+}
+
+
+
+public Car() {
+    super();
+    // TODO Auto-generated constructor stub
+}
+
+
+public Car(String mBand) {
+    this.mBand = mBand;
+}
+
+
+public void drive() {
+    System.out.println(&quot;di di di,开车了！&quot;);
+}
+
+@Override
+public String toString() {
+    return &quot;Car [mBand=&quot; + mBand + &quot;, mColor=&quot; + mColor + &quot;]&quot;;
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>现在我们来一一分解它。</p>
+<p>Class 的名字<br>Class 对象也有名字，涉及到的 API 有：</p>
+<p>Class.getName();</p>
+<p>Class.getSimpleName();</p>
+<p>Class.getCanonicalName();<br>1<br>2<br>3<br>4<br>5<br>6<br>现在，说说它们的区别。</p>
+<p>因为 Class 是一个入口，它代表引用、基本数据类型甚至是数组对象，所以获取它们的方式又有一点不同。</p>
+<p>先从 getName() 说起。</p>
+<p>当 Class 代表一个引用时<br>getName() 方法返回的是一个二进制形式的字符串，比如“com.frank.test.Car”。</p>
+<p>当 Class 代表一个基本数据类型，比如 int.class 的时候<br>getName() 方法返回的是它们的关键字，比如 int.class 的名字是 int。</p>
+<p>当 Class 代表的是基础数据类型的数组时 比如 int[][][] 这样的 3 维数组时<br>getName() 返回 [[[I 这样的字符串。</p>
+<p>为什么会这样呢？这是因为，Java 本身对于这一块制定了相应规则，在元素的类型前面添加相应数量的 [ 符号，用 [ 的个数来提示数组的维度，并且值得注意的是，对于基本类型或者是类，都有相应的编码，所谓的编码大多数是用一个大写字母来指示某种类型，规则如下：</p>
+<p>需要注意的是类或者是接口的类型编码是 L类名; 的形式,后面有一个分号。</p>
+<p>比如 String[].getClass().getName() 结果是 [Ljava.lang.String;。</p>
+<p>我们来测试一下代码：</p>
+<p>public class Test {</p>
+<pre><code>public static void main(String[] args) {
+
+    try {
+        Class clz = Class.forName(&quot;com.frank.test.Car&quot;);
+
+        Class clz1 = float.class;
+
+        Class clz2 = Void.class;
+
+        Class clz3 = new int[]{}.getClass();
+
+        Class clz4 = new Car[]{}.getClass();
+
+        System.out.println(clz.getName());
+        System.out.println(clz1.getName());
+        System.out.println(clz2.getName());
+        System.out.println(clz3.getName());
+        System.out.println(clz4.getName());
+
+
+    } catch (ClassNotFoundException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>上面代码的打印结果如下：</p>
+<p>com.frank.test.Car<br>float<br>java.lang.Void<br>[I<br>[Lcom.frank.test.Car;<br>1<br>2<br>3<br>4<br>5<br>6<br>刚刚介绍的都是 getName() 的情况，那么 getSimpleName() 和 getCaninolName() 呢？</p>
+<p>getSimpleName() 自然是要去获取 simplename 的，那么对于一个 Class 而言什么是 SimpleName 呢？我们先要从嵌套类说起</p>
+<p>public class Outter {</p>
+<pre><code>static class Inner {}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>Outter 这个类中有一个静态的内部类。</p>
+<p>Class clz = Outter.Inner.class;</p>
+<p>System.out.println(“ Inner Class name:”+clz.getName());<br>System.out.println(“ Inner Class simple name:”+clz.getSimpleName());<br>1<br>2<br>3<br>4<br>5<br>我们分别打印 Inner 这个类的 Class 对象的 name 和 simplename。</p>
+<p> Inner Class name:com.frank.test.Outter$Inner<br> Inner Class simple name:Inner<br>1<br>2<br>3<br>可以看到，因为是内部类，所以通过 getName() 方法获取到的是二进制形式的全限定类名，并且类名前面还有个 $ 符号。<br>getSimpleName() 则直接返回了 Inner，去掉了包名限定。</p>
+<p>打个比方，我的全名叫做 Frank Zhao，而我的 simplename 就叫做 frank，simplename 之于 name 也是如此。</p>
+<p>simplename 的不同<br>需要注意的是，当获取一个数组的 Class 中的 simplename 时，不同于 getName() 方法，simplename 不是在前面加 [，而是在后面添加对应数量的 [] 。</p>
+<p>Class clz = new Outter.Inner[][][]{}.getClass();</p>
+<p>System.out.println(“ Inner Class name:”+clz.getName());<br>System.out.println(“ Inner Class simple name:”+clz.getSimpleName());<br>1<br>2<br>3<br>4<br>5<br>上面代码打印结果是：</p>
+<p> Inner Class name:[[[Lcom.frank.test.Outter$Inner;<br> Inner Class simple name:Inner[][][]<br>1<br>2<br>3<br>还需要注意的是，对于匿名内部类，getSimpleName() 返回的是一个空的字符串。</p>
+<p>Runnable run = new Runnable() {</p>
+<pre><code>@Override
+public void run() {
+    // TODO Auto-generated method stub
+
+}
+</code></pre><p>};</p>
+<p>System.out.println(“ Inner Class name:”+run.getClass().getName());<br>System.out.println(“ Inner Class simple name:”+run.getClass().getSimpleName());<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>打印结果是：</p>
+<p> anonymous Class name:com.frank.test.Test$1<br> anonymous Class simple name:<br>1<br>2<br>3<br>最后再来看 getCanonicalName()。</p>
+<p>Canonical 是官方、标准的意思，那么 getCanonicalName() 自然就是返回一个 Class 对象的官方名字，这个官方名字 canonicalName 是 Java 语言规范制定的，如果 Class 对象没有 canonicalName 的话就返回 null。</p>
+<p>getCanonicalName() 是 getName() 和 getSimpleName() 的结合。</p>
+<p>getCanonicalName() 返回的也是全限定类名，但是对于内部类，不用 $ 开头，而用 .。<br>getCanonicalName() 对于数组类型的 Class，同 simplename 一样直接在后面添加 [] 。<br>getCanonicalName() 不同于 simplename 的地方是，不存在 canonicalName 的时候返回 null 而不是空字符串。<br>局部类和匿名内部类不存在 canonicalName。<br>Class clz = new Outter.Inner[][][]{}.getClass();</p>
+<p>System.out.println(“ Inner Class name:”+clz.getName());<br>System.out.println(“ Inner Class simple name:”+clz.getSimpleName());<br>System.out.println(“ Inner Class canonical name:”+clz.getCanonicalName());</p>
+<p>//run 是匿名类<br>Runnable run = new Runnable() {</p>
+<pre><code>@Override
+public void run() {
+    // TODO Auto-generated method stub
+
+}
+</code></pre><p>};</p>
+<p>System.out.println(“ anonymous Class name:”+run.getClass().getName());<br>System.out.println(“ anonymous Class simple name:”+run.getClass().getSimpleName());<br>System.out.println(“ anonymous Class canonical name:”+run.getClass().getCanonicalName());</p>
+<p>// local 是局部类<br>class local{};</p>
+<p>System.out.println(“Local a name:”+local.class.getName());<br>System.out.println(“Local a simplename:”+local.class.getSimpleName());<br>System.out.println(“Local a canonicalname:”+local.class.getCanonicalName());<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>打印结果如下：</p>
+<p>Inner Class name:[[[Lcom.frank.test.Outter$Inner;<br>Inner Class simple name:Inner[][][]<br>Inner Class canonical name:com.frank.test.Outter.Inner[][][]</p>
+<p>anonymous Class name:com.frank.test.Test$1<br>anonymous Class simple name:<br>anonymous Class canonical name:null</p>
+<p>Local a name:com.frank.test.Test$1local<br>Local a simplename:local<br>Local a canonicalname:null<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>Class 去获取相应名字的知识内容就讲完了，仔细想一下，小小的一个细节，其实蛮有学问的。</p>
+<p>好了，我们继续往下。</p>
+<p>Class 获取修饰符<br>通常，Java 开发中定义一个类，往往是要通过许多修饰符来配合使用的。它们大致分为 4 类。</p>
+<p>用来限制作用域，如 public、protected、priviate。<br>用来提示子类复写，abstract。<br>用来标记为静态类 static。<br>注解。<br>Java 反射提供了 API 去获取这些修饰符。</p>
+<p>package com.frank.test;</p>
+<p>public abstract class TestModifier {</p>
+<p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>我们定义了一个类，名字为 TestModifier，被 public 和 abstract 修饰，现在我们要提取这些修饰符。我们只需要调用 Class.getModifiers() 方法就是了，它返回的是一个 int 数值。</p>
+<p>System.out.println(“modifiers value:”+TestModifier.class.getModifiers());<br>System.out.println(“modifiers :”+Modifier.toString(TestModifier.class.getModifiers()));<br>1<br>2<br>3<br>打印结果是：</p>
+<p>modifiers value:1025<br>modifiers :public abstract<br>1<br>2<br>3<br>大家肯定会有疑问，为什么会返回一个整型数值呢？</p>
+<p>这是因为一个类定义的时候可能会被多个修饰符修饰，为了一并获取，所以 Java 工程师考虑到了位运算，用一个 int 数值来记录所有的修饰符，然后不同的位对应不同的修饰符，这些修饰符对应的位都定义在 Modifier 这个类当中。</p>
+<p>public class Modifier {</p>
+<pre><code>public static final int PUBLIC           = 0x00000001;
+
+
+public static final int PRIVATE          = 0x00000002;
+
+
+public static final int PROTECTED        = 0x00000004;
+
+
+public static final int STATIC           = 0x00000008;
+
+
+public static final int FINAL            = 0x00000010;
+
+
+public static final int SYNCHRONIZED     = 0x00000020;
+
+
+public static final int VOLATILE         = 0x00000040;
+
+
+public static final int TRANSIENT        = 0x00000080;
+
+
+public static final int NATIVE           = 0x00000100;
+
+
+public static final int INTERFACE        = 0x00000200;
+
+
+public static final int ABSTRACT         = 0x00000400;
+
+
+public static final int STRICT           = 0x00000800;
+
+public static String toString(int mod) {
+    StringBuilder sb = new StringBuilder();
+    int len;
+
+    if ((mod &amp; PUBLIC) != 0)        sb.append(&quot;public &quot;);
+    if ((mod &amp; PROTECTED) != 0)     sb.append(&quot;protected &quot;);
+    if ((mod &amp; PRIVATE) != 0)       sb.append(&quot;private &quot;);
+
+    /* Canonical order */
+    if ((mod &amp; ABSTRACT) != 0)      sb.append(&quot;abstract &quot;);
+    if ((mod &amp; STATIC) != 0)        sb.append(&quot;static &quot;);
+    if ((mod &amp; FINAL) != 0)         sb.append(&quot;final &quot;);
+    if ((mod &amp; TRANSIENT) != 0)     sb.append(&quot;transient &quot;);
+    if ((mod &amp; VOLATILE) != 0)      sb.append(&quot;volatile &quot;);
+    if ((mod &amp; SYNCHRONIZED) != 0)  sb.append(&quot;synchronized &quot;);
+    if ((mod &amp; NATIVE) != 0)        sb.append(&quot;native &quot;);
+    if ((mod &amp; STRICT) != 0)        sb.append(&quot;strictfp &quot;);
+    if ((mod &amp; INTERFACE) != 0)     sb.append(&quot;interface &quot;);
+
+    if ((len = sb.length()) &gt; 0)    /* trim trailing space */
+        return sb.toString().substring(0, len-1);
+    return &quot;&quot;;
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>调用 Modifier.toString() 方法就可以打印出一个类的所有修饰符。</p>
+<p>当然，Modifier 还提供了一系列的静态工具方法用来对修饰符进行操作。</p>
+<p>public static boolean isPublic(int mod) {<br>​        return (mod &amp; PUBLIC) != 0;<br>​    }</p>
+<p>public static boolean isPrivate(int mod) {<br>​    return (mod &amp; PRIVATE) != 0;<br>}</p>
+<p>public static boolean isProtected(int mod) {<br>​    return (mod &amp; PROTECTED) != 0;<br>}</p>
+<p>public static boolean isStatic(int mod) {<br>​    return (mod &amp; STATIC) != 0;<br>}</p>
+<p>public static boolean isFinal(int mod) {<br>​    return (mod &amp; FINAL) != 0;<br>}</p>
+<p>public static boolean isSynchronized(int mod) {<br>​    return (mod &amp; SYNCHRONIZED) != 0;<br>}</p>
+<p>public static boolean isVolatile(int mod) {<br>​    return (mod &amp; VOLATILE) != 0;<br>}</p>
+<p>public static boolean isTransient(int mod) {<br>​    return (mod &amp; TRANSIENT) != 0;<br>}</p>
+<p>public static boolean isNative(int mod) {<br>​    return (mod &amp; NATIVE) != 0;<br>}</p>
+<p>public static boolean isInterface(int mod) {<br>​    return (mod &amp; INTERFACE) != 0;<br>}</p>
+<p>public static boolean isAbstract(int mod) {<br>​    return (mod &amp; ABSTRACT) != 0;<br>}</p>
+<p>public static boolean isStrict(int mod) {<br>​    return (mod &amp; STRICT) != 0;<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>这些代码的作用，一看就懂，所以不再多说。</p>
+<p>获取 Class 的成员<br>一个类的成员包括属性（有人翻译为字段或者域）、方法。对应到 Class 中就是 Field、Method、Constructor。</p>
+<p>获取 Filed<br>获取指定名字的属性有 2 个 API</p>
+<p>public Field getDeclaredField(String name)<br>​                       throws NoSuchFieldException,<br>​                              SecurityException;</p>
+<p>public Field getField(String name)<br>​               throws NoSuchFieldException,<br>​                      SecurityException<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>两者的区别就是 getDeclaredField() 获取的是 Class 中被 private 修饰的属性。 getField() 方法获取的是非私有属性，并且 getField() 在当前 Class 获取不到时会向祖先类获取。</p>
+<p>获取所有的属性。</p>
+<p>//获取所有的属性，但不包括从父类继承下来的属性<br>public Field[] getDeclaredFields() throws SecurityException {}</p>
+<p>//获取自身的所有的 public 属性，包括从父类继承下来的。<br>public Field[] getFields() throws SecurityException {<br>1<br>2<br>3<br>4<br>5<br>可以用一个例子，给大家加深一下理解。</p>
+<p>public class Farther {</p>
+<pre><code>public int a;
+
+private int b;
+</code></pre><p>}</p>
+<p>public class Son extends Farther {<br>​    int c;</p>
+<pre><code>private String d;
+
+protected float e;
+</code></pre><p>}</p>
+<p>package com.frank.test;</p>
+<p>import java.lang.reflect.Field;</p>
+<p>public class FieldTest {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    Class cls = Son.class;
+
+    try {
+        Field field = cls.getDeclaredField(&quot;b&quot;);
+
+    } catch (NoSuchFieldException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        System.out.println(&quot;getDeclaredField &quot;+e.getMessage());
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        System.out.println(&quot;getDeclaredField &quot;+e.getMessage());
+    }
+
+    try {
+        Field field = cls.getField(&quot;b&quot;);
+
+    } catch (NoSuchFieldException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        System.out.println(&quot;getField &quot;+e.getMessage());
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        System.out.println(&quot;getField &quot;+e.getMessage());
+    }
+
+
+
+
+
+    Field[] filed1 = cls.getDeclaredFields();
+
+    for ( Field f : filed1 ) {
+        System.out.println(&quot;Declared Field :&quot;+f.getName());
+    }
+
+    Field[] filed2 = cls.getFields();
+
+    for ( Field f : filed2 ) {
+        System.out.println(&quot;Field :&quot;+f.getName());
+    }
+
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>代码打印结果：</p>
+<p>java.lang.NoSuchFieldException: b<br>​    at java.lang.Class.getDeclaredField(Unknown Source)<br>​    at com.frank.test.FieldTest.main(FieldTest.java:13)<br>java.lang.NoSuchFieldException: bgetDeclaredField b</p>
+<pre><code>at java.lang.Class.getField(Unknown Source)
+at com.frank.test.FieldTest.main(FieldTest.java:26)
+</code></pre><p>getField b</p>
+<p>Declared Field :c<br>Declared Field :d<br>Declared Field :e</p>
+<p>Field :a<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>大家细细体会一下，不过需要注意的是 getDeclaredFileds() 方法可以获取 private、protected、public 和 default 属性，但是它获取不到从父类继承下来的属性。</p>
+<p>获取 Method<br>类或者接口中的方法对应到 Class 就是 Method。<br>相应的 API 如下：</p>
+<p>public Method getDeclaredMethod(String name, Class&lt;?&gt;… parameterTypes)</p>
+<p>public Method getMethod(String name, Class&lt;?&gt;… parameterTypes)</p>
+<p>public Method[] getDeclaredMethods() throws SecurityException</p>
+<p>public Method getMethod(String name, Class&lt;?&gt;… parameterTypes)<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>因为跟 Field 类似，所以不做过多的讲解。parameterTypes 是方法对应的参数。</p>
+<p>获取 Constructor<br>Java 反射把构造器从方法中单独拎出来了，用 Constructor 表示。</p>
+<p>public Constructor<t> getDeclaredConstructor(Class&lt;?&gt;… parameterTypes)</t></p>
+<p>public Constructor<t> getConstructor(Class&lt;?&gt;… parameterTypes)</t></p>
+<p>public Constructor&lt;?&gt;[] getDeclaredConstructors() throws SecurityException </p>
+<p>public Constructor&lt;?&gt;[] getConstructors() throws SecurityException<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>仍然以前面的 Father 和 Son 两个类为例。</p>
+<p>public class Farther {</p>
+<pre><code>public int a;
+
+private int b;
+
+public Farther() {
+    super();
+    // TODO Auto-generated constructor stub
+}
+</code></pre><p>}</p>
+<p>public class Son extends Farther {<br>​    int c;</p>
+<pre><code>private String d;
+
+protected float e;
+
+
+
+private Son() {
+    super();
+    // TODO Auto-generated constructor stub
+}
+
+
+
+public Son(int c, String d) {
+    super();
+    this.c = c;
+    this.d = d;
+}
+</code></pre><p>}</p>
+<p>public class ConstructorTest {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    Class clz = Son.class;
+
+    Constructor[] constructors = clz.getConstructors();
+
+    for ( Constructor c : constructors ) {
+        System.out.println(&quot;getConstructor:&quot;+c.toString());
+    }
+
+    constructors = clz.getDeclaredConstructors();
+
+    for ( Constructor c : constructors ) {
+        System.out.println(&quot;getDeclaredConstructors:&quot;+c.toString());
+    }
+
+}
+</code></pre><p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>测试程序代码的打印结果如下：</p>
+<p>getConstructor:public com.frank.test.Son(int,java.lang.String)</p>
+<p>getDeclaredConstructors:private com.frank.test.Son()<br>getDeclaredConstructors:public com.frank.test.Son(int,java.lang.String)<br>1<br>2<br>3<br>4<br>5<br>因为，Constructor 不能从父类继承，所以就没有办法通过 getConstructor() 获取到父类的 Constructor。</p>
+<p>我们获取到了 Field、Method、Constructor,但这一是终点，相反，这正是反射机制中开始的地方，我们运用反射的目的就是为了获取和操控 Class 对象中的这些成员。</p>
+<p>Field 的操控<br>我们在一个类中定义字段时，通常是这样。</p>
+<p>public class Son extends Farther {<br>​    int c;</p>
+<pre><code>private String d;
+
+protected float e;
+
+Car car;
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>像 c、d、e、car 这些变量都是属性，在反射机制中映射到 Class 对象中都是 Field，很显然，它们也有对应的类别。</p>
+<p>它们要么是 8 种基础类型 int、long、float、double、boolean、char、byte 和 short。或者是引用，所有的引用都是 Object 的后代。</p>
+<p>Field 类型的获取<br>获取 Field 的类型，通过 2 个方法：</p>
+<p>public Type getGenericType() {}</p>
+<p>public Class&lt;?&gt; getType() {}<br>1<br>2<br>3<br>4<br>注意，两者返回的类型不一样，getGenericType() 方法能够获取到泛型类型。大家可以看下面的代码进行理解：</p>
+<p>public class Son extends Farther {<br>​    int c;</p>
+<pre><code>private String d;
+
+protected float e;
+
+public List&lt;Car&gt; cars;
+
+public HashMap&lt;Integer,String&gt; map;
+
+private Son() {
+    super();
+    // TODO Auto-generated constructor stub
+}
+
+
+
+public Son(int c, String d) {
+    super();
+    this.c = c;
+    this.d = d;
+}
+</code></pre><p>}</p>
+<p>public class FieldTest {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    Class cls = Son.class;
+
+
+    Field[] filed2 = cls.getFields();
+
+    for ( Field f : filed2 ) {
+        System.out.println(&quot;Field :&quot;+f.getName());
+        System.out.println(&quot;Field type:&quot;+f.getType());
+        System.out.println(&quot;Field generic type:&quot;+f.getGenericType());
+        System.out.println(&quot;-------------------&quot;);
+    }
+
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>打印结果：</p>
+<p>Field :cars<br>Field type:interface java.util.List</p>
+<h2 id="Field-generic-type-java-util-List-lt-com-frank-test-Car-gt"><a href="#Field-generic-type-java-util-List-lt-com-frank-test-Car-gt" class="headerlink" title="Field generic type:java.util.List&lt;com.frank.test.Car&gt;"></a>Field generic type:java.util.List&lt;com.frank.test.Car&gt;</h2><p>Field :map<br>Field type:class java.util.HashMap</p>
+<h2 id="Field-generic-type-java-util-HashMap-lt-java-lang-Integer-java-lang-String-gt"><a href="#Field-generic-type-java-util-HashMap-lt-java-lang-Integer-java-lang-String-gt" class="headerlink" title="Field generic type:java.util.HashMap&lt;java.lang.Integer, java.lang.String&gt;"></a>Field generic type:java.util.HashMap&lt;java.lang.Integer, java.lang.String&gt;</h2><p>Field :a<br>Field type:int</p>
+<h2 id="Field-generic-type-int"><a href="#Field-generic-type-int" class="headerlink" title="Field generic type:int"></a>Field generic type:int</h2><p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>可以看到 getGenericType() 确实把泛型都打印出来了，它比 getType() 返回的内容更详细。</p>
+<p>Field 修饰符的获取<br>同 Class 一样，Field 也有很多修饰符。通过 getModifiers() 方法就可以轻松获取。</p>
+<p>public int getModifiers() {}<br>1<br>2<br>这个与前面 Class 获取修饰符一致，所以不需要再讲，不清楚的同学翻看前面的内容就好了。</p>
+<p>Field 内容的读取与赋值<br>这个应该是反射机制中对于 Field 最主要的目的了。</p>
+<p>Field 这个类定义了一系列的 get 方法来获取不同类型的值。</p>
+<p>public Object get(Object obj);</p>
+<p>public int getInt(Object obj);</p>
+<p>public long getLong(Object obj)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public float getFloat(Object obj)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public short getShort(Object obj)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public double getDouble(Object obj)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public char getChar(Object obj)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public byte getByte(Object obj)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public boolean getBoolean(Object obj)<br>​        throws IllegalArgumentException, IllegalAccessException<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>Field 又定义了一系列的 set 方法用来对其自身进行赋值。</p>
+<p>public void set(Object obj, Object value);</p>
+<p>public void getInt(Object obj,int value);</p>
+<p>public void getLong(Object obj,long value)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public void getFloat(Object obj,float value)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public void getShort(Object obj,short value)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public void getDouble(Object obj,double value)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public void getChar(Object obj,char value)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public void getByte(Object obj,byte b)<br>​        throws IllegalArgumentException, IllegalAccessException;</p>
+<p>public void getBoolean(Object obj,boolean b)<br>​        throws IllegalArgumentException, IllegalAccessException<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>可能有同学会对方法中出现的 Object 参数有疑问，它其实是类的实例引用，这里涉及一个细节。</p>
+<p>Class 本身不对成员进行储存，它只提供检索，所以需要用 Field、Method、Constructor 对象来承载这些成员，所以，针对成员的操作时，一般需要为成员指定类的实例引用。如果难于理解的话，可以这样理解，班级这个概念是一个类，一个班级有几十名学生，现在有A、B、C 3 个班级，将所有班级的学生抽出来集合到一个场地来考试，但是学生在试卷上写上自己名字的时候，还要指定自己的班级，这里涉及到的 Object 其实就是类似的作用，表示这个成员是具体属于哪个 Object。这个是为了精确定位。</p>
+<p>下面用代码来说明：</p>
+<p>A testa = new A();<br>testa.a = 10;</p>
+<p>System.out.println(“testa.a = “+testa.a);</p>
+<p>Class c = A.class;</p>
+<p>try {<br>​    Field fielda = c.getField(“a”);</p>
+<pre><code>int ra = fielda.getInt(testa);
+
+System.out.println(&quot;reflection testa.a = &quot;+ra);
+
+fielda.setInt(testa, 15);
+
+System.out.println(&quot;testa.a = &quot;+testa.a);
+</code></pre><p>} catch (NoSuchFieldException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>} catch (SecurityException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>} catch (IllegalArgumentException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>} catch (IllegalAccessException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>打印结果如下：</p>
+<p>testa.a = 10<br>reflection testa.a = 10<br>testa.a = 15<br>1<br>2<br>3<br>4<br>我们再来看看 Field 被 private 修饰的情况</p>
+<p>public class A {</p>
+<pre><code>public int a;
+
+private int b;
+
+public int getB() {
+    return b;
+}
+
+public void setB(int b) {
+    this.b = b;
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>再编写测试代码</p>
+<p>A testa = new A();<br>testa.setB(3);</p>
+<p>System.out.println(“testa.b = “+testa.getB());</p>
+<p>Class c = A.class;</p>
+<p>try {<br>​    Field fieldb = c.getDeclaredField(“b”);<br>​    int rb = fieldb.getInt(testa);</p>
+<pre><code>System.out.println(&quot;reflection testa.b = &quot;+rb);
+
+fieldb.setInt(testa, 20);
+
+System.out.println(&quot;testa.b = &quot;+testa.getB());
+</code></pre><p>} catch (NoSuchFieldException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>} catch (SecurityException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>} catch (IllegalArgumentException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>} catch (IllegalAccessException e) {<br>​    // TODO Auto-generated catch block<br>​    e.printStackTrace();<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>打印的结果如下：</p>
+<p>testa.b = 3<br>java.lang.IllegalAccessException: Class com.frank.test.FieldTest can not access a member of class com.frank.test.A with modifiers “private”<br>​    at sun.reflect.Reflection.ensureMemberAccess(Unknown Source)<br>​    at java.lang.reflect.AccessibleObject.slowCheckMemberAccess(Unknown Source)<br>​    at java.lang.reflect.AccessibleObject.checkAccess(Unknown Source)<br>​    at java.lang.reflect.Field.getInt(Unknown Source)<br>​    at com.frank.test.FieldTest.main(FieldTest.java:20)<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>抛异常了。这是因为在反射中访问了 private 修饰的成员，如果要消除异常的话，需要添加一句代码。</p>
+<p>fieldb.setAccessible(true);<br>1<br>再看打印结果</p>
+<p>testa.b = 3<br>reflection testa.b = 3<br>testa.b = 20<br>1<br>2<br>3<br>Method 的操控<br>Method 对应普通类的方法。<br>我们看看一般普通类的方法的构成。</p>
+<p>public int add(int a,int b);<br>1<br>2<br>3<br>方法由下面几个要素构成： </p>
+<ul>
+<li>方法名 </li>
+<li>方法参数 </li>
+<li>方法返回值 </li>
+<li>方法的修饰符 </li>
+<li>方法可能会抛出的异常</li>
+</ul>
+<p>很显然，反射中 Method 提供了相应的 API 来提取这些元素。</p>
+<p>Method 获取方法名<br>通过 getName() 这个方法就好了。</p>
+<p>以前面的 Car 类作为测试对象。</p>
+<p>public class MethodTest {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    Car car = new Car();
+
+    Class clz = car.getClass();
+
+    Method methods[] = clz.getDeclaredMethods();
+
+    for ( Method m : methods ) {
+        System.out.println(&quot;method name:&quot;+m.getName());
+    } 
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>打印结果如下：</p>
+<p>method name:toString<br>method name:drive<br>1<br>2<br>Method 获取方法参数<br>涉及到的 API 如下：</p>
+<p>public Parameter[] getParameters() {}<br>1<br>2<br>返回的是一个 Parameter 数组，在反射中 Parameter 对象就是用来映射方法中的参数。经常使用的方法有：</p>
+<p>Parameter.java</p>
+<p>// 获取参数名字<br>public String getName() {}</p>
+<p>// 获取参数类型<br>public Class&lt;?&gt; getType() {}</p>
+<p>// 获取参数的修饰符<br>public int getModifiers() {}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>当然，有时候我们不需要参数的名字，只要参数的类型就好了，通过 Method 中下面的方法获取。<br>Method.java</p>
+<p>// 获取所有的参数类型<br>public Class&lt;?&gt;[] getParameterTypes() {}</p>
+<p>// 获取所有的参数类型，包括泛型<br>public Type[] getGenericParameterTypes() {}<br>1<br>2<br>3<br>4<br>5<br>6<br>下面，同样进行测试。</p>
+<p>public class Car {</p>
+<pre><code>private String mBand;
+
+private Color mColor;
+
+public enum Color {
+    RED,
+    WHITE,
+    BLACK,
+    BLUE,
+    YELLOR
+}
+
+
+
+public Car() {
+    super();
+    // TODO Auto-generated constructor stub
+}
+
+
+public Car(String mBand) {
+    this.mBand = mBand;
+}
+
+
+public void drive() {
+    System.out.println(&quot;di di di,开车了！&quot;);
+}
+
+@Override
+public String toString() {
+    return &quot;Car [mBand=&quot; + mBand + &quot;, mColor=&quot; + mColor + &quot;]&quot;;
+}
+
+public void test(String[] paraa,List&lt;String&gt; b,HashMap&lt;Integer,Son&gt; maps) {}
+</code></pre><p>}</p>
+<p>public class MethodTest {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    Car car = new Car();
+
+    Class clz = car.getClass();
+
+    Method methods[] = clz.getDeclaredMethods();
+
+
+
+    for ( Method m : methods ) {
+        System.out.println(&quot;method name:&quot;+m.getName());
+
+        Parameter[] paras = m.getParameters();
+
+        for ( Parameter p : paras ) {
+            System.out.println(&quot; parameter :&quot;+p.getName()+&quot; &quot;+p.getType().getName());
+        }
+
+        Class[] pTypes = m.getParameterTypes();
+
+        System.out.println(&quot;method para types:&quot;);
+        for ( Class type : pTypes ) {
+            System.out.print(&quot; &quot;+ type.getName());
+        }
+        System.out.println();
+
+        Type[] gTypes = m.getGenericParameterTypes();
+        System.out.println(&quot;method para generic types:&quot;);
+        for ( Type type : gTypes ) {
+            System.out.print(&quot; &quot;+ type.getTypeName());
+        }
+        System.out.println();
+        System.out.println(&quot;==========================================&quot;);
+
+    } 
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82<br>83<br>打印结果如下：</p>
+<p>method name:toString<br>method para types:</p>
+<p>method para generic types:</p>
+<p>==========================================<br>method name:test<br> parameter :arg0 [Ljava.lang.String;<br> parameter :arg1 java.util.List<br> parameter :arg2 java.util.HashMap<br>method para types:<br> [Ljava.lang.String; java.util.List java.util.HashMap<br>method para generic types:</p>
+<h1 id="java-lang-String-java-util-List-lt-java-lang-String-gt-java-util-HashMap-lt-java-lang-Integer-com-frank-test-Son-gt"><a href="#java-lang-String-java-util-List-lt-java-lang-String-gt-java-util-HashMap-lt-java-lang-Integer-com-frank-test-Son-gt" class="headerlink" title=" java.lang.String[] java.util.List&lt;java.lang.String&gt; java.util.HashMap&lt;java.lang.Integer, com.frank.test.Son&gt;"></a> java.lang.String[] java.util.List&lt;java.lang.String&gt; java.util.HashMap&lt;java.lang.Integer, com.frank.test.Son&gt;</h1><p>method name:drive<br>method para types:</p>
+<p>method para generic types:</p>
+<p>==========================================<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>Method 获取返回值类型<br>// 获取返回值类型<br>public Class&lt;?&gt; getReturnType() {}</p>
+<p>// 获取返回值类型包括泛型<br>public Type getGenericReturnType() {}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>Method 获取修饰符<br>public int getModifiers() {}<br>1<br>2<br>这部分内容前面已经讲过。</p>
+<p>Method 获取异常类型<br>public Class&lt;?&gt;[] getExceptionTypes() {}</p>
+<p>public Type[] getGenericExceptionTypes() {}<br>1<br>2<br>3<br>4<br>Method 方法的执行<br>这个应该是整个反射机制的核心内容了，很多时候运用反射目的其实就是为了以常规手段执行 Method。</p>
+<p>public Object invoke(Object obj, Object… args) {}<br>1<br>2<br>Method 调用 invoke() 的时候，存在许多细节：</p>
+<p>invoke() 方法中第一个参数 Object 实质上是 Method 所依附的 Class 对应的类的实例，如果这个方法是一个静态方法，那么 ojb 为 null，后面的可变参数 Object 对应的自然就是参数。</p>
+<p>invoke() 返回的对象是 Object，所以实际上执行的时候要进行强制转换。</p>
+<p>在对 Method 调用 invoke() 的时候，如果方法本身会抛出异常，那么这个异常就会经过包装，由 Method 统一抛出 InvocationTargetException。而通过 InvocationTargetException.getCause() 可以获取真正的异常。</p>
+<p>下面同样通过例子来说明,我们新建立一个类，要添加一个 static 修饰的静态方法，一个普通的方法和一个会抛出异常的方法。</p>
+<p>public class TestMethod {</p>
+<pre><code>public static void testStatic () {
+    System.out.println(&quot;test static&quot;);
+}
+
+private  int add (int a,int b ) {
+    return a + b;
+}
+
+public void testException () throws IllegalAccessException {
+    throw new IllegalAccessException(&quot;You have some problem.&quot;);
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>我们编写测试代码：</p>
+<p>public class InvokeTest {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    Class testCls = TestMethod.class;
+
+    try {
+        Method mStatic = testCls.getMethod(&quot;testStatic&quot;,null);
+        // 测试静态方法
+        mStatic.invoke(null, null);
+    } catch (NoSuchMethodException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalAccessException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalArgumentException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (InvocationTargetException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+    TestMethod t = new TestMethod();
+
+    try {
+        Method mAdd = testCls.getDeclaredMethod(&quot;add&quot;,int.class,int.class);
+        // 通过这句代码才能访问 private 修饰的 Method
+        mAdd.setAccessible(true);
+        int result = (int) mAdd.invoke(t, 1,2);
+        System.out.println(&quot;add method result:&quot;+result);
+    } catch (NoSuchMethodException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalAccessException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalArgumentException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (InvocationTargetException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+    try {
+        Method testExcep = testCls.getMethod(&quot;testException&quot;,null);
+
+        try {
+            testExcep.invoke(t, null);
+        } catch (IllegalAccessException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            // TODO Auto-generated catch block
+            //e.printStackTrace();
+
+            // 通过 InvocationTargetException.getCause() 获取被包装的异常
+            System.out.println(&quot;testException occur some error,Error type is :&quot;+e.getCause().getClass().getName());
+            System.out.println(&quot;Error message is :&quot;+e.getCause().getMessage());
+        }
+
+
+    } catch (NoSuchMethodException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82<br>83<br>84<br>打印结果如下：</p>
+<p>test static<br>add method result:3<br>testException occur some error,Error type is :java.lang.IllegalAccessException<br>Error message is :You have some problem.<br>1<br>2<br>3<br>4<br>5<br>Constructor 的操控<br>在平常开发的时候，构造器也称构造方法，但是在反射机制中却把它与 Method 分离开来，单独用 Constructor 这个类表示。</p>
+<p>Constructor 同 Method 差不多，但是它特别的地方在于，它能够创建一个对象。</p>
+<p>在 Java 反射机制中有两种方法可以用来创建类的对象实例：Class.newInstance() 和 Constructor.newInstance()。官方文档建议开发者使用后面这种方法，下面是原因。</p>
+<p>Class.newInstance() 只能调用无参的构造方法，而 Constructor.newInstance() 则可以调用任意的构造方法。<br>Class.newInstance() 通过构造方法直接抛出异常，而 Constructor.newInstance() 会把抛出来的异常包装到 InvocationTargetException 里面去，这个和 Method 行为一致。<br>Class.newInstance() 要求构造方法能够被访问，而 Constructor.newInstance() 却能够访问 private 修饰的构造器。<br>还是通过代码来验证。</p>
+<p>public class TestConstructor {</p>
+<pre><code>private String self;
+
+public TestConstructor() {
+    self = &quot; Frank &quot;;
+}
+
+public TestConstructor(String self) {
+    this.self = self;
+}
+
+@Override
+public String toString() {
+    return &quot;TestConstructor [self=&quot; + self + &quot;]&quot;;
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>上面的类中有 2 个构造方法，一个无参，一个有参数。编写测试代码：</p>
+<p>public class NewInstanceTest {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    Class clz = TestConstructor.class;
+
+    try {
+        TestConstructor test1 = (TestConstructor) clz.newInstance();
+
+        System.out.println(test1.toString());
+    } catch (InstantiationException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalAccessException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+    try {
+        Constructor con = clz.getConstructor(String.class);
+
+        TestConstructor test2 = (TestConstructor) con.newInstance(&quot;Zhao&quot;);
+
+        System.out.println(test2.toString());
+
+    } catch (NoSuchMethodException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (InstantiationException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalAccessException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalArgumentException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (InvocationTargetException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>分别用 Class.newInstance() 和 Constructor.newInstance() 方法来创建类的实例，打印结果如下：</p>
+<p>TestConstructor [self= Frank ]<br>TestConstructor [self=Zhao]<br>1<br>2<br>3<br>可以看到通过 Class.newInstance() 方法调用的构造方法确实是无参的那个。</p>
+<p>现在，我们学习了 Class 对象的获取，也能够获取它内部成员 Filed、Method 和 Constructor 并且能够操作它们。在这个基础上，我们已经能够应付普通的反射开发了。</p>
+<p>但是，Java 反射机制还另外细分了两个概念：数组和枚举。</p>
+<p>反射中的数组<br>数组本质上是一个 Class，而在 Class 中存在一个方法用来识别它是否为一个数组。<br>Class.java</p>
+<p>public native boolean isArray();<br>1<br>2<br>为了便于测试，我们创建一个新的类</p>
+<p>public class Shuzu {</p>
+<pre><code>private int[] array;
+
+private Car[] cars;
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>其中有一个 int 型的数组属性，它的名字叫做 array。还有一个 cars 数组，它的类型是 Car，是之前定义好的类。 当然，array 和 cars 是 Shuzu 这个类的 Field，对于 Field 的角度来说，它是数组类型，我们可以这样理解数组可以同 int、char 这些基本类型一样成为一个 Field 的类别。</p>
+<p>我们可能通过一系列的 API 来获取它的具体信息,刚刚有提到它本质上还是一个 Class 而已。</p>
+<p>getName();</p>
+<p>getComponentType();<br>1<br>2<br>3<br>4<br>第二个方法是获取数组的里面的元素的类型，比如 int[] 数组的 componentType 自然就是 int。</p>
+<p>按照惯例，写代码验证。</p>
+<p>public class ArraysTest {</p>
+<pre><code>public static void main(String[] args) {
+    Class clz = Shuzu.class;
+
+    Field[] fields = clz.getDeclaredFields();
+
+    for ( Field f : fields ) {
+        // 获取 Field 的类型
+        Class c = f.getType();
+        // 判断这个类型是不是数组类型
+        if ( c.isArray()) {
+            System.out.println(&quot;Type is &quot;+c.getName());
+            System.out.println(&quot;ComponentType type is :&quot;+c.getComponentType());
+        }
+    }
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>打印结果如下：</p>
+<p>Type is [I<br>ComponentType type is :int<br>Type is [Lcom.frank.test.Car;<br>ComponentType type is :class com.frank.test.Car<br>1<br>2<br>3<br>4<br>反射中动态创建数组<br>反射创建数组是通过 Array.newInstance() 这个方法。<br>Array.java</p>
+<p>public static Object newInstance(Class&lt;?&gt; componentType, int… dimensions)<br>​        throws IllegalArgumentException, NegativeArraySizeException {}<br>1<br>2<br>3<br>第一个参数指定的是数组内的元素类型，后面的是可变参数，表示的是相应维度的数组长度限制。</p>
+<p>比如，我要创建一个 int[2][3] 的数组。</p>
+<p>Array.newInstance(int.class,2,3);<br>1<br>2<br>Array 的读取与赋值<br>首先，对于 Array 整体的读取与赋值，把它作为一个普通的 Field，根据 Class 中相应获取和设置就好了。调用的是 Field 中对应的方法。</p>
+<p>public void set(Object obj,<br>​                Object value)<br>​         throws IllegalArgumentException,<br>​                IllegalAccessException;</p>
+<p>public Object get(Object obj)<br>​           throws IllegalArgumentException,<br>​                  IllegalAccessException;<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>还需要处理的情况是对于数组中指定位置的元素进行读取与赋值，这要涉及到 Array 提供的一系列 setXXX() 和 getXXX() 方法。因为和之前 Field 相应的 set 、get 方法类似，所以我在下面只摘抄典型的几种，大家很容易知晓其它类型的怎么操作。</p>
+<p>public static void set(Object array,<br>​                       int index,<br>​                       Object value)<br>​                throws IllegalArgumentException,<br>​                       ArrayIndexOutOfBoundsException;</p>
+<p>public static void setBoolean(Object array,<br>​                              int index,<br>​                              boolean z)<br>​                       throws IllegalArgumentException,<br>​                              ArrayIndexOutOfBoundsException;</p>
+<p>public static Object get(Object array,<br>​                         int index)<br>​                  throws IllegalArgumentException,<br>​                         ArrayIndexOutOfBoundsException;</p>
+<p>public static short getShort(Object array,<br>​                             int index)<br>​                      throws IllegalArgumentException,<br>​                             ArrayIndexOutOfBoundsException;</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>进行代码测试：</p>
+<p>public class ArraysTest {</p>
+<pre><code>public static void main(String[] args) {
+    Class clz = Shuzu.class;
+
+    try {
+        Shuzu shu = (Shuzu) clz.newInstance();
+
+        Field arrayF = clz.getDeclaredField(&quot;array&quot;);
+        arrayF.setAccessible(true);
+
+        Object o = Array.newInstance(int.class, 3);
+        Array.set(o, 0, 1);
+        Array.set(o, 1, 3);
+        Array.set(o, 2, 3);
+
+        arrayF.set(shu, o);
+
+        int[] array = shu.getArray();
+
+        for ( int i = 0;i &lt; array.length;i++) {
+            System.out.println(&quot;array index &quot;+i+&quot; value:&quot;+array[i]);
+        }
+
+    } catch (InstantiationException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalAccessException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (NoSuchFieldException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+
+
+}
+</code></pre><p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>打印结果如下：</p>
+<p>array index 0 value:1<br>array index 1 value:3<br>array index 2 value:3<br>1<br>2<br>3<br>4<br>反射中的枚举 Enum<br>同数组一样，枚举本质上也是一个 Class 而已，但反射中还是把它单独提出来了。</p>
+<p>我们来看一般程序开发中枚举的表现形式。</p>
+<p>public enum State {<br>​    IDLE,<br>​    DRIVING,<br>​    STOPPING,</p>
+<pre><code>test();
+
+int test1() {
+    return 0;
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>枚举真的跟类很相似，有修饰符、有方法、有属性字段甚至可以有构造方法。</p>
+<p>在 Java 反射中，可以把枚举看成一般的 Class，但是反射机制也提供了 3 个特别的的 API 用于操控枚举。</p>
+<p>// 用来判定 Class 对象是不是枚举类型<br>Class.isEnum()</p>
+<p>// 获取所有的枚举常量<br>Class.getEnumConstants()</p>
+<p>// 判断一个 Field 是不是枚举常量<br>java.lang.reflect.Field.isEnumConstant()<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>枚举的获取与设定<br>因为等同于 Class，所以枚举的获取与设定就可以通过 Field 中的 get() 和 set() 方法。</p>
+<p>需要注意的是，如果要获取枚举里面的 Field、Method、Constructor 可以调用 Class 的通用 API。</p>
+<p>用例子来加深理解吧。</p>
+<p>public enum State {<br>​    IDLE,<br>​    DRIVING,<br>​    STOPPING,</p>
+<pre><code>test();
+
+int test1() {
+    return 0;
+}
+</code></pre><p>}</p>
+<p>public class Meiju {</p>
+<pre><code>private State state = State.DRIVING;
+
+public State getState() {
+    return state;
+}
+
+public void setState(State state) {
+    this.state = state;
+}
+</code></pre><p>}</p>
+<p>public static void main(String[] args) {</p>
+<pre><code>    Class clz = State.class;
+
+    if ( clz.isEnum()){
+        System.out.println(clz.getName()+&quot; is Enum&quot;);
+
+        System.out.println(Arrays.asList(clz.getEnumConstants()));
+        // 获取枚举中所有的 Field
+        Field[] fs = clz.getDeclaredFields();
+
+        for ( Field f : fs ) {
+            if ( f.isEnumConstant()){
+                System.out.println(f.getName()+&quot; is EnumConstant&quot;);
+            }else {
+                System.out.println(f.getName()+&quot; is not EnumConstant&quot;);
+            }
+        }
+
+        Class cMeiju = Meiju.class;
+        Meiju meiju = new Meiju();
+
+        try {
+            Field f = cMeiju.getDeclaredField(&quot;state&quot;);
+            f.setAccessible(true);
+
+
+            try {
+                State state = (State) f.get(meiju);
+
+                System.out.println(&quot;State current is &quot;+state);
+
+                f.set(meiju, State.STOPPING);
+
+
+                System.out.println(&quot;State current is &quot;+meiju.getState());
+
+            } catch (IllegalArgumentException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        } catch (NoSuchFieldException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SecurityException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82<br>83<br>84<br>打印结果如下：</p>
+<p>com.frank.test.State is Enum<br>[IDLE, DRIVING, STOPPING, test]<br>IDLE is EnumConstant<br>DRIVING is EnumConstant<br>STOPPING is EnumConstant<br>test is EnumConstant<br>ENUM$VALUES is not EnumConstant<br>State current is DRIVING<br>State current is STOPPING<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>到这里，反射的所有知识基本上讲完了。下面进行模拟实战。</p>
+<p>反射与自动驾驶<br>文章开头，我用自动驾驶的技术来比喻反射，实际上的目的是为了给初学者一个大体的印象和一个模糊的轮廓，实际上反射不是自动驾驶，它是什么取决于你自己对它的理解。</p>
+<p>下段代码的目标是为了对比，先定义一个类 AutoDrive，这个类有一系列的属性，然后有一系列的方法，先用普通编码的方式来创建这个类的对象，调用它的方法。然后用反射的机制模拟自动驾驶。</p>
+<p>汽车开动的步骤，以手动档为例。 </p>
+<ol>
+<li>空档发动。 </li>
+<li>打左转向灯。 </li>
+<li>踩离合挂一档。 </li>
+<li>起步松手铩。</li>
+</ol>
+<p>现在代码模拟</p>
+<p>public class AutoDrive {</p>
+<pre><code>public enum Color {
+    WHITE,
+    REN,
+    BLUE
+}
+private String vendor;
+
+private Color color;
+
+public AutoDrive(String vendor, Color color) {
+    super();
+    this.vendor = vendor;
+    this.color = color;
+}
+
+public AutoDrive() {
+    vendor = &quot;Nissan&quot;;
+    color = Color.WHITE;
+}
+
+public void drive(){
+
+    boot();
+
+    turnOnLeftLight();
+
+    cailiheguayidang();
+
+    songshousha();
+
+
+    tips();
+
+}
+
+private void tips() {
+    System.out.println(&quot;您正在驾驶 &quot;+color+&quot; &quot;+vendor+&quot; 汽车，小心行驶。&quot;);
+}
+
+private void songshousha() {
+    // TODO Auto-generated method stub
+    System.out.println(&quot;起步松手铩。&quot;);
+}
+
+private void cailiheguayidang() {
+    // TODO Auto-generated method stub
+    System.out.println(&quot;踩离合器，挂一档&quot;);
+}
+
+private void turnOnLeftLight() {
+    // TODO Auto-generated method stub
+    System.out.println(&quot;打左向灯&quot;);
+}
+
+private void boot() {
+    // TODO Auto-generated method stub
+    System.out.println(&quot;空档发动汽车&quot;);
+
+}
+</code></pre><p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>我们只要创建一个 AutoDrive 的对象，调用它的 drive() 方法就好了。</p>
+<p>public class DriveTest {</p>
+<pre><code>public static void main(String[] args) {
+    AutoDrive car = new AutoDrive();
+
+    car.drive();
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>结果如下：</p>
+<p>空档发动汽车<br>打左向灯<br>踩离合器，挂一档<br>起步松手铩。<br>您正在驾驶 WHITE Nissan 汽车，小心行驶。<br>1<br>2<br>3<br>4<br>5<br>6<br>我们现在要使用自动驾驶技术，具体到代码就是反射，因为非常规嘛。</p>
+<p>public class DriveTest {</p>
+<pre><code>public static void main(String[] args) {
+    AutoDrive car = new AutoDrive();
+
+    car.drive();
+
+    Class cls = AutoDrive.class;
+    try {
+        Constructor cons = cls.getConstructor(String.class,AutoDrive.Color.class);
+
+        // 利用反射技术创建 AutoDrive 对象
+        AutoDrive autoDrive = (AutoDrive) cons.newInstance(&quot;Tesla&quot;,AutoDrive.Color.RED);
+
+        // 获取能够驱动汽车的 drive 方法
+        Method method = cls.getMethod(&quot;drive&quot;);
+
+        System.out.println(&quot;=====================\n自动驾驶马上开始\n================&quot;);
+        // 通过反射调用 Method 方法，最终车子跑去起来
+        method.invoke(autoDrive, null);
+
+
+    } catch (NoSuchMethodException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (SecurityException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (InstantiationException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalAccessException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IllegalArgumentException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (InvocationTargetException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+</code></pre><p>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>最后，打印结果：</p>
+<p>空档发动汽车<br>打左向灯<br>踩离合器，挂一档<br>起步松手铩。</p>
+<h1 id="您正在驾驶-WHITE-Nissan-汽车，小心行驶。"><a href="#您正在驾驶-WHITE-Nissan-汽车，小心行驶。" class="headerlink" title="您正在驾驶 WHITE Nissan 汽车，小心行驶。"></a>您正在驾驶 WHITE Nissan 汽车，小心行驶。</h1><h1 id="自动驾驶马上开始"><a href="#自动驾驶马上开始" class="headerlink" title="自动驾驶马上开始"></a>自动驾驶马上开始</h1><p>空档发动汽车<br>打左向灯<br>踩离合器，挂一档<br>起步松手铩。<br>您正在驾驶 RED Tesla 汽车，小心行驶。<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>总结<br>Java 中的反射是非常规编码方式。<br>Java 反射机制的操作入口是获取 Class 文件。 有 Class.forName()、 .class 和 Object.getClass() 3 种。<br>获取 Class 对象后还不够，需要获取它的 Members，包含 Field、Method、Constructor。<br>Field 操作主要涉及到类别的获取，及数值的读取与赋值。<br>Method 算是反射机制最核心的内容，通常的反射都是为了调用某个 Method 的 invoke() 方法。<br>通过 Class.newInstance() 和 Constructor.newInstance() 都可以创建类的对象实例，但推荐后者。因为它适应于任何构造方法，而前者只会调用可见的无参数的构造方法。<br>数组和枚举可以被看成普通的 Class 对待。<br>最后，需要注意的是。</p>
+<p>反射是非常规开发手段，它会抛弃 Java 虚拟机的很多优化，所以同样功能的代码，反射要比正常方式要慢，所以考虑到采用反射时，要考虑它的时间成本。另外，就如无人驾驶之于汽车一样，用着很爽的同时，其实风险未知。</p>
+<p>洋洋洒洒已经 2000 多行了，本来还有东西没有写完，因为这一块内容实在太多了。只能另外写一篇文章了，讲得是反射中一些常见的细节和容易出错的地方。不过，这篇文章的内容已经足够应付平常开发中所需要的反射知识了。</p>
+<h2 id="只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。"><a href="#只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。" class="headerlink" title="只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。"></a>只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。</h2><p>作者：frank909<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/briblue/article/details/74616922" target="_blank" rel="noopener">https://blog.csdn.net/briblue/article/details/74616922</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>距离毕业买房的距离又近了一步<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/money2.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/money1.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/06/11/工具 - 无版权/" class="archive-article-date">
-  	<time datetime="2018-06-11T05:34:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/06/11/工具 - 无版权/">无版权工具大全</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/11/27/细说反射，java开发者必须买过的坎/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/06/11/工具类网站大全/" class="archive-article-date">
-  	<time datetime="2018-06-11T05:34:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/year/11/24/java虚拟机/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java虚拟机</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/06/11/工具类网站大全/">工具类网站大全</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Field-generic-type-java-util-List-lt-com-frank-test-Car-gt"><span class="toc-number">1.</span> <span class="toc-text">Field generic type:java.util.List&lt;com.frank.test.Car&gt;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Field-generic-type-java-util-HashMap-lt-java-lang-Integer-java-lang-String-gt"><span class="toc-number">2.</span> <span class="toc-text">Field generic type:java.util.HashMap&lt;java.lang.Integer, java.lang.String&gt;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Field-generic-type-int"><span class="toc-number">3.</span> <span class="toc-text">Field generic type:int</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-lang-String-java-util-List-lt-java-lang-String-gt-java-util-HashMap-lt-java-lang-Integer-com-frank-test-Son-gt"><span class="toc-number"></span> <span class="toc-text"> java.lang.String[] java.util.List&lt;java.lang.String&gt; java.util.HashMap&lt;java.lang.Integer, com.frank.test.Son&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#您正在驾驶-WHITE-Nissan-汽车，小心行驶。"><span class="toc-number"></span> <span class="toc-text">您正在驾驶 WHITE Nissan 汽车，小心行驶。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自动驾驶马上开始"><span class="toc-number"></span> <span class="toc-text">自动驾驶马上开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。"><span class="toc-number">1.</span> <span class="toc-text">只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/05/28/Linux目录/" class="archive-article-date">
-  	<time datetime="2018-05-28T04:52:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/05/28/Linux目录/">Linux目录结构</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/05/28/Linux基础命令/" class="archive-article-date">
-  	<time datetime="2018-05-28T04:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/05/28/Linux基础命令/">Linux基础命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/03/29/Hexo - 来必力插件/" class="archive-article-date">
-  	<time datetime="2018-03-29T04:00:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/03/29/Hexo - 来必力插件/">来必力评论插件+yilia博客框架</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/03/29/数码 - 散热器/" class="archive-article-date">
-  	<time datetime="2018-03-29T00:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/03/29/数码 - 散热器/">散热器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/03/28/数码 - 说键盘/" class="archive-article-date">
-  	<time datetime="2018-03-28T12:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/03/28/数码 - 说键盘/">各价位键盘推荐大全</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/03/28/Hexo - 博客搭建/" class="archive-article-date">
-  	<time datetime="2018-03-28T12:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/03/28/Hexo - 博客搭建/">关于Github+Hexo搭建博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+	  <!-- 来必力City版安装代码 -->
+	 
+	  <!-- 这一句是适配样式 -->
+	  <section class="duoshuo" id="comments">
+		<!-- 以下是 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8zNjg1My8xMzM4OQ==">
+		  <script type="text/javascript">
+		   (function(d, s) {
+			   var j, e = d.getElementsByTagName(s)[0];
+			   if (typeof LivereTower === 'function') { return; }
+			   j = d.createElement(s);
+			   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+			   j.async = true;
+			   e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		  </script>
+		<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+	  </section>
+	
   
 
 
@@ -538,8 +1561,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
