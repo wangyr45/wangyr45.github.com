@@ -9,20 +9,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
-  <title>移动设备怎样定位 | 王约翰的博客</title>
+  <title>零售业务分析 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文解释关于移动设备定位的问题。">
-<meta name="keywords" content="原理">
+  <meta name="description" content="本文简单研究了下零售业务的一些规则。">
+<meta name="keywords" content="业务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动设备怎样定位">
-<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/移动设备怎样定位/index.html">
+<meta property="og:title" content="零售业务分析">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/零售业务分析/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="本文解释关于移动设备定位的问题。">
+<meta property="og:description" content="本文简单研究了下零售业务的一些规则。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-30T09:31:19.830Z">
+<meta property="og:updated_time" content="2018-11-30T09:33:31.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动设备怎样定位">
-<meta name="twitter:description" content="本文解释关于移动设备定位的问题。">
+<meta name="twitter:title" content="零售业务分析">
+<meta name="twitter:description" content="本文简单研究了下零售业务的一些规则。">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
   
@@ -201,20 +201,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-移动设备怎样定位" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-零售业务分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      移动设备怎样定位
+      零售业务分析
     </h1>
   
 
         
-        <a href="/year/11/30/移动设备怎样定位/" class="archive-article-date">
-  	<time datetime="2018-11-30T09:29:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+        <a href="/year/11/30/零售业务分析/" class="archive-article-date">
+  	<time datetime="2018-11-30T09:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
 </a>
         
       </header>
@@ -229,7 +229,7 @@ var _hmt = _hmt || [];
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
         <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#现象"><span class="toc-number">1.</span> <span class="toc-text">现象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#没有GPS接收器的设备可以定位"><span class="toc-number">1.1.</span> <span class="toc-text">没有GPS接收器的设备可以定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不接入网络可以定位"><span class="toc-number">1.2.</span> <span class="toc-text">不接入网络可以定位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位原理（先说理想空间里的几何模型，通信和经纬度后补）"><span class="toc-number">2.</span> <span class="toc-text">定位原理（先说理想空间里的几何模型，通信和经纬度后补）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#仅依靠GPS定位"><span class="toc-number">2.1.</span> <span class="toc-text">仅依靠GPS定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仅依靠WIFI热点定位"><span class="toc-number">2.2.</span> <span class="toc-text">仅依靠WIFI热点定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仅依靠GSM基站定位"><span class="toc-number">2.3.</span> <span class="toc-text">仅依靠GSM基站定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#辅助定位"><span class="toc-number">2.4.</span> <span class="toc-text">辅助定位</span></a></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-number">1.</span> <span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-number">1.4.5.</span> <span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-number">2.</span> <span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
          </div>
    <script type="text/javascript">
     function showToc(){
@@ -252,22 +252,80 @@ var _hmt = _hmt || [];
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文解释关于移动设备定位的问题。<br><a id="more"></a></p>
-<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><h3 id="没有GPS接收器的设备可以定位"><a href="#没有GPS接收器的设备可以定位" class="headerlink" title="没有GPS接收器的设备可以定位"></a>没有GPS接收器的设备可以定位</h3><ul>
-<li>云翼的iPad 1代 Wifi版（型号MD292CH），在接入公司wifi的情况下，可在地图软件上定位到“我的位置”</li>
-<li>五福的三星手机，不开GPS模块，但接入了Wifi和移动运营商，可在百度地图上定位到“我的位置”</li>
+        <p>本文简单研究了下零售业务的一些规则。<br><a id="more"></a></p>
+<h2 id="1-优惠规则5要素"><a href="#1-优惠规则5要素" class="headerlink" title="1 优惠规则5要素"></a>1 优惠规则5要素</h2><h3 id="1-1-满足优惠条件的动作"><a href="#1-1-满足优惠条件的动作" class="headerlink" title="1.1 满足优惠条件的动作"></a>1.1 满足优惠条件的动作</h3><p>这个要素，是指触发优惠规则的动作，主要包括买和满两种。</p>
+<p><strong>注</strong>：</p>
+<ul>
+<li>在数学上，买是满的一种特殊情况，只不过做文本串分析时，要同时考虑到这两种文本描述。</li>
+<li>在电商行业，触发优惠的动作还包括：晒单、微博分享、微信关注、给好评、收藏、新用户注册、手机下单等行为，这里我只叙述与商品和订单相关的，与其它行为（注册、营销、手机下单等）相关的暂忽略。</li>
+<li>抽奖，中奖要看运气，所以这时也暂不讨论</li>
 </ul>
-<h3 id="不接入网络可以定位"><a href="#不接入网络可以定位" class="headerlink" title="不接入网络可以定位"></a>不接入网络可以定位</h3><ul>
-<li>吴笑的iPhone 4S，关闭无线网和蜂窝数据（包括2G，3G），可以定位</li>
-<li>吴笑的车载导航，只有GPS接收器，没有任何网络接入，可以定位导航</li>
+<h4 id="1-1-1-买"><a href="#1-1-1-买" class="headerlink" title="1.1.1 买"></a>1.1.1 买</h4><p>只要买就优惠，如买赠（买1送1）、买立减（买此商品立减5元）</p>
+<h4 id="1-1-2-满"><a href="#1-1-2-满" class="headerlink" title="1.1.2 满"></a>1.1.2 满</h4><p>如满88减18</p>
+<h3 id="1-2-优惠条件作用对象"><a href="#1-2-优惠条件作用对象" class="headerlink" title="1.2 优惠条件作用对象"></a>1.2 优惠条件作用对象</h3><p>这个要素，是指满的对象（上文已解释，买其实是满的一种特殊情况，故此处叙述时合并），满什么条件，主要有三种：</p>
+<h4 id="1-2-1-订单金额（抵扣前金额）"><a href="#1-2-1-订单金额（抵扣前金额）" class="headerlink" title="1.2.1 订单金额（抵扣前金额）"></a>1.2.1 订单金额（抵扣前金额）</h4><p>如满88元减18元</p>
+<h4 id="1-2-2-实付金额（抵扣后金额）"><a href="#1-2-2-实付金额（抵扣后金额）" class="headerlink" title="1.2.2 实付金额（抵扣后金额）"></a>1.2.2 实付金额（抵扣后金额）</h4><p>如实付100元再返20元代金券</p>
+<h4 id="1-2-3-商品数量"><a href="#1-2-3-商品数量" class="headerlink" title="1.2.3 商品数量"></a>1.2.3 商品数量</h4><p>如买二送三，满2件每件165元，39元任选三件</p>
+<h3 id="1-3-优惠方式"><a href="#1-3-优惠方式" class="headerlink" title="1.3 优惠方式"></a>1.3 优惠方式</h3><p>这个要素是指，商家以什么方式给予消费者优惠。</p>
+<h4 id="1-3-1-减"><a href="#1-3-1-减" class="headerlink" title="1.3.1 减"></a>1.3.1 减</h4><p>在订单金额中减去部分金额，如满减，买立减，实付减</p>
+<h4 id="1-3-2-折"><a href="#1-3-2-折" class="headerlink" title="1.3.2 折"></a>1.3.2 折</h4><p>订单金额或者商品单价打个折扣。如满188打8折，第二件半价。</p>
+<p>折其实也是减的一种特殊情况，做文本串分析时当两种情况</p>
+<h4 id="1-3-3-送-赠"><a href="#1-3-3-送-赠" class="headerlink" title="1.3.3 送/赠"></a>1.3.3 送/赠</h4><p>订单中赠送，或者订单完成后再赠送。如买1送1，买奶粉送奶瓶，买奶粉送京券</p>
+<h4 id="1-3-4-换购"><a href="#1-3-4-换购" class="headerlink" title="1.3.4 换购"></a>1.3.4 换购</h4><p>满99元即可加1元换购超值礼品</p>
+<h3 id="1-4-回馈内容"><a href="#1-4-回馈内容" class="headerlink" title="1.4 回馈内容"></a>1.4 回馈内容</h3><h4 id="1-4-1-现金"><a href="#1-4-1-现金" class="headerlink" title="1.4.1 现金"></a>1.4.1 现金</h4><ul>
+<li>满减、满折就是减了现金</li>
 </ul>
-<h2 id="定位原理（先说理想空间里的几何模型，通信和经纬度后补）"><a href="#定位原理（先说理想空间里的几何模型，通信和经纬度后补）" class="headerlink" title="定位原理（先说理想空间里的几何模型，通信和经纬度后补）"></a>定位原理（先说理想空间里的几何模型，通信和经纬度后补）</h2><h3 id="仅依靠GPS定位"><a href="#仅依靠GPS定位" class="headerlink" title="仅依靠GPS定位"></a>仅依靠GPS定位</h3><p>GPS接收器与卫星1通信，获得与卫星1（记为Sat_1）的距离（记为Dist_1） GPS接收器与卫星2通信，获得与卫星2（记为Sat_2）的距离（记为Dist_2）</p>
-<p>分别以Sat_1, Sat_2为圆心，Dist_1, Dist_2为半径，画一个球，两球相交得一个空心圆，接收器在这个空心圆上某一点。</p>
-<p>如果再有第三颗GPS卫星，同理画一个球，运气好的话，此球与空心圆有一个交点（相切），此时三颗星就可定位了。 如果不相切，球与圆圈有两个交点，排除一个不在地球表面的（可以理解为地球表面作为第四个球参与确定交点），剩下那个点即为接收机所在位置。</p>
-<p>（注：之前，我想的是：运气不好的话三颗星只能画三个球面，有两个交点，这就需要第四颗卫星来画第四个球了。后来查了资料，才知道这不对，再加上地球本身第四个球面，已经可以唯一确定接收机的位置了）</p>
-<h3 id="仅依靠WIFI热点定位"><a href="#仅依靠WIFI热点定位" class="headerlink" title="仅依靠WIFI热点定位"></a>仅依靠WIFI热点定位</h3><p>wifi的有效距离比较有限，可以不考虑地球曲面的影响，简单认为wifi热点跟要定位的移动终端在同一个平面上。把上面GPS定位原理的圆球改为圆圈，在水平面画圆圈。理论上，最好的情况下，两个wifi热点可定位成功（两个圆正好相切），不在同一直线上的三个wifi热点一定能找到唯一交点，定位成功。</p>
-<h3 id="仅依靠GSM基站定位"><a href="#仅依靠GSM基站定位" class="headerlink" title="仅依靠GSM基站定位"></a>仅依靠GSM基站定位</h3><p>与wifi定位相同</p>
-<h3 id="辅助定位"><a href="#辅助定位" class="headerlink" title="辅助定位"></a>辅助定位</h3><p>AGPS</p>
+<h4 id="1-4-2-可折算成现金几无使用限制的卡-券-积分"><a href="#1-4-2-可折算成现金几无使用限制的卡-券-积分" class="headerlink" title="1.4.2 可折算成现金几无使用限制的卡/券/积分"></a>1.4.2 可折算成现金几无使用限制的卡/券/积分</h4><ul>
+<li>赠送天猫积分、集分宝也等于赠送现金</li>
+<li>京券、京东积分也等于现金</li>
+</ul>
+<h4 id="1-4-3-同主体商品"><a href="#1-4-3-同主体商品" class="headerlink" title="1.4.3 同主体商品"></a>1.4.3 同主体商品</h4><p>这条是指，赠送的商品与消费者购买的商品是同一个商品（可能保质期和生产批次略有不同，但总体上价值是一样的）</p>
+<p>如一号店的德运全脂牛奶，买一升，赠一升，属于赠送同主体的商品。</p>
+<h4 id="1-4-4-其它小赠品"><a href="#1-4-4-其它小赠品" class="headerlink" title="1.4.4 其它小赠品"></a>1.4.4 其它小赠品</h4><p>如买鞋送袜子，买奶粉送奶粉勺。</p>
+<p>把同主体商品拿出来单独说，和其它小赠品区分开，是因为同主体商品有利于计算实际到手价，德运全指牛奶买1送1，就等于是5折了，但如果买1升德运牛奶送5克奥利奥饼干，就不方便衡量饼干的价值进而计算到手价。</p>
+<h4 id="1-4-5-不可折算成现金的卡-券-积分"><a href="#1-4-5-不可折算成现金的卡-券-积分" class="headerlink" title="1.4.5 不可折算成现金的卡/券/积分"></a>1.4.5 不可折算成现金的卡/券/积分</h4><ul>
+<li>送有限制条件的满减券、折扣券</li>
+<li>送一号店积分</li>
+<li>送淘金币</li>
+<li>送航空公司里程等等</li>
+</ul>
+<p>这类回馈有的价值较高（如有限制条件的券），有的如同鸡肋（如淘金币、一号店积分）不好统一衡量价值，也不能拿来参与到手价计算</p>
+<h3 id="1-5-是否有限制"><a href="#1-5-是否有限制" class="headerlink" title="1.5 是否有限制"></a>1.5 是否有限制</h3><p>是否有限制也影响到手价的计算</p>
+<h4 id="1-5-1-有限制"><a href="#1-5-1-有限制" class="headerlink" title="1.5.1 有限制"></a>1.5.1 有限制</h4><ul>
+<li>满150减15，每个订单仅限使用一次</li>
+<li>买1送1，每个收货地址仅限5件</li>
+<li>实付200再返10元，最高返200元</li>
+</ul>
+<h4 id="1-5-2-无限制"><a href="#1-5-2-无限制" class="headerlink" title="1.5.2 无限制"></a>1.5.2 无限制</h4><p>这个不多解释了</p>
+<h2 id="2-常用优惠规则"><a href="#2-常用优惠规则" class="headerlink" title="2 常用优惠规则"></a>2 常用优惠规则</h2><p>上述5个因素，排列组合最多超过200种，但考虑到有些组合不可能存在，如“回馈内容”中的两种“赠品”只可能和“优惠方式”中的“送赠”组合，而不可能和“折、减”组合，实际常用的优惠方式约为几十种（有无限制我就不一一罗列了，读者朋友自行把下面优惠规则总数乘以二）：</p>
+<h3 id="2-1-减折类（6种）"><a href="#2-1-减折类（6种）" class="headerlink" title="2.1 减折类（6种）"></a>2.1 减折类（6种）</h3><p>满折类的优惠条件主要是满N件和满N元，一般不会跟“实付xx元”搭配：</p>
+<ul>
+<li>买立减（买一件）</li>
+<li>买立折（买一件）</li>
+<li>满N件减x元</li>
+<li>满N件打x折</li>
+<li>满N元减x元</li>
+<li>满N元打x折</li>
+</ul>
+<h4 id="2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><a href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）" class="headerlink" title="2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）"></a>2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</h4><ul>
+<li>买即送（买一件）</li>
+<li>满N件送xx</li>
+<li>满N元送xx</li>
+<li>实付N元送xx</li>
+</ul>
+<p>在有的促销文案里，送虚拟卡券积分也叫满返。</p>
+<p>以上四种场景乘以赠送的三种东西，就是12种。</p>
+<h4 id="2-3-换购（4种）"><a href="#2-3-换购（4种）" class="headerlink" title="2.3 换购（4种）"></a>2.3 换购（4种）</h4><ul>
+<li>买此商品即享换购资格</li>
+<li>满N件即享换购资格</li>
+<li>满N元即享换购资格</li>
+<li>实付N元即享换购资格</li>
+</ul>
+<h4 id="2-4-送同主体商品（3种）"><a href="#2-4-送同主体商品（3种）" class="headerlink" title="2.4 送同主体商品（3种）"></a>2.4 送同主体商品（3种）</h4><ul>
+<li>买N送M</li>
+<li>满N元再送M件</li>
+<li>实付N元再送M件</li>
+</ul>
 
       
 
@@ -312,7 +370,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">业务</a>
         		</li>
       		
 		</ul>
@@ -368,7 +426,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/11/30/移动设备怎样定位/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/11/30/零售业务分析/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -382,18 +440,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/year/11/30/零售业务分析/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          零售业务分析
-        
-      </div>
-    </a>
   
-  
-    <a href="/year/11/30/Shell脚本编程入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Shell脚本编程入门</div>
+    <a href="/year/11/30/移动设备怎样定位/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动设备怎样定位</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -420,7 +469,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#现象"><span class="toc-number">1.</span> <span class="toc-text">现象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#没有GPS接收器的设备可以定位"><span class="toc-number">1.1.</span> <span class="toc-text">没有GPS接收器的设备可以定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不接入网络可以定位"><span class="toc-number">1.2.</span> <span class="toc-text">不接入网络可以定位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位原理（先说理想空间里的几何模型，通信和经纬度后补）"><span class="toc-number">2.</span> <span class="toc-text">定位原理（先说理想空间里的几何模型，通信和经纬度后补）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#仅依靠GPS定位"><span class="toc-number">2.1.</span> <span class="toc-text">仅依靠GPS定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仅依靠WIFI热点定位"><span class="toc-number">2.2.</span> <span class="toc-text">仅依靠WIFI热点定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仅依靠GSM基站定位"><span class="toc-number">2.3.</span> <span class="toc-text">仅依靠GSM基站定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#辅助定位"><span class="toc-number">2.4.</span> <span class="toc-text">辅助定位</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-number">1.</span> <span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-number">1.4.5.</span> <span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-number">2.</span> <span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
