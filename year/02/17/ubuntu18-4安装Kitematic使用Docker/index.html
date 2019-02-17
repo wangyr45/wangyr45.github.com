@@ -9,15 +9,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
-  <title>Tag: MySQL | 王约翰的博客</title>
+  <title>ubuntu18.4安装Kitematic使用Docker | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="王约翰的博客">
-<meta property="og:url" content="http://wangyuehan.github.io/tags/MySQL/index.html">
+  <meta name="description" content="要安装Kitematic，您需要一个具有sudo权限的用户运行Ubuntu 18.04实例。您还需要DockerHub上的帐户。">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu18.4安装Kitematic使用Docker">
+<meta property="og:url" content="http://wangyuehan.github.io/year/02/17/ubuntu18-4安装Kitematic使用Docker/index.html">
 <meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="要安装Kitematic，您需要一个具有sudo权限的用户运行Ubuntu 18.04实例。您还需要DockerHub上的帐户。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g09n6a46n4j30b405kaa2.jpg">
+<meta property="og:updated_time" content="2019-02-17T12:01:38.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王约翰的博客">
+<meta name="twitter:title" content="ubuntu18.4安装Kitematic使用Docker">
+<meta name="twitter:description" content="要安装Kitematic，您需要一个具有sudo权限的用户运行Ubuntu 18.04实例。您还需要DockerHub上的帐户。">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g09n6a46n4j30b405kaa2.jpg">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
   
@@ -196,64 +203,241 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ubuntu18-4安装Kitematic使用Docker" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/year/11/03/MySQL原理/" class="archive-article-date">
-  	<time datetime="2018-11-03T06:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/year/11/03/MySQL原理/">MySQL原理应用</a>
+    <h1 class="article-title" itemprop="name">
+      ubuntu18.4安装Kitematic使用Docker
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/year/02/17/ubuntu18-4安装Kitematic使用Docker/" class="archive-article-date">
+  	<time datetime="2019-02-17T12:00:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+	
+	<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+
+
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g09n6a46n4j30b405kaa2.jpg" alt="img"></p>
+<p>要安装Kitematic，您需要一个具有sudo权限的用户运行Ubuntu 18.04实例。您还需要DockerHub上的帐户。</p>
+<a id="more"></a>
+<p><strong>安装</strong></p>
+<p>Kitematic的安装实际上非常简单。首先要做的是下载包含.deb安装程序的zip文件。确保从KitematicGithub下载页面下载最新文件。</p>
+<p>下载后解压缩文件，双击进入新创建的文件夹，右键单击文件管理器中的空白处，然后选择“在终端中打开”。终端打开时，发出命令：</p>
+<blockquote>
+<p>sudo dpkg -i Kitematic-0.17.7_amd64.deb</p>
+</blockquote>
+<p>上面的命令会出错。 没关系，因为我们可以解决这个问题。 要解决问题，请发出以下命令：</p>
+<blockquote>
+<p>sudo apt-get install -f</p>
+</blockquote>
+<p>这将获取所有遗漏的依赖项并完成安装。</p>
+<p><strong>运行Kitematic</strong></p>
+<p>要打开Kitematic，您必须确保正确配置Docker。 这意味着必须将运行Kitematic的用户添加到docker组。 如果您还没有这样做，请打开终端窗口并发出命令：</p>
+<blockquote>
+<p>sudo usermod -aG docker USER</p>
+</blockquote>
+<p>其中USER是有问题的用户名。</p>
+<p>完成后，退出桌面并重新登录。然后，您应该能够从GNOME Dash打开Docker。应用程序打开后，使用您的DockerHub凭据登录。</p>
+<p>该应用可能需要一些时间来加载所有镜像，然后就可以开始使用最好的Docker客户端GUI了。</p>
+<p>找到要部署的容器，然后单击关联的CREATE按钮。下载镜像后，它将自动部署。单击Settings选项卡，您可以在其中配置容器以满足您的需求。请记住，如果更改配置，请确保重新启动容器。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>距离毕业买房的距离又近了一步<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/money2.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/money1.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/02/17/ubuntu18-4安装Kitematic使用Docker/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/year/02/17/5-个命令放大-Dock-生产力/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">5 个命令放大 Dock 生产力</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  
+	  <!-- 来必力City版安装代码 -->
+	 
+	  <!-- 这一句是适配样式 -->
+	  <section class="duoshuo" id="comments">
+		<!-- 以下是 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8zNjg1My8xMzM4OQ==">
+		  <script type="text/javascript">
+		   (function(d, s) {
+			   var j, e = d.getElementsByTagName(s)[0];
+			   if (typeof LivereTower === 'function') { return; }
+			   j = d.createElement(s);
+			   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+			   j.async = true;
+			   e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		  </script>
+		<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+	  </section>
+	
+  
 
 
           </div>
@@ -281,9 +465,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
