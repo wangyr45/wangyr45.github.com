@@ -14,12 +14,12 @@
   <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker学习笔记">
-<meta property="og:url" content="http://wangyuehan.github.io/year/03/10/Docker学习笔记/index.html">
+<meta property="og:url" content="http://wangyuehan.github.io/year/03/11/Docker学习笔记/index.html">
 <meta property="og:site_name" content="王约翰的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0xp4fle6mj30sg09n0tc.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0xpiew7etj31k70u07wi.jpg">
-<meta property="og:updated_time" content="2019-03-10T07:33:04.459Z">
+<meta property="og:updated_time" content="2019-03-11T06:26:38.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker学习笔记">
 <meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0xp4fle6mj30sg09n0tc.jpg">
@@ -231,8 +231,8 @@ var _hmt = _hmt || [];
   
 
         
-        <a href="/year/03/10/Docker学习笔记/" class="archive-article-date">
-  	<time datetime="2019-03-10T06:44:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+        <a href="/year/03/11/Docker学习笔记/" class="archive-article-date">
+  	<time datetime="2019-03-11T06:26:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
 </a>
         
       </header>
@@ -301,8 +301,23 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像搜索：</span><br><span class="line">docker search &quot;镜像关键词&quot;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像拉取：</span><br><span class="line">docker pull [opthions] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像删除：</span><br><span class="line">docker rmi 镜像 ID 或镜像名称</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">制作镜像：</span><br><span class="line">dockerfile</span><br><span class="line">实例：</span><br><span class="line">FROM registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27</span><br><span class="line">MAINTAINER LEON-DU</span><br><span class="line">COPY index.html /usr/tomcat/webapps/ROOT/</span><br><span class="line">EXPOSE 8080/tcp</span><br><span class="line"></span><br><span class="line">docker build -t mytomcat</span><br></pre></td></tr></table></figure>
-<h2 id="11-Docker容器操作命令"><a href="#11-Docker容器操作命令" class="headerlink" title="11.Docker容器操作命令"></a>11.Docker容器操作命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11-Docker容器操作命令"><a href="#11-Docker容器操作命令" class="headerlink" title="11.Docker容器操作命令"></a>11.Docker容器操作命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">生产容器：</span><br><span class="line">  docker run -d -p 8888:8080 --name tomcat-test tomcat</span><br><span class="line">生产容器</span><br><span class="line">  docker run -d -p 8888:8080 --name tomcat-test tomcat</span><br><span class="line">  说明:-d：后台运行 -p：端口映射 8888:宿主机端口.8080:docker容器端口，tomcat-test:容器名字，tomcat:镜像名称</span><br><span class="line">查看容器(查看正在运行的容器)</span><br><span class="line">  docker ps|grep 容器关键字</span><br><span class="line">查询全部（包括已停止）的容器</span><br><span class="line">  docker ps -a|grep 容器关键字</span><br><span class="line">进入容器</span><br><span class="line">  docker exec -it containerId/containerName /bin/bash</span><br><span class="line">退出容器</span><br><span class="line">  exit</span><br><span class="line">停止容器</span><br><span class="line">  docker stop containerId/containerName</span><br><span class="line">启动容器</span><br><span class="line">  docker start containerId/containerName</span><br><span class="line">删除容器</span><br><span class="line">  docker rm containerId/containerName</span><br><span class="line">拷贝文件</span><br><span class="line">  docker cp 宿主机目录及文件 容器名称：容器目录</span><br></pre></td></tr></table></figure>
+<p>问题总结1:</p>
+<blockquote>
+<p>部署安装tomcat容器</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:/home/docker# docker pull registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27</span><br><span class="line">Using default tag: latest</span><br><span class="line">latest: Pulling from shuodao/tomcat-8.5.27</span><br><span class="line">8f7c85c2269a: Pull complete </span><br><span class="line">9e72e494a6dd: Pull complete </span><br><span class="line">3009ec50c887: Pull complete </span><br><span class="line">9d5ffccbec91: Pull complete </span><br><span class="line">e872a2642ce1: Pull complete </span><br><span class="line">558a041b7256: Pull complete </span><br><span class="line">5bd2d92394a5: Pull complete </span><br><span class="line">Digest: sha256:05fa942790b8d42bfd4f5a16527609c9e9ddb4a45a04a8d31e5750c3a2b7c1bd</span><br><span class="line">Status: Downloaded newer image for registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27:latest</span><br><span class="line">root@ubuntu:/home/docker# docker images</span><br><span class="line">REPOSITORY                                                TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27   latest              d07ca8aba782        2 months ago        369 MB</span><br><span class="line">root@ubuntu:/home/docker# docker run -d -p 8888:8080 --name mytomcat registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27</span><br><span class="line">8e195d1630b7875b1ab2fde17b4cba1a7bc407d70c332b021d18eb16662ec066</span><br><span class="line">root@ubuntu:/home/docker# docker exec -it mytomcat /bin/bash</span><br><span class="line">root@8e195d1630b7:/# ls</span><br><span class="line">bin   dev  home  lib64  mnt  proc  run   srv  tmp  var</span><br><span class="line">boot  etc  lib   media  opt  root  sbin  sys  usr</span><br><span class="line">root@8e195d1630b7:/# cd usr</span><br><span class="line">root@8e195d1630b7:/usr# ls</span><br><span class="line">bin  games  include  java  lib  local  sbin  share  src  tomcat</span><br><span class="line">root@8e195d1630b7:/usr# exit</span><br><span class="line">exit</span><br><span class="line">root@ubuntu:/home/docker#</span><br></pre></td></tr></table></figure>
+<p><a href="http://localhost:8888" target="_blank" rel="noopener">http://localhost:8888</a> 访问tomcat服务器页面</p>
+<p>docker stop mytomcat 停止容器运行，在访问网址，已经无法登陆。</p>
+<p>问题总结2:</p>
+<p>做一个index.html通过tomcat运行它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker@ubuntu:~$ docker cp /home/docker/Desktop/bg.html mytomcat:/usr/tomcat/webapps/ROOT</span><br></pre></td></tr></table></figure>
+<p>打开浏览器，输入网址：<a href="http://localhost:8888/index/.html" target="_blank" rel="noopener">http://localhost:8888/index/.html</a> 访问。</p>
+<p>问题总结3：</p>
+<p>删除images时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker@ubuntu:~$ docker rmi registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat</span><br><span class="line">Error response from daemon: conflict: unable to remove repository reference &quot;registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat&quot; (must force) - container af06eabfa3bb is using its referenced image ba886ec36feciej</span><br></pre></td></tr></table></figure>
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">docker ps -a -q(af06eabfa3bb)</span><br><span class="line"></span><br><span class="line">docker stop af06eabfa3bb</span><br><span class="line">docker rm af06eabfa3bb</span><br><span class="line">docker images</span><br><span class="line">——&gt;registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat   latest              ba886ec36fec        15 months ago       1.62 GB</span><br><span class="line"></span><br><span class="line">docker rmi registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat</span><br></pre></td></tr></table></figure>
 <p>(未完待续…)</p>
 
       
@@ -404,7 +419,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/03/10/Docker学习笔记/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/03/11/Docker学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
