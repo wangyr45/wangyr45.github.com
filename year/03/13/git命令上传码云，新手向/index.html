@@ -9,24 +9,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
-  <title>系统设计 - 消息队列 | 王约翰的博客</title>
+  <title>git命令上传码云，新手向~ | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="根据Github整理。内容包括：消息模型、相关使用场景、可靠性等等。">
-<meta name="keywords" content="系统设计,消息队列">
+  <meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="系统设计 - 消息队列">
-<meta property="og:url" content="http://wangyuehan.github.io/year/11/04/系统设计-消息队列/index.html">
+<meta property="og:title" content="git命令上传码云，新手向~">
+<meta property="og:url" content="http://wangyuehan.github.io/year/03/13/git命令上传码云，新手向/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="根据Github整理。内容包括：消息模型、相关使用场景、可靠性等等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/685a692f-8f76-4cac-baac-b68e2df9a30f.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/ddb5ff4c-4ada-46aa-9bf1-140bdb5e4676.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg">
-<meta property="og:updated_time" content="2019-03-09T08:23:55.630Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g10ukejf2jj30i3085glq.jpg">
+<meta property="og:updated_time" content="2019-03-13T00:11:15.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="系统设计 - 消息队列">
-<meta name="twitter:description" content="根据Github整理。内容包括：消息模型、相关使用场景、可靠性等等。">
-<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/685a692f-8f76-4cac-baac-b68e2df9a30f.jpg">
+<meta name="twitter:title" content="git命令上传码云，新手向~">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g10ukejf2jj30i3085glq.jpg">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
   
@@ -223,20 +218,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-系统设计-消息队列" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git命令上传码云，新手向" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      系统设计 - 消息队列
+      git命令上传码云，新手向~
     </h1>
   
 
         
-        <a href="/year/11/04/系统设计-消息队列/" class="archive-article-date">
-  	<time datetime="2018-11-04T03:33:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
+        <a href="/year/03/13/git命令上传码云，新手向/" class="archive-article-date">
+  	<time datetime="2019-03-13T00:08:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
 </a>
         
       </header>
@@ -251,7 +246,7 @@ var _hmt = _hmt || [];
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
         <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、消息模型"><span class="toc-number">1.</span> <span class="toc-text">一、消息模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#点对点"><span class="toc-number">1.1.</span> <span class="toc-text">点对点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布-订阅"><span class="toc-number">1.2.</span> <span class="toc-text">发布/订阅</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、使用场景"><span class="toc-number">2.</span> <span class="toc-text">二、使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异步处理"><span class="toc-number">2.1.</span> <span class="toc-text">异步处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流量削锋"><span class="toc-number">2.2.</span> <span class="toc-text">流量削锋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用解耦"><span class="toc-number">2.3.</span> <span class="toc-text">应用解耦</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、可靠性"><span class="toc-number">3.</span> <span class="toc-text">三、可靠性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#发送端的可靠性"><span class="toc-number">3.1.</span> <span class="toc-text">发送端的可靠性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接收端的可靠性"><span class="toc-number">3.2.</span> <span class="toc-text">接收端的可靠性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+           
          </div>
    <script type="text/javascript">
     function showToc(){
@@ -274,40 +269,22 @@ var _hmt = _hmt || [];
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <p>根据Github整理。<br>内容包括：消息模型、相关使用场景、可靠性等等。</p>
+        <p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g10ukejf2jj30i3085glq.jpg" alt=""></p>
 <a id="more"></a>
-<h1 id="一、消息模型"><a href="#一、消息模型" class="headerlink" title="一、消息模型"></a>一、消息模型</h1><h2 id="点对点"><a href="#点对点" class="headerlink" title="点对点"></a>点对点</h2><p>消息生产者向消息队列中发送了一个消息之后，只能被一个消费者消费一次。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/685a692f-8f76-4cac-baac-b68e2df9a30f.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/685a692f-8f76-4cac-baac-b68e2df9a30f.jpg" alt="img"></a></p>
-<h2 id="发布-订阅"><a href="#发布-订阅" class="headerlink" title="发布/订阅"></a>发布/订阅</h2><p>消息生产者向频道发送一个消息之后，多个消费者可以从该频道订阅到这条消息并消费。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/ddb5ff4c-4ada-46aa-9bf1-140bdb5e4676.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/ddb5ff4c-4ada-46aa-9bf1-140bdb5e4676.jpg" alt="img"></a></p>
-<p>发布与订阅模式和观察者模式有以下不同：</p>
-<ul>
-<li>观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。</li>
-<li>观察者模式是同步的，当事件触发时，主题会调用观察者的方法，然后等待方法返回；而发布与订阅模式是异步的，发布者向频道发送一个消息之后，就不需要关心订阅者何时去订阅这个消息，可以立即返回。</li>
-</ul>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg" alt="img"></a></p>
-<h1 id="二、使用场景"><a href="#二、使用场景" class="headerlink" title="二、使用场景"></a>二、使用场景</h1><h2 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h2><p>发送者将消息发送给消息队列之后，不需要同步等待消息接收者处理完毕，而是立即返回进行其它操作。消息接收者从消息队列中订阅消息之后异步处理。</p>
-<p>例如在注册流程中通常需要发送验证邮件来确保注册用户身份的合法性，可以使用消息队列使发送验证邮件的操作异步处理，用户在填写完注册信息之后就可以完成注册，而将发送验证邮件这一消息发送到消息队列中。</p>
-<p>只有在业务流程允许异步处理的情况下才能这么做，例如上面的注册流程中，如果要求用户对验证邮件进行点击之后才能完成注册的话，就不能再使用消息队列。</p>
-<h2 id="流量削锋"><a href="#流量削锋" class="headerlink" title="流量削锋"></a>流量削锋</h2><p>在高并发的场景下，如果短时间有大量的请求到达会压垮服务器。</p>
-<p>可以将请求发送到消息队列中，服务器按照其处理能力从消息队列中订阅消息进行处理。</p>
-<h2 id="应用解耦"><a href="#应用解耦" class="headerlink" title="应用解耦"></a>应用解耦</h2><p>如果模块之间不直接进行调用，模块之间耦合度就会很低，那么修改一个模块或者新增一个模块对其它模块的影响会很小，从而实现可扩展性。</p>
-<p>通过使用消息队列，一个模块只需要向消息队列中发送消息，其它模块可以选择性地从消息队列中订阅消息从而完成调用。</p>
-<h1 id="三、可靠性"><a href="#三、可靠性" class="headerlink" title="三、可靠性"></a>三、可靠性</h1><h2 id="发送端的可靠性"><a href="#发送端的可靠性" class="headerlink" title="发送端的可靠性"></a>发送端的可靠性</h2><p>发送端完成操作后一定能将消息成功发送到消息队列中。</p>
-<p>实现方法：</p>
-<ul>
-<li>在本地数据库建一张消息表，将消息数据与业务数据保存在同一数据库实例里，这样就可以利用本地数据库的事务机制。事务提交成功后，将消息表中的消息转移到消息队列中，若转移消息成功则删除消息表中的数据，否则继续重传。</li>
-</ul>
-<h2 id="接收端的可靠性"><a href="#接收端的可靠性" class="headerlink" title="接收端的可靠性"></a>接收端的可靠性</h2><p>接收端能够从消息队列成功消费一次消息。</p>
-<p>两种实现方法：</p>
-<ul>
-<li>保证接收端处理消息的业务逻辑具有幂等性：只要具有幂等性，那么消费多少次消息，最后处理的结果都是一样的。</li>
-<li>保证消息具有唯一编号，并使用一张日志表来记录已经消费的消息编号。</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="http://developers-club.com/posts/270339/" target="_blank" rel="noopener">Observer vs Pub-Sub</a></li>
-<li><a href="https://blog.csdn.net/lizhitao/article/details/47723105" target="_blank" rel="noopener">消息队列中点对点与发布订阅区别</a></li>
-</ul>
+<p>将本地的项目上传到码云</p>
+<p>1、码云上创建一个项目 testgit (名字随你)</p>
+<p>2、本地创建一个文件夹D:/testgit，然后使用git bash    </p>
+<p>3、cd 到本地文件夹中D:/testgit，</p>
+<p>4、使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹</p>
+<p>5、使用git remote add origin <a href="https://gitee.com/你的码云用户名/testgit" target="_blank" rel="noopener">https://gitee.com/你的码云用户名/testgit</a>      //添加远程仓库</p>
+<p>6、使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹</p>
+<p>7、将要上传的文件，添加到刚刚创建的文件夹</p>
+<p>8、使用git add . 或者 git add + 文件名 (将文件保存到缓存区)</p>
+<p>9、使用git commit -m ‘描述新添加的文件内容’  (就是注释)   （文件保存到本地仓库）</p>
+<p>10、使用git push origin master ，将本地仓库推送到远程仓库 </p>
+<p>如何将远程仓库项目克隆岛本地？</p>
+<p>1、cd 到你想要保存远程仓库项目的文件夹</p>
+<p>2、使用 git clone 远程仓库地址</p>
 
       
 
@@ -352,28 +329,13 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">系统设计</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">消息队列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/专业知识//" class="article-tag-list-link color5">专业知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -423,7 +385,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/11/04/系统设计-消息队列/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/03/13/git命令上传码云，新手向/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -437,18 +399,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/year/11/04/正则表达式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          正则表达式
-        
-      </div>
-    </a>
   
-  
-    <a href="/year/11/04/系统设计-攻击技术/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">系统设计 - 攻击技术</div>
+    <a href="/year/03/11/Docker学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Docker学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -475,7 +428,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、消息模型"><span class="toc-number">1.</span> <span class="toc-text">一、消息模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#点对点"><span class="toc-number">1.1.</span> <span class="toc-text">点对点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布-订阅"><span class="toc-number">1.2.</span> <span class="toc-text">发布/订阅</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、使用场景"><span class="toc-number">2.</span> <span class="toc-text">二、使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异步处理"><span class="toc-number">2.1.</span> <span class="toc-text">异步处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流量削锋"><span class="toc-number">2.2.</span> <span class="toc-text">流量削锋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用解耦"><span class="toc-number">2.3.</span> <span class="toc-text">应用解耦</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、可靠性"><span class="toc-number">3.</span> <span class="toc-text">三、可靠性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#发送端的可靠性"><span class="toc-number">3.1.</span> <span class="toc-text">发送端的可靠性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接收端的可靠性"><span class="toc-number">3.2.</span> <span class="toc-text">接收端的可靠性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
