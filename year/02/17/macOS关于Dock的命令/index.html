@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
     <link rel="icon" href="/images/bitbug_favicon.ico">
   
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
   <title>macOS关于Dock的命令 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -55,7 +55,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -280,30 +280,30 @@ var _hmt = _hmt || [];
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g09h2ygq24j318g0p0whk.jpg" alt=""></p>
+        <p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g09h2ygq24j318g0p0whk.jpg" alt></p>
 <a id="more"></a>
 <h3 id="1-用鼠标移动也能显示背景框"><a href="#1-用鼠标移动也能显示背景框" class="headerlink" title="1. 用鼠标移动也能显示背景框"></a>1. 用鼠标移动也能显示背景框</h3><figure class="highlight plain"><figcaption><span>write com.apple.dock mouse-over-hilite-stack -bool true</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g09h5ehue9j30jg0ax0uz.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g09h5ehue9j30jg0ax0uz.jpg" alt></p>
 <h3 id="2-用空白占位图标分割-Dock-区域"><a href="#2-用空白占位图标分割-Dock-区域" class="headerlink" title="2. 用空白占位图标分割 Dock 区域"></a>2. 用空白占位图标分割 Dock 区域</h3><p>左：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock persistent-apps -array-add '&#123;"tile-type"</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>右：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock persistent-others -array-add '&#123;tile-data</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p> <img src="https://ws4.sinaimg.cn/large/006tKfTcly1g09h5xt265j311903d751.jpg" alt=""></p>
+<p> <img src="https://ws4.sinaimg.cn/large/006tKfTcly1g09h5xt265j311903d751.jpg" alt></p>
 <h3 id="3-滚轮-手势上划显示某个软件的所有窗口"><a href="#3-滚轮-手势上划显示某个软件的所有窗口" class="headerlink" title="3. 滚轮/手势上划显示某个软件的所有窗口"></a>3. 滚轮/手势上划显示某个软件的所有窗口</h3><p>开：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock scroll-to-open -bool TRUE; killall Dock</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>关：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock scroll-to-open -bool FALSE; killall Dock</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>注：区别在于 TRUE/FALSE </p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g09h6i0eisj30jg0ax3zq.jpg" alt=""></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g09h6i0eisj30jg0ax3zq.jpg" alt></p>
 <h3 id="4-使不活动的图标进入半透明状态"><a href="#4-使不活动的图标进入半透明状态" class="headerlink" title="4. 使不活动的图标进入半透明状态"></a>4. 使不活动的图标进入半透明状态</h3><p>开：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock showhidden -bool TRUE; killall Dock</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>关：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock showhidden -bool FALSE; killall Dock</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>注：区别在于 TRUE/FALSE </p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g09h73q6nqj30jg0ax3zr.jpg" alt=""></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g09h73q6nqj30jg0ax3zr.jpg" alt></p>
 <h3 id="5-Dock-的瞬间隐藏和出现，以及切换用的快捷键"><a href="#5-Dock-的瞬间隐藏和出现，以及切换用的快捷键" class="headerlink" title="5. Dock 的瞬间隐藏和出现，以及切换用的快捷键"></a>5. Dock 的瞬间隐藏和出现，以及切换用的快捷键</h3><p>取消隐藏/出现动画：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock autohide-time-modifier -int 0;killall Dock</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g09h7og44bj30jg0axq3y.jpg" alt=""></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g09h7og44bj30jg0axq3y.jpg" alt></p>
 <p>将隐藏/出现动画变为 0.1 秒，区别在于有过渡效果和无过渡效果：</p>
 <figure class="highlight plain"><figcaption><span>write com.apple.dock autohide-time-modifier -float 0.1;killall Dock</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>恢复正常的隐藏/出现动画：</p>
@@ -620,10 +620,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
@@ -641,6 +637,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SAP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,7 +696,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+                <a href="javascript:void(0)" class="js-tag color5">攻击技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,7 +704,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">攻击技术</a>
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,15 +732,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">集群</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,7 +800,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

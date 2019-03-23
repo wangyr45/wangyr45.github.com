@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
     <link rel="icon" href="/images/bitbug_favicon.ico">
   
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
   <title>在Linux中编写第一个Node.js应用程序 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -53,7 +53,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -278,7 +278,7 @@ var _hmt = _hmt || [];
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <p> <img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0tcck4fb2j30r80bcwey.jpg" alt=""></p>
+        <p> <img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0tcck4fb2j30r80bcwey.jpg" alt></p>
 <a id="more"></a>
 <p><strong>什么是Node.js？</strong></p>
 <p>Node.js是一个基于Chrome的V8 JavaScript引擎构建的开源，轻量级和高效的JavaScript运行时。它的设计没有线程（单线程），并且与Twisted类似，后者是一个使用Python或Event Machine构建的网络引擎，这是一个用于Ruby程序的事件处理库。</p>
@@ -322,7 +322,7 @@ var _hmt = _hmt || [];
 <p>$ npm start</p>
 <p>接下来，打开Web浏览器并访问您的Web应用程序，该应用程序将打印字符串“Hello World!<a href="http://www.linuxidc.com”，使用地址" target="_blank" rel="noopener">www.linuxidc.com”，使用地址</a>:</p>
 <p><a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0tce0ou39j30u00gwac5.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0tce0ou39j30u00gwac5.jpg" alt></p>
 <p>从浏览器访问Nodejs应用程序</p>
 <p>在上面的代码中，正在处理的主要事件是通过HTTP模块的HTTP请求。</p>
 <p><strong>Nodejs HTTP模块</strong></p>
@@ -347,14 +347,14 @@ var _hmt = _hmt || [];
 <p>或者</p>
 <p>$ npm start</p>
 <p>在Web浏览器中输入不同的URL，如下所示。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0tce0ou39j30u00gwac5.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0tce0ou39j30u00gwac5.jpg" alt></p>
 <p>查看客户的应用程序请求</p>
 <p>现在，我们将为Linux公社<a href="http://www.linuxidc.com创建一个非常小的网站，其中包含主页，关于和作者页面。" target="_blank" rel="noopener">www.linuxidc.com创建一个非常小的网站，其中包含主页，关于和作者页面。</a> 我们将在这些页面上显示一些信息。</p>
 <p>打开server.js文件进行编辑，并在其中添加下面的代码。</p>
 <p>//include http module<br>var http = require(‘http’);</p>
 <p>http.creatServer(function(req,res){<br> //store URL in variable q_string</p>
 <p> var q_string = req.url;<br> switch(q_string) {<br>  case ‘/‘:<br>                         res.writeHead(200, { ‘Content-Type’: ‘text/plain’ });<br>                         res.write(‘欢迎光临<a href="http://www.linuxidc.com!&#39;" target="_blank" rel="noopener">www.linuxidc.com!&#39;</a>)<br>                         res.end();<br>                         break;<br>                 case ‘/aboutus’:<br>                  res.writeHead(200, { ‘Content-Type’: ‘text/plain’ });<br>                         res.write(‘关于Linux公社’);<br>                         res.write(‘\n\n’);<br>                         res.write(‘Linux公社(<a href="http://www.linuxidc.com)是专业的Linux系统门户网站！&#39;)" target="_blank" rel="noopener">www.linuxidc.com)是专业的Linux系统门户网站！&#39;)</a>;<br>                         res.write(‘\n’);<br>                         res.end(‘了解更多: <a href="https://www.linuxidc.com/aboutus.htm&#39;)" target="_blank" rel="noopener">https://www.linuxidc.com/aboutus.htm&#39;)</a>;<br>                         break;<br>                 case ‘/contactus:<br>                         res.writeHead(200, { ‘Content-Type’: ‘text/plain’ });<br>                         res.write(‘联系我们’);<br>                         res.write(‘\n\n’);<br>                         res.end(‘联系我们: <a href="https://www.linuxidc.com/contactus.htm&#39;)" target="_blank" rel="noopener">https://www.linuxidc.com/contactus.htm&#39;)</a>;<br>                         break;<br>                 default:<br>                        res.writeHead(404, { ‘Content-Type’: ‘text/plain’ });<br>                        res.end(‘Not Found’);<br>                         break;<br> }<br>}).listen(1688);<br>console.log(‘Server started on localhost:1688; press Ctrl-C to terminate….’);</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0tcds37quj30u00gwgnv.jpg" alt=""></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0tcds37quj30u00gwgnv.jpg" alt></p>
 
       
 
@@ -664,10 +664,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
@@ -685,6 +681,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SAP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,7 +740,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+                <a href="javascript:void(0)" class="js-tag color5">攻击技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -748,7 +748,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">攻击技术</a>
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,15 +776,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">集群</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,7 +844,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
