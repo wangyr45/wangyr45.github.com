@@ -11,13 +11,13 @@
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
   <title>macos把任意网站变成桌面软件 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。 制作软件让我们以https://">
+  <meta name="description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。">
 <meta name="keywords" content="macOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="macos把任意网站变成桌面软件">
 <meta property="og:url" content="http://wangyuehan.github.io/year/05/10/macos把任意网站变成桌面软件/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。 制作软件让我们以https://">
+<meta property="og:description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://segmentfault.com/img/bV2nuw?w=1392&h=912">
 <meta property="og:image" content="https://segmentfault.com/img/bV2nvn?w=1034&h=614">
@@ -25,10 +25,10 @@
 <meta property="og:image" content="https://segmentfault.com/img/bV2osj?w=938&h=627">
 <meta property="og:image" content="https://segmentfault.com/img/bV2os1?w=932&h=599">
 <meta property="og:image" content="https://github.com/mengdu/vue-electron-chrome/raw/master/20171218164524.png">
-<meta property="og:updated_time" content="2019-05-10T03:48:14.040Z">
+<meta property="og:updated_time" content="2019-05-10T06:27:58.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macos把任意网站变成桌面软件">
-<meta name="twitter:description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。 制作软件让我们以https://">
+<meta name="twitter:description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。">
 <meta name="twitter:image" content="https://segmentfault.com/img/bV2nuw?w=1392&h=912">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
@@ -248,6 +248,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>以前，开发一个桌面软件要花费大量的人力和时间。现在，随着<code>web</code>技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的<code>Qt</code>，后来的<code>Electron</code>，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你<code>5</code>分钟之内就把一个网站变成一个可安装的桌面软件。</p>
+<a id="more"></a>
 <h1 id="制作软件"><a href="#制作软件" class="headerlink" title="制作软件"></a>制作软件</h1><p>让我们以<a href="https://segmentfaut.com/" target="_blank" rel="noopener">https://segmentfaut.com</a>这个网站为例来制作我们的软件。</p>
 <h2 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h2><p>一句话搞定：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nativefier</span><br></pre></td></tr></table></figure>
@@ -399,6 +400,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/year/05/10/小黄鸭调试法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          小黄鸭调试法
+        
+      </div>
+    </a>
   
   
     <a href="/year/05/09/分布式架构下的负载均衡/" id="article-nav-older" class="article-nav-link-wrap">
@@ -566,10 +576,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">营销</a>
               </li>
              
@@ -586,11 +592,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,7 +608,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,15 +628,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">macOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,11 +656,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">传播学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">资源</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">传播学</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,7 +692,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">攻击技术</a>
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,7 +700,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+                <a href="javascript:void(0)" class="js-tag color5">攻击技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,11 +712,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
+                <a href="javascript:void(0)" class="js-tag color3">业务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">业务</a>
+                <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,11 +748,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集群</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color3">集群</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,7 +768,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -762,7 +776,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
