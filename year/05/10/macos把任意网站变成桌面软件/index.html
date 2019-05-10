@@ -9,20 +9,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://wangyuehan.github.io">
-  <title>零售业务分析 | 王约翰的博客</title>
+  <title>macos把任意网站变成桌面软件 | 王约翰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文简单研究了下零售业务的一些规则。">
-<meta name="keywords" content="业务">
+  <meta name="description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。 制作软件让我们以https://">
+<meta name="keywords" content="macOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="零售业务分析">
-<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/零售业务分析/index.html">
+<meta property="og:title" content="macos把任意网站变成桌面软件">
+<meta property="og:url" content="http://wangyuehan.github.io/year/05/10/macos把任意网站变成桌面软件/index.html">
 <meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="本文简单研究了下零售业务的一些规则。">
+<meta property="og:description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。 制作软件让我们以https://">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-30T09:33:31.000Z">
+<meta property="og:image" content="https://segmentfault.com/img/bV2nuw?w=1392&h=912">
+<meta property="og:image" content="https://segmentfault.com/img/bV2nvn?w=1034&h=614">
+<meta property="og:image" content="https://segmentfault.com/img/bV2orp?w=932&h=599">
+<meta property="og:image" content="https://segmentfault.com/img/bV2osj?w=938&h=627">
+<meta property="og:image" content="https://segmentfault.com/img/bV2os1?w=932&h=599">
+<meta property="og:image" content="https://github.com/mengdu/vue-electron-chrome/raw/master/20171218164524.png">
+<meta property="og:updated_time" content="2019-05-10T03:48:14.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="零售业务分析">
-<meta name="twitter:description" content="本文简单研究了下零售业务的一些规则。">
+<meta name="twitter:title" content="macos把任意网站变成桌面软件">
+<meta name="twitter:description" content="以前，开发一个桌面软件要花费大量的人力和时间。现在，随着web技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的Qt，后来的Electron，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你5分钟之内就把一个网站变成一个可安装的桌面软件。 制作软件让我们以https://">
+<meta name="twitter:image" content="https://segmentfault.com/img/bV2nuw?w=1392&h=912">
   
     <link rel="alternative" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
   
@@ -213,20 +220,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-零售业务分析" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-macos把任意网站变成桌面软件" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      零售业务分析
+      macos把任意网站变成桌面软件
     </h1>
   
 
         
-        <a href="/year/11/30/零售业务分析/" class="archive-article-date">
-  	<time datetime="2018-11-30T09:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+        <a href="/year/05/10/macos把任意网站变成桌面软件/" class="archive-article-date">
+  	<time datetime="2019-05-10T03:45:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
 </a>
         
       </header>
@@ -234,110 +241,40 @@ var _hmt = _hmt || [];
 	
 	<!-- 目录内容 -->
 
-    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-          <span class="btn-bg"></span>
-          <span class="btn-text">文章导航</span>
-          </p>
-    <div id="toc-article" class="toc-article">
-        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-        <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-number">1.</span> <span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-number">1.4.5.</span> <span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-number">2.</span> <span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
-         </div>
-   <script type="text/javascript">
-    function showToc(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:block");
-        show_toc_btn.setAttribute("style","display:none");
-        };
-    function showBtn(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:none");
-        show_toc_btn.setAttribute("style","display:block");
-        };
-   </script>
-      
 <!-- 目录内容结束 -->
 
 
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文简单研究了下零售业务的一些规则。<br><a id="more"></a></p>
-<h2 id="1-优惠规则5要素"><a href="#1-优惠规则5要素" class="headerlink" title="1 优惠规则5要素"></a>1 优惠规则5要素</h2><h3 id="1-1-满足优惠条件的动作"><a href="#1-1-满足优惠条件的动作" class="headerlink" title="1.1 满足优惠条件的动作"></a>1.1 满足优惠条件的动作</h3><p>这个要素，是指触发优惠规则的动作，主要包括买和满两种。</p>
-<p><strong>注</strong>：</p>
-<ul>
-<li>在数学上，买是满的一种特殊情况，只不过做文本串分析时，要同时考虑到这两种文本描述。</li>
-<li>在电商行业，触发优惠的动作还包括：晒单、微博分享、微信关注、给好评、收藏、新用户注册、手机下单等行为，这里我只叙述与商品和订单相关的，与其它行为（注册、营销、手机下单等）相关的暂忽略。</li>
-<li>抽奖，中奖要看运气，所以这时也暂不讨论</li>
-</ul>
-<h4 id="1-1-1-买"><a href="#1-1-1-买" class="headerlink" title="1.1.1 买"></a>1.1.1 买</h4><p>只要买就优惠，如买赠（买1送1）、买立减（买此商品立减5元）</p>
-<h4 id="1-1-2-满"><a href="#1-1-2-满" class="headerlink" title="1.1.2 满"></a>1.1.2 满</h4><p>如满88减18</p>
-<h3 id="1-2-优惠条件作用对象"><a href="#1-2-优惠条件作用对象" class="headerlink" title="1.2 优惠条件作用对象"></a>1.2 优惠条件作用对象</h3><p>这个要素，是指满的对象（上文已解释，买其实是满的一种特殊情况，故此处叙述时合并），满什么条件，主要有三种：</p>
-<h4 id="1-2-1-订单金额（抵扣前金额）"><a href="#1-2-1-订单金额（抵扣前金额）" class="headerlink" title="1.2.1 订单金额（抵扣前金额）"></a>1.2.1 订单金额（抵扣前金额）</h4><p>如满88元减18元</p>
-<h4 id="1-2-2-实付金额（抵扣后金额）"><a href="#1-2-2-实付金额（抵扣后金额）" class="headerlink" title="1.2.2 实付金额（抵扣后金额）"></a>1.2.2 实付金额（抵扣后金额）</h4><p>如实付100元再返20元代金券</p>
-<h4 id="1-2-3-商品数量"><a href="#1-2-3-商品数量" class="headerlink" title="1.2.3 商品数量"></a>1.2.3 商品数量</h4><p>如买二送三，满2件每件165元，39元任选三件</p>
-<h3 id="1-3-优惠方式"><a href="#1-3-优惠方式" class="headerlink" title="1.3 优惠方式"></a>1.3 优惠方式</h3><p>这个要素是指，商家以什么方式给予消费者优惠。</p>
-<h4 id="1-3-1-减"><a href="#1-3-1-减" class="headerlink" title="1.3.1 减"></a>1.3.1 减</h4><p>在订单金额中减去部分金额，如满减，买立减，实付减</p>
-<h4 id="1-3-2-折"><a href="#1-3-2-折" class="headerlink" title="1.3.2 折"></a>1.3.2 折</h4><p>订单金额或者商品单价打个折扣。如满188打8折，第二件半价。</p>
-<p>折其实也是减的一种特殊情况，做文本串分析时当两种情况</p>
-<h4 id="1-3-3-送-赠"><a href="#1-3-3-送-赠" class="headerlink" title="1.3.3 送/赠"></a>1.3.3 送/赠</h4><p>订单中赠送，或者订单完成后再赠送。如买1送1，买奶粉送奶瓶，买奶粉送京券</p>
-<h4 id="1-3-4-换购"><a href="#1-3-4-换购" class="headerlink" title="1.3.4 换购"></a>1.3.4 换购</h4><p>满99元即可加1元换购超值礼品</p>
-<h3 id="1-4-回馈内容"><a href="#1-4-回馈内容" class="headerlink" title="1.4 回馈内容"></a>1.4 回馈内容</h3><h4 id="1-4-1-现金"><a href="#1-4-1-现金" class="headerlink" title="1.4.1 现金"></a>1.4.1 现金</h4><ul>
-<li>满减、满折就是减了现金</li>
-</ul>
-<h4 id="1-4-2-可折算成现金几无使用限制的卡-券-积分"><a href="#1-4-2-可折算成现金几无使用限制的卡-券-积分" class="headerlink" title="1.4.2 可折算成现金几无使用限制的卡/券/积分"></a>1.4.2 可折算成现金几无使用限制的卡/券/积分</h4><ul>
-<li>赠送天猫积分、集分宝也等于赠送现金</li>
-<li>京券、京东积分也等于现金</li>
-</ul>
-<h4 id="1-4-3-同主体商品"><a href="#1-4-3-同主体商品" class="headerlink" title="1.4.3 同主体商品"></a>1.4.3 同主体商品</h4><p>这条是指，赠送的商品与消费者购买的商品是同一个商品（可能保质期和生产批次略有不同，但总体上价值是一样的）</p>
-<p>如一号店的德运全脂牛奶，买一升，赠一升，属于赠送同主体的商品。</p>
-<h4 id="1-4-4-其它小赠品"><a href="#1-4-4-其它小赠品" class="headerlink" title="1.4.4 其它小赠品"></a>1.4.4 其它小赠品</h4><p>如买鞋送袜子，买奶粉送奶粉勺。</p>
-<p>把同主体商品拿出来单独说，和其它小赠品区分开，是因为同主体商品有利于计算实际到手价，德运全指牛奶买1送1，就等于是5折了，但如果买1升德运牛奶送5克奥利奥饼干，就不方便衡量饼干的价值进而计算到手价。</p>
-<h4 id="1-4-5-不可折算成现金的卡-券-积分"><a href="#1-4-5-不可折算成现金的卡-券-积分" class="headerlink" title="1.4.5 不可折算成现金的卡/券/积分"></a>1.4.5 不可折算成现金的卡/券/积分</h4><ul>
-<li>送有限制条件的满减券、折扣券</li>
-<li>送一号店积分</li>
-<li>送淘金币</li>
-<li>送航空公司里程等等</li>
-</ul>
-<p>这类回馈有的价值较高（如有限制条件的券），有的如同鸡肋（如淘金币、一号店积分）不好统一衡量价值，也不能拿来参与到手价计算</p>
-<h3 id="1-5-是否有限制"><a href="#1-5-是否有限制" class="headerlink" title="1.5 是否有限制"></a>1.5 是否有限制</h3><p>是否有限制也影响到手价的计算</p>
-<h4 id="1-5-1-有限制"><a href="#1-5-1-有限制" class="headerlink" title="1.5.1 有限制"></a>1.5.1 有限制</h4><ul>
-<li>满150减15，每个订单仅限使用一次</li>
-<li>买1送1，每个收货地址仅限5件</li>
-<li>实付200再返10元，最高返200元</li>
-</ul>
-<h4 id="1-5-2-无限制"><a href="#1-5-2-无限制" class="headerlink" title="1.5.2 无限制"></a>1.5.2 无限制</h4><p>这个不多解释了</p>
-<h2 id="2-常用优惠规则"><a href="#2-常用优惠规则" class="headerlink" title="2 常用优惠规则"></a>2 常用优惠规则</h2><p>上述5个因素，排列组合最多超过200种，但考虑到有些组合不可能存在，如“回馈内容”中的两种“赠品”只可能和“优惠方式”中的“送赠”组合，而不可能和“折、减”组合，实际常用的优惠方式约为几十种（有无限制我就不一一罗列了，读者朋友自行把下面优惠规则总数乘以二）：</p>
-<h3 id="2-1-减折类（6种）"><a href="#2-1-减折类（6种）" class="headerlink" title="2.1 减折类（6种）"></a>2.1 减折类（6种）</h3><p>满折类的优惠条件主要是满N件和满N元，一般不会跟“实付xx元”搭配：</p>
-<ul>
-<li>买立减（买一件）</li>
-<li>买立折（买一件）</li>
-<li>满N件减x元</li>
-<li>满N件打x折</li>
-<li>满N元减x元</li>
-<li>满N元打x折</li>
-</ul>
-<h4 id="2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><a href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）" class="headerlink" title="2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）"></a>2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</h4><ul>
-<li>买即送（买一件）</li>
-<li>满N件送xx</li>
-<li>满N元送xx</li>
-<li>实付N元送xx</li>
-</ul>
-<p>在有的促销文案里，送虚拟卡券积分也叫满返。</p>
-<p>以上四种场景乘以赠送的三种东西，就是12种。</p>
-<h4 id="2-3-换购（4种）"><a href="#2-3-换购（4种）" class="headerlink" title="2.3 换购（4种）"></a>2.3 换购（4种）</h4><ul>
-<li>买此商品即享换购资格</li>
-<li>满N件即享换购资格</li>
-<li>满N元即享换购资格</li>
-<li>实付N元即享换购资格</li>
-</ul>
-<h4 id="2-4-送同主体商品（3种）"><a href="#2-4-送同主体商品（3种）" class="headerlink" title="2.4 送同主体商品（3种）"></a>2.4 送同主体商品（3种）</h4><ul>
-<li>买N送M</li>
-<li>满N元再送M件</li>
-<li>实付N元再送M件</li>
-</ul>
+        <p>以前，开发一个桌面软件要花费大量的人力和时间。现在，随着<code>web</code>技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的<code>Qt</code>，后来的<code>Electron</code>，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你<code>5</code>分钟之内就把一个网站变成一个可安装的桌面软件。</p>
+<h1 id="制作软件"><a href="#制作软件" class="headerlink" title="制作软件"></a>制作软件</h1><p>让我们以<a href="https://segmentfaut.com/" target="_blank" rel="noopener">https://segmentfaut.com</a>这个网站为例来制作我们的软件。</p>
+<h2 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h2><p>一句话搞定：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nativefier</span><br></pre></td></tr></table></figure>
+<h2 id="开始制作"><a href="#开始制作" class="headerlink" title="开始制作"></a>开始制作</h2><p>一句话搞定：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nativefier &quot;https://segmentfault.com&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="运行软件"><a href="#运行软件" class="headerlink" title="运行软件"></a>运行软件</h2><p>好了，软件制作好了，看看效果吧：</p>
+<p><img src="https://segmentfault.com/img/bV2nuw?w=1392&amp;h=912" alt="图片描述"></p>
+<p>就是这么简单，有没有？</p>
+<h2 id="可选步骤"><a href="#可选步骤" class="headerlink" title="可选步骤"></a>可选步骤</h2><p>以上是必经步骤，以下是可选步骤。</p>
+<p>作人不可过于懒惰，进门之后，多多少少还是需要调整一下的。<code>Nativefier</code>提供了很多选项可供设置，包括应用软件名称、图标、初始窗口尺寸、是否全屏等等等等，具体可以到<a href="https://github.com/jiahaog/nativefier/blob/master/docs/api.md" target="_blank" rel="noopener">官网</a>查询。</p>
+<p>同时，在设置好这些选项之后，为了便于以后调整和使用，最好是做一个批处理脚本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">nativefier --name &quot;SegmentFault&quot; &quot;https://segmentfault.com/&quot;</span><br></pre></td></tr></table></figure>
+<p>调整完参数之后，重新运行这个脚本就可以了。</p>
+<h1 id="制作安装包"><a href="#制作安装包" class="headerlink" title="制作安装包"></a>制作安装包</h1><p>制作完软件之后，我们得到是一个名为<code>SegmentFault.app</code>的应用程序，虽然已经可以执行了，但看上去不够专业，专业的安装包都是<code>.dmg</code>为后缀的文件，接下来我们就来制作一个<code>.dmg</code>。</p>
+<p>打开Mac自带的<strong>磁盘工具</strong>，新建一个<strong>空白映像</strong>。</p>
+<p><img src="https://segmentfault.com/img/bV2nvn?w=1034&amp;h=614" alt="图片描述"></p>
+<p>初始时的大小设置为<code>200MB</code>，因为缺省的<code>100MB</code>放不下安装文件，但是这个尺寸后面可以压缩，所以即使设置为<code>300MB</code>也没关系的。</p>
+<p><img src="https://segmentfault.com/img/bV2orp?w=932&amp;h=599" alt="clipboard.png"></p>
+<p>建好之后，双击图标打开这个文件，把刚才上面做好的<code>SegmentFault.app</code>拷贝进去，然后再在里面建立一个指向<code>Applications</code>文件夹的快捷方式，右键菜单点击显示选项，勾选『<strong>始终以图标显示方式打开</strong>』，调整图标大小，在最下面挑选一张带箭头的图片作为背景。</p>
+<p><img src="https://segmentfault.com/img/bV2osj?w=938&amp;h=627" alt="clipboard.png"></p>
+<p>最后，再次打开磁盘工具，先推出刚才的这个文件，然后点击菜单『<strong>映像</strong>』-『<strong>转换</strong>』，把它压缩一下，一个完美的<code>dmg</code>安装包就制作好了。</p>
+<p><img src="https://segmentfault.com/img/bV2os1?w=932&amp;h=599" alt="clipboard.png"></p>
+<p>新的安装包大小大约是<code>51MB</code>，我把它上传到百度网盘了，有需要的同学可以<a href="https://pan.baidu.com/s/1ghaT1mj" target="_blank" rel="noopener">下载安装</a>试用一下。<code>Windows</code>的安装包我就不制作了，制作软件方法类似，只是在制作安装包的时候，<code>Windows</code>要稍微麻烦一些。</p>
+<p>怎么样，制作一个桌面软件是不是很容易呢？你也来学着把贵司的网站变成软件吧！</p>
+<p>备注：</p>
+<p>segmentfault中mengdu大神编写过个专门为web app使用的浏览器，也是基于electron的，只要改下主页网址即可<br>项目地址：<a href="https://github.com/mengdu/vue-electron-chrome" target="_blank" rel="noopener">https://github.com/mengdu/vue…</a></p>
+<p><img src="https://github.com/mengdu/vue-electron-chrome/raw/master/20171218164524.png" alt="截图"></p>
 
       
 
@@ -382,13 +319,24 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">业务</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">macOS</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/玩物志//" class="article-tag-list-link color4">玩物志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -438,7 +386,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/11/30/零售业务分析/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangyuehan.github.io/year/05/10/macos把任意网站变成桌面软件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -452,18 +400,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/year/12/09/算法思维导图/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          算法思维导图
-        
-      </div>
-    </a>
   
-  
-    <a href="/year/11/30/移动设备怎样定位/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">移动设备怎样定位</div>
+    <a href="/year/05/09/分布式架构下的负载均衡/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">分布式架构下的负载均衡</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -490,7 +429,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-number">1.</span> <span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-number">1.4.5.</span> <span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-number">2.</span> <span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#制作软件"><span class="toc-number">1.</span> <span class="toc-text">制作软件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装工具"><span class="toc-number">1.1.</span> <span class="toc-text">安装工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始制作"><span class="toc-number">1.2.</span> <span class="toc-text">开始制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行软件"><span class="toc-number">1.3.</span> <span class="toc-text">运行软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可选步骤"><span class="toc-number">1.4.</span> <span class="toc-text">可选步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#制作安装包"><span class="toc-number">2.</span> <span class="toc-text">制作安装包</span></a></li></ol>
                     </div>
                 </span>
             </div>
