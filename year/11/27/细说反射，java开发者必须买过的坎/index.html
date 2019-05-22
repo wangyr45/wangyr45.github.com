@@ -1,46 +1,128 @@
-<!DOCTYPE html>
-<html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <title>细说反射,java开发者必须买过的坎 | lyyourc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" , user-scalable="no"">
+  <title>细说反射,java开发者必须买过的坎王约翰的博客</title>
+  <link rel="shortcut icon" href>
+  
+    
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+      <link rel="stylesheet" href="/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="/css/atom-one-dark.css">
+    
+      <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    
+      <link rel="stylesheet" href="/css/nprogress.min.css">
+    
+      <link rel="stylesheet" href="/css/valine.css">
+    
+      <link rel="stylesheet" href="/css/life.css">
+    
+  
+
+  
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  
+  
+  
+    <script src="/js/jquery-2.2.4.min.js"></script>
+  
+    <script src="https://cdn1.lncld.net/static/js/3.1.0/av-min.js"></script>
+  
+    <script src="/js/jquery.pjax.js"></script>
+  
+    <script src="/js/nprogress.min.js"></script>
+  
+    <script src="/js/tether.min.js"></script>
+  
+    <script src="/js/bootstrap.min.js"></script>
+  
+    <script src="/js/highlight.min.js"></script>
+  
+    <script src="/js/highlightjs-line-numbers.min.js"></script>
+  
+    <script src="/js/jquery.fancybox.js"></script>
+  
+    <script src="/js/jquery.qrcode.min.js"></script>
+  
+    <script src="/js/Valine.min.js"></script>
+  
   
 </head>
-</html>
 <body>
-  <nav class="app-nav">
-  
+<script>AV.init({appId:'',appKey:''});</script>
+<script type="text/javascript">
+      var config = {
+            ClasS: 'Counter',
+            el:'.views',
+            elP: '.views-post'
+      }
+</script>
+<div class="container">
+    <div class="row blog-box-shadow">
+        <!--博客主栏开始-->
+        <div class="col-xl-9 col-lg-12 blog-main" id="pjax-box">
+            <header class="blog-header">
+                <a href="http://wangyuehan.github.io" class="blog-header-mobile-title">王约翰的博客</a>
+                <a href="javascript:;" class="blog-header-navbar-btn"><i class="fa fa-bars"></i></a>
+                <nav class="blog-header-navbar blog-header-fixed">
+                    <ul class="blog-navbar-links">
+                        
+                          <li class="blog-nav-item"><a href="/" class="transition">首页</a></li>
+                        
+                          <li class="blog-nav-item"><a href="/about/" class="transition">关于</a></li>
+                        
+                          <li class="blog-nav-item"><a href="/links/" class="transition">链接</a></li>
+                        
+                        <div class="blog-navbar-right">
+                            <form action>
+                                <div class="input-group">
+                                    <input type="text" class="blog-header-search" placeholder="search...">
+                                    <buttn type="submit" class="blog-header-search-btn"><i class="fa fa-search"></i></buttn>
+                                </div>
+                            </form>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+                
+<header class="blog-post-page-title">
+    <h4>细说反射,java开发者必须买过的坎</h4>
+    <time datetime="2018-11-27T10:59:34.000Z"><i class="fa fa-clock-o"></i>2018-11-27</time>
     
-      <a href="/.">home</a>
     
-  
     
-      <a href="/archives">archive</a>
     
-  
+	
     
-      <a href="/atom.xml">rss</a>
-    
-  
-</nav>
-
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/year/11/27/细说反射，java开发者必须买过的坎/">细说反射,java开发者必须买过的坎</a>
-  </h1>
-
-  <section class="article-meta">
-    <p class="article-date">November 27 2018</p>
-  </section>
-
-  <section class="article-entry">
-    <p>很不错的关于发射的文章</p>
-<a id="more"></a>
-<p>写作是门手艺，笑对需要勇气。</p>
+</header>
+<div class="blog-main-post blog-post-page-box">
+    <article class="blog-post-block blog-post-page-content">
+        <section>
+            
+                <p>写作是门手艺，笑对需要勇气。</p>
 <p>写下这个题目的时候，我压力比较大，怕的是费力不讨好。因为反射这一块，对于大多数人员而言太熟悉了，稍微不注意就容易把方向写偏，把知识点写漏。但是，我已经写了注解和动态代理这两个知识点的博客，阅读量还可以，这两个知识点是属于反射机制中的，现在对于注解和动态代理息息相关的反射知识基础我倒是退缩了，所以说看起来很普通的东西，其实真的要一五一十地把它的门道说才方显功力。我们经常说一个人半吊子二把刀，说起来头头是道，做起来却不是那么一回事。<br>王阳明说知行合一，很多人只让自己停留在知的阶段，没有行，或者说行的能力薄弱，因为没有行来“事上练”，所以就没有办法不停检测自己的“知”是否正确，也就无法“致良知”,这就是王阳明心学，有兴趣的同学可以自行去阅读相关的书籍。听不懂的也没有关系，大体意思就是实践出真理，理论和实践相结合。对于 Java 反射这类基础知识，很多同学看了一遍就觉得懂了，其实很多时候还是没有懂，只是跟着书本被动阅读，你会产生一种错觉，这种错觉就是你以为你懂了，其实，你没有。如何检测呢？很简单，你在阅读某本书，某个章节之后，你合上书本，闭上眼睛，你试着回想一下，你刚才看过的内容，你能记住多少？别不信，你现在就可以找一本书试一试。<br>讲了这么多，我的观点其实很简单，就是认真对待你的一技之长，尽可能把每个知识点真正弄懂，带着自己的思考去学习新的概念，然后适时做一些练习来检测和巩固。</p>
 <p>下面，让我们一起认真对待之前可能没有多在意的基础知识之一—— Java 反射。</p>
 <p>注意，这篇文章因为内容太多，所以篇幅非常长。中途受不了的同学可以回到目录跳转到感兴趣的小节进行学习。</p>
@@ -1144,75 +1226,400 @@ private void boot() {
 <p>反射是非常规开发手段，它会抛弃 Java 虚拟机的很多优化，所以同样功能的代码，反射要比正常方式要慢，所以考虑到采用反射时，要考虑它的时间成本。另外，就如无人驾驶之于汽车一样，用着很爽的同时，其实风险未知。</p>
 <p>洋洋洒洒已经 2000 多行了，本来还有东西没有写完，因为这一块内容实在太多了。只能另外写一篇文章了，讲得是反射中一些常见的细节和容易出错的地方。不过，这篇文章的内容已经足够应付平常开发中所需要的反射知识了。</p>
 <h2 id="只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。"><a href="#只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。" class="headerlink" title="只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。"></a>只是，在日常开发中，利用反射飙车的时候，记得提醒自己一句：老哥，稳住。</h2><p>作者：frank909<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/briblue/article/details/74616922" target="_blank" rel="noopener">https://blog.csdn.net/briblue/article/details/74616922</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+            
+        </section>
+        <footer class="blog-post-page-tags">
+        
+			
+				
+			<a href="/tags/java/" rel="tag" data-toggle="tooltip" data-placement="top" title="Linux">java</a>
+				
+			
+		
+        </footer>
+    </article>
+    <article class="blog-post-page-readmore">
+    	
+    	
+		
+			<a href="/year/11/28/纪念曾经儿时的经典漫画——风云/" class="blog-post-page-readmore-prev" data-toggle="tooltip" data-placement="top" title="纪念曾经儿时的经典漫画——风云">上一篇</a>
+		
 
-  </section>
-</article>
+		
+		
+			<a href="/year/11/24/java虚拟机/" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="java虚拟机">下一篇</a>
+		
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar">
-    <div class="grid-item">
-      <p class="title"> lyyourc </p>
-      <p class="subtitle"> You Are The JavaScript In My HTML </p>
-    <div>
-  </div></div></section>
+        <div style="clear: both;"></div>
+    </article>
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=很不错的关于发射的文章</p>
-<a i">
-  Tweet
-</a>
+    <article class="blog-post-block blog-post-page-content">
+            <div class="row">
+            
+                <div class="col-md-4 col-sm-4 post-page-more-btn">
+                    <span class="post-comments-btn btn btn-info btn-block" data-toggle="tooltip" data-placement="top" title="本站采用Disqus评论组件，若您没有科学上网可能会无法查看并评论">加载评论</span>
+                </div>
+            
+                <div class="col-md-4 col-sm-4 post-page-more-btn">
+                    <span data-toggle="modal" data-target="#post-donate-content">
+                        <span id="post-donate-btn" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="top" title="如果您觉得本文还不错或者对您有帮助，可以考虑打赏一下作者哦">打赏本文</span>
+                    </span>
+                </div>
+                <div class="col-md-4 col-sm-4 post-page-more-btn">
+                    <span data-toggle="modal" data-target="#post-qrcode-content">
+                        <span><span id="post-qrcode-btn" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="top" title="微信扫描二维码手机端查看本文及分享本文">二维码</span></span>
+                    </span>
+                </div>
+            </div>
+        <div class="post-more-function-br"></div>
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
+        <div class="modal fade" id="post-donate-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">打赏本文</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row post-donate-content">
+                            <div class="col-md-4">
+                                <p>支付宝</p>
+                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
+                            </div>
+                            <div class="col-md-4">
+                                <p>微信</p>
+                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
+                            </div>
+                            <div class="col-md-4">
+                                <p>财付通</p>
+                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+        <div class="modal fade" id="post-qrcode-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">文章二维码</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row post-qrcode-content">
+                            <span class="post-qrcode-content-canvas"></span>
+                            <img class="post-qrcode-content-img no-lightbox" src>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // post QRcode
+            // 中文转码
+            function toUtf8(str) {
+                var out, i, len, c;
+                out = "";
+                len = str.length;
+                for (i = 0; i < len; i++) {
+                    c = str.charCodeAt(i);
+                    if ((c >= 0x0001) && (c <= 0x007F)) {
+                        out += str.charAt(i);
+                    } else if (c > 0x07FF) {
+                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    } else {
+                        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    }
+                }
+                return out;
+            }
+            // 生成
+            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("http://wangyuehan.github.io/year/11/27/细说反射，java开发者必须买过的坎/")}).hide();
+            var canvas=qrcode.find('canvas').get(0);
+            $('.post-qrcode-content-img').attr('src',canvas.toDataURL('image/jpg'));
+        </script>
 
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-
-  </section>
+        
+    </article>
+    
 </div>
 
-
-  
-    
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-<script>
-  var disqus_shortname = 'drakeleung';
-  
-  var disqus_url = 'http://wangyuehan.github.io/year/11/27/细说反射，java开发者必须买过的坎/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+                
+            <footer class="blog-footer">
+                <p class="blog-footer-left">Copyright ©  2019 <a href="http://wangyuehan.github.io">王约翰的博客</a></p>
+                <p class="blog-footer-right">Powered by <a href="https://hexo.io" target="_blank">Hexo</a>,Theme <a href="https://note.isweic.com/themes-life/" target="_blank">Life</a></p>
+            </footer>
+        </div><!--博客主栏结束-->
+        <!--博客侧边栏开始-->
+        <div class="col-xl-3 blog-sidebar">
+            <div class="blog-sidebar-title">
+                <a href>王约翰的博客</a>
+            </div>
+            <div class="blog-sidebar-logo">
+                <img src="http://dl.weic96.cn/logo.png">
+            </div>
+            <div class="blog-sidebar-count blog-sidebar-padding">
+                <div class="blog-sidebar-count-left">
+                    <p class="blog-sidebar-count-p">108</p>
+                    <span class="blog-sidebar-count-span">文章</span>
+                </div>
+                <div class="blog-sidebar-count-right">
+                    <p class="blog-sidebar-count-p">62</p>
+                    <span class="blog-sidebar-count-span">标签</span>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="blog-sidebar-icon blog-sidebar-padding">
+                <ul>
+                    <li><a href class="icon-github" target="_blank" data-toggle="tooltip" data-placement="top" title="Github"><i class="fa fa-github"></i></a></li>
+                    <li><a href class="icon-weibo" target="_blank" data-toggle="tooltip" data-placement="top" title="新浪微博"><i class="fa fa-weibo"></i></a></li>
+                    <li><a href class="icon-twitter" target="_blank" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <!--<li><a href="" class="icon-facebook" target="_blank" data-toggle="tooltip" data-placement="top" title="FaceBook"><i class="fa fa-facebook"></i></a></li>-->
+                    <li><a href="mailto:" class="icon-email" data-toggle="tooltip" data-placement="top" title="E-Mail"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href class="icon-rss" data-toggle="tooltip" target="_blank" data-placement="top" title="RSS"><i class="fa fa-rss"></i></a></li>
+                </ul>
+            </div>
+            <div class="blog-sidebar-categories">
+                <h4 class="blog-sidebar-h4"><i class="fa fa-folder-open"></i>&nbsp;文章分类</h4>
+                <ul class="list-group blog-sidebar-padding">
+                  
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/读书笔记/">读书笔记</a>
+                          <span class="badge badge-default badge-pill">12</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/玩物志/">玩物志</a>
+                          <span class="badge badge-default badge-pill">11</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/专业知识/">专业知识</a>
+                          <span class="badge badge-default badge-pill">21</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/随笔/">随笔</a>
+                          <span class="badge badge-default badge-pill">5</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/心理学/">心理学</a>
+                          <span class="badge badge-default badge-pill">10</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/产品分析/">产品分析</a>
+                          <span class="badge badge-default badge-pill">1</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/每周琢磨/">/每周琢磨</a>
+                          <span class="badge badge-default badge-pill">1</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/读书笔记/心理学/">心理学</a>
+                          <span class="badge badge-default badge-pill">1</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/精选文章/">/精选文章</a>
+                          <span class="badge badge-default badge-pill">1</span>
+                      </li>
+                    
+                      <li class="list-group-item justify-content-between">
+                          <a href="/categories/随笔/读书笔记/">读书笔记</a>
+                          <span class="badge badge-default badge-pill">1</span>
+                      </li>
+                    
+                  
+                </ul>
+            </div>
+            <div class="blog-sidebar-tags">
+                <h4 class="blog-sidebar-h4"><i class="fa fa-tag"></i>&nbsp;标签云</h4>
+                <ul class="blog-sidebar-tags-ul blog-sidebar-padding">
+                  
+                    
+                      <li><a href="/tags/营销/" class="tag-could" data-toggle="tooltip" data-placement="top" title="营销">营销</a></li>
+                    
+                      <li><a href="/tags/思维导图/" class="tag-could" data-toggle="tooltip" data-placement="top" title="思维导图">思维导图</a></li>
+                    
+                      <li><a href="/tags/读书笔记/" class="tag-could" data-toggle="tooltip" data-placement="top" title="读书笔记">读书笔记</a></li>
+                    
+                      <li><a href="/tags/随笔/" class="tag-could" data-toggle="tooltip" data-placement="top" title="随笔">随笔</a></li>
+                    
+                      <li><a href="/tags/问题/" class="tag-could" data-toggle="tooltip" data-placement="top" title="问题">问题</a></li>
+                    
+                      <li><a href="/tags/Docker/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Docker">Docker</a></li>
+                    
+                      <li><a href="/tags/nginx/" class="tag-could" data-toggle="tooltip" data-placement="top" title="nginx">nginx</a></li>
+                    
+                      <li><a href="/tags/docker/" class="tag-could" data-toggle="tooltip" data-placement="top" title="docker">docker</a></li>
+                    
+                      <li><a href="/tags/Git/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Git">Git</a></li>
+                    
+                      <li><a href="/tags/博客/" class="tag-could" data-toggle="tooltip" data-placement="top" title="博客">博客</a></li>
+                    
+                      <li><a href="/tags/Linux/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Linux">Linux</a></li>
+                    
+                      <li><a href="/tags/SAP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="SAP">SAP</a></li>
+                    
+                      <li><a href="/tags/科学上网/" class="tag-could" data-toggle="tooltip" data-placement="top" title="科学上网">科学上网</a></li>
+                    
+                      <li><a href="/tags/linux/" class="tag-could" data-toggle="tooltip" data-placement="top" title="linux">linux</a></li>
+                    
+                      <li><a href="/tags/git/" class="tag-could" data-toggle="tooltip" data-placement="top" title="git">git</a></li>
+                    
+                      <li><a href="/tags/图床/" class="tag-could" data-toggle="tooltip" data-placement="top" title="图床">图床</a></li>
+                    
+                      <li><a href="/tags/macOS/" class="tag-could" data-toggle="tooltip" data-placement="top" title="macOS">macOS</a></li>
+                    
+                      <li><a href="/tags/macos/" class="tag-could" data-toggle="tooltip" data-placement="top" title="macos">macos</a></li>
+                    
+                      <li><a href="/tags/心理学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="心理学">心理学</a></li>
+                    
+                      <li><a href="/tags/产品分析/" class="tag-could" data-toggle="tooltip" data-placement="top" title="产品分析">产品分析</a></li>
+                    
+                      <li><a href="/tags/产品/" class="tag-could" data-toggle="tooltip" data-placement="top" title="产品">产品</a></li>
+                    
+                      <li><a href="/tags/资源/" class="tag-could" data-toggle="tooltip" data-placement="top" title="资源">资源</a></li>
+                    
+                      <li><a href="/tags/传播学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="传播学">传播学</a></li>
+                    
+                      <li><a href="/tags/软件工程/" class="tag-could" data-toggle="tooltip" data-placement="top" title="软件工程">软件工程</a></li>
+                    
+                      <li><a href="/tags/审美/" class="tag-could" data-toggle="tooltip" data-placement="top" title="审美">审美</a></li>
+                    
+                      <li><a href="/tags/工具/" class="tag-could" data-toggle="tooltip" data-placement="top" title="工具">工具</a></li>
+                    
+                      <li><a href="/tags/微信公众号/" class="tag-could" data-toggle="tooltip" data-placement="top" title="微信公众号">微信公众号</a></li>
+                    
+                      <li><a href="/tags/撸猫/" class="tag-could" data-toggle="tooltip" data-placement="top" title="撸猫">撸猫</a></li>
+                    
+                      <li><a href="/tags/数码/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数码">数码</a></li>
+                    
+                      <li><a href="/tags/新博客/" class="tag-could" data-toggle="tooltip" data-placement="top" title="新博客">新博客</a></li>
+                    
+                      <li><a href="/tags/原理/" class="tag-could" data-toggle="tooltip" data-placement="top" title="原理">原理</a></li>
+                    
+                      <li><a href="/tags/算法/" class="tag-could" data-toggle="tooltip" data-placement="top" title="算法">算法</a></li>
+                    
+                      <li><a href="/tags/攻击技术/" class="tag-could" data-toggle="tooltip" data-placement="top" title="攻击技术">攻击技术</a></li>
+                    
+                      <li><a href="/tags/系统设计/" class="tag-could" data-toggle="tooltip" data-placement="top" title="系统设计">系统设计</a></li>
+                    
+                      <li><a href="/tags/消息队列/" class="tag-could" data-toggle="tooltip" data-placement="top" title="消息队列">消息队列</a></li>
+                    
+                      <li><a href="/tags/哲学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="哲学">哲学</a></li>
+                    
+                      <li><a href="/tags/运营/" class="tag-could" data-toggle="tooltip" data-placement="top" title="运营">运营</a></li>
+                    
+                      <li><a href="/tags/业务/" class="tag-could" data-toggle="tooltip" data-placement="top" title="业务">业务</a></li>
+                    
+                      <li><a href="/tags/项目管理/" class="tag-could" data-toggle="tooltip" data-placement="top" title="项目管理">项目管理</a></li>
+                    
+                      <li><a href="/tags/好文章/" class="tag-could" data-toggle="tooltip" data-placement="top" title="好文章">好文章</a></li>
+                    
+                      <li><a href="/tags/api/" class="tag-could" data-toggle="tooltip" data-placement="top" title="api">api</a></li>
+                    
+                      <li><a href="/tags/每周琢磨/" class="tag-could" data-toggle="tooltip" data-placement="top" title="每周琢磨">每周琢磨</a></li>
+                    
+                      <li><a href="/tags/分布式/" class="tag-could" data-toggle="tooltip" data-placement="top" title="分布式">分布式</a></li>
+                    
+                      <li><a href="/tags/负载均衡/" class="tag-could" data-toggle="tooltip" data-placement="top" title="负载均衡">负载均衡</a></li>
+                    
+                      <li><a href="/tags/影评/" class="tag-could" data-toggle="tooltip" data-placement="top" title="影评">影评</a></li>
+                    
+                      <li><a href="/tags/游戏/" class="tag-could" data-toggle="tooltip" data-placement="top" title="游戏">游戏</a></li>
+                    
+                      <li><a href="/tags/正则表达式/" class="tag-could" data-toggle="tooltip" data-placement="top" title="正则表达式">正则表达式</a></li>
+                    
+                      <li><a href="/tags/缓存/" class="tag-could" data-toggle="tooltip" data-placement="top" title="缓存">缓存</a></li>
+                    
+                      <li><a href="/tags/集群/" class="tag-could" data-toggle="tooltip" data-placement="top" title="集群">集群</a></li>
+                    
+                      <li><a href="/tags/java/" class="tag-could" data-toggle="tooltip" data-placement="top" title="java">java</a></li>
+                    
+                      <li><a href="/tags/源码/" class="tag-could" data-toggle="tooltip" data-placement="top" title="源码">源码</a></li>
+                    
+                      <li><a href="/tags/J2EE/" class="tag-could" data-toggle="tooltip" data-placement="top" title="J2EE">J2EE</a></li>
+                    
+                      <li><a href="/tags/MySQL/" class="tag-could" data-toggle="tooltip" data-placement="top" title="MySQL">MySQL</a></li>
+                    
+                      <li><a href="/tags/数据库/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数据库">数据库</a></li>
+                    
+                      <li><a href="/tags/redis/" class="tag-could" data-toggle="tooltip" data-placement="top" title="redis">redis</a></li>
+                    
+                      <li><a href="/tags/计算机网络/" class="tag-could" data-toggle="tooltip" data-placement="top" title="计算机网络">计算机网络</a></li>
+                    
+                      <li><a href="/tags/HTTP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="HTTP">HTTP</a></li>
+                    
+                      <li><a href="/tags/网络/" class="tag-could" data-toggle="tooltip" data-placement="top" title="网络">网络</a></li>
+                    
+                      <li><a href="/tags/经济学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="经济学">经济学</a></li>
+                    
+                      <li><a href="/tags/操作系统/" class="tag-could" data-toggle="tooltip" data-placement="top" title="操作系统">操作系统</a></li>
+                    
+                      <li><a href="/tags/微服务/" class="tag-could" data-toggle="tooltip" data-placement="top" title="微服务">微服务</a></li>
+                    
+                      <li><a href="/tags/大数据/" class="tag-could" data-toggle="tooltip" data-placement="top" title="大数据">大数据</a></li>
+                    
+                  
+                </ul>
+            </div>
+            <script>
+              // 博客侧栏标签云随机色
+              var tag_cloud = $('.tag-could');
+              tag_cloud.each(function () {
+                  var Cnum = 9;
+                  var Crand = parseInt(Math.random() * Cnum);
+                  $(this).addClass("tag-could" + Crand);
+              })
+            </script>
+            <!--返回顶部按钮-->
+            <div class="retop">
+                <i class="fa fa-angle-up"></i>
+            </div>
+        </div><!--博客侧边栏结束-->
+    </div>
+</div>
+<script src="/js/LeanStatistics.min.js"></script>
+<script src="/js/Life.js"></script>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    otherF();
+    LeanStatistics();
+    $(document).pjax('a', '#pjax-box', {fragment:'#pjax-box', timeout:8000}).on('pjax:complete', function() {
+      $('pre code').each(function(i, block){
+        hljs.highlightBlock(block);
+      })
+      $('code.hljs').each(function(i, block) {
+        hljs.lineNumbersBlock(block);
+      });
+      LeanStatistics();
+    }).on('pjax:start', function() { NProgress.start(); }).on('pjax:end',   function() {
+      NProgress.done();
+      otherF();
+    });
 </script>
-
-
-  
-</main>
-
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":80,"height":160},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>
