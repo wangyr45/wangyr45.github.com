@@ -2,98 +2,43 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <title>一篇文章带你了解APP PUSH推送机制 | lyyourc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
-  
-  <title>一篇文章带你了解APP PUSH推送机制 | 王约翰的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="写作目的： 本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。">
-<meta name="keywords" content="好文章">
-<meta property="og:type" content="article">
-<meta property="og:title" content="一篇文章带你了解APP PUSH推送机制">
-<meta property="og:url" content="http://wangyuehan.github.io/year/04/26/一篇文章带你了解APP-PUSH推送机制/index.html">
-<meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="写作目的： 本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img.pmcaff.com/FlfolmCf7jnGE5r8yUCqPV5a3Tr--picture">
-<meta property="og:image" content="https://img.pmcaff.com/FrJy5X0myRMYsO-9THXFWibGrGGs-picture">
-<meta property="og:updated_time" content="2019-04-26T06:41:52.238Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一篇文章带你了解APP PUSH推送机制">
-<meta name="twitter:description" content="写作目的： 本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。">
-<meta name="twitter:image" content="https://img.pmcaff.com/FlfolmCf7jnGE5r8yUCqPV5a3Tr--picture">
-  
-    <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">王约翰的博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-一篇文章带你了解APP-PUSH推送机制" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/year/04/26/一篇文章带你了解APP-PUSH推送机制/" class="article-date">
-  <time datetime="2019-04-26T06:39:38.000Z" itemprop="datePublished">2019-04-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <nav class="app-nav">
   
-    <h1 class="article-title" itemprop="name">
-      一篇文章带你了解APP PUSH推送机制
-    </h1>
+    
+      <a href="/.">home</a>
+    
   
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>写作目的：</strong></p>
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/year/04/26/一篇文章带你了解APP-PUSH推送机制/">一篇文章带你了解APP PUSH推送机制</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">April 26 2019</p>
+  </section>
+
+  <section class="article-entry">
+    <p><strong>写作目的：</strong></p>
 <p>本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。</p>
 <a id="more"></a>
 <h1 id="一-APP-PUSH定义与价值"><a href="#一-APP-PUSH定义与价值" class="headerlink" title="一 APP PUSH定义与价值"></a>一 APP PUSH定义与价值</h1><p>APP PUSH的定义为在手机终端锁屏状态下通知栏展示或在操作前台顶端弹出的消息通知，点击后可唤起对应的APP，并在APP内跳转到指定页面。</p>
@@ -128,151 +73,73 @@
 <p>以上内容为个人经验总结，欢迎讨论指正。</p>
 <p>转自PMCAFF<a href="https://www.pmcaff.com/user/profile/7PQA50xdQw" target="_blank" rel="noopener">卓别木</a>,学习拜读！</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wangyuehan.github.io/year/04/26/一篇文章带你了解APP-PUSH推送机制/" data-id="cjvx6alj0006sa77b8wfd3of3" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/好文章/">好文章</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/year/05/05/欢迎访问新博客-www-wangyurui-top/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          欢迎访问新博客-www.wangyurui.top
-        
-      </div>
-    </a>
-  
-  
-    <a href="/year/04/25/hexo博客微博图床失效解决办法/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo博客微博图床失效解决办法</div>
-    </a>
-  
-</nav>
-
-  
+  </section>
 </article>
 
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> lyyourc </p>
+      <p class="subtitle"> You Are The JavaScript In My HTML </p>
+    <div>
+  </div></div></section>
 
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=<strong>写作目的：</stron">
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
 </section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/每周琢磨/">/每周琢磨</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/精选文章/">/精选文章</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业知识/">专业知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品分析/">产品分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心理学/">心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/玩物志/">玩物志</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/心理学/">心理学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/读书笔记/">读书笔记</a></li></ul></li></ul>
-    </div>
-  </div>
 
-
+<script>
+  var disqus_shortname = 'drakeleung';
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/J2EE/">J2EE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SAP/">SAP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/">macOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macos/">macos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务/">业务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品/">产品</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品分析/">产品分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/传播学/">传播学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原理/">原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哲学/">哲学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图床/">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据/">大数据</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好文章/">好文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/审美/">审美</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影评/">影评</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信公众号/">微信公众号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心理学/">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/撸猫/">撸猫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/攻击技术/">攻击技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数码/">数码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新博客/">新博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每周琢磨/">每周琢磨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源码/">源码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统设计/">系统设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经济学/">经济学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/缓存/">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/营销/">营销</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/负载均衡/">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运营/">运营</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/问题/">问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集群/">集群</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
-    </div>
-  </div>
+  var disqus_url = 'http://wangyuehan.github.io/year/04/26/一篇文章带你了解APP-PUSH推送机制/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/Linux/" style="font-size: 14.29px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/docker/" style="font-size: 12.86px;">docker</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 17.14px;">java</a> <a href="/tags/linux/" style="font-size: 12.86px;">linux</a> <a href="/tags/macOS/" style="font-size: 11.43px;">macOS</a> <a href="/tags/macos/" style="font-size: 10px;">macos</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/业务/" style="font-size: 10px;">业务</a> <a href="/tags/产品/" style="font-size: 17.14px;">产品</a> <a href="/tags/产品分析/" style="font-size: 10px;">产品分析</a> <a href="/tags/传播学/" style="font-size: 10px;">传播学</a> <a href="/tags/分布式/" style="font-size: 11.43px;">分布式</a> <a href="/tags/博客/" style="font-size: 11.43px;">博客</a> <a href="/tags/原理/" style="font-size: 10px;">原理</a> <a href="/tags/哲学/" style="font-size: 11.43px;">哲学</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/好文章/" style="font-size: 10px;">好文章</a> <a href="/tags/审美/" style="font-size: 10px;">审美</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/微信公众号/" style="font-size: 10px;">微信公众号</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心理学/" style="font-size: 20px;">心理学</a> <a href="/tags/思维导图/" style="font-size: 12.86px;">思维导图</a> <a href="/tags/撸猫/" style="font-size: 10px;">撸猫</a> <a href="/tags/操作系统/" style="font-size: 11.43px;">操作系统</a> <a href="/tags/攻击技术/" style="font-size: 10px;">攻击技术</a> <a href="/tags/数据库/" style="font-size: 12.86px;">数据库</a> <a href="/tags/数码/" style="font-size: 11.43px;">数码</a> <a href="/tags/新博客/" style="font-size: 10px;">新博客</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/每周琢磨/" style="font-size: 10px;">每周琢磨</a> <a href="/tags/消息队列/" style="font-size: 10px;">消息队列</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/源码/" style="font-size: 11.43px;">源码</a> <a href="/tags/科学上网/" style="font-size: 10px;">科学上网</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/系统设计/" style="font-size: 15.71px;">系统设计</a> <a href="/tags/经济学/" style="font-size: 10px;">经济学</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网络/" style="font-size: 12.86px;">网络</a> <a href="/tags/营销/" style="font-size: 12.86px;">营销</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/读书笔记/" style="font-size: 18.57px;">读书笔记</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a> <a href="/tags/运营/" style="font-size: 11.43px;">运营</a> <a href="/tags/问题/" style="font-size: 11.43px;">问题</a> <a href="/tags/随笔/" style="font-size: 12.86px;">随笔</a> <a href="/tags/集群/" style="font-size: 10px;">集群</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
-    </div>
-  </div>
+</main>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/year/05/21/万象优图鉴别XX图片/">万象优图鉴别XX图片</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/21/centos搭建wordpress/">centos搭建wordpress</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/15/巴纳姆效应：真实的裂变/">巴纳姆效应：真实的裂变</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/14/鸟笼效应/">鸟笼效应</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/13/审美的初级阶段/">审美的初级阶段</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 John Wang<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":80,"height":160},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

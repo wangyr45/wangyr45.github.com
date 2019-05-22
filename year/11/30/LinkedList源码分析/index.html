@@ -2,97 +2,43 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <title>LinkedList源码分析 | lyyourc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
-  
-  <title>LinkedList源码分析 | 王约翰的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="整理的关于LinkedList相关源码知识点。">
-<meta name="keywords" content="java,源码">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LinkedList源码分析">
-<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/LinkedList源码分析/index.html">
-<meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="整理的关于LinkedList相关源码知识点。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032">
-<meta property="og:updated_time" content="2018-11-30T06:15:58.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LinkedList源码分析">
-<meta name="twitter:description" content="整理的关于LinkedList相关源码知识点。">
-<meta name="twitter:image" content="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032">
-  
-    <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">王约翰的博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-LinkedList源码分析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/year/11/30/LinkedList源码分析/" class="article-date">
-  <time datetime="2018-11-30T06:14:54.000Z" itemprop="datePublished">2018-11-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <nav class="app-nav">
   
-    <h1 class="article-title" itemprop="name">
-      LinkedList源码分析
-    </h1>
+    
+      <a href="/.">home</a>
+    
   
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>整理的关于LinkedList相关源码知识点。<br><a id="more"></a></p>
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/year/11/30/LinkedList源码分析/">LinkedList源码分析</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">November 30 2018</p>
+  </section>
+
+  <section class="article-entry">
+    <p>整理的关于LinkedList相关源码知识点。<br><a id="more"></a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>LinkedList是一个实现了List接口和Deque接口的双端链表。 LinkedList底层的链表结构使它支持高效的插入和删除操作，另外它实现了Deque接口，使得LinkedList类也具有队列的特性; LinkedList不是线程安全的，如果想使LinkedList变成线程安全的，可以调用静态类Collections类中的synchronizedList方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list=Collections.synchronizedList(new LinkedList(...));</span><br></pre></td></tr></table></figure>
 <h2 id="内部结构分析"><a href="#内部结构分析" class="headerlink" title="内部结构分析"></a>内部结构分析</h2><p><strong>如下图所示：</strong> <a href="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032" alt="LinkedList内部结构"></a> 看完了图之后，我们再看LinkedList类中的一个<strong>内部私有类Node</strong>就很好理解了：</p>
@@ -149,151 +95,73 @@
 <p><strong>remove(int index)</strong>：删除指定位置的元素</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public E remove(int index) &#123;</span><br><span class="line">        //检查index范围</span><br><span class="line">        checkElementIndex(index);</span><br><span class="line">        //将节点删除</span><br><span class="line">        return unlink(node(index));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="LinkedList类常用方法测试"><a href="#LinkedList类常用方法测试" class="headerlink" title="LinkedList类常用方法测试"></a>LinkedList类常用方法测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">package list;</span><br><span class="line"></span><br><span class="line">import java.util.Iterator;</span><br><span class="line">import java.util.LinkedList;</span><br><span class="line"></span><br><span class="line">public class LinkedListDemo &#123;</span><br><span class="line">    public static void main(String[] srgs) &#123;</span><br><span class="line">        //创建存放int类型的linkedList</span><br><span class="line">        LinkedList&lt;Integer&gt; linkedList = new LinkedList&lt;&gt;();</span><br><span class="line">        /************************** linkedList的基本操作 ************************/</span><br><span class="line">        linkedList.addFirst(0); // 添加元素到列表开头</span><br><span class="line">        linkedList.add(1); // 在列表结尾添加元素</span><br><span class="line">        linkedList.add(2, 2); // 在指定位置添加元素</span><br><span class="line">        linkedList.addLast(3); // 添加元素到列表结尾</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;LinkedList（直接输出的）: &quot; + linkedList);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;getFirst()获得第一个元素: &quot; + linkedList.getFirst()); // 返回此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;getLast()获得第最后一个元素: &quot; + linkedList.getLast()); // 返回此列表的最后一个元素</span><br><span class="line">        System.out.println(&quot;removeFirst()删除第一个元素并返回: &quot; + linkedList.removeFirst()); // 移除并返回此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;removeLast()删除最后一个元素并返回: &quot; + linkedList.removeLast()); // 移除并返回此列表的最后一个元素</span><br><span class="line">        System.out.println(&quot;After remove:&quot; + linkedList);</span><br><span class="line">        System.out.println(&quot;contains()方法判断列表是否包含1这个元素:&quot; + linkedList.contains(1)); // 判断此列表包含指定元素，如果是，则返回true</span><br><span class="line">        System.out.println(&quot;该linkedList的大小 : &quot; + linkedList.size()); // 返回此列表的元素个数</span><br><span class="line"></span><br><span class="line">        /************************** 位置访问操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.set(1, 3); // 将此列表中指定位置的元素替换为指定的元素</span><br><span class="line">        System.out.println(&quot;After set(1, 3):&quot; + linkedList);</span><br><span class="line">        System.out.println(&quot;get(1)获得指定位置（这里为1）的元素: &quot; + linkedList.get(1)); // 返回此列表中指定位置处的元素</span><br><span class="line"></span><br><span class="line">        /************************** Search操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.add(3);</span><br><span class="line">        System.out.println(&quot;indexOf(3): &quot; + linkedList.indexOf(3)); // 返回此列表中首次出现的指定元素的索引</span><br><span class="line">        System.out.println(&quot;lastIndexOf(3): &quot; + linkedList.lastIndexOf(3));// 返回此列表中最后出现的指定元素的索引</span><br><span class="line"></span><br><span class="line">        /************************** Queue操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        System.out.println(&quot;peek(): &quot; + linkedList.peek()); // 获取但不移除此列表的头</span><br><span class="line">        System.out.println(&quot;element(): &quot; + linkedList.element()); // 获取但不移除此列表的头</span><br><span class="line">        linkedList.poll(); // 获取并移除此列表的头</span><br><span class="line">        System.out.println(&quot;After poll():&quot; + linkedList);</span><br><span class="line">        linkedList.remove();</span><br><span class="line">        System.out.println(&quot;After remove():&quot; + linkedList); // 获取并移除此列表的头</span><br><span class="line">        linkedList.offer(4);</span><br><span class="line">        System.out.println(&quot;After offer(4):&quot; + linkedList); // 将指定元素添加到此列表的末尾</span><br><span class="line"></span><br><span class="line">        /************************** Deque操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.offerFirst(2); // 在此列表的开头插入指定的元素</span><br><span class="line">        System.out.println(&quot;After offerFirst(2):&quot; + linkedList);</span><br><span class="line">        linkedList.offerLast(5); // 在此列表末尾插入指定的元素</span><br><span class="line">        System.out.println(&quot;After offerLast(5):&quot; + linkedList);</span><br><span class="line">        System.out.println(&quot;peekFirst(): &quot; + linkedList.peekFirst()); // 获取但不移除此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;peekLast(): &quot; + linkedList.peekLast()); // 获取但不移除此列表的第一个元素</span><br><span class="line">        linkedList.pollFirst(); // 获取并移除此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;After pollFirst():&quot; + linkedList);</span><br><span class="line">        linkedList.pollLast(); // 获取并移除此列表的最后一个元素</span><br><span class="line">        System.out.println(&quot;After pollLast():&quot; + linkedList);</span><br><span class="line">        linkedList.push(2); // 将元素推入此列表所表示的堆栈（插入到列表的头）</span><br><span class="line">        System.out.println(&quot;After push(2):&quot; + linkedList);</span><br><span class="line">        linkedList.pop(); // 从此列表所表示的堆栈处弹出一个元素（获取并移除列表第一个元素）</span><br><span class="line">        System.out.println(&quot;After pop():&quot; + linkedList);</span><br><span class="line">        linkedList.add(3);</span><br><span class="line">        linkedList.removeFirstOccurrence(3); // 从此列表中移除第一次出现的指定元素（从头部到尾部遍历列表）</span><br><span class="line">        System.out.println(&quot;After removeFirstOccurrence(3):&quot; + linkedList);</span><br><span class="line">        linkedList.removeLastOccurrence(3); // 从此列表中移除最后一次出现的指定元素（从头部到尾部遍历列表）</span><br><span class="line">        System.out.println(&quot;After removeFirstOccurrence(3):&quot; + linkedList);</span><br><span class="line"></span><br><span class="line">        /************************** 遍历操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.clear();</span><br><span class="line">        for (int i = 0; i &lt; 100000; i++) &#123;</span><br><span class="line">            linkedList.add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        // 迭代器遍历</span><br><span class="line">        long start = System.currentTimeMillis();</span><br><span class="line">        Iterator&lt;Integer&gt; iterator = linkedList.iterator();</span><br><span class="line">        while (iterator.hasNext()) &#123;</span><br><span class="line">            iterator.next();</span><br><span class="line">        &#125;</span><br><span class="line">        long end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;Iterator：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 顺序遍历(随机遍历)</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        for (int i = 0; i &lt; linkedList.size(); i++) &#123;</span><br><span class="line">            linkedList.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;for：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 另一种for循环遍历</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        for (Integer i : linkedList)</span><br><span class="line">            ;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;for2：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 通过pollFirst()或pollLast()来遍历LinkedList</span><br><span class="line">        LinkedList&lt;Integer&gt; temp1 = new LinkedList&lt;&gt;();</span><br><span class="line">        temp1.addAll(linkedList);</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        while (temp1.size() != 0) &#123;</span><br><span class="line">            temp1.pollFirst();</span><br><span class="line">        &#125;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;pollFirst()或pollLast()：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 通过removeFirst()或removeLast()来遍历LinkedList</span><br><span class="line">        LinkedList&lt;Integer&gt; temp2 = new LinkedList&lt;&gt;();</span><br><span class="line">        temp2.addAll(linkedList);</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        while (temp2.size() != 0) &#123;</span><br><span class="line">            temp2.removeFirst();</span><br><span class="line">        &#125;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;removeFirst()或removeLast()：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wangyuehan.github.io/year/11/30/LinkedList源码分析/" data-id="cjvx6aljq008oa77bsbrdo8au" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/year/11/30/HashMap源码学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          HashMap源码学习
-        
-      </div>
-    </a>
-  
-  
-    <a href="/year/11/30/J2EE基础知识回顾/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">J2EE基础知识回顾</div>
-    </a>
-  
-</nav>
-
-  
+  </section>
 </article>
 
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> lyyourc </p>
+      <p class="subtitle"> You Are The JavaScript In My HTML </p>
+    <div>
+  </div></div></section>
 
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=整理的关于LinkedList相关源码知">
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
 </section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/每周琢磨/">/每周琢磨</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/精选文章/">/精选文章</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业知识/">专业知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品分析/">产品分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心理学/">心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/玩物志/">玩物志</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/心理学/">心理学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/读书笔记/">读书笔记</a></li></ul></li></ul>
-    </div>
-  </div>
 
-
+<script>
+  var disqus_shortname = 'drakeleung';
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/J2EE/">J2EE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SAP/">SAP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/">macOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macos/">macos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务/">业务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品/">产品</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品分析/">产品分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/传播学/">传播学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原理/">原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哲学/">哲学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图床/">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据/">大数据</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好文章/">好文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/审美/">审美</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影评/">影评</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信公众号/">微信公众号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心理学/">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/撸猫/">撸猫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/攻击技术/">攻击技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数码/">数码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新博客/">新博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每周琢磨/">每周琢磨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源码/">源码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统设计/">系统设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经济学/">经济学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/缓存/">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/营销/">营销</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/负载均衡/">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运营/">运营</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/问题/">问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集群/">集群</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
-    </div>
-  </div>
+  var disqus_url = 'http://wangyuehan.github.io/year/11/30/LinkedList源码分析/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/Linux/" style="font-size: 14.29px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/docker/" style="font-size: 12.86px;">docker</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 17.14px;">java</a> <a href="/tags/linux/" style="font-size: 12.86px;">linux</a> <a href="/tags/macOS/" style="font-size: 11.43px;">macOS</a> <a href="/tags/macos/" style="font-size: 10px;">macos</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/业务/" style="font-size: 10px;">业务</a> <a href="/tags/产品/" style="font-size: 17.14px;">产品</a> <a href="/tags/产品分析/" style="font-size: 10px;">产品分析</a> <a href="/tags/传播学/" style="font-size: 10px;">传播学</a> <a href="/tags/分布式/" style="font-size: 11.43px;">分布式</a> <a href="/tags/博客/" style="font-size: 11.43px;">博客</a> <a href="/tags/原理/" style="font-size: 10px;">原理</a> <a href="/tags/哲学/" style="font-size: 11.43px;">哲学</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/好文章/" style="font-size: 10px;">好文章</a> <a href="/tags/审美/" style="font-size: 10px;">审美</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/微信公众号/" style="font-size: 10px;">微信公众号</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心理学/" style="font-size: 20px;">心理学</a> <a href="/tags/思维导图/" style="font-size: 12.86px;">思维导图</a> <a href="/tags/撸猫/" style="font-size: 10px;">撸猫</a> <a href="/tags/操作系统/" style="font-size: 11.43px;">操作系统</a> <a href="/tags/攻击技术/" style="font-size: 10px;">攻击技术</a> <a href="/tags/数据库/" style="font-size: 12.86px;">数据库</a> <a href="/tags/数码/" style="font-size: 11.43px;">数码</a> <a href="/tags/新博客/" style="font-size: 10px;">新博客</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/每周琢磨/" style="font-size: 10px;">每周琢磨</a> <a href="/tags/消息队列/" style="font-size: 10px;">消息队列</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/源码/" style="font-size: 11.43px;">源码</a> <a href="/tags/科学上网/" style="font-size: 10px;">科学上网</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/系统设计/" style="font-size: 15.71px;">系统设计</a> <a href="/tags/经济学/" style="font-size: 10px;">经济学</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网络/" style="font-size: 12.86px;">网络</a> <a href="/tags/营销/" style="font-size: 12.86px;">营销</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/读书笔记/" style="font-size: 18.57px;">读书笔记</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a> <a href="/tags/运营/" style="font-size: 11.43px;">运营</a> <a href="/tags/问题/" style="font-size: 11.43px;">问题</a> <a href="/tags/随笔/" style="font-size: 12.86px;">随笔</a> <a href="/tags/集群/" style="font-size: 10px;">集群</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
-    </div>
-  </div>
+</main>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/year/05/21/万象优图鉴别XX图片/">万象优图鉴别XX图片</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/21/centos搭建wordpress/">centos搭建wordpress</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/15/巴纳姆效应：真实的裂变/">巴纳姆效应：真实的裂变</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/14/鸟笼效应/">鸟笼效应</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/13/审美的初级阶段/">审美的初级阶段</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 John Wang<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":80,"height":160},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

@@ -2,166 +2,43 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <title>计算机网络-大纲 | lyyourc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
-  
-  <title>计算机网络-大纲 | 王约翰的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="根据Github众大神精简整理的计算机网络相关知识。持续跟进添加知识进度。ing….">
-<meta name="keywords" content="网络">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络-大纲">
-<meta property="og:url" content="http://wangyuehan.github.io/year/10/18/计算机网络-大纲/index.html">
-<meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="根据Github众大神精简整理的计算机网络相关知识。持续跟进添加知识进度。ing….">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/network-of-networks.gif">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/46cec213-3048-4a80-aded-fdd577542801.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/168e893c-e4a0-4ba4-b81f-9d993483abd0.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/2ad244f5-939c-49fa-9385-69bc688677ab.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/3939369b-3a4a-48a0-b9eb-3efae26dd400.png">
-<meta property="og:image" content="https://camo.githubusercontent.com/5fbb2567e91e2f2fc7a325e90f74fc6a70340e1f/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f64656c61793d5c667261637b6c28626974297d7b76286269742f73297d">
-<meta property="og:image" content="https://camo.githubusercontent.com/192f15a49dfcd9505b636df833b8e07a79223702/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f64656c61793d5c667261637b6c286d297d7b76286d2f73297d">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/426df589-6f97-4622-b74d-4a81fcb1da8e.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/45e0e0bf-386d-4280-a341-a0b9496c7674.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/d4eef1e2-5703-4ca4-82ab-8dda93d6b81f.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/ac106e7e-489a-4082-abd9-dabebe48394c.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f0a31c04-6e26-408c-8395-88f4e2ae928b.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/ea5f3efe-d5e6-499b-b278-9e898af61257.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/c5022dd3-be22-4250-b9f6-38ae984a04d7.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/c4c14368-519c-4a0e-8331-0a553715e3e7.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/fa2273c3-1b5f-48ce-8e8b-441a4116c1c4.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/5999e5de-7c16-4b52-b3aa-6dc7b58c7894.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/21041ec2-babb-483f-bf47-8b8148eec162.png">
-<meta property="og:image" content="https://camo.githubusercontent.com/375366f321c81ac7e67837c3fce1f1bc6f8a427d/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c7665637b537d">
-<meta property="og:image" content="https://camo.githubusercontent.com/858d1274c608f6d519d53b7cb436dc8f08149571/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c7665637b547d">
-<meta property="og:image" content="https://camo.githubusercontent.com/c865e31d591fff6d3e40f0db755f42a3d0c7b067/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c667261637b317d7b6d7d5c7665637b537d5c63646f745c7665637b547d3d30">
-<meta property="og:image" content="https://camo.githubusercontent.com/375366f321c81ac7e67837c3fce1f1bc6f8a427d/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c7665637b537d">
-<meta property="og:image" content="https://camo.githubusercontent.com/0c73e56917dca0ab8ecec4029a5811beeea55e6a/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c667261637b317d7b6d7d5c7665637b537d5c63646f745c7665637b537d3d31">
-<meta property="og:image" content="https://camo.githubusercontent.com/a3a70b9617bfb5361021f4367d864a852a40df0b/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c667261637b317d7b6d7d5c7665637b537d5c63646f745c7665637b53277d3d2d31">
-<meta property="og:image" content="https://camo.githubusercontent.com/a6ac16cdd1032e3879adb3216d357c68b506cf1d/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c7665637b53277d">
-<meta property="og:image" content="https://camo.githubusercontent.com/375366f321c81ac7e67837c3fce1f1bc6f8a427d/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c7665637b537d">
-<meta property="og:image" content="https://camo.githubusercontent.com/375366f321c81ac7e67837c3fce1f1bc6f8a427d/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f5c7665637b537d">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/92ad9bae-7d02-43ba-8115-a9d6f530ca28.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/5aa82b89-f266-44da-887d-18f31f01d8ef.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/ddcf2327-8d84-425d-8535-121a94bcb88d.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/69f16984-a66f-4288-82e4-79b4aa43e835.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/a6026bb4-3daf-439f-b1ec-a5a24e19d2fb.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/50d38e84-238f-4081-8876-14ef6d7938b5.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/c9cfcd20-c901-435f-9a07-3e46830c359f.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/a74b70ac-323a-4b31-b4d5-90569b8a944b.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/7b038838-c75b-4538-ae84-6299386704e5.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/0a9f4125-b6ab-4e94-a807-fd7070ae726a.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/23ba890e-e11c-45e2-a20c-64d217f83430.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/cbf50eb8-22b4-4528-a2e7-d187143d57f7.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/66192382-558b-4b05-a35d-ac4a2b1a9811.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/b9d79a5a-e7af-499b-b989-f10483e71b8b.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/8006a450-6c2f-498c-a928-c927f758b1d0.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/e3124763-f75e-46c3-ba82-341e6c98d862.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/aa29cc88-7256-4399-8c7f-3cf4a6489559.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/1556770b-8c01-4681-af10-46f1df69202c.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/2719067e-b299-4639-9065-bed6729dbf0b.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/c3369072-c740-43b0-b276-202bd1d3960d.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/1ab49e39-012b-4383-8284-26570987e3c4.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/9cd0ae20-4fb5-4017-a000-f7d3a0eb3529.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/d4c3a4a1-0846-46ec-9cc3-eaddfca71254.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/55dc4e84-573d-4c13-a765-52ed1dd251f9.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/e92d0ebc-7d46-413b-aec1-34a39602f787.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f87afe72-c2df-4c12-ac03-9b8d581a8af8.jpg">
-<meta property="og:image" content="https://camo.githubusercontent.com/02e9a4a23b05bcf814d9e5d0c1b79a6bb5ae2aee/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f525454733d28312d61292a2852545473292b612a525454">
-<meta property="og:image" content="https://camo.githubusercontent.com/da3da0a6cad7ef2af7d7adcd2940277780c35325/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f52544f3d525454732b342a5254545f64">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/a3253deb-8d21-40a1-aae4-7d178e4aa319.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/51e2ed95-65b8-4ae9-8af3-65602d452a25.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/910f613f-514f-4534-87dd-9b4699d59d31.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f61b5419-c94a-4df1-8d4d-aed9ae8cc6d5.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/b54eeb16-0b0e-484c-be62-306f57c40d77.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/03f47940-3843-4b51-9e42-5dcaff44858b.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/be5c2c61-86d2-4dba-a289-b48ea23219de.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/bf16c541-0717-473b-b75d-4115864f4fbf.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/7b3efa99-d306-4982-8cfb-e7153c33aab4.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/ed5522bb-3a60-481c-8654-43e7195a48fe.png">
-<meta property="og:updated_time" content="2019-03-09T08:25:40.355Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络-大纲">
-<meta name="twitter:description" content="根据Github众大神精简整理的计算机网络相关知识。持续跟进添加知识进度。ing….">
-<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/network-of-networks.gif">
-  
-    <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">王约翰的博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-计算机网络-大纲" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/year/10/18/计算机网络-大纲/" class="article-date">
-  <time datetime="2018-10-18T12:17:05.000Z" itemprop="datePublished">2018-10-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/专业知识/">专业知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <nav class="app-nav">
   
-    <h1 class="article-title" itemprop="name">
-      计算机网络-大纲
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>根据Github众大神精简整理的计算机网络相关知识。<br>持续跟进添加知识进度。<br>ing….<br><a id="more"></a></p>
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/year/10/18/计算机网络-大纲/">计算机网络-大纲</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">October 18 2018</p>
+  </section>
+
+  <section class="article-entry">
+    <p>根据Github众大神精简整理的计算机网络相关知识。<br>持续跟进添加知识进度。<br>ing….<br><a id="more"></a></p>
 <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><p>网络把主机连接起来，而互联网是把多种不同的网络连接起来，因此互联网是网络的网络。</p>
 <p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/network-of-networks.gif" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/network-of-networks.gif" alt="img"></a></p>
 <h2 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h2><p>互联网服务提供商 ISP 可以从互联网管理机构获得许多 IP 地址，同时拥有通信线路以及路由器等联网设备，个人或机构向 ISP 缴纳一定的费用就可以接入互联网。</p>
@@ -659,151 +536,73 @@
 <li><a href="http://slideplayer.com/slide/5115386/" target="_blank" rel="noopener">Circuit Switching (a) Circuit switching. (b) Packet switching.</a></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wangyuehan.github.io/year/10/18/计算机网络-大纲/" data-id="cjvx6all300bea77bgp8l1q8o" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/year/10/21/SAP后勤 - 1.ERP和SAP/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          SAP后勤模块实施攻略——1.ERP和SAP
-        
-      </div>
-    </a>
-  
-  
-    <a href="/year/06/11/影评 - 春夏秋冬又一春/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">春夏秋冬又一春</div>
-    </a>
-  
-</nav>
-
-  
+  </section>
 </article>
 
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar">
+    <div class="grid-item">
+      <p class="title"> lyyourc </p>
+      <p class="subtitle"> You Are The JavaScript In My HTML </p>
+    <div>
+  </div></div></section>
 
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a class="twitter-share-button" data-size="large" data-via="DrakeLeung" href="https://twitter.com/intent/tweet?text=根据Github众大神精简整理的计算机网">
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
 </section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/每周琢磨/">/每周琢磨</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/精选文章/">/精选文章</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业知识/">专业知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品分析/">产品分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心理学/">心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/玩物志/">玩物志</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/心理学/">心理学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/读书笔记/">读书笔记</a></li></ul></li></ul>
-    </div>
-  </div>
 
-
+<script>
+  var disqus_shortname = 'drakeleung';
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/J2EE/">J2EE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SAP/">SAP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/">macOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macos/">macos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业务/">业务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品/">产品</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品分析/">产品分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/传播学/">传播学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原理/">原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哲学/">哲学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图床/">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据/">大数据</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好文章/">好文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/审美/">审美</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影评/">影评</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信公众号/">微信公众号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心理学/">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/撸猫/">撸猫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/攻击技术/">攻击技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数码/">数码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新博客/">新博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每周琢磨/">每周琢磨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源码/">源码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统设计/">系统设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经济学/">经济学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/缓存/">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/营销/">营销</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/负载均衡/">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运营/">运营</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/问题/">问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/集群/">集群</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
-    </div>
-  </div>
+  var disqus_url = 'http://wangyuehan.github.io/year/10/18/计算机网络-大纲/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/Linux/" style="font-size: 14.29px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/docker/" style="font-size: 12.86px;">docker</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 17.14px;">java</a> <a href="/tags/linux/" style="font-size: 12.86px;">linux</a> <a href="/tags/macOS/" style="font-size: 11.43px;">macOS</a> <a href="/tags/macos/" style="font-size: 10px;">macos</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/业务/" style="font-size: 10px;">业务</a> <a href="/tags/产品/" style="font-size: 17.14px;">产品</a> <a href="/tags/产品分析/" style="font-size: 10px;">产品分析</a> <a href="/tags/传播学/" style="font-size: 10px;">传播学</a> <a href="/tags/分布式/" style="font-size: 11.43px;">分布式</a> <a href="/tags/博客/" style="font-size: 11.43px;">博客</a> <a href="/tags/原理/" style="font-size: 10px;">原理</a> <a href="/tags/哲学/" style="font-size: 11.43px;">哲学</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/好文章/" style="font-size: 10px;">好文章</a> <a href="/tags/审美/" style="font-size: 10px;">审美</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/微信公众号/" style="font-size: 10px;">微信公众号</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心理学/" style="font-size: 20px;">心理学</a> <a href="/tags/思维导图/" style="font-size: 12.86px;">思维导图</a> <a href="/tags/撸猫/" style="font-size: 10px;">撸猫</a> <a href="/tags/操作系统/" style="font-size: 11.43px;">操作系统</a> <a href="/tags/攻击技术/" style="font-size: 10px;">攻击技术</a> <a href="/tags/数据库/" style="font-size: 12.86px;">数据库</a> <a href="/tags/数码/" style="font-size: 11.43px;">数码</a> <a href="/tags/新博客/" style="font-size: 10px;">新博客</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/每周琢磨/" style="font-size: 10px;">每周琢磨</a> <a href="/tags/消息队列/" style="font-size: 10px;">消息队列</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/源码/" style="font-size: 11.43px;">源码</a> <a href="/tags/科学上网/" style="font-size: 10px;">科学上网</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/系统设计/" style="font-size: 15.71px;">系统设计</a> <a href="/tags/经济学/" style="font-size: 10px;">经济学</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网络/" style="font-size: 12.86px;">网络</a> <a href="/tags/营销/" style="font-size: 12.86px;">营销</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/读书笔记/" style="font-size: 18.57px;">读书笔记</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a> <a href="/tags/运营/" style="font-size: 11.43px;">运营</a> <a href="/tags/问题/" style="font-size: 11.43px;">问题</a> <a href="/tags/随笔/" style="font-size: 12.86px;">随笔</a> <a href="/tags/集群/" style="font-size: 10px;">集群</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
-    </div>
-  </div>
+</main>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/year/05/21/万象优图鉴别XX图片/">万象优图鉴别XX图片</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/21/centos搭建wordpress/">centos搭建wordpress</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/15/巴纳姆效应：真实的裂变/">巴纳姆效应：真实的裂变</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/14/鸟笼效应/">鸟笼效应</a>
-          </li>
-        
-          <li>
-            <a href="/year/05/13/审美的初级阶段/">审美的初级阶段</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 John Wang<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":80,"height":160},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>
