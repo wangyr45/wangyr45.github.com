@@ -1,134 +1,139 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!doctype html>
-<html lang="zh-Hans">
+<!DOCTYPE html>
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" , user-scalable="no"">
-  <title>计算机操作系统-大纲王约翰的博客</title>
-  <link rel="shortcut icon" href="http://prj8y63ca.bkt.clouddn.com/2019-05-22-touxiang.png">
+  <meta charset="utf-8">
+  
+  <title>计算机操作系统-大纲 | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="持续跟进添加知识进度。ing….">
+<meta name="keywords" content="操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机操作系统-大纲">
+<meta property="og:url" content="http://wangyuehan.github.io/year/03/20/计算机操作系统-大纲/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="持续跟进添加知识进度。ing….">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/tGPV0.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2_14_microkernelArchitecture.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a6ac2b08-3861-4e85-baa8-382287bfee9f.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/3cd630ea-017c-488d-ad1d-732b4efeddf5.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ProcessState.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8c662999-c16c-481c-9f40-1fdba5bc9167.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/042cf928-3c8e-4815-ae9c-f2780202c68f.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a9077f06-7584-4f2b-8c20-3a8e46928820.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/53cd9ade-b0a6-4399-b4de-7f1fbd06cdfb.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2ac50b81-d92a-4401-b9ec-f2113ecc3076.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/c037c901-7eae-4e31-a1e4-9d41329e5c3e.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/b1fa0453-a4b0-4eae-a352-48acca8fff74.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e1eda3d5-5ec8-4708-8e25-1a04c5e11f48.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ed523051-608f-4c3f-b343-383e2d194470.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/d160ec2e-cfe2-4640-bda7-62f53e58b8c0.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/62e0dd4f-44c3-43ee-bb6e-fedb9e068519.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/7b281b1e-0595-402b-ae35-8c91084c33c1.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/cf4386a1-58c9-4eca-a17f-e12b1e9770eb.png">
+<meta property="og:image" content="https://camo.githubusercontent.com/7be506554fa5a86670d2bd1f22c786ae88e0bd31/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f37efbc8c30efbc8c31efbc8c32efbc8c30efbc8c33efbc8c30efbc8c34efbc8c32efbc8c33efbc8c30efbc8c33efbc8c32efbc8c31efbc8c32efbc8c30efbc8c31efbc8c37efbc8c30efbc8c31">
+<meta property="og:image" content="https://camo.githubusercontent.com/bb6f10172ad16d1094a12ee638783cbf3a15370a/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f34efbc8c37efbc8c30efbc8c37efbc8c31efbc8c30efbc8c31efbc8c32efbc8c31efbc8c32efbc8c36">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/eb859228-c0f2-4bce-910d-d9f76929352b.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ecf8ad5d-5403-48b9-b6e7-f2e20ffe8fca.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/5f5ef0b6-98ea-497c-a007-f6c55288eab1.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/22de0538-7c6e-4365-bd3b-8ce3c5900216.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e0900bb2-220a-43b7-9aa9-1d5cd55ff56e.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/014fbc4d-d873-4a12-b160-867ddaed9807.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/4e2485e4-34bd-4967-9f02-0c093b797aaa.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/271ce08f-c124-475f-b490-be44fedc6d2e.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/b396d726-b75f-4a32-89a2-03a7b6e19f6f.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/47d98583-8bb0-45cc-812d-47eefa0a4a40.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/76dc7769-1aac-4888-9bea-064f1caa8e77.jpg">
+<meta property="og:updated_time" content="2019-03-20T11:38:26.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机操作系统-大纲">
+<meta name="twitter:description" content="持续跟进添加知识进度。ing….">
+<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/tGPV0.png">
+  
+    <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
   
     
-    
-      <link rel="stylesheet" href="/css/bootstrap.min.css">
-    
-      <link rel="stylesheet" href="/css/font-awesome.min.css">
-    
-      <link rel="stylesheet" href="/css/atom-one-dark.css">
-    
-      <link rel="stylesheet" href="/css/jquery.fancybox.css">
-    
-      <link rel="stylesheet" href="/css/nprogress.min.css">
-    
-      <link rel="stylesheet" href="/css/valine.css">
-    
-      <link rel="stylesheet" href="/css/life.css">
-    
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-  
-
-  <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  
-  
-  
-    <script src="/js/jquery-2.2.4.min.js"></script>
-  
-    <script src="https://cdn1.lncld.net/static/js/3.1.0/av-min.js"></script>
-  
-    <script src="/js/jquery.pjax.js"></script>
-  
-    <script src="/js/nprogress.min.js"></script>
-  
-    <script src="/js/tether.min.js"></script>
-  
-    <script src="/js/bootstrap.min.js"></script>
-  
-    <script src="/js/highlight.min.js"></script>
-  
-    <script src="/js/highlightjs-line-numbers.min.js"></script>
-  
-    <script src="/js/jquery.fancybox.js"></script>
-  
-    <script src="/js/jquery.qrcode.min.js"></script>
-  
-    <script src="/js/Valine.min.js"></script>
-  
-  
 </head>
+</html>
 <body>
-<script>AV.init({appId:'',appKey:''});</script>
-<script type="text/javascript">
-      var config = {
-            ClasS: 'Counter',
-            el:'.views',
-            elP: '.views-post'
-      }
-</script>
-<div class="container">
-    <div class="row blog-box-shadow">
-        <!--博客主栏开始-->
-        <div class="col-xl-9 col-lg-12 blog-main" id="pjax-box">
-            <header class="blog-header">
-                <a href="http://wangyuehan.github.io" class="blog-header-mobile-title">王约翰的博客</a>
-                <a href="javascript:;" class="blog-header-navbar-btn"><i class="fa fa-bars"></i></a>
-                <nav class="blog-header-navbar blog-header-fixed">
-                    <ul class="blog-navbar-links">
-                        
-                          <li class="blog-nav-item"><a href="/" class="transition">首页</a></li>
-                        
-                          <li class="blog-nav-item"><a href="/about/" class="transition">关于</a></li>
-                        
-                          <li class="blog-nav-item"><a href="/links/" class="transition">链接</a></li>
-                        
-                        <div class="blog-navbar-right">
-                            <form action>
-                                <div class="input-group">
-                                    <input type="text" class="blog-header-search" placeholder="search...">
-                                    <buttn type="submit" class="blog-header-search-btn"><i class="fa fa-search"></i></buttn>
-                                </div>
-                            </form>
-                        </div>
-                    </ul>
-                </nav>
-            </header>
-                
-<header class="blog-post-page-title">
-    <h4>计算机操作系统-大纲</h4>
-    <time datetime="2019-03-20T11:38:05.000Z"><i class="fa fa-clock-o"></i>2019-03-20</time>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
     
-    
-    
-    
-	
-        <span><i class="fa fa-folder-o"></i>
-    		
-    	       <a href="/categories/专业知识/" rel="categories" data-toggle="tooltip" data-placement="top" title="Linux">专业知识</a>
-    		
-        </span>
-	
-    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
 </header>
-<div class="blog-main-post blog-post-page-box">
-    <article class="blog-post-block blog-post-page-content">
-        <section>
-            
-                <p></p>
+      <div class="outer">
+        <section id="main"><article id="post-计算机操作系统-大纲" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/03/20/计算机操作系统-大纲/" class="article-date">
+  <time datetime="2019-03-20T11:38:05.000Z" itemprop="datePublished">2019-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/专业知识/">专业知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机操作系统-大纲
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>持续跟进添加知识进度。<br>ing….<br><a id="more"></a></p>
 <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
 <p>并行需要硬件支持，如多流水线、多核处理器或者分布式计算系统。</p>
 <p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
@@ -533,400 +538,233 @@
 <li><a href="https://www.slideshare.net/rkolahalam/inter-process-communication-presentation1" target="_blank" rel="noopener">Inter Process Communication Presentation[1]</a></li>
 <li><a href="https://blogs.cisco.com/datacenter/decoding-ucs-invicta-part-1" target="_blank" rel="noopener">Decoding UCS Invicta – Part 1</a></li>
 </ul>
-            
-        </section>
-        <footer class="blog-post-page-tags">
-        
-			
-				
-			<a href="/tags/操作系统/" rel="tag" data-toggle="tooltip" data-placement="top" title="Linux">操作系统</a>
-				
-			
-		
-        </footer>
-    </article>
-    <article class="blog-post-page-readmore">
-    	
-    	
-		
-			<a href="/year/03/22/情感附加值/" class="blog-post-page-readmore-prev" data-toggle="tooltip" data-placement="top" title="情感附加值">上一篇</a>
-		
 
-		
-		
-			<a href="/year/03/20/武志红的心理学/" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="武志红的心理学">下一篇</a>
-		
-
-        <div style="clear: both;"></div>
-    </article>
-
-    <article class="blog-post-block blog-post-page-content">
-            <div class="row">
-            
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span class="post-comments-btn btn btn-info btn-block" data-toggle="tooltip" data-placement="top" title="本站采用Disqus评论组件，若您没有科学上网可能会无法查看并评论">加载评论</span>
-                </div>
-            
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span data-toggle="modal" data-target="#post-donate-content">
-                        <span id="post-donate-btn" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="top" title="如果您觉得本文还不错或者对您有帮助，可以考虑打赏一下作者哦">打赏本文</span>
-                    </span>
-                </div>
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span data-toggle="modal" data-target="#post-qrcode-content">
-                        <span><span id="post-qrcode-btn" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="top" title="微信扫描二维码手机端查看本文及分享本文">二维码</span></span>
-                    </span>
-                </div>
-            </div>
-        <div class="post-more-function-br"></div>
-
-        <div class="modal fade" id="post-donate-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">打赏本文</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row post-donate-content">
-                            <div class="col-md-4">
-                                <p>支付宝</p>
-                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
-                            </div>
-                            <div class="col-md-4">
-                                <p>微信</p>
-                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
-                            </div>
-                            <div class="col-md-4">
-                                <p>财付通</p>
-                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="post-qrcode-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">文章二维码</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row post-qrcode-content">
-                            <span class="post-qrcode-content-canvas"></span>
-                            <img class="post-qrcode-content-img no-lightbox" src>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <script>
-            // post QRcode
-            // 中文转码
-            function toUtf8(str) {
-                var out, i, len, c;
-                out = "";
-                len = str.length;
-                for (i = 0; i < len; i++) {
-                    c = str.charCodeAt(i);
-                    if ((c >= 0x0001) && (c <= 0x007F)) {
-                        out += str.charAt(i);
-                    } else if (c > 0x07FF) {
-                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
-                        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
-                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-                    } else {
-                        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
-                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-                    }
-                }
-                return out;
-            }
-            // 生成
-            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("http://wangyuehan.github.io/year/03/20/计算机操作系统-大纲/")}).hide();
-            var canvas=qrcode.find('canvas').get(0);
-            $('.post-qrcode-content-img').attr('src',canvas.toDataURL('image/jpg'));
-        </script>
-
-        
-    </article>
-    
-</div>
-
-                
-            <footer class="blog-footer">
-                <p class="blog-footer-left">Copyright ©  2019 <a href="http://wangyuehan.github.io">王约翰的博客</a></p>
-                <p class="blog-footer-right">Powered by <a href="https://hexo.io" target="_blank">Hexo</a>,Theme <a href="https://note.isweic.com/themes-life/" target="_blank">Life</a></p>
-            </footer>
-        </div><!--博客主栏结束-->
-        <!--博客侧边栏开始-->
-        <div class="col-xl-3 blog-sidebar">
-            <div class="blog-sidebar-title">
-                <a href>王约翰的博客</a>
-            </div>
-            <div class="blog-sidebar-logo">
-                <img src="http://prj8y63ca.bkt.clouddn.com/2019-05-22-touxiang.png">
-            </div>
-            <div class="blog-sidebar-count blog-sidebar-padding">
-                <div class="blog-sidebar-count-left">
-                    <p class="blog-sidebar-count-p">108</p>
-                    <span class="blog-sidebar-count-span">文章</span>
-                </div>
-                <div class="blog-sidebar-count-right">
-                    <p class="blog-sidebar-count-p">62</p>
-                    <span class="blog-sidebar-count-span">标签</span>
-                </div>
-                <div style="clear: both;"></div>
-            </div>
-            <div class="blog-sidebar-icon blog-sidebar-padding">
-                <ul>
-                    <li><a href class="icon-github" target="_blank" data-toggle="tooltip" data-placement="top" title="Github"><i class="fa fa-github"></i></a></li>
-                    <li><a href class="icon-weibo" target="_blank" data-toggle="tooltip" data-placement="top" title="新浪微博"><i class="fa fa-weibo"></i></a></li>
-                    <li><a href class="icon-twitter" target="_blank" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                    <!--<li><a href="" class="icon-facebook" target="_blank" data-toggle="tooltip" data-placement="top" title="FaceBook"><i class="fa fa-facebook"></i></a></li>-->
-                    <li><a href="mailto:" class="icon-email" data-toggle="tooltip" data-placement="top" title="E-Mail"><i class="fa fa-envelope"></i></a></li>
-                    <li><a href class="icon-rss" data-toggle="tooltip" target="_blank" data-placement="top" title="RSS"><i class="fa fa-rss"></i></a></li>
-                </ul>
-            </div>
-            <div class="blog-sidebar-categories">
-                <h4 class="blog-sidebar-h4"><i class="fa fa-folder-open"></i>&nbsp;文章分类</h4>
-                <ul class="list-group blog-sidebar-padding">
-                  
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/读书笔记/">读书笔记</a>
-                          <span class="badge badge-default badge-pill">12</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/玩物志/">玩物志</a>
-                          <span class="badge badge-default badge-pill">11</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/专业知识/">专业知识</a>
-                          <span class="badge badge-default badge-pill">21</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/随笔/">随笔</a>
-                          <span class="badge badge-default badge-pill">5</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/心理学/">心理学</a>
-                          <span class="badge badge-default badge-pill">10</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/产品分析/">产品分析</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/每周琢磨/">/每周琢磨</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/读书笔记/心理学/">心理学</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/精选文章/">/精选文章</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/随笔/读书笔记/">读书笔记</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                  
-                </ul>
-            </div>
-            <div class="blog-sidebar-tags">
-                <h4 class="blog-sidebar-h4"><i class="fa fa-tag"></i>&nbsp;标签云</h4>
-                <ul class="blog-sidebar-tags-ul blog-sidebar-padding">
-                  
-                    
-                      <li><a href="/tags/营销/" class="tag-could" data-toggle="tooltip" data-placement="top" title="营销">营销</a></li>
-                    
-                      <li><a href="/tags/思维导图/" class="tag-could" data-toggle="tooltip" data-placement="top" title="思维导图">思维导图</a></li>
-                    
-                      <li><a href="/tags/读书笔记/" class="tag-could" data-toggle="tooltip" data-placement="top" title="读书笔记">读书笔记</a></li>
-                    
-                      <li><a href="/tags/随笔/" class="tag-could" data-toggle="tooltip" data-placement="top" title="随笔">随笔</a></li>
-                    
-                      <li><a href="/tags/问题/" class="tag-could" data-toggle="tooltip" data-placement="top" title="问题">问题</a></li>
-                    
-                      <li><a href="/tags/Docker/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Docker">Docker</a></li>
-                    
-                      <li><a href="/tags/nginx/" class="tag-could" data-toggle="tooltip" data-placement="top" title="nginx">nginx</a></li>
-                    
-                      <li><a href="/tags/docker/" class="tag-could" data-toggle="tooltip" data-placement="top" title="docker">docker</a></li>
-                    
-                      <li><a href="/tags/Git/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Git">Git</a></li>
-                    
-                      <li><a href="/tags/博客/" class="tag-could" data-toggle="tooltip" data-placement="top" title="博客">博客</a></li>
-                    
-                      <li><a href="/tags/Linux/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Linux">Linux</a></li>
-                    
-                      <li><a href="/tags/SAP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="SAP">SAP</a></li>
-                    
-                      <li><a href="/tags/科学上网/" class="tag-could" data-toggle="tooltip" data-placement="top" title="科学上网">科学上网</a></li>
-                    
-                      <li><a href="/tags/linux/" class="tag-could" data-toggle="tooltip" data-placement="top" title="linux">linux</a></li>
-                    
-                      <li><a href="/tags/git/" class="tag-could" data-toggle="tooltip" data-placement="top" title="git">git</a></li>
-                    
-                      <li><a href="/tags/图床/" class="tag-could" data-toggle="tooltip" data-placement="top" title="图床">图床</a></li>
-                    
-                      <li><a href="/tags/macOS/" class="tag-could" data-toggle="tooltip" data-placement="top" title="macOS">macOS</a></li>
-                    
-                      <li><a href="/tags/macos/" class="tag-could" data-toggle="tooltip" data-placement="top" title="macos">macos</a></li>
-                    
-                      <li><a href="/tags/心理学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="心理学">心理学</a></li>
-                    
-                      <li><a href="/tags/产品分析/" class="tag-could" data-toggle="tooltip" data-placement="top" title="产品分析">产品分析</a></li>
-                    
-                      <li><a href="/tags/产品/" class="tag-could" data-toggle="tooltip" data-placement="top" title="产品">产品</a></li>
-                    
-                      <li><a href="/tags/资源/" class="tag-could" data-toggle="tooltip" data-placement="top" title="资源">资源</a></li>
-                    
-                      <li><a href="/tags/传播学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="传播学">传播学</a></li>
-                    
-                      <li><a href="/tags/软件工程/" class="tag-could" data-toggle="tooltip" data-placement="top" title="软件工程">软件工程</a></li>
-                    
-                      <li><a href="/tags/审美/" class="tag-could" data-toggle="tooltip" data-placement="top" title="审美">审美</a></li>
-                    
-                      <li><a href="/tags/工具/" class="tag-could" data-toggle="tooltip" data-placement="top" title="工具">工具</a></li>
-                    
-                      <li><a href="/tags/微信公众号/" class="tag-could" data-toggle="tooltip" data-placement="top" title="微信公众号">微信公众号</a></li>
-                    
-                      <li><a href="/tags/撸猫/" class="tag-could" data-toggle="tooltip" data-placement="top" title="撸猫">撸猫</a></li>
-                    
-                      <li><a href="/tags/数码/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数码">数码</a></li>
-                    
-                      <li><a href="/tags/新博客/" class="tag-could" data-toggle="tooltip" data-placement="top" title="新博客">新博客</a></li>
-                    
-                      <li><a href="/tags/原理/" class="tag-could" data-toggle="tooltip" data-placement="top" title="原理">原理</a></li>
-                    
-                      <li><a href="/tags/算法/" class="tag-could" data-toggle="tooltip" data-placement="top" title="算法">算法</a></li>
-                    
-                      <li><a href="/tags/攻击技术/" class="tag-could" data-toggle="tooltip" data-placement="top" title="攻击技术">攻击技术</a></li>
-                    
-                      <li><a href="/tags/系统设计/" class="tag-could" data-toggle="tooltip" data-placement="top" title="系统设计">系统设计</a></li>
-                    
-                      <li><a href="/tags/消息队列/" class="tag-could" data-toggle="tooltip" data-placement="top" title="消息队列">消息队列</a></li>
-                    
-                      <li><a href="/tags/哲学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="哲学">哲学</a></li>
-                    
-                      <li><a href="/tags/运营/" class="tag-could" data-toggle="tooltip" data-placement="top" title="运营">运营</a></li>
-                    
-                      <li><a href="/tags/业务/" class="tag-could" data-toggle="tooltip" data-placement="top" title="业务">业务</a></li>
-                    
-                      <li><a href="/tags/项目管理/" class="tag-could" data-toggle="tooltip" data-placement="top" title="项目管理">项目管理</a></li>
-                    
-                      <li><a href="/tags/好文章/" class="tag-could" data-toggle="tooltip" data-placement="top" title="好文章">好文章</a></li>
-                    
-                      <li><a href="/tags/api/" class="tag-could" data-toggle="tooltip" data-placement="top" title="api">api</a></li>
-                    
-                      <li><a href="/tags/每周琢磨/" class="tag-could" data-toggle="tooltip" data-placement="top" title="每周琢磨">每周琢磨</a></li>
-                    
-                      <li><a href="/tags/分布式/" class="tag-could" data-toggle="tooltip" data-placement="top" title="分布式">分布式</a></li>
-                    
-                      <li><a href="/tags/负载均衡/" class="tag-could" data-toggle="tooltip" data-placement="top" title="负载均衡">负载均衡</a></li>
-                    
-                      <li><a href="/tags/影评/" class="tag-could" data-toggle="tooltip" data-placement="top" title="影评">影评</a></li>
-                    
-                      <li><a href="/tags/游戏/" class="tag-could" data-toggle="tooltip" data-placement="top" title="游戏">游戏</a></li>
-                    
-                      <li><a href="/tags/正则表达式/" class="tag-could" data-toggle="tooltip" data-placement="top" title="正则表达式">正则表达式</a></li>
-                    
-                      <li><a href="/tags/缓存/" class="tag-could" data-toggle="tooltip" data-placement="top" title="缓存">缓存</a></li>
-                    
-                      <li><a href="/tags/集群/" class="tag-could" data-toggle="tooltip" data-placement="top" title="集群">集群</a></li>
-                    
-                      <li><a href="/tags/java/" class="tag-could" data-toggle="tooltip" data-placement="top" title="java">java</a></li>
-                    
-                      <li><a href="/tags/源码/" class="tag-could" data-toggle="tooltip" data-placement="top" title="源码">源码</a></li>
-                    
-                      <li><a href="/tags/J2EE/" class="tag-could" data-toggle="tooltip" data-placement="top" title="J2EE">J2EE</a></li>
-                    
-                      <li><a href="/tags/MySQL/" class="tag-could" data-toggle="tooltip" data-placement="top" title="MySQL">MySQL</a></li>
-                    
-                      <li><a href="/tags/数据库/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数据库">数据库</a></li>
-                    
-                      <li><a href="/tags/redis/" class="tag-could" data-toggle="tooltip" data-placement="top" title="redis">redis</a></li>
-                    
-                      <li><a href="/tags/计算机网络/" class="tag-could" data-toggle="tooltip" data-placement="top" title="计算机网络">计算机网络</a></li>
-                    
-                      <li><a href="/tags/HTTP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="HTTP">HTTP</a></li>
-                    
-                      <li><a href="/tags/网络/" class="tag-could" data-toggle="tooltip" data-placement="top" title="网络">网络</a></li>
-                    
-                      <li><a href="/tags/经济学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="经济学">经济学</a></li>
-                    
-                      <li><a href="/tags/操作系统/" class="tag-could" data-toggle="tooltip" data-placement="top" title="操作系统">操作系统</a></li>
-                    
-                      <li><a href="/tags/微服务/" class="tag-could" data-toggle="tooltip" data-placement="top" title="微服务">微服务</a></li>
-                    
-                      <li><a href="/tags/大数据/" class="tag-could" data-toggle="tooltip" data-placement="top" title="大数据">大数据</a></li>
-                    
-                  
-                </ul>
-            </div>
-            <script>
-              // 博客侧栏标签云随机色
-              var tag_cloud = $('.tag-could');
-              tag_cloud.each(function () {
-                  var Cnum = 9;
-                  var Crand = parseInt(Math.random() * Cnum);
-                  $(this).addClass("tag-could" + Crand);
-              })
-            </script>
-            <!--返回顶部按钮-->
-            <div class="retop">
-                <i class="fa fa-angle-up"></i>
-            </div>
-        </div><!--博客侧边栏结束-->
+      
     </div>
-</div>
-<script src="/js/LeanStatistics.min.js"></script>
-<script src="/js/Life.js"></script>
-<script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-    otherF();
-    LeanStatistics();
-    $(document).pjax('a', '#pjax-box', {fragment:'#pjax-box', timeout:8000}).on('pjax:complete', function() {
-      $('pre code').each(function(i, block){
-        hljs.highlightBlock(block);
-      })
-      $('code.hljs').each(function(i, block) {
-        hljs.lineNumbersBlock(block);
-      });
-      LeanStatistics();
-    }).on('pjax:start', function() { NProgress.start(); }).on('pjax:end',   function() {
-      NProgress.done();
-      otherF();
-    });
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/03/20/计算机操作系统-大纲/" data-id="cjvyhd60e00b2al7bqx0bhy5t" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/year/03/22/情感附加值/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          情感附加值
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/03/20/武志红的心理学/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">武志红的心理学</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、概述"><span class="toc-number">1.</span> <span class="toc-text">一、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特征"><span class="toc-number">1.1.</span> <span class="toc-text">基本特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-并发"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 并发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-共享"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 共享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-虚拟"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 虚拟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-异步"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 异步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本功能"><span class="toc-number">1.2.</span> <span class="toc-text">基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进程管理"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 进程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-内存管理"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-文件管理"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 文件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-设备管理"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 设备管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统调用"><span class="toc-number">1.3.</span> <span class="toc-text">系统调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#大内核和微内核"><span class="toc-number">1.4.</span> <span class="toc-text">大内核和微内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-大内核"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 大内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-微内核"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 微内核</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中断分类"><span class="toc-number">1.5.</span> <span class="toc-text">中断分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-外中断"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 外中断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-异常"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-陷入"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 陷入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、进程管理"><span class="toc-number">2.</span> <span class="toc-text">二、进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程与线程"><span class="toc-number">2.1.</span> <span class="toc-text">进程与线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进程"><span class="toc-number">2.1.1.</span> <span class="toc-text">1. 进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-线程"><span class="toc-number">2.1.2.</span> <span class="toc-text">2. 线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-区别"><span class="toc-number">2.1.3.</span> <span class="toc-text">3. 区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程状态的切换"><span class="toc-number">2.2.</span> <span class="toc-text">进程状态的切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程调度算法"><span class="toc-number">2.3.</span> <span class="toc-text">进程调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-批处理系统"><span class="toc-number">2.3.1.</span> <span class="toc-text">1. 批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-交互式系统"><span class="toc-number">2.3.2.</span> <span class="toc-text">2. 交互式系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-实时系统"><span class="toc-number">2.3.3.</span> <span class="toc-text">3. 实时系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程同步"><span class="toc-number">2.4.</span> <span class="toc-text">进程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-临界区"><span class="toc-number">2.4.1.</span> <span class="toc-text">1. 临界区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-同步与互斥"><span class="toc-number">2.4.2.</span> <span class="toc-text">2. 同步与互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-信号量"><span class="toc-number">2.4.3.</span> <span class="toc-text">3. 信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-管程"><span class="toc-number">2.4.4.</span> <span class="toc-text">4. 管程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典同步问题"><span class="toc-number">2.5.</span> <span class="toc-text">经典同步问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-读者-写者问题"><span class="toc-number">2.5.1.</span> <span class="toc-text">1. 读者-写者问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-哲学家进餐问题"><span class="toc-number">2.5.2.</span> <span class="toc-text">2. 哲学家进餐问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程通信"><span class="toc-number">2.6.</span> <span class="toc-text">进程通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-管道"><span class="toc-number">2.6.1.</span> <span class="toc-text">1. 管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-FIFO"><span class="toc-number">2.6.2.</span> <span class="toc-text">2. FIFO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-消息队列"><span class="toc-number">2.6.3.</span> <span class="toc-text">3. 消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-信号量"><span class="toc-number">2.6.4.</span> <span class="toc-text">4. 信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-共享存储"><span class="toc-number">2.6.5.</span> <span class="toc-text">5. 共享存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-套接字"><span class="toc-number">2.6.6.</span> <span class="toc-text">6. 套接字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、死锁"><span class="toc-number">3.</span> <span class="toc-text">三、死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#必要条件"><span class="toc-number">3.1.</span> <span class="toc-text">必要条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理方法"><span class="toc-number">3.2.</span> <span class="toc-text">处理方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鸵鸟策略"><span class="toc-number">3.3.</span> <span class="toc-text">鸵鸟策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁检测与死锁恢复"><span class="toc-number">3.4.</span> <span class="toc-text">死锁检测与死锁恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-每种类型一个资源的死锁检测"><span class="toc-number">3.4.1.</span> <span class="toc-text">1. 每种类型一个资源的死锁检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-每种类型多个资源的死锁检测"><span class="toc-number">3.4.2.</span> <span class="toc-text">2. 每种类型多个资源的死锁检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-死锁恢复"><span class="toc-number">3.4.3.</span> <span class="toc-text">3. 死锁恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁预防"><span class="toc-number">3.5.</span> <span class="toc-text">死锁预防</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-破坏互斥条件"><span class="toc-number">3.5.1.</span> <span class="toc-text">1. 破坏互斥条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-破坏占有和等待条件"><span class="toc-number">3.5.2.</span> <span class="toc-text">2. 破坏占有和等待条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-破坏不可抢占条件"><span class="toc-number">3.5.3.</span> <span class="toc-text">3. 破坏不可抢占条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-破坏环路等待"><span class="toc-number">3.5.4.</span> <span class="toc-text">4. 破坏环路等待</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁避免"><span class="toc-number">3.6.</span> <span class="toc-text">死锁避免</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安全状态"><span class="toc-number">3.6.1.</span> <span class="toc-text">1. 安全状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-单个资源的银行家算法"><span class="toc-number">3.6.2.</span> <span class="toc-text">2. 单个资源的银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-多个资源的银行家算法"><span class="toc-number">3.6.3.</span> <span class="toc-text">3. 多个资源的银行家算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、内存管理"><span class="toc-number">4.</span> <span class="toc-text">四、内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟内存"><span class="toc-number">4.1.</span> <span class="toc-text">虚拟内存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页系统地址映射"><span class="toc-number">4.2.</span> <span class="toc-text">分页系统地址映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面置换算法"><span class="toc-number">4.3.</span> <span class="toc-text">页面置换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-最佳"><span class="toc-number">4.3.1.</span> <span class="toc-text">1. 最佳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-最近最久未使用"><span class="toc-number">4.3.2.</span> <span class="toc-text">2. 最近最久未使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-最近未使用"><span class="toc-number">4.3.3.</span> <span class="toc-text">3. 最近未使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-先进先出"><span class="toc-number">4.3.4.</span> <span class="toc-text">4. 先进先出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-第二次机会算法"><span class="toc-number">4.3.5.</span> <span class="toc-text">5. 第二次机会算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-时钟"><span class="toc-number">4.3.6.</span> <span class="toc-text">6. 时钟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分段"><span class="toc-number">4.4.</span> <span class="toc-text">分段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#段页式"><span class="toc-number">4.5.</span> <span class="toc-text">段页式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页与分段的比较"><span class="toc-number">4.6.</span> <span class="toc-text">分页与分段的比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、设备管理"><span class="toc-number">5.</span> <span class="toc-text">五、设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘结构"><span class="toc-number">5.1.</span> <span class="toc-text">磁盘结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘调度算法"><span class="toc-number">5.2.</span> <span class="toc-text">磁盘调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-先来先服务"><span class="toc-number">5.2.1.</span> <span class="toc-text">1. 先来先服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-最短寻道时间优先"><span class="toc-number">5.2.2.</span> <span class="toc-text">2. 最短寻道时间优先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-电梯算法"><span class="toc-number">5.2.3.</span> <span class="toc-text">3. 电梯算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、链接"><span class="toc-number">6.</span> <span class="toc-text">六、链接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#编译系统"><span class="toc-number">6.1.</span> <span class="toc-text">编译系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态链接"><span class="toc-number">6.2.</span> <span class="toc-text">静态链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标文件"><span class="toc-number">6.3.</span> <span class="toc-text">目标文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态链接"><span class="toc-number">6.4.</span> <span class="toc-text">动态链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">7.</span> <span class="toc-text">参考资料</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 John Wang&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
 </script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":80,"height":160},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

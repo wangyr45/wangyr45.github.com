@@ -1,128 +1,105 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!doctype html>
-<html lang="zh-Hans">
+<!DOCTYPE html>
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" , user-scalable="no"">
-  <title>LinkedList源码分析王约翰的博客</title>
-  <link rel="shortcut icon" href="http://prj8y63ca.bkt.clouddn.com/2019-05-22-touxiang.png">
+  <meta charset="utf-8">
+  
+  <title>LinkedList源码分析 | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="整理的关于LinkedList相关源码知识点。">
+<meta name="keywords" content="java,源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinkedList源码分析">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/LinkedList源码分析/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="整理的关于LinkedList相关源码知识点。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032">
+<meta property="og:updated_time" content="2018-11-30T06:15:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LinkedList源码分析">
+<meta name="twitter:description" content="整理的关于LinkedList相关源码知识点。">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032">
+  
+    <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
   
     
-    
-      <link rel="stylesheet" href="/css/bootstrap.min.css">
-    
-      <link rel="stylesheet" href="/css/font-awesome.min.css">
-    
-      <link rel="stylesheet" href="/css/atom-one-dark.css">
-    
-      <link rel="stylesheet" href="/css/jquery.fancybox.css">
-    
-      <link rel="stylesheet" href="/css/nprogress.min.css">
-    
-      <link rel="stylesheet" href="/css/valine.css">
-    
-      <link rel="stylesheet" href="/css/life.css">
-    
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-  
-
-  <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  
-  
-  
-    <script src="/js/jquery-2.2.4.min.js"></script>
-  
-    <script src="https://cdn1.lncld.net/static/js/3.1.0/av-min.js"></script>
-  
-    <script src="/js/jquery.pjax.js"></script>
-  
-    <script src="/js/nprogress.min.js"></script>
-  
-    <script src="/js/tether.min.js"></script>
-  
-    <script src="/js/bootstrap.min.js"></script>
-  
-    <script src="/js/highlight.min.js"></script>
-  
-    <script src="/js/highlightjs-line-numbers.min.js"></script>
-  
-    <script src="/js/jquery.fancybox.js"></script>
-  
-    <script src="/js/jquery.qrcode.min.js"></script>
-  
-    <script src="/js/Valine.min.js"></script>
-  
-  
 </head>
+</html>
 <body>
-<script>AV.init({appId:'',appKey:''});</script>
-<script type="text/javascript">
-      var config = {
-            ClasS: 'Counter',
-            el:'.views',
-            elP: '.views-post'
-      }
-</script>
-<div class="container">
-    <div class="row blog-box-shadow">
-        <!--博客主栏开始-->
-        <div class="col-xl-9 col-lg-12 blog-main" id="pjax-box">
-            <header class="blog-header">
-                <a href="http://wangyuehan.github.io" class="blog-header-mobile-title">王约翰的博客</a>
-                <a href="javascript:;" class="blog-header-navbar-btn"><i class="fa fa-bars"></i></a>
-                <nav class="blog-header-navbar blog-header-fixed">
-                    <ul class="blog-navbar-links">
-                        
-                          <li class="blog-nav-item"><a href="/" class="transition">首页</a></li>
-                        
-                          <li class="blog-nav-item"><a href="/about/" class="transition">关于</a></li>
-                        
-                          <li class="blog-nav-item"><a href="/links/" class="transition">链接</a></li>
-                        
-                        <div class="blog-navbar-right">
-                            <form action>
-                                <div class="input-group">
-                                    <input type="text" class="blog-header-search" placeholder="search...">
-                                    <buttn type="submit" class="blog-header-search-btn"><i class="fa fa-search"></i></buttn>
-                                </div>
-                            </form>
-                        </div>
-                    </ul>
-                </nav>
-            </header>
-                
-<header class="blog-post-page-title">
-    <h4>LinkedList源码分析</h4>
-    <time datetime="2018-11-30T06:14:54.000Z"><i class="fa fa-clock-o"></i>2018-11-30</time>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
     
-    
-    
-    
-	
-    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
 </header>
-<div class="blog-main-post blog-post-page-box">
-    <article class="blog-post-block blog-post-page-content">
-        <section>
-            
-                <p></p>
+      <div class="outer">
+        <section id="main"><article id="post-LinkedList源码分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/11/30/LinkedList源码分析/" class="article-date">
+  <time datetime="2018-11-30T06:14:54.000Z" itemprop="datePublished">2018-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      LinkedList源码分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>整理的关于LinkedList相关源码知识点。<br><a id="more"></a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>LinkedList是一个实现了List接口和Deque接口的双端链表。 LinkedList底层的链表结构使它支持高效的插入和删除操作，另外它实现了Deque接口，使得LinkedList类也具有队列的特性; LinkedList不是线程安全的，如果想使LinkedList变成线程安全的，可以调用静态类Collections类中的synchronizedList方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list=Collections.synchronizedList(new LinkedList(...));</span><br></pre></td></tr></table></figure>
 <h2 id="内部结构分析"><a href="#内部结构分析" class="headerlink" title="内部结构分析"></a>内部结构分析</h2><p><strong>如下图所示：</strong> <a href="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/df94e406b94b97fe2f094082e3977f30121448f6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f31392f313632336533363366653034353062303f773d36303026683d34383126663d6a70656726733d3138353032" alt="LinkedList内部结构"></a> 看完了图之后，我们再看LinkedList类中的一个<strong>内部私有类Node</strong>就很好理解了：</p>
@@ -179,402 +156,232 @@
 <p><strong>remove(int index)</strong>：删除指定位置的元素</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public E remove(int index) &#123;</span><br><span class="line">        //检查index范围</span><br><span class="line">        checkElementIndex(index);</span><br><span class="line">        //将节点删除</span><br><span class="line">        return unlink(node(index));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="LinkedList类常用方法测试"><a href="#LinkedList类常用方法测试" class="headerlink" title="LinkedList类常用方法测试"></a>LinkedList类常用方法测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">package list;</span><br><span class="line"></span><br><span class="line">import java.util.Iterator;</span><br><span class="line">import java.util.LinkedList;</span><br><span class="line"></span><br><span class="line">public class LinkedListDemo &#123;</span><br><span class="line">    public static void main(String[] srgs) &#123;</span><br><span class="line">        //创建存放int类型的linkedList</span><br><span class="line">        LinkedList&lt;Integer&gt; linkedList = new LinkedList&lt;&gt;();</span><br><span class="line">        /************************** linkedList的基本操作 ************************/</span><br><span class="line">        linkedList.addFirst(0); // 添加元素到列表开头</span><br><span class="line">        linkedList.add(1); // 在列表结尾添加元素</span><br><span class="line">        linkedList.add(2, 2); // 在指定位置添加元素</span><br><span class="line">        linkedList.addLast(3); // 添加元素到列表结尾</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;LinkedList（直接输出的）: &quot; + linkedList);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;getFirst()获得第一个元素: &quot; + linkedList.getFirst()); // 返回此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;getLast()获得第最后一个元素: &quot; + linkedList.getLast()); // 返回此列表的最后一个元素</span><br><span class="line">        System.out.println(&quot;removeFirst()删除第一个元素并返回: &quot; + linkedList.removeFirst()); // 移除并返回此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;removeLast()删除最后一个元素并返回: &quot; + linkedList.removeLast()); // 移除并返回此列表的最后一个元素</span><br><span class="line">        System.out.println(&quot;After remove:&quot; + linkedList);</span><br><span class="line">        System.out.println(&quot;contains()方法判断列表是否包含1这个元素:&quot; + linkedList.contains(1)); // 判断此列表包含指定元素，如果是，则返回true</span><br><span class="line">        System.out.println(&quot;该linkedList的大小 : &quot; + linkedList.size()); // 返回此列表的元素个数</span><br><span class="line"></span><br><span class="line">        /************************** 位置访问操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.set(1, 3); // 将此列表中指定位置的元素替换为指定的元素</span><br><span class="line">        System.out.println(&quot;After set(1, 3):&quot; + linkedList);</span><br><span class="line">        System.out.println(&quot;get(1)获得指定位置（这里为1）的元素: &quot; + linkedList.get(1)); // 返回此列表中指定位置处的元素</span><br><span class="line"></span><br><span class="line">        /************************** Search操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.add(3);</span><br><span class="line">        System.out.println(&quot;indexOf(3): &quot; + linkedList.indexOf(3)); // 返回此列表中首次出现的指定元素的索引</span><br><span class="line">        System.out.println(&quot;lastIndexOf(3): &quot; + linkedList.lastIndexOf(3));// 返回此列表中最后出现的指定元素的索引</span><br><span class="line"></span><br><span class="line">        /************************** Queue操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        System.out.println(&quot;peek(): &quot; + linkedList.peek()); // 获取但不移除此列表的头</span><br><span class="line">        System.out.println(&quot;element(): &quot; + linkedList.element()); // 获取但不移除此列表的头</span><br><span class="line">        linkedList.poll(); // 获取并移除此列表的头</span><br><span class="line">        System.out.println(&quot;After poll():&quot; + linkedList);</span><br><span class="line">        linkedList.remove();</span><br><span class="line">        System.out.println(&quot;After remove():&quot; + linkedList); // 获取并移除此列表的头</span><br><span class="line">        linkedList.offer(4);</span><br><span class="line">        System.out.println(&quot;After offer(4):&quot; + linkedList); // 将指定元素添加到此列表的末尾</span><br><span class="line"></span><br><span class="line">        /************************** Deque操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.offerFirst(2); // 在此列表的开头插入指定的元素</span><br><span class="line">        System.out.println(&quot;After offerFirst(2):&quot; + linkedList);</span><br><span class="line">        linkedList.offerLast(5); // 在此列表末尾插入指定的元素</span><br><span class="line">        System.out.println(&quot;After offerLast(5):&quot; + linkedList);</span><br><span class="line">        System.out.println(&quot;peekFirst(): &quot; + linkedList.peekFirst()); // 获取但不移除此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;peekLast(): &quot; + linkedList.peekLast()); // 获取但不移除此列表的第一个元素</span><br><span class="line">        linkedList.pollFirst(); // 获取并移除此列表的第一个元素</span><br><span class="line">        System.out.println(&quot;After pollFirst():&quot; + linkedList);</span><br><span class="line">        linkedList.pollLast(); // 获取并移除此列表的最后一个元素</span><br><span class="line">        System.out.println(&quot;After pollLast():&quot; + linkedList);</span><br><span class="line">        linkedList.push(2); // 将元素推入此列表所表示的堆栈（插入到列表的头）</span><br><span class="line">        System.out.println(&quot;After push(2):&quot; + linkedList);</span><br><span class="line">        linkedList.pop(); // 从此列表所表示的堆栈处弹出一个元素（获取并移除列表第一个元素）</span><br><span class="line">        System.out.println(&quot;After pop():&quot; + linkedList);</span><br><span class="line">        linkedList.add(3);</span><br><span class="line">        linkedList.removeFirstOccurrence(3); // 从此列表中移除第一次出现的指定元素（从头部到尾部遍历列表）</span><br><span class="line">        System.out.println(&quot;After removeFirstOccurrence(3):&quot; + linkedList);</span><br><span class="line">        linkedList.removeLastOccurrence(3); // 从此列表中移除最后一次出现的指定元素（从头部到尾部遍历列表）</span><br><span class="line">        System.out.println(&quot;After removeFirstOccurrence(3):&quot; + linkedList);</span><br><span class="line"></span><br><span class="line">        /************************** 遍历操作 ************************/</span><br><span class="line">        System.out.println(&quot;-----------------------------------------&quot;);</span><br><span class="line">        linkedList.clear();</span><br><span class="line">        for (int i = 0; i &lt; 100000; i++) &#123;</span><br><span class="line">            linkedList.add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        // 迭代器遍历</span><br><span class="line">        long start = System.currentTimeMillis();</span><br><span class="line">        Iterator&lt;Integer&gt; iterator = linkedList.iterator();</span><br><span class="line">        while (iterator.hasNext()) &#123;</span><br><span class="line">            iterator.next();</span><br><span class="line">        &#125;</span><br><span class="line">        long end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;Iterator：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 顺序遍历(随机遍历)</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        for (int i = 0; i &lt; linkedList.size(); i++) &#123;</span><br><span class="line">            linkedList.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;for：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 另一种for循环遍历</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        for (Integer i : linkedList)</span><br><span class="line">            ;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;for2：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 通过pollFirst()或pollLast()来遍历LinkedList</span><br><span class="line">        LinkedList&lt;Integer&gt; temp1 = new LinkedList&lt;&gt;();</span><br><span class="line">        temp1.addAll(linkedList);</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        while (temp1.size() != 0) &#123;</span><br><span class="line">            temp1.pollFirst();</span><br><span class="line">        &#125;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;pollFirst()或pollLast()：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line"></span><br><span class="line">        // 通过removeFirst()或removeLast()来遍历LinkedList</span><br><span class="line">        LinkedList&lt;Integer&gt; temp2 = new LinkedList&lt;&gt;();</span><br><span class="line">        temp2.addAll(linkedList);</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">        while (temp2.size() != 0) &#123;</span><br><span class="line">            temp2.removeFirst();</span><br><span class="line">        &#125;</span><br><span class="line">        end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;removeFirst()或removeLast()：&quot; + (end - start) + &quot; ms&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-            
-        </section>
-        <footer class="blog-post-page-tags">
-        
-			
-				
-			<a href="/tags/java/" rel="tag" data-toggle="tooltip" data-placement="top" title="Linux">java</a>
-				
-			<a href="/tags/源码/" rel="tag" data-toggle="tooltip" data-placement="top" title="Linux">源码</a>
-				
-			
-		
-        </footer>
-    </article>
-    <article class="blog-post-page-readmore">
-    	
-    	
-		
-			<a href="/year/11/30/HashMap源码学习/" class="blog-post-page-readmore-prev" data-toggle="tooltip" data-placement="top" title="HashMap源码学习">上一篇</a>
-		
-
-		
-		
-			<a href="/year/11/30/J2EE基础知识回顾/" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="J2EE基础知识回顾">下一篇</a>
-		
-
-        <div style="clear: both;"></div>
-    </article>
-
-    <article class="blog-post-block blog-post-page-content">
-            <div class="row">
-            
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span class="post-comments-btn btn btn-info btn-block" data-toggle="tooltip" data-placement="top" title="本站采用Disqus评论组件，若您没有科学上网可能会无法查看并评论">加载评论</span>
-                </div>
-            
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span data-toggle="modal" data-target="#post-donate-content">
-                        <span id="post-donate-btn" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="top" title="如果您觉得本文还不错或者对您有帮助，可以考虑打赏一下作者哦">打赏本文</span>
-                    </span>
-                </div>
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span data-toggle="modal" data-target="#post-qrcode-content">
-                        <span><span id="post-qrcode-btn" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="top" title="微信扫描二维码手机端查看本文及分享本文">二维码</span></span>
-                    </span>
-                </div>
-            </div>
-        <div class="post-more-function-br"></div>
-
-        <div class="modal fade" id="post-donate-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">打赏本文</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row post-donate-content">
-                            <div class="col-md-4">
-                                <p>支付宝</p>
-                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
-                            </div>
-                            <div class="col-md-4">
-                                <p>微信</p>
-                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
-                            </div>
-                            <div class="col-md-4">
-                                <p>财付通</p>
-                                <img class="post-donate-content-img no-lightbox" src="http://dl.weic96.cn/logo.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="post-qrcode-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">文章二维码</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row post-qrcode-content">
-                            <span class="post-qrcode-content-canvas"></span>
-                            <img class="post-qrcode-content-img no-lightbox" src>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <script>
-            // post QRcode
-            // 中文转码
-            function toUtf8(str) {
-                var out, i, len, c;
-                out = "";
-                len = str.length;
-                for (i = 0; i < len; i++) {
-                    c = str.charCodeAt(i);
-                    if ((c >= 0x0001) && (c <= 0x007F)) {
-                        out += str.charAt(i);
-                    } else if (c > 0x07FF) {
-                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
-                        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
-                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-                    } else {
-                        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
-                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-                    }
-                }
-                return out;
-            }
-            // 生成
-            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("http://wangyuehan.github.io/year/11/30/LinkedList源码分析/")}).hide();
-            var canvas=qrcode.find('canvas').get(0);
-            $('.post-qrcode-content-img').attr('src',canvas.toDataURL('image/jpg'));
-        </script>
-
-        
-    </article>
-    
-</div>
-
-                
-            <footer class="blog-footer">
-                <p class="blog-footer-left">Copyright ©  2019 <a href="http://wangyuehan.github.io">王约翰的博客</a></p>
-                <p class="blog-footer-right">Powered by <a href="https://hexo.io" target="_blank">Hexo</a>,Theme <a href="https://note.isweic.com/themes-life/" target="_blank">Life</a></p>
-            </footer>
-        </div><!--博客主栏结束-->
-        <!--博客侧边栏开始-->
-        <div class="col-xl-3 blog-sidebar">
-            <div class="blog-sidebar-title">
-                <a href>王约翰的博客</a>
-            </div>
-            <div class="blog-sidebar-logo">
-                <img src="http://prj8y63ca.bkt.clouddn.com/2019-05-22-touxiang.png">
-            </div>
-            <div class="blog-sidebar-count blog-sidebar-padding">
-                <div class="blog-sidebar-count-left">
-                    <p class="blog-sidebar-count-p">108</p>
-                    <span class="blog-sidebar-count-span">文章</span>
-                </div>
-                <div class="blog-sidebar-count-right">
-                    <p class="blog-sidebar-count-p">62</p>
-                    <span class="blog-sidebar-count-span">标签</span>
-                </div>
-                <div style="clear: both;"></div>
-            </div>
-            <div class="blog-sidebar-icon blog-sidebar-padding">
-                <ul>
-                    <li><a href class="icon-github" target="_blank" data-toggle="tooltip" data-placement="top" title="Github"><i class="fa fa-github"></i></a></li>
-                    <li><a href class="icon-weibo" target="_blank" data-toggle="tooltip" data-placement="top" title="新浪微博"><i class="fa fa-weibo"></i></a></li>
-                    <li><a href class="icon-twitter" target="_blank" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                    <!--<li><a href="" class="icon-facebook" target="_blank" data-toggle="tooltip" data-placement="top" title="FaceBook"><i class="fa fa-facebook"></i></a></li>-->
-                    <li><a href="mailto:" class="icon-email" data-toggle="tooltip" data-placement="top" title="E-Mail"><i class="fa fa-envelope"></i></a></li>
-                    <li><a href class="icon-rss" data-toggle="tooltip" target="_blank" data-placement="top" title="RSS"><i class="fa fa-rss"></i></a></li>
-                </ul>
-            </div>
-            <div class="blog-sidebar-categories">
-                <h4 class="blog-sidebar-h4"><i class="fa fa-folder-open"></i>&nbsp;文章分类</h4>
-                <ul class="list-group blog-sidebar-padding">
-                  
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/读书笔记/">读书笔记</a>
-                          <span class="badge badge-default badge-pill">12</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/玩物志/">玩物志</a>
-                          <span class="badge badge-default badge-pill">11</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/专业知识/">专业知识</a>
-                          <span class="badge badge-default badge-pill">21</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/随笔/">随笔</a>
-                          <span class="badge badge-default badge-pill">5</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/心理学/">心理学</a>
-                          <span class="badge badge-default badge-pill">10</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/产品分析/">产品分析</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/每周琢磨/">/每周琢磨</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/读书笔记/心理学/">心理学</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/精选文章/">/精选文章</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                      <li class="list-group-item justify-content-between">
-                          <a href="/categories/随笔/读书笔记/">读书笔记</a>
-                          <span class="badge badge-default badge-pill">1</span>
-                      </li>
-                    
-                  
-                </ul>
-            </div>
-            <div class="blog-sidebar-tags">
-                <h4 class="blog-sidebar-h4"><i class="fa fa-tag"></i>&nbsp;标签云</h4>
-                <ul class="blog-sidebar-tags-ul blog-sidebar-padding">
-                  
-                    
-                      <li><a href="/tags/营销/" class="tag-could" data-toggle="tooltip" data-placement="top" title="营销">营销</a></li>
-                    
-                      <li><a href="/tags/思维导图/" class="tag-could" data-toggle="tooltip" data-placement="top" title="思维导图">思维导图</a></li>
-                    
-                      <li><a href="/tags/读书笔记/" class="tag-could" data-toggle="tooltip" data-placement="top" title="读书笔记">读书笔记</a></li>
-                    
-                      <li><a href="/tags/随笔/" class="tag-could" data-toggle="tooltip" data-placement="top" title="随笔">随笔</a></li>
-                    
-                      <li><a href="/tags/问题/" class="tag-could" data-toggle="tooltip" data-placement="top" title="问题">问题</a></li>
-                    
-                      <li><a href="/tags/Docker/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Docker">Docker</a></li>
-                    
-                      <li><a href="/tags/nginx/" class="tag-could" data-toggle="tooltip" data-placement="top" title="nginx">nginx</a></li>
-                    
-                      <li><a href="/tags/docker/" class="tag-could" data-toggle="tooltip" data-placement="top" title="docker">docker</a></li>
-                    
-                      <li><a href="/tags/Git/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Git">Git</a></li>
-                    
-                      <li><a href="/tags/博客/" class="tag-could" data-toggle="tooltip" data-placement="top" title="博客">博客</a></li>
-                    
-                      <li><a href="/tags/Linux/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Linux">Linux</a></li>
-                    
-                      <li><a href="/tags/SAP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="SAP">SAP</a></li>
-                    
-                      <li><a href="/tags/科学上网/" class="tag-could" data-toggle="tooltip" data-placement="top" title="科学上网">科学上网</a></li>
-                    
-                      <li><a href="/tags/linux/" class="tag-could" data-toggle="tooltip" data-placement="top" title="linux">linux</a></li>
-                    
-                      <li><a href="/tags/git/" class="tag-could" data-toggle="tooltip" data-placement="top" title="git">git</a></li>
-                    
-                      <li><a href="/tags/图床/" class="tag-could" data-toggle="tooltip" data-placement="top" title="图床">图床</a></li>
-                    
-                      <li><a href="/tags/macOS/" class="tag-could" data-toggle="tooltip" data-placement="top" title="macOS">macOS</a></li>
-                    
-                      <li><a href="/tags/macos/" class="tag-could" data-toggle="tooltip" data-placement="top" title="macos">macos</a></li>
-                    
-                      <li><a href="/tags/心理学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="心理学">心理学</a></li>
-                    
-                      <li><a href="/tags/产品分析/" class="tag-could" data-toggle="tooltip" data-placement="top" title="产品分析">产品分析</a></li>
-                    
-                      <li><a href="/tags/产品/" class="tag-could" data-toggle="tooltip" data-placement="top" title="产品">产品</a></li>
-                    
-                      <li><a href="/tags/资源/" class="tag-could" data-toggle="tooltip" data-placement="top" title="资源">资源</a></li>
-                    
-                      <li><a href="/tags/传播学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="传播学">传播学</a></li>
-                    
-                      <li><a href="/tags/软件工程/" class="tag-could" data-toggle="tooltip" data-placement="top" title="软件工程">软件工程</a></li>
-                    
-                      <li><a href="/tags/审美/" class="tag-could" data-toggle="tooltip" data-placement="top" title="审美">审美</a></li>
-                    
-                      <li><a href="/tags/工具/" class="tag-could" data-toggle="tooltip" data-placement="top" title="工具">工具</a></li>
-                    
-                      <li><a href="/tags/微信公众号/" class="tag-could" data-toggle="tooltip" data-placement="top" title="微信公众号">微信公众号</a></li>
-                    
-                      <li><a href="/tags/撸猫/" class="tag-could" data-toggle="tooltip" data-placement="top" title="撸猫">撸猫</a></li>
-                    
-                      <li><a href="/tags/数码/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数码">数码</a></li>
-                    
-                      <li><a href="/tags/新博客/" class="tag-could" data-toggle="tooltip" data-placement="top" title="新博客">新博客</a></li>
-                    
-                      <li><a href="/tags/原理/" class="tag-could" data-toggle="tooltip" data-placement="top" title="原理">原理</a></li>
-                    
-                      <li><a href="/tags/算法/" class="tag-could" data-toggle="tooltip" data-placement="top" title="算法">算法</a></li>
-                    
-                      <li><a href="/tags/攻击技术/" class="tag-could" data-toggle="tooltip" data-placement="top" title="攻击技术">攻击技术</a></li>
-                    
-                      <li><a href="/tags/系统设计/" class="tag-could" data-toggle="tooltip" data-placement="top" title="系统设计">系统设计</a></li>
-                    
-                      <li><a href="/tags/消息队列/" class="tag-could" data-toggle="tooltip" data-placement="top" title="消息队列">消息队列</a></li>
-                    
-                      <li><a href="/tags/哲学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="哲学">哲学</a></li>
-                    
-                      <li><a href="/tags/运营/" class="tag-could" data-toggle="tooltip" data-placement="top" title="运营">运营</a></li>
-                    
-                      <li><a href="/tags/业务/" class="tag-could" data-toggle="tooltip" data-placement="top" title="业务">业务</a></li>
-                    
-                      <li><a href="/tags/项目管理/" class="tag-could" data-toggle="tooltip" data-placement="top" title="项目管理">项目管理</a></li>
-                    
-                      <li><a href="/tags/好文章/" class="tag-could" data-toggle="tooltip" data-placement="top" title="好文章">好文章</a></li>
-                    
-                      <li><a href="/tags/api/" class="tag-could" data-toggle="tooltip" data-placement="top" title="api">api</a></li>
-                    
-                      <li><a href="/tags/每周琢磨/" class="tag-could" data-toggle="tooltip" data-placement="top" title="每周琢磨">每周琢磨</a></li>
-                    
-                      <li><a href="/tags/分布式/" class="tag-could" data-toggle="tooltip" data-placement="top" title="分布式">分布式</a></li>
-                    
-                      <li><a href="/tags/负载均衡/" class="tag-could" data-toggle="tooltip" data-placement="top" title="负载均衡">负载均衡</a></li>
-                    
-                      <li><a href="/tags/影评/" class="tag-could" data-toggle="tooltip" data-placement="top" title="影评">影评</a></li>
-                    
-                      <li><a href="/tags/游戏/" class="tag-could" data-toggle="tooltip" data-placement="top" title="游戏">游戏</a></li>
-                    
-                      <li><a href="/tags/正则表达式/" class="tag-could" data-toggle="tooltip" data-placement="top" title="正则表达式">正则表达式</a></li>
-                    
-                      <li><a href="/tags/缓存/" class="tag-could" data-toggle="tooltip" data-placement="top" title="缓存">缓存</a></li>
-                    
-                      <li><a href="/tags/集群/" class="tag-could" data-toggle="tooltip" data-placement="top" title="集群">集群</a></li>
-                    
-                      <li><a href="/tags/java/" class="tag-could" data-toggle="tooltip" data-placement="top" title="java">java</a></li>
-                    
-                      <li><a href="/tags/源码/" class="tag-could" data-toggle="tooltip" data-placement="top" title="源码">源码</a></li>
-                    
-                      <li><a href="/tags/J2EE/" class="tag-could" data-toggle="tooltip" data-placement="top" title="J2EE">J2EE</a></li>
-                    
-                      <li><a href="/tags/MySQL/" class="tag-could" data-toggle="tooltip" data-placement="top" title="MySQL">MySQL</a></li>
-                    
-                      <li><a href="/tags/数据库/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数据库">数据库</a></li>
-                    
-                      <li><a href="/tags/redis/" class="tag-could" data-toggle="tooltip" data-placement="top" title="redis">redis</a></li>
-                    
-                      <li><a href="/tags/计算机网络/" class="tag-could" data-toggle="tooltip" data-placement="top" title="计算机网络">计算机网络</a></li>
-                    
-                      <li><a href="/tags/HTTP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="HTTP">HTTP</a></li>
-                    
-                      <li><a href="/tags/网络/" class="tag-could" data-toggle="tooltip" data-placement="top" title="网络">网络</a></li>
-                    
-                      <li><a href="/tags/经济学/" class="tag-could" data-toggle="tooltip" data-placement="top" title="经济学">经济学</a></li>
-                    
-                      <li><a href="/tags/操作系统/" class="tag-could" data-toggle="tooltip" data-placement="top" title="操作系统">操作系统</a></li>
-                    
-                      <li><a href="/tags/微服务/" class="tag-could" data-toggle="tooltip" data-placement="top" title="微服务">微服务</a></li>
-                    
-                      <li><a href="/tags/大数据/" class="tag-could" data-toggle="tooltip" data-placement="top" title="大数据">大数据</a></li>
-                    
-                  
-                </ul>
-            </div>
-            <script>
-              // 博客侧栏标签云随机色
-              var tag_cloud = $('.tag-could');
-              tag_cloud.each(function () {
-                  var Cnum = 9;
-                  var Crand = parseInt(Math.random() * Cnum);
-                  $(this).addClass("tag-could" + Crand);
-              })
-            </script>
-            <!--返回顶部按钮-->
-            <div class="retop">
-                <i class="fa fa-angle-up"></i>
-            </div>
-        </div><!--博客侧边栏结束-->
+      
     </div>
-</div>
-<script src="/js/LeanStatistics.min.js"></script>
-<script src="/js/Life.js"></script>
-<script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-    otherF();
-    LeanStatistics();
-    $(document).pjax('a', '#pjax-box', {fragment:'#pjax-box', timeout:8000}).on('pjax:complete', function() {
-      $('pre code').each(function(i, block){
-        hljs.highlightBlock(block);
-      })
-      $('code.hljs').each(function(i, block) {
-        hljs.lineNumbersBlock(block);
-      });
-      LeanStatistics();
-    }).on('pjax:start', function() { NProgress.start(); }).on('pjax:end',   function() {
-      NProgress.done();
-      otherF();
-    });
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/11/30/LinkedList源码分析/" data-id="cjvyhd5z9008nal7bixeftgqc" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/year/11/30/HashMap源码学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          HashMap源码学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/11/30/J2EE基础知识回顾/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">J2EE基础知识回顾</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部结构分析"><span class="toc-number">2.</span> <span class="toc-text">内部结构分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList源码分析"><span class="toc-number">3.</span> <span class="toc-text">LinkedList源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造方法"><span class="toc-number">3.1.</span> <span class="toc-text">构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add方法"><span class="toc-number">3.2.</span> <span class="toc-text">add方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据位置取数据的方法"><span class="toc-number">3.3.</span> <span class="toc-text">根据位置取数据的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据对象得到索引的方法"><span class="toc-number">3.4.</span> <span class="toc-text">根据对象得到索引的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检查链表是否包含某对象的方法："><span class="toc-number">3.5.</span> <span class="toc-text">检查链表是否包含某对象的方法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList类常用方法测试"><span class="toc-number">4.</span> <span class="toc-text">LinkedList类常用方法测试</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 John Wang&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
 </script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":80,"height":160},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>
