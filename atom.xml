@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangyuehan.github.io/"/>
-  <updated>2019-06-02T04:40:57.786Z</updated>
+  <updated>2019-06-05T01:28:38.911Z</updated>
   <id>http://wangyuehan.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>聊聊品牌-耐克（三）</title>
+    <link href="http://wangyuehan.github.io/year/06/05/%E8%81%8A%E8%81%8A%E5%93%81%E7%89%8C-%E8%80%90%E5%85%8B%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://wangyuehan.github.io/year/06/05/聊聊品牌-耐克（三）/</id>
+    <published>2019-06-05T00:20:26.000Z</published>
+    <updated>2019-06-05T01:28:38.911Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h1 id="Just-do-it的由来"><a href="#Just-do-it的由来" class="headerlink" title="Just  do it的由来"></a>Just  do it的由来</h1><p>这句耐克的广告语来源也是非常戏剧性的，其实是来自一名杀人犯的口中。</p><p>上世纪八十年代，虽然耐克上升势头很好，除了阿迪达斯这个老对手之外，还有锐步。</p><p><img src="http://prj8y63ca.bkt.clouddn.com/2019-06-05-002727.jpg" alt></p><p>在1985年前后，美国掀起女性重视健身和运动。而锐步迎来了大机遇，只用了两三年，到1987年时候，锐步反超耐克，成为全美第一运动品牌。</p><p>除了锐步，后来居上的·安德玛，也是早期成功的小品牌崛起的典范，从巨头最不重视的的市场切入，进而扩展到主流市场。</p><p>被锐步反超后，耐克立马找来了著名的广告公司W+K，委托他们设计一句广告语，扩大品牌影响力，而当时负责这个项目的人正是W+K创始人丹·维登。因为这个项目很重要，而且是大客户要求的，维登冥思苦想，也实现没想出来合适的，到了快提交项目的凌晨，维登脑海中有了灵感。</p><p>这个灵感来源自一个故事，上世纪七十年代中期，美国一个名叫加里·基尔默的美国人抢劫并杀了两个人，被判监禁，出狱了之后，依旧在此犯案，又杀了两个人。在第一次犯罪时候，美国最高法院因为错判案件叫停了死刑，所以吉尔摩第一次犯案时候逃过了一劫，第二次犯罪的时候，很不巧，死刑被恢复了，执行枪决时，执行者问基尔默有什么遗言，基尔默只说了一句”Let’s do it !”,意思就是来吧。</p><p>维登因为这句话来了灵感，尤其 do it 十分酷，而且符合体育。为了增加广告语的感染力，有添加了”just”这个词.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;Just-do-it的由来&quot;&gt;&lt;a href=&quot;#Just-do-it的由来&quot; class=&quot;headerlink&quot; title=&quot;Just  do it的由来&quot;&gt;&lt;/a&gt;Just  do it的由来&lt;/h1&gt;&lt;p&gt;这句耐克的广
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://wangyuehan.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://wangyuehan.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>聊聊品牌-耐克（二）</title>
@@ -441,30 +467,6 @@
     
     
       <category term="nginx" scheme="http://wangyuehan.github.io/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>玩docker-docker运行Halo</title>
-    <link href="http://wangyuehan.github.io/year/04/19/%E7%8E%A9%E4%B9%90%E6%97%A5%E5%BF%97-docker%E8%BF%90%E8%A1%8CHalo/"/>
-    <id>http://wangyuehan.github.io/year/04/19/玩乐日志-docker运行Halo/</id>
-    <published>2019-04-19T11:30:39.000Z</published>
-    <updated>2019-04-19T11:43:11.747Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前在群里有些个小学弟搭建，但是没弄出来，估计很多新手也是搞不出来，又觉得hexo难，但是又想有一个自己的博客，比较苦恼。</p><p>正好有一台空闲服务器，这次我准备在阿里云购买的CentOS服务器上用docker容器运行Halo博客系统，没错，就是java编写的Halo博客。下面进入教程。</p><p>测试链接-<a href="http://47.105.33.34:8090/" target="_blank" rel="noopener">http://47.105.33.34:8090/</a></p><a id="more"></a><p>首先，我就当你们了解docker基本知识了。</p><p>直接开始，全新的系统。</p><h1 id="1-安装Docker"><a href="#1-安装Docker" class="headerlink" title="1. 安装Docker"></a>1. 安装Docker</h1><p>移除旧的版本：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-selinux \</span><br><span class="line">                  docker-engine-selinux \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure><p>安装一些必要的系统工具：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure><p>添加软件源信息：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure><p>更新 yum 缓存：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum makecache fast</span><br></pre></td></tr></table></figure><p>安装 Docker-ce：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure><p>启动 Docker 后台服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure><h1 id="2-Docker部署Hola"><a href="#2-Docker部署Hola" class="headerlink" title="2. Docker部署Hola"></a>2. Docker部署Hola</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 拉取镜像</span><br><span class="line">$ docker pull ruibaby/halo</span><br><span class="line"></span><br><span class="line"># 运行</span><br><span class="line">$ docker run -d --name halo -p 8090:8090 -v ~/halo:/root/halo -e DB_USER=root -e DB_PASSWORD=123456 ruibaby/halo</span><br><span class="line"></span><br><span class="line"># 注意：DB_USER 和 DB_PASSWORD 务必修改并记下</span><br></pre></td></tr></table></figure><h2 id="3-最后"><a href="#3-最后" class="headerlink" title="3. 最后"></a>3. 最后</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">#看看是否运行</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1g286gfkp5cj329408on07.jpg" alt></p><p>输入网址：外网ip:8090</p><p>输入网址会出现找不到网页情况，耐心等待几秒即可。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前在群里有些个小学弟搭建，但是没弄出来，估计很多新手也是搞不出来，又觉得hexo难，但是又想有一个自己的博客，比较苦恼。&lt;/p&gt;
-&lt;p&gt;正好有一台空闲服务器，这次我准备在阿里云购买的CentOS服务器上用docker容器运行Halo博客系统，没错，就是java编写的Halo博客。下面进入教程。&lt;/p&gt;
-&lt;p&gt;测试链接-&lt;a href=&quot;http://47.105.33.34:8090/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://47.105.33.34:8090/&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="玩物志" scheme="http://wangyuehan.github.io/categories/%E7%8E%A9%E7%89%A9%E5%BF%97/"/>
-    
-    
-      <category term="docker" scheme="http://wangyuehan.github.io/tags/docker/"/>
     
   </entry>
   
