@@ -1,125 +1,97 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content>
   
-  <title>MySQL原理应用 | 王约翰的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>MySQL原理应用</title>
+  <meta name="author" content="John Wang">
   <meta name="description" content="根据Github整理。内容包括：索引、查询性能优化、存储引擎、数据类型、切分、复制等等。">
-<meta name="keywords" content="MySQL,数据库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MySQL原理应用">
-<meta property="og:url" content="http://wangyuehan.github.io/year/11/03/MySQL原理/index.html">
-<meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="根据Github整理。内容包括：索引、查询性能优化、存储引擎、数据类型、切分、复制等等。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/061c88c1-572f-424f-b580-9cbce903a3fe.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/c28c6fbc-2bc1-47d9-9b2e-cf3d4034f877.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/7ab8ca28-2a41-4adf-9502-cc0a21e63b51.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/63c2909f-0c5f-496f-9fe5-ee9176b31aba.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/e130e5b8-b19a-4f1e-b860-223040525cf6.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/master-slave.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/master-slave-proxy.png">
-<meta property="og:updated_time" content="2019-03-09T08:24:47.512Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL原理应用">
-<meta name="twitter:description" content="根据Github整理。内容包括：索引、查询性能优化、存储引擎、数据类型、切分、复制等等。">
-<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/061c88c1-572f-424f-b580-9cbce903a3fe.png">
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
+  <meta property="og:title" content="MySQL原理应用">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="王约翰的博客">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 </html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    
-    <div id="header-inner" class="inner">
-      <nav id="sub-nav">
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;你敲代码好像cxk啊！
       </div>
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">归档</a>
-        
-          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
-        
-          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
-        
-          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
-        
-          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
-        
-          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
-        
-          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
-        
-          <a class="main-nav-link" href="/board">留言板</a>
-        
-          <a class="main-nav-link" href="/atom.xml">rss</a>
-        
-      </nav>
-      
     </div>
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">王约翰的博客</a>
-      </h1>
+    <div class="main-ctnr">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
-        </h2>
-      
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-MySQL原理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/year/11/03/MySQL原理/" class="article-date">
-  <time datetime="2018-11-03T06:09:28.000Z" itemprop="datePublished">2018-11-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/专业知识/">专业知识</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <article class="standard post">
+    <div class="title">
+      
   
-    <h1 class="article-title" itemprop="name">
-      MySQL原理应用
+    <h1 class="page-title center">
+        MySQL原理应用
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+
+    </div>
+    <div class="meta center">
       
-        <!-- Table of Contents -->
-        
-        <p>根据Github整理。<br>内容包括：索引、查询性能优化、存储引擎、数据类型、切分、复制等等。<br><a id="more"></a></p>
+<time datetime="2018-11-03T06:09:28.000Z">
+<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
+  </svg>
+  &nbsp;
+  2018-11-03
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/categories/专业知识/">专业知识</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/tags/MySQL/">MySQL</a>·<a href="/tags/数据库/">数据库</a>
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、索引"><span class="toc-text">一、索引</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#B-Tree-原理"><span class="toc-text">B+ Tree 原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据结构"><span class="toc-text">1. 数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-操作"><span class="toc-text">2. 操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-与红黑树的比较"><span class="toc-text">3. 与红黑树的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-索引"><span class="toc-text">MySQL 索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B-Tree-索引"><span class="toc-text">1. B+Tree 索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-哈希索引"><span class="toc-text">2. 哈希索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-全文索引"><span class="toc-text">3. 全文索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-空间数据索引"><span class="toc-text">4. 空间数据索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化"><span class="toc-text">索引优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-独立的列"><span class="toc-text">1. 独立的列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-多列索引"><span class="toc-text">2. 多列索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-索引列的顺序"><span class="toc-text">3. 索引列的顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-前缀索引"><span class="toc-text">4. 前缀索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-覆盖索引"><span class="toc-text">5. 覆盖索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引的优点"><span class="toc-text">索引的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引的使用条件"><span class="toc-text">索引的使用条件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、查询性能优化"><span class="toc-text">二、查询性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Explain-进行分析"><span class="toc-text">使用 Explain 进行分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化数据访问"><span class="toc-text">优化数据访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-减少请求的数据量"><span class="toc-text">1. 减少请求的数据量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-减少服务器端扫描的行数"><span class="toc-text">2. 减少服务器端扫描的行数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重构查询方式"><span class="toc-text">重构查询方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-切分大查询"><span class="toc-text">1. 切分大查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-分解大连接查询"><span class="toc-text">2. 分解大连接查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、存储引擎"><span class="toc-text">三、存储引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#InnoDB"><span class="toc-text">InnoDB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyISAM"><span class="toc-text">MyISAM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比较"><span class="toc-text">比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、数据类型"><span class="toc-text">四、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#整型"><span class="toc-text">整型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮点数"><span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串"><span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间和日期"><span class="toc-text">时间和日期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DATETIME"><span class="toc-text">1. DATETIME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TIMESTAMP"><span class="toc-text">2. TIMESTAMP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、切分"><span class="toc-text">五、切分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#水平切分"><span class="toc-text">水平切分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垂直切分"><span class="toc-text">垂直切分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sharding-策略"><span class="toc-text">Sharding 策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sharding-存在的问题"><span class="toc-text">Sharding 存在的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事务问题"><span class="toc-text">1. 事务问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-连接"><span class="toc-text">2. 连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ID-唯一性"><span class="toc-text">3. ID 唯一性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、复制"><span class="toc-text">六、复制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主从复制"><span class="toc-text">主从复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#读写分离"><span class="toc-text">读写分离</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <p>根据Github整理。<br>内容包括：索引、查询性能优化、存储引擎、数据类型、切分、复制等等。<br><a id="more"></a></p>
 <h1 id="一、索引"><a href="#一、索引" class="headerlink" title="一、索引"></a>一、索引</h1><h2 id="B-Tree-原理"><a href="#B-Tree-原理" class="headerlink" title="B+ Tree 原理"></a>B+ Tree 原理</h2><h3 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1. 数据结构"></a>1. 数据结构</h3><p>B Tree 指的是 Balance Tree，也就是平衡树。平衡树是一颗查找树，并且所有叶子节点位于同一层。</p>
 <p>B+ Tree 是基于 B Tree 和叶子节点顺序访问指针进行实现，它具有 B Tree 的平衡性，并且通过顺序访问指针来提高区间查询的性能。</p>
 <p>在 B+ Tree 中，一个节点中的 key 从左到右非递减排列，如果某个指针的左右相邻 key 分别是 keyi 和 keyi+1，且不为 null，则该指针指向节点的所有 key 大于等于 keyi 且小于等于 keyi+1。</p>
@@ -289,258 +261,66 @@
 <li><a href="https://tech.meituan.com/dianping_order_db_sharding.html" target="_blank" rel="noopener">大众点评订单系统分库分表实践</a></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wangyuehan.github.io/year/11/03/MySQL原理/" data-id="cjx5l5eqr009en37brw12i4bl" class="article-share-link">分享</a>
-      
-      
-        <a href="http://wangyuehan.github.io/year/11/03/MySQL原理/#disqus_thread" class="article-comment-link">留言</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
-    </footer>
-  </div>
+  </article>
   
-    
- <script src="/jquery/jquery.min.js"></script>
-  <div id="random_posts">
-    <h2>推荐文章</h2>
-    <div class="random_posts_ul">
-      <script>
-          var random_count =4
-          var site = {BASE_URI:'/'};
-          function load_random_posts(obj) {
-              var arr=site.posts;
-              if (!obj) return;
-              // var count = $(obj).attr('data-count') || 6;
-              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
-              arr = arr.slice(0, random_count);
-              var html = '<ul>';
-            
-              for(var j=0;j<arr.length;j++){
-                var item=arr[j];
-                html += '<li><strong>' + 
-                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
-                (item.title || item.uri) + '</a></strong>';
-                if(item.excerpt){
-                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
-                }
-                html +='</li>';
-                
-              }
-              $(obj).html(html + '</ul>');
-          }
-          $('.random_posts_ul').each(function () {
-              var c = this;
-              if (!site.posts || !site.posts.length){
-                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
-              } 
-               else{
-                load_random_posts(c);
-              }
-          });
-      </script>
-    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
 
-    
-<nav id="article-nav">
-  
-    <a href="/year/11/03/Redis/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Redis
-        
-      </div>
-    </a>
-  
-  
-    <a href="/year/10/28/Java容器/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Java容器</div>
-    </a>
-  
-</nav>
 
-  
-</article>
- 
-     
-  <div class="comments" id="comments">
-    
-     
-    <section id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-      </section>
-      
-       
-       
-      
-      
-  </div>
- 
-  
-
-</section>
-           
-    <aside id="sidebar">
-  
     
 
-  
-    
-
-  
-    
-    <div class="widget-wrap">
-    
-      <div class="widget" id="toc-widget-fixed">
-      
-        <strong class="toc-title">文章目录</strong>
-        <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、索引"><span class="toc-number">1.</span> <span class="toc-text">一、索引</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#B-Tree-原理"><span class="toc-number">1.1.</span> <span class="toc-text">B+ Tree 原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据结构"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-操作"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-与红黑树的比较"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 与红黑树的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-索引"><span class="toc-number">1.2.</span> <span class="toc-text">MySQL 索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B-Tree-索引"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. B+Tree 索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-哈希索引"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 哈希索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-全文索引"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 全文索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-空间数据索引"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 空间数据索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化"><span class="toc-number">1.3.</span> <span class="toc-text">索引优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-独立的列"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 独立的列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-多列索引"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 多列索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-索引列的顺序"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 索引列的顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-前缀索引"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 前缀索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-覆盖索引"><span class="toc-number">1.3.5.</span> <span class="toc-text">5. 覆盖索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引的优点"><span class="toc-number">1.4.</span> <span class="toc-text">索引的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引的使用条件"><span class="toc-number">1.5.</span> <span class="toc-text">索引的使用条件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、查询性能优化"><span class="toc-number">2.</span> <span class="toc-text">二、查询性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Explain-进行分析"><span class="toc-number">2.1.</span> <span class="toc-text">使用 Explain 进行分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化数据访问"><span class="toc-number">2.2.</span> <span class="toc-text">优化数据访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-减少请求的数据量"><span class="toc-number">2.2.1.</span> <span class="toc-text">1. 减少请求的数据量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-减少服务器端扫描的行数"><span class="toc-number">2.2.2.</span> <span class="toc-text">2. 减少服务器端扫描的行数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重构查询方式"><span class="toc-number">2.3.</span> <span class="toc-text">重构查询方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-切分大查询"><span class="toc-number">2.3.1.</span> <span class="toc-text">1. 切分大查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-分解大连接查询"><span class="toc-number">2.3.2.</span> <span class="toc-text">2. 分解大连接查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、存储引擎"><span class="toc-number">3.</span> <span class="toc-text">三、存储引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#InnoDB"><span class="toc-number">3.1.</span> <span class="toc-text">InnoDB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyISAM"><span class="toc-number">3.2.</span> <span class="toc-text">MyISAM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比较"><span class="toc-number">3.3.</span> <span class="toc-text">比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、数据类型"><span class="toc-number">4.</span> <span class="toc-text">四、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#整型"><span class="toc-number">4.1.</span> <span class="toc-text">整型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮点数"><span class="toc-number">4.2.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串"><span class="toc-number">4.3.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间和日期"><span class="toc-number">4.4.</span> <span class="toc-text">时间和日期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DATETIME"><span class="toc-number">4.4.1.</span> <span class="toc-text">1. DATETIME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TIMESTAMP"><span class="toc-number">4.4.2.</span> <span class="toc-text">2. TIMESTAMP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、切分"><span class="toc-number">5.</span> <span class="toc-text">五、切分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#水平切分"><span class="toc-number">5.1.</span> <span class="toc-text">水平切分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垂直切分"><span class="toc-number">5.2.</span> <span class="toc-text">垂直切分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sharding-策略"><span class="toc-number">5.3.</span> <span class="toc-text">Sharding 策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sharding-存在的问题"><span class="toc-number">5.4.</span> <span class="toc-text">Sharding 存在的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事务问题"><span class="toc-number">5.4.1.</span> <span class="toc-text">1. 事务问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-连接"><span class="toc-number">5.4.2.</span> <span class="toc-text">2. 连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ID-唯一性"><span class="toc-number">5.4.3.</span> <span class="toc-text">3. ID 唯一性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、复制"><span class="toc-number">6.</span> <span class="toc-text">六、复制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主从复制"><span class="toc-number">6.1.</span> <span class="toc-text">主从复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#读写分离"><span class="toc-number">6.2.</span> <span class="toc-text">读写分离</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">7.</span> <span class="toc-text">参考资料</span></a></li></ol>
-          </div>
-      </div>
-    </div>
-
-  
-    
-
-  
-    
-  
-    
-  
-    
-
-  
-    
-  
-    <!--微信公众号二维码-->
 
 
-  
-</aside>
 
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-left">
-      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
-      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
-    </div>
-     <div id="footer-right">
-      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
     </div>
   </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"/>
+        </svg>
+        </a>
+        © XXX 20xx-2017
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
- <script src="/jquery/jquery.min.js"></script>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
-  
-    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
-  
-    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
-  
-    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
-  
-    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
-  
-    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
-  
-    <a href="/board" class="mobile-nav-link">留言板</a>
-  
-    <a href="/atom.xml" class="mobile-nav-link">rss</a>
-  
-</nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png">
-<script>
-// Elevator script included on the page, already.
-window.onload = function() {
-  var elevator = new Elevator({
-    selector:'.back-to-top-btn',
-    element: document.querySelector('.back-to-top-btn'),
-    duration: 1000 // milliseconds
-  });
-}
-</script>
-      
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
 
-<script>
-  var disqus_shortname = 'yuehan';
-  
-  var disqus_url = 'http://wangyuehan.github.io/year/11/03/MySQL原理/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
 
-
-
-
-
-
-
-<!-- author:forvoid begin -->
-<!-- author:forvoid begin -->
-
-<!-- author:forvoid end -->
-
-<!-- author:forvoid end -->
-
-
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      })
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      })
-    </script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
- <script src="/js/is.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-<script src="/js/elevator.js"></script>
-  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

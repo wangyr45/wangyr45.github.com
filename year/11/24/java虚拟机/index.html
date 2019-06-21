@@ -1,136 +1,97 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content>
   
-  <title>java虚拟机 | 王约翰的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>java虚拟机</title>
+  <meta name="author" content="John Wang">
   <meta name="description" content="整理的关于java虚拟机相关知识。">
-<meta name="keywords" content="java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java虚拟机">
-<meta property="og:url" content="http://wangyuehan.github.io/year/11/24/java虚拟机/index.html">
-<meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="整理的关于java虚拟机相关知识。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/85370d54-40d1-4912-bcbe-37a2481c861d.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/28ab96b4-82ea-4d99-99fb-b320f60d0a58.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/JNI-Java-Native-Interface.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/0635cbe8.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/a4248c4b-6c1d-4fb8-a557-86da92d3a294.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/902b83ab-8054-4bd2-898f-9a4a0fe52830.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/e6b733ad-606d-4028-b3e8-83c3a73a3797.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/c625baa0-dde6-449e-93df-c3a67f2f430f.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/22fda4ae-4dd5-489d-ab10-9ebfdad22ae0.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/81538cd5-1bcf-4e31-86e5-e198df1e013b.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/08f32fd3-f736-4a67-81ca-295b2a7972f2.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/278fe431-af88-4a95-a895-9c3b80117de3.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/62e77997-6957-4b68-8d12-bfd609bb2c68.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/4cf711a8-7ab2-4152-b85c-d5c226733807.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/9bbddeeb-e939-41f0-8e8e-2b1a0aa7e0a7.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f99ee771-c56f-47fb-9148-c0036695b5fe.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/32b8374a-e822-4720-af0b-c0f485095ea2.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/class_loader_hierarchy.png">
-<meta property="og:updated_time" content="2019-03-09T08:25:24.871Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java虚拟机">
-<meta name="twitter:description" content="整理的关于java虚拟机相关知识。">
-<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/85370d54-40d1-4912-bcbe-37a2481c861d.png">
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
+  <meta property="og:title" content="java虚拟机">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="王约翰的博客">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 </html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    
-    <div id="header-inner" class="inner">
-      <nav id="sub-nav">
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;你敲代码好像cxk啊！
       </div>
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">归档</a>
-        
-          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
-        
-          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
-        
-          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
-        
-          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
-        
-          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
-        
-          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
-        
-          <a class="main-nav-link" href="/board">留言板</a>
-        
-          <a class="main-nav-link" href="/atom.xml">rss</a>
-        
-      </nav>
-      
     </div>
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">王约翰的博客</a>
-      </h1>
+    <div class="main-ctnr">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
-        </h2>
-      
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-java虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/year/11/24/java虚拟机/" class="article-date">
-  <time datetime="2018-11-24T05:34:45.000Z" itemprop="datePublished">2018-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/专业知识/">专业知识</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <article class="standard post">
+    <div class="title">
+      
   
-    <h1 class="article-title" itemprop="name">
-      java虚拟机
+    <h1 class="page-title center">
+        java虚拟机
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+
+    </div>
+    <div class="meta center">
       
-        <!-- Table of Contents -->
-        
-        <p>整理的关于java虚拟机相关知识。<br><a id="more"></a></p>
+<time datetime="2018-11-24T05:34:45.000Z">
+<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
+  </svg>
+  &nbsp;
+  2018-11-24
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/categories/专业知识/">专业知识</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/tags/java/">java</a>
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、运行时数据区域"><span class="toc-text">一、运行时数据区域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序计数器"><span class="toc-text">程序计数器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-虚拟机栈"><span class="toc-text">Java 虚拟机栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地方法栈"><span class="toc-text">本地方法栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆"><span class="toc-text">堆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法区"><span class="toc-text">方法区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行时常量池"><span class="toc-text">运行时常量池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接内存"><span class="toc-text">直接内存</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、垃圾收集"><span class="toc-text">二、垃圾收集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#判断一个对象是否可被回收"><span class="toc-text">判断一个对象是否可被回收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-引用计数算法"><span class="toc-text">1. 引用计数算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-可达性分析算法"><span class="toc-text">2. 可达性分析算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-方法区的回收"><span class="toc-text">3. 方法区的回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-finalize"><span class="toc-text">4. finalize()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用类型"><span class="toc-text">引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-强引用"><span class="toc-text">1. 强引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-软引用"><span class="toc-text">2. 软引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-弱引用"><span class="toc-text">3. 弱引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-虚引用"><span class="toc-text">4. 虚引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垃圾收集算法"><span class="toc-text">垃圾收集算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-标记-清除"><span class="toc-text">1. 标记 - 清除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-标记-整理"><span class="toc-text">2. 标记 - 整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-复制"><span class="toc-text">3. 复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-分代收集"><span class="toc-text">4. 分代收集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垃圾收集器"><span class="toc-text">垃圾收集器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Serial-收集器"><span class="toc-text">1. Serial 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ParNew-收集器"><span class="toc-text">2. ParNew 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Parallel-Scavenge-收集器"><span class="toc-text">3. Parallel Scavenge 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Serial-Old-收集器"><span class="toc-text">4. Serial Old 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Parallel-Old-收集器"><span class="toc-text">5. Parallel Old 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CMS-收集器"><span class="toc-text">6. CMS 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-G1-收集器"><span class="toc-text">7. G1 收集器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、内存分配与回收策略"><span class="toc-text">三、内存分配与回收策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minor-GC-和-Full-GC"><span class="toc-text">Minor GC 和 Full GC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存分配策略"><span class="toc-text">内存分配策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-对象优先在-Eden-分配"><span class="toc-text">1. 对象优先在 Eden 分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-大对象直接进入老年代"><span class="toc-text">2. 大对象直接进入老年代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-长期存活的对象进入老年代"><span class="toc-text">3. 长期存活的对象进入老年代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-动态对象年龄判定"><span class="toc-text">4. 动态对象年龄判定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-空间分配担保"><span class="toc-text">5. 空间分配担保</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Full-GC-的触发条件"><span class="toc-text">Full GC 的触发条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-调用-System-gc"><span class="toc-text">1. 调用 System.gc()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-老年代空间不足"><span class="toc-text">2. 老年代空间不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-空间分配担保失败"><span class="toc-text">3. 空间分配担保失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-JDK-1-7-及以前的永久代空间不足"><span class="toc-text">4. JDK 1.7 及以前的永久代空间不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Concurrent-Mode-Failure"><span class="toc-text">5. Concurrent Mode Failure</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、类加载机制"><span class="toc-text">四、类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#类的生命周期"><span class="toc-text">类的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类加载过程"><span class="toc-text">类加载过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-加载"><span class="toc-text">1. 加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-验证"><span class="toc-text">2. 验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-准备"><span class="toc-text">3. 准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-解析"><span class="toc-text">4. 解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-初始化"><span class="toc-text">5. 初始化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类初始化时机"><span class="toc-text">类初始化时机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-主动引用"><span class="toc-text">1. 主动引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-被动引用"><span class="toc-text">2. 被动引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类与类加载器"><span class="toc-text">类与类加载器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类加载器分类"><span class="toc-text">类加载器分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双亲委派模型"><span class="toc-text">双亲委派模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-工作过程"><span class="toc-text">1. 工作过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-好处"><span class="toc-text">2. 好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-实现"><span class="toc-text">3. 实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义类加载器实现"><span class="toc-text">自定义类加载器实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <p>整理的关于java虚拟机相关知识。<br><a id="more"></a></p>
 <h1 id="一、运行时数据区域"><a href="#一、运行时数据区域" class="headerlink" title="一、运行时数据区域"></a>一、运行时数据区域</h1><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/85370d54-40d1-4912-bcbe-37a2481c861d.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/85370d54-40d1-4912-bcbe-37a2481c861d.png" alt="img"></a></p>
 <h2 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h2><p>记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）。</p>
 <h2 id="Java-虚拟机栈"><a href="#Java-虚拟机栈" class="headerlink" title="Java 虚拟机栈"></a>Java 虚拟机栈</h2><p>每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。从方法调用直至执行完成的过程，就对应着一个栈帧在 Java 虚拟机栈中入栈和出栈的过程。</p>
@@ -427,258 +388,66 @@
 <li><a href="https://alvinalexander.com/java/jwarehouse/apache-tomcat-6.0.16/java/org/apache/el/util/ConcurrentCache.java.shtml" target="_blank" rel="noopener">Tomcat example source code file (ConcurrentCache.java)</a></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wangyuehan.github.io/year/11/24/java虚拟机/" data-id="cjx5l5ere00b6n37bq9n0atod" class="article-share-link">分享</a>
-      
-      
-        <a href="http://wangyuehan.github.io/year/11/24/java虚拟机/#disqus_thread" class="article-comment-link">留言</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 
-    </footer>
-  </div>
+  </article>
   
-    
- <script src="/jquery/jquery.min.js"></script>
-  <div id="random_posts">
-    <h2>推荐文章</h2>
-    <div class="random_posts_ul">
-      <script>
-          var random_count =4
-          var site = {BASE_URI:'/'};
-          function load_random_posts(obj) {
-              var arr=site.posts;
-              if (!obj) return;
-              // var count = $(obj).attr('data-count') || 6;
-              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
-              arr = arr.slice(0, random_count);
-              var html = '<ul>';
-            
-              for(var j=0;j<arr.length;j++){
-                var item=arr[j];
-                html += '<li><strong>' + 
-                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
-                (item.title || item.uri) + '</a></strong>';
-                if(item.excerpt){
-                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
-                }
-                html +='</li>';
-                
-              }
-              $(obj).html(html + '</ul>');
-          }
-          $('.random_posts_ul').each(function () {
-              var c = this;
-              if (!site.posts || !site.posts.length){
-                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
-              } 
-               else{
-                load_random_posts(c);
-              }
-          });
-      </script>
-    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
 
-    
-<nav id="article-nav">
-  
-    <a href="/year/11/27/细说反射，java开发者必须买过的坎/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          细说反射,java开发者必须买过的坎
-        
-      </div>
-    </a>
-  
-  
-    <a href="/year/11/15/手把手教你搭建可自动化构建的微服务框架/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">手把手教你搭建可自动化构建的微服务框架</div>
-    </a>
-  
-</nav>
 
-  
-</article>
- 
-     
-  <div class="comments" id="comments">
-    
-     
-    <section id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-      </section>
-      
-       
-       
-      
-      
-  </div>
- 
-  
-
-</section>
-           
-    <aside id="sidebar">
-  
     
 
-  
-    
-
-  
-    
-    <div class="widget-wrap">
-    
-      <div class="widget" id="toc-widget-fixed">
-      
-        <strong class="toc-title">文章目录</strong>
-        <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、运行时数据区域"><span class="toc-number">1.</span> <span class="toc-text">一、运行时数据区域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序计数器"><span class="toc-number">1.1.</span> <span class="toc-text">程序计数器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-虚拟机栈"><span class="toc-number">1.2.</span> <span class="toc-text">Java 虚拟机栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地方法栈"><span class="toc-number">1.3.</span> <span class="toc-text">本地方法栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆"><span class="toc-number">1.4.</span> <span class="toc-text">堆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法区"><span class="toc-number">1.5.</span> <span class="toc-text">方法区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行时常量池"><span class="toc-number">1.6.</span> <span class="toc-text">运行时常量池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接内存"><span class="toc-number">1.7.</span> <span class="toc-text">直接内存</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、垃圾收集"><span class="toc-number">2.</span> <span class="toc-text">二、垃圾收集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#判断一个对象是否可被回收"><span class="toc-number">2.1.</span> <span class="toc-text">判断一个对象是否可被回收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-引用计数算法"><span class="toc-number">2.1.1.</span> <span class="toc-text">1. 引用计数算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-可达性分析算法"><span class="toc-number">2.1.2.</span> <span class="toc-text">2. 可达性分析算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-方法区的回收"><span class="toc-number">2.1.3.</span> <span class="toc-text">3. 方法区的回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-finalize"><span class="toc-number">2.1.4.</span> <span class="toc-text">4. finalize()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用类型"><span class="toc-number">2.2.</span> <span class="toc-text">引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-强引用"><span class="toc-number">2.2.1.</span> <span class="toc-text">1. 强引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-软引用"><span class="toc-number">2.2.2.</span> <span class="toc-text">2. 软引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-弱引用"><span class="toc-number">2.2.3.</span> <span class="toc-text">3. 弱引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-虚引用"><span class="toc-number">2.2.4.</span> <span class="toc-text">4. 虚引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垃圾收集算法"><span class="toc-number">2.3.</span> <span class="toc-text">垃圾收集算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-标记-清除"><span class="toc-number">2.3.1.</span> <span class="toc-text">1. 标记 - 清除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-标记-整理"><span class="toc-number">2.3.2.</span> <span class="toc-text">2. 标记 - 整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-复制"><span class="toc-number">2.3.3.</span> <span class="toc-text">3. 复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-分代收集"><span class="toc-number">2.3.4.</span> <span class="toc-text">4. 分代收集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垃圾收集器"><span class="toc-number">2.4.</span> <span class="toc-text">垃圾收集器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Serial-收集器"><span class="toc-number">2.4.1.</span> <span class="toc-text">1. Serial 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ParNew-收集器"><span class="toc-number">2.4.2.</span> <span class="toc-text">2. ParNew 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Parallel-Scavenge-收集器"><span class="toc-number">2.4.3.</span> <span class="toc-text">3. Parallel Scavenge 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Serial-Old-收集器"><span class="toc-number">2.4.4.</span> <span class="toc-text">4. Serial Old 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Parallel-Old-收集器"><span class="toc-number">2.4.5.</span> <span class="toc-text">5. Parallel Old 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CMS-收集器"><span class="toc-number">2.4.6.</span> <span class="toc-text">6. CMS 收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-G1-收集器"><span class="toc-number">2.4.7.</span> <span class="toc-text">7. G1 收集器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、内存分配与回收策略"><span class="toc-number">3.</span> <span class="toc-text">三、内存分配与回收策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minor-GC-和-Full-GC"><span class="toc-number">3.1.</span> <span class="toc-text">Minor GC 和 Full GC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存分配策略"><span class="toc-number">3.2.</span> <span class="toc-text">内存分配策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-对象优先在-Eden-分配"><span class="toc-number">3.2.1.</span> <span class="toc-text">1. 对象优先在 Eden 分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-大对象直接进入老年代"><span class="toc-number">3.2.2.</span> <span class="toc-text">2. 大对象直接进入老年代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-长期存活的对象进入老年代"><span class="toc-number">3.2.3.</span> <span class="toc-text">3. 长期存活的对象进入老年代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-动态对象年龄判定"><span class="toc-number">3.2.4.</span> <span class="toc-text">4. 动态对象年龄判定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-空间分配担保"><span class="toc-number">3.2.5.</span> <span class="toc-text">5. 空间分配担保</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Full-GC-的触发条件"><span class="toc-number">3.3.</span> <span class="toc-text">Full GC 的触发条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-调用-System-gc"><span class="toc-number">3.3.1.</span> <span class="toc-text">1. 调用 System.gc()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-老年代空间不足"><span class="toc-number">3.3.2.</span> <span class="toc-text">2. 老年代空间不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-空间分配担保失败"><span class="toc-number">3.3.3.</span> <span class="toc-text">3. 空间分配担保失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-JDK-1-7-及以前的永久代空间不足"><span class="toc-number">3.3.4.</span> <span class="toc-text">4. JDK 1.7 及以前的永久代空间不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Concurrent-Mode-Failure"><span class="toc-number">3.3.5.</span> <span class="toc-text">5. Concurrent Mode Failure</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、类加载机制"><span class="toc-number">4.</span> <span class="toc-text">四、类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#类的生命周期"><span class="toc-number">4.1.</span> <span class="toc-text">类的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类加载过程"><span class="toc-number">4.2.</span> <span class="toc-text">类加载过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-加载"><span class="toc-number">4.2.1.</span> <span class="toc-text">1. 加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-验证"><span class="toc-number">4.2.2.</span> <span class="toc-text">2. 验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-准备"><span class="toc-number">4.2.3.</span> <span class="toc-text">3. 准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-解析"><span class="toc-number">4.2.4.</span> <span class="toc-text">4. 解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-初始化"><span class="toc-number">4.2.5.</span> <span class="toc-text">5. 初始化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类初始化时机"><span class="toc-number">4.3.</span> <span class="toc-text">类初始化时机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-主动引用"><span class="toc-number">4.3.1.</span> <span class="toc-text">1. 主动引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-被动引用"><span class="toc-number">4.3.2.</span> <span class="toc-text">2. 被动引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类与类加载器"><span class="toc-number">4.4.</span> <span class="toc-text">类与类加载器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类加载器分类"><span class="toc-number">4.5.</span> <span class="toc-text">类加载器分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双亲委派模型"><span class="toc-number">4.6.</span> <span class="toc-text">双亲委派模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-工作过程"><span class="toc-number">4.6.1.</span> <span class="toc-text">1. 工作过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-好处"><span class="toc-number">4.6.2.</span> <span class="toc-text">2. 好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-实现"><span class="toc-number">4.6.3.</span> <span class="toc-text">3. 实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义类加载器实现"><span class="toc-number">4.7.</span> <span class="toc-text">自定义类加载器实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
-          </div>
-      </div>
-    </div>
-
-  
-    
-
-  
-    
-  
-    
-  
-    
-
-  
-    
-  
-    <!--微信公众号二维码-->
 
 
-  
-</aside>
 
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-left">
-      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
-      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
-    </div>
-     <div id="footer-right">
-      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
     </div>
   </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"/>
+        </svg>
+        </a>
+        © XXX 20xx-2017
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
- <script src="/jquery/jquery.min.js"></script>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
-  
-    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
-  
-    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
-  
-    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
-  
-    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
-  
-    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
-  
-    <a href="/board" class="mobile-nav-link">留言板</a>
-  
-    <a href="/atom.xml" class="mobile-nav-link">rss</a>
-  
-</nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png">
-<script>
-// Elevator script included on the page, already.
-window.onload = function() {
-  var elevator = new Elevator({
-    selector:'.back-to-top-btn',
-    element: document.querySelector('.back-to-top-btn'),
-    duration: 1000 // milliseconds
-  });
-}
-</script>
-      
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
 
-<script>
-  var disqus_shortname = 'yuehan';
-  
-  var disqus_url = 'http://wangyuehan.github.io/year/11/24/java虚拟机/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
 
-
-
-
-
-
-
-<!-- author:forvoid begin -->
-<!-- author:forvoid begin -->
-
-<!-- author:forvoid end -->
-
-<!-- author:forvoid end -->
-
-
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      })
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      })
-    </script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
- <script src="/js/is.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-<script src="/js/elevator.js"></script>
-  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

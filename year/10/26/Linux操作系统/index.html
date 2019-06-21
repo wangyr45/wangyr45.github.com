@@ -1,135 +1,97 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content>
   
-  <title>Linux操作系统 | 王约翰的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Linux操作系统</title>
+  <meta name="author" content="John Wang">
   <meta name="description" content="根据Github总结关于Linux底层操作系统相关知识。包括：常用操作和概念、磁盘、分区、文件系统、压缩打包、Bash、管道指令、正则表达式、进程管理等等。">
-<meta name="keywords" content="Linux,操作系统">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Linux操作系统">
-<meta property="og:url" content="http://wangyuehan.github.io/year/10/26/Linux操作系统/index.html">
-<meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="根据Github总结关于Linux底层操作系统相关知识。包括：常用操作和概念、磁盘、分区、文件系统、压缩打包、Bash、管道指令、正则表达式、进程管理等等。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/5942debd-fc00-477a-b390-7c5692cc8070.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/924914c0-660c-4e4a-bbc0-1df1146e7516.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f9f2a16b-4843-44d1-9759-c745772e9bcf.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f0574025-c514-49f5-a591-6d6a71f271f7.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/6729baa0-57d7-4817-b3aa-518cbccf824c.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/GUID_Partition_Table_Scheme.svg.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/50831a6f-2777-46ea-a571-29f23c85cc21.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f900f266-a323-42b2-bc43-218fdb8811a8.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/BSD_disk.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/83185315-793a-453a-a927-5e8d92b5c0ef.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/075e1977-7846-4928-96c8-bb5b0268693c.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/inode_with_signatures.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/linux-filesystem.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/b8081c84-62c4-4019-b3ee-4bd0e443d647.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/658fc5e7-79c0-4247-9445-d69bf194c539.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/76a49594323247f21c9b3a69945445ee.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/flow.png">
-<meta property="og:updated_time" content="2019-03-09T08:25:30.321Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux操作系统">
-<meta name="twitter:description" content="根据Github总结关于Linux底层操作系统相关知识。包括：常用操作和概念、磁盘、分区、文件系统、压缩打包、Bash、管道指令、正则表达式、进程管理等等。">
-<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/5942debd-fc00-477a-b390-7c5692cc8070.jpg">
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
+  <meta property="og:title" content="Linux操作系统">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="王约翰的博客">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 </html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    
-    <div id="header-inner" class="inner">
-      <nav id="sub-nav">
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;你敲代码好像cxk啊！
       </div>
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">归档</a>
-        
-          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
-        
-          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
-        
-          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
-        
-          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
-        
-          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
-        
-          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
-        
-          <a class="main-nav-link" href="/board">留言板</a>
-        
-          <a class="main-nav-link" href="/atom.xml">rss</a>
-        
-      </nav>
-      
     </div>
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">王约翰的博客</a>
-      </h1>
+    <div class="main-ctnr">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
-        </h2>
-      
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Linux操作系统" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/year/10/26/Linux操作系统/" class="article-date">
-  <time datetime="2018-10-26T02:32:41.000Z" itemprop="datePublished">2018-10-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/专业知识/">专业知识</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <article class="standard post">
+    <div class="title">
+      
   
-    <h1 class="article-title" itemprop="name">
-      Linux操作系统
+    <h1 class="page-title center">
+        Linux操作系统
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+
+    </div>
+    <div class="meta center">
       
-        <!-- Table of Contents -->
-        
-        <p>根据Github总结关于Linux底层操作系统相关知识。<br>包括：常用操作和概念、磁盘、分区、文件系统、压缩打包、Bash、管道指令、正则表达式、进程管理等等。</p>
+<time datetime="2018-10-26T02:32:41.000Z">
+<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
+  </svg>
+  &nbsp;
+  2018-10-26
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/categories/专业知识/">专业知识</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/tags/Linux/">Linux</a>·<a href="/tags/操作系统/">操作系统</a>
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、常用操作以及概念"><span class="toc-text">一、常用操作以及概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求助"><span class="toc-text">求助</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-–help"><span class="toc-text">1. –help</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-man"><span class="toc-text">2. man</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-info"><span class="toc-text">3. info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-doc"><span class="toc-text">4. doc</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关机"><span class="toc-text">关机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-who"><span class="toc-text">1. who</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-sync"><span class="toc-text">2. sync</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-shutdown"><span class="toc-text">3. shutdown</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PATH"><span class="toc-text">PATH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sudo"><span class="toc-text">sudo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包管理工具"><span class="toc-text">包管理工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发行版"><span class="toc-text">发行版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM-三个模式"><span class="toc-text">VIM 三个模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GNU"><span class="toc-text">GNU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开源协议"><span class="toc-text">开源协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、磁盘"><span class="toc-text">二、磁盘</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘接口"><span class="toc-text">磁盘接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-IDE"><span class="toc-text">1. IDE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SATA"><span class="toc-text">2. SATA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-SCSI"><span class="toc-text">3. SCSI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SAS"><span class="toc-text">4. SAS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘的文件名"><span class="toc-text">磁盘的文件名</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、分区"><span class="toc-text">三、分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分区表"><span class="toc-text">分区表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-MBR"><span class="toc-text">1. MBR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GPT"><span class="toc-text">2. GPT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开机检测程序"><span class="toc-text">开机检测程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-BIOS"><span class="toc-text">1. BIOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-UEFI"><span class="toc-text">2. UEFI</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、文件系统"><span class="toc-text">四、文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分区与文件系统"><span class="toc-text">分区与文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件读取"><span class="toc-text">文件读取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘碎片"><span class="toc-text">磁盘碎片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#block"><span class="toc-text">block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inode"><span class="toc-text">inode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志"><span class="toc-text">日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#挂载"><span class="toc-text">挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录配置"><span class="toc-text">目录配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、文件"><span class="toc-text">五、文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件属性"><span class="toc-text">文件属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件与目录的基本操作"><span class="toc-text">文件与目录的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ls"><span class="toc-text">1. ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-cd"><span class="toc-text">2. cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-mkdir"><span class="toc-text">3. mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-rmdir"><span class="toc-text">4. rmdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-touch"><span class="toc-text">5. touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-cp"><span class="toc-text">6. cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-rm"><span class="toc-text">7. rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-mv"><span class="toc-text">8. mv</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改权限"><span class="toc-text">修改权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件默认权限"><span class="toc-text">文件默认权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录的权限"><span class="toc-text">目录的权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接"><span class="toc-text">链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-实体链接"><span class="toc-text">1. 实体链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-符号链接"><span class="toc-text">2. 符号链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取文件内容"><span class="toc-text">获取文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cat"><span class="toc-text">1. cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-tac"><span class="toc-text">2. tac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-more"><span class="toc-text">3. more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-less"><span class="toc-text">4. less</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-head"><span class="toc-text">5. head</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-tail"><span class="toc-text">6. tail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-od"><span class="toc-text">7. od</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令与文件搜索"><span class="toc-text">指令与文件搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-which"><span class="toc-text">1. which</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-whereis"><span class="toc-text">2. whereis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-locate"><span class="toc-text">3. locate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-find"><span class="toc-text">4. find</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、压缩与打包"><span class="toc-text">六、压缩与打包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩文件名"><span class="toc-text">压缩文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩指令"><span class="toc-text">压缩指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-gzip"><span class="toc-text">1. gzip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-bzip2"><span class="toc-text">2. bzip2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-xz"><span class="toc-text">3. xz</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包"><span class="toc-text">打包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、Bash"><span class="toc-text">七、Bash</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特性"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量操作"><span class="toc-text">变量操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令搜索顺序"><span class="toc-text">指令搜索顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据流重定向"><span class="toc-text">数据流重定向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、管道指令"><span class="toc-text">八、管道指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#提取指令"><span class="toc-text">提取指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排序指令"><span class="toc-text">排序指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双向输出重定向"><span class="toc-text">双向输出重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符转换指令"><span class="toc-text">字符转换指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分区指令"><span class="toc-text">分区指令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、正则表达式"><span class="toc-text">九、正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#printf"><span class="toc-text">printf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#awk"><span class="toc-text">awk</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、进程管理"><span class="toc-text">十、进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看进程"><span class="toc-text">查看进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ps"><span class="toc-text">1. ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-pstree"><span class="toc-text">2. pstree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-top"><span class="toc-text">3. top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-netstat"><span class="toc-text">4. netstat</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程状态"><span class="toc-text">进程状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SIGCHLD"><span class="toc-text">SIGCHLD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wait"><span class="toc-text">wait()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#waitpid"><span class="toc-text">waitpid()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#孤儿进程"><span class="toc-text">孤儿进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#僵尸进程"><span class="toc-text">僵尸进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <p>根据Github总结关于Linux底层操作系统相关知识。<br>包括：常用操作和概念、磁盘、分区、文件系统、压缩打包、Bash、管道指令、正则表达式、进程管理等等。</p>
 <a id="more"></a>
 <h1 id="一、常用操作以及概念"><a href="#一、常用操作以及概念" class="headerlink" title="一、常用操作以及概念"></a>一、常用操作以及概念</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
 <li>Tab：命令和文件名补全；</li>
@@ -753,258 +715,66 @@
 <li><a href="http://web.cs.ucla.edu/classes/fall14/cs111/scribe/11a/index.html" target="_blank" rel="noopener">FILE SYSTEM DESIGN</a></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wangyuehan.github.io/year/10/26/Linux操作系统/" data-id="cjx5l5erk00bkn37bo5qpetjb" class="article-share-link">分享</a>
-      
-      
-        <a href="http://wangyuehan.github.io/year/10/26/Linux操作系统/#disqus_thread" class="article-comment-link">留言</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
 
-    </footer>
-  </div>
+  </article>
   
-    
- <script src="/jquery/jquery.min.js"></script>
-  <div id="random_posts">
-    <h2>推荐文章</h2>
-    <div class="random_posts_ul">
-      <script>
-          var random_count =4
-          var site = {BASE_URI:'/'};
-          function load_random_posts(obj) {
-              var arr=site.posts;
-              if (!obj) return;
-              // var count = $(obj).attr('data-count') || 6;
-              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
-              arr = arr.slice(0, random_count);
-              var html = '<ul>';
-            
-              for(var j=0;j<arr.length;j++){
-                var item=arr[j];
-                html += '<li><strong>' + 
-                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
-                (item.title || item.uri) + '</a></strong>';
-                if(item.excerpt){
-                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
-                }
-                html +='</li>';
-                
-              }
-              $(obj).html(html + '</ul>');
-          }
-          $('.random_posts_ul').each(function () {
-              var c = this;
-              if (!site.posts || !site.posts.length){
-                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
-              } 
-               else{
-                load_random_posts(c);
-              }
-          });
-      </script>
-    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
 
-    
-<nav id="article-nav">
-  
-    <a href="/year/10/28/Java容器/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Java容器
-        
-      </div>
-    </a>
-  
-  
-    <a href="/year/10/26/HTTP学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">HTTP学习</div>
-    </a>
-  
-</nav>
 
-  
-</article>
- 
-     
-  <div class="comments" id="comments">
-    
-     
-    <section id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-      </section>
-      
-       
-       
-      
-      
-  </div>
- 
-  
-
-</section>
-           
-    <aside id="sidebar">
-  
     
 
-  
-    
-
-  
-    
-    <div class="widget-wrap">
-    
-      <div class="widget" id="toc-widget-fixed">
-      
-        <strong class="toc-title">文章目录</strong>
-        <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、常用操作以及概念"><span class="toc-number">1.</span> <span class="toc-text">一、常用操作以及概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">1.1.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求助"><span class="toc-number">1.2.</span> <span class="toc-text">求助</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-–help"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. –help</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-man"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. man</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-info"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-doc"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. doc</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关机"><span class="toc-number">1.3.</span> <span class="toc-text">关机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-who"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. who</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-sync"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. sync</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-shutdown"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. shutdown</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PATH"><span class="toc-number">1.4.</span> <span class="toc-text">PATH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sudo"><span class="toc-number">1.5.</span> <span class="toc-text">sudo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包管理工具"><span class="toc-number">1.6.</span> <span class="toc-text">包管理工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发行版"><span class="toc-number">1.7.</span> <span class="toc-text">发行版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM-三个模式"><span class="toc-number">1.8.</span> <span class="toc-text">VIM 三个模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GNU"><span class="toc-number">1.9.</span> <span class="toc-text">GNU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开源协议"><span class="toc-number">1.10.</span> <span class="toc-text">开源协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、磁盘"><span class="toc-number">2.</span> <span class="toc-text">二、磁盘</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘接口"><span class="toc-number">2.1.</span> <span class="toc-text">磁盘接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-IDE"><span class="toc-number">2.1.1.</span> <span class="toc-text">1. IDE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SATA"><span class="toc-number">2.1.2.</span> <span class="toc-text">2. SATA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-SCSI"><span class="toc-number">2.1.3.</span> <span class="toc-text">3. SCSI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SAS"><span class="toc-number">2.1.4.</span> <span class="toc-text">4. SAS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘的文件名"><span class="toc-number">2.2.</span> <span class="toc-text">磁盘的文件名</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、分区"><span class="toc-number">3.</span> <span class="toc-text">三、分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分区表"><span class="toc-number">3.1.</span> <span class="toc-text">分区表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-MBR"><span class="toc-number">3.1.1.</span> <span class="toc-text">1. MBR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GPT"><span class="toc-number">3.1.2.</span> <span class="toc-text">2. GPT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开机检测程序"><span class="toc-number">3.2.</span> <span class="toc-text">开机检测程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-BIOS"><span class="toc-number">3.2.1.</span> <span class="toc-text">1. BIOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-UEFI"><span class="toc-number">3.2.2.</span> <span class="toc-text">2. UEFI</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、文件系统"><span class="toc-number">4.</span> <span class="toc-text">四、文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分区与文件系统"><span class="toc-number">4.1.</span> <span class="toc-text">分区与文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-number">4.2.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件读取"><span class="toc-number">4.3.</span> <span class="toc-text">文件读取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘碎片"><span class="toc-number">4.4.</span> <span class="toc-text">磁盘碎片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#block"><span class="toc-number">4.5.</span> <span class="toc-text">block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inode"><span class="toc-number">4.6.</span> <span class="toc-text">inode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">4.7.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志"><span class="toc-number">4.8.</span> <span class="toc-text">日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#挂载"><span class="toc-number">4.9.</span> <span class="toc-text">挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录配置"><span class="toc-number">4.10.</span> <span class="toc-text">目录配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、文件"><span class="toc-number">5.</span> <span class="toc-text">五、文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件属性"><span class="toc-number">5.1.</span> <span class="toc-text">文件属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件与目录的基本操作"><span class="toc-number">5.2.</span> <span class="toc-text">文件与目录的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ls"><span class="toc-number">5.2.1.</span> <span class="toc-text">1. ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-cd"><span class="toc-number">5.2.2.</span> <span class="toc-text">2. cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-mkdir"><span class="toc-number">5.2.3.</span> <span class="toc-text">3. mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-rmdir"><span class="toc-number">5.2.4.</span> <span class="toc-text">4. rmdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-touch"><span class="toc-number">5.2.5.</span> <span class="toc-text">5. touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-cp"><span class="toc-number">5.2.6.</span> <span class="toc-text">6. cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-rm"><span class="toc-number">5.2.7.</span> <span class="toc-text">7. rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-mv"><span class="toc-number">5.2.8.</span> <span class="toc-text">8. mv</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改权限"><span class="toc-number">5.3.</span> <span class="toc-text">修改权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件默认权限"><span class="toc-number">5.4.</span> <span class="toc-text">文件默认权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录的权限"><span class="toc-number">5.5.</span> <span class="toc-text">目录的权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接"><span class="toc-number">5.6.</span> <span class="toc-text">链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-实体链接"><span class="toc-number">5.6.1.</span> <span class="toc-text">1. 实体链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-符号链接"><span class="toc-number">5.6.2.</span> <span class="toc-text">2. 符号链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取文件内容"><span class="toc-number">5.7.</span> <span class="toc-text">获取文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cat"><span class="toc-number">5.7.1.</span> <span class="toc-text">1. cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-tac"><span class="toc-number">5.7.2.</span> <span class="toc-text">2. tac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-more"><span class="toc-number">5.7.3.</span> <span class="toc-text">3. more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-less"><span class="toc-number">5.7.4.</span> <span class="toc-text">4. less</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-head"><span class="toc-number">5.7.5.</span> <span class="toc-text">5. head</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-tail"><span class="toc-number">5.7.6.</span> <span class="toc-text">6. tail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-od"><span class="toc-number">5.7.7.</span> <span class="toc-text">7. od</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令与文件搜索"><span class="toc-number">5.8.</span> <span class="toc-text">指令与文件搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-which"><span class="toc-number">5.8.1.</span> <span class="toc-text">1. which</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-whereis"><span class="toc-number">5.8.2.</span> <span class="toc-text">2. whereis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-locate"><span class="toc-number">5.8.3.</span> <span class="toc-text">3. locate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-find"><span class="toc-number">5.8.4.</span> <span class="toc-text">4. find</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、压缩与打包"><span class="toc-number">6.</span> <span class="toc-text">六、压缩与打包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩文件名"><span class="toc-number">6.1.</span> <span class="toc-text">压缩文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩指令"><span class="toc-number">6.2.</span> <span class="toc-text">压缩指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-gzip"><span class="toc-number">6.2.1.</span> <span class="toc-text">1. gzip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-bzip2"><span class="toc-number">6.2.2.</span> <span class="toc-text">2. bzip2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-xz"><span class="toc-number">6.2.3.</span> <span class="toc-text">3. xz</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包"><span class="toc-number">6.3.</span> <span class="toc-text">打包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、Bash"><span class="toc-number">7.</span> <span class="toc-text">七、Bash</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特性"><span class="toc-number">7.1.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量操作"><span class="toc-number">7.2.</span> <span class="toc-text">变量操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令搜索顺序"><span class="toc-number">7.3.</span> <span class="toc-text">指令搜索顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据流重定向"><span class="toc-number">7.4.</span> <span class="toc-text">数据流重定向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、管道指令"><span class="toc-number">8.</span> <span class="toc-text">八、管道指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#提取指令"><span class="toc-number">8.1.</span> <span class="toc-text">提取指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排序指令"><span class="toc-number">8.2.</span> <span class="toc-text">排序指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双向输出重定向"><span class="toc-number">8.3.</span> <span class="toc-text">双向输出重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符转换指令"><span class="toc-number">8.4.</span> <span class="toc-text">字符转换指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分区指令"><span class="toc-number">8.5.</span> <span class="toc-text">分区指令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、正则表达式"><span class="toc-number">9.</span> <span class="toc-text">九、正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#grep"><span class="toc-number">9.1.</span> <span class="toc-text">grep</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#printf"><span class="toc-number">9.2.</span> <span class="toc-text">printf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#awk"><span class="toc-number">9.3.</span> <span class="toc-text">awk</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、进程管理"><span class="toc-number">10.</span> <span class="toc-text">十、进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看进程"><span class="toc-number">10.1.</span> <span class="toc-text">查看进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ps"><span class="toc-number">10.1.1.</span> <span class="toc-text">1. ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-pstree"><span class="toc-number">10.1.2.</span> <span class="toc-text">2. pstree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-top"><span class="toc-number">10.1.3.</span> <span class="toc-text">3. top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-netstat"><span class="toc-number">10.1.4.</span> <span class="toc-text">4. netstat</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程状态"><span class="toc-number">10.2.</span> <span class="toc-text">进程状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SIGCHLD"><span class="toc-number">10.3.</span> <span class="toc-text">SIGCHLD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wait"><span class="toc-number">10.4.</span> <span class="toc-text">wait()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#waitpid"><span class="toc-number">10.5.</span> <span class="toc-text">waitpid()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#孤儿进程"><span class="toc-number">10.6.</span> <span class="toc-text">孤儿进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#僵尸进程"><span class="toc-number">10.7.</span> <span class="toc-text">僵尸进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">11.</span> <span class="toc-text">参考资料</span></a></li></ol>
-          </div>
-      </div>
-    </div>
-
-  
-    
-
-  
-    
-  
-    
-  
-    
-
-  
-    
-  
-    <!--微信公众号二维码-->
 
 
-  
-</aside>
 
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-left">
-      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
-      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
-    </div>
-     <div id="footer-right">
-      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
     </div>
   </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"/>
+        </svg>
+        </a>
+        © XXX 20xx-2017
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
- <script src="/jquery/jquery.min.js"></script>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
-  
-    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
-  
-    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
-  
-    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
-  
-    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
-  
-    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
-  
-    <a href="/board" class="mobile-nav-link">留言板</a>
-  
-    <a href="/atom.xml" class="mobile-nav-link">rss</a>
-  
-</nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png">
-<script>
-// Elevator script included on the page, already.
-window.onload = function() {
-  var elevator = new Elevator({
-    selector:'.back-to-top-btn',
-    element: document.querySelector('.back-to-top-btn'),
-    duration: 1000 // milliseconds
-  });
-}
-</script>
-      
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
 
-<script>
-  var disqus_shortname = 'yuehan';
-  
-  var disqus_url = 'http://wangyuehan.github.io/year/10/26/Linux操作系统/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
 
-
-
-
-
-
-
-<!-- author:forvoid begin -->
-<!-- author:forvoid begin -->
-
-<!-- author:forvoid end -->
-
-<!-- author:forvoid end -->
-
-
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      })
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      })
-    </script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
- <script src="/js/is.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-<script src="/js/elevator.js"></script>
-  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

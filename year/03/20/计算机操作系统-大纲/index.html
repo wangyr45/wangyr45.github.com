@@ -1,149 +1,97 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content>
   
-  <title>计算机操作系统-大纲 | 王约翰的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>计算机操作系统-大纲</title>
+  <meta name="author" content="John Wang">
   <meta name="description" content="持续跟进添加知识进度。ing….">
-<meta name="keywords" content="操作系统">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计算机操作系统-大纲">
-<meta property="og:url" content="http://wangyuehan.github.io/year/03/20/计算机操作系统-大纲/index.html">
-<meta property="og:site_name" content="王约翰的博客">
-<meta property="og:description" content="持续跟进添加知识进度。ing….">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/tGPV0.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2_14_microkernelArchitecture.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a6ac2b08-3861-4e85-baa8-382287bfee9f.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/3cd630ea-017c-488d-ad1d-732b4efeddf5.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ProcessState.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8c662999-c16c-481c-9f40-1fdba5bc9167.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/042cf928-3c8e-4815-ae9c-f2780202c68f.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a9077f06-7584-4f2b-8c20-3a8e46928820.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/53cd9ade-b0a6-4399-b4de-7f1fbd06cdfb.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2ac50b81-d92a-4401-b9ec-f2113ecc3076.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/c037c901-7eae-4e31-a1e4-9d41329e5c3e.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/b1fa0453-a4b0-4eae-a352-48acca8fff74.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e1eda3d5-5ec8-4708-8e25-1a04c5e11f48.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ed523051-608f-4c3f-b343-383e2d194470.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/d160ec2e-cfe2-4640-bda7-62f53e58b8c0.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/62e0dd4f-44c3-43ee-bb6e-fedb9e068519.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/7b281b1e-0595-402b-ae35-8c91084c33c1.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/cf4386a1-58c9-4eca-a17f-e12b1e9770eb.png">
-<meta property="og:image" content="https://camo.githubusercontent.com/7be506554fa5a86670d2bd1f22c786ae88e0bd31/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f37efbc8c30efbc8c31efbc8c32efbc8c30efbc8c33efbc8c30efbc8c34efbc8c32efbc8c33efbc8c30efbc8c33efbc8c32efbc8c31efbc8c32efbc8c30efbc8c31efbc8c37efbc8c30efbc8c31">
-<meta property="og:image" content="https://camo.githubusercontent.com/bb6f10172ad16d1094a12ee638783cbf3a15370a/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f34efbc8c37efbc8c30efbc8c37efbc8c31efbc8c30efbc8c31efbc8c32efbc8c31efbc8c32efbc8c36">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/eb859228-c0f2-4bce-910d-d9f76929352b.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ecf8ad5d-5403-48b9-b6e7-f2e20ffe8fca.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/5f5ef0b6-98ea-497c-a007-f6c55288eab1.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/22de0538-7c6e-4365-bd3b-8ce3c5900216.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e0900bb2-220a-43b7-9aa9-1d5cd55ff56e.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/014fbc4d-d873-4a12-b160-867ddaed9807.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/4e2485e4-34bd-4967-9f02-0c093b797aaa.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/271ce08f-c124-475f-b490-be44fedc6d2e.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/b396d726-b75f-4a32-89a2-03a7b6e19f6f.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/47d98583-8bb0-45cc-812d-47eefa0a4a40.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/76dc7769-1aac-4888-9bea-064f1caa8e77.jpg">
-<meta property="og:updated_time" content="2019-03-20T11:38:26.417Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机操作系统-大纲">
-<meta name="twitter:description" content="持续跟进添加知识进度。ing….">
-<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/tGPV0.png">
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
+  <meta property="og:title" content="计算机操作系统-大纲">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="王约翰的博客">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 </html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    
-    <div id="header-inner" class="inner">
-      <nav id="sub-nav">
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;你敲代码好像cxk啊！
       </div>
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">归档</a>
-        
-          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
-        
-          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
-        
-          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
-        
-          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
-        
-          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
-        
-          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
-        
-          <a class="main-nav-link" href="/board">留言板</a>
-        
-          <a class="main-nav-link" href="/atom.xml">rss</a>
-        
-      </nav>
-      
     </div>
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">王约翰的博客</a>
-      </h1>
+    <div class="main-ctnr">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
-        </h2>
-      
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-计算机操作系统-大纲" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/year/03/20/计算机操作系统-大纲/" class="article-date">
-  <time datetime="2019-03-20T11:38:05.000Z" itemprop="datePublished">2019-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/专业知识/">专业知识</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <article class="standard post">
+    <div class="title">
+      
   
-    <h1 class="article-title" itemprop="name">
-      计算机操作系统-大纲
+    <h1 class="page-title center">
+        计算机操作系统-大纲
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+
+    </div>
+    <div class="meta center">
       
-        <!-- Table of Contents -->
-        
-        <p>持续跟进添加知识进度。<br>ing….<br><a id="more"></a></p>
+<time datetime="2019-03-20T11:38:05.000Z">
+<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
+  </svg>
+  &nbsp;
+  2019-03-20
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/categories/专业知识/">专业知识</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/tags/操作系统/">操作系统</a>
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、概述"><span class="toc-text">一、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特征"><span class="toc-text">基本特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-并发"><span class="toc-text">1. 并发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-共享"><span class="toc-text">2. 共享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-虚拟"><span class="toc-text">3. 虚拟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-异步"><span class="toc-text">4. 异步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本功能"><span class="toc-text">基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进程管理"><span class="toc-text">1. 进程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-内存管理"><span class="toc-text">2. 内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-文件管理"><span class="toc-text">3. 文件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-设备管理"><span class="toc-text">4. 设备管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统调用"><span class="toc-text">系统调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#大内核和微内核"><span class="toc-text">大内核和微内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-大内核"><span class="toc-text">1. 大内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-微内核"><span class="toc-text">2. 微内核</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中断分类"><span class="toc-text">中断分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-外中断"><span class="toc-text">1. 外中断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-异常"><span class="toc-text">2. 异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-陷入"><span class="toc-text">3. 陷入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、进程管理"><span class="toc-text">二、进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程与线程"><span class="toc-text">进程与线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进程"><span class="toc-text">1. 进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-线程"><span class="toc-text">2. 线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-区别"><span class="toc-text">3. 区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程状态的切换"><span class="toc-text">进程状态的切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程调度算法"><span class="toc-text">进程调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-批处理系统"><span class="toc-text">1. 批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-交互式系统"><span class="toc-text">2. 交互式系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-实时系统"><span class="toc-text">3. 实时系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程同步"><span class="toc-text">进程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-临界区"><span class="toc-text">1. 临界区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-同步与互斥"><span class="toc-text">2. 同步与互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-信号量"><span class="toc-text">3. 信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-管程"><span class="toc-text">4. 管程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典同步问题"><span class="toc-text">经典同步问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-读者-写者问题"><span class="toc-text">1. 读者-写者问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-哲学家进餐问题"><span class="toc-text">2. 哲学家进餐问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程通信"><span class="toc-text">进程通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-管道"><span class="toc-text">1. 管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-FIFO"><span class="toc-text">2. FIFO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-消息队列"><span class="toc-text">3. 消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-信号量"><span class="toc-text">4. 信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-共享存储"><span class="toc-text">5. 共享存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-套接字"><span class="toc-text">6. 套接字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、死锁"><span class="toc-text">三、死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#必要条件"><span class="toc-text">必要条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理方法"><span class="toc-text">处理方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鸵鸟策略"><span class="toc-text">鸵鸟策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁检测与死锁恢复"><span class="toc-text">死锁检测与死锁恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-每种类型一个资源的死锁检测"><span class="toc-text">1. 每种类型一个资源的死锁检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-每种类型多个资源的死锁检测"><span class="toc-text">2. 每种类型多个资源的死锁检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-死锁恢复"><span class="toc-text">3. 死锁恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁预防"><span class="toc-text">死锁预防</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-破坏互斥条件"><span class="toc-text">1. 破坏互斥条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-破坏占有和等待条件"><span class="toc-text">2. 破坏占有和等待条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-破坏不可抢占条件"><span class="toc-text">3. 破坏不可抢占条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-破坏环路等待"><span class="toc-text">4. 破坏环路等待</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁避免"><span class="toc-text">死锁避免</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安全状态"><span class="toc-text">1. 安全状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-单个资源的银行家算法"><span class="toc-text">2. 单个资源的银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-多个资源的银行家算法"><span class="toc-text">3. 多个资源的银行家算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、内存管理"><span class="toc-text">四、内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟内存"><span class="toc-text">虚拟内存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页系统地址映射"><span class="toc-text">分页系统地址映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面置换算法"><span class="toc-text">页面置换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-最佳"><span class="toc-text">1. 最佳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-最近最久未使用"><span class="toc-text">2. 最近最久未使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-最近未使用"><span class="toc-text">3. 最近未使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-先进先出"><span class="toc-text">4. 先进先出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-第二次机会算法"><span class="toc-text">5. 第二次机会算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-时钟"><span class="toc-text">6. 时钟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分段"><span class="toc-text">分段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#段页式"><span class="toc-text">段页式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页与分段的比较"><span class="toc-text">分页与分段的比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、设备管理"><span class="toc-text">五、设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘结构"><span class="toc-text">磁盘结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘调度算法"><span class="toc-text">磁盘调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-先来先服务"><span class="toc-text">1. 先来先服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-最短寻道时间优先"><span class="toc-text">2. 最短寻道时间优先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-电梯算法"><span class="toc-text">3. 电梯算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、链接"><span class="toc-text">六、链接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#编译系统"><span class="toc-text">编译系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态链接"><span class="toc-text">静态链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标文件"><span class="toc-text">目标文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态链接"><span class="toc-text">动态链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <p>持续跟进添加知识进度。<br>ing….<br><a id="more"></a></p>
 <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
 <p>并行需要硬件支持，如多流水线、多核处理器或者分布式计算系统。</p>
 <p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
@@ -549,258 +497,66 @@
 <li><a href="https://blogs.cisco.com/datacenter/decoding-ucs-invicta-part-1" target="_blank" rel="noopener">Decoding UCS Invicta – Part 1</a></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wangyuehan.github.io/year/03/20/计算机操作系统-大纲/" data-id="cjx5l5ern00bsn37b4ygl6etx" class="article-share-link">分享</a>
-      
-      
-        <a href="http://wangyuehan.github.io/year/03/20/计算机操作系统-大纲/#disqus_thread" class="article-comment-link">留言</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
 
-    </footer>
-  </div>
+  </article>
   
-    
- <script src="/jquery/jquery.min.js"></script>
-  <div id="random_posts">
-    <h2>推荐文章</h2>
-    <div class="random_posts_ul">
-      <script>
-          var random_count =4
-          var site = {BASE_URI:'/'};
-          function load_random_posts(obj) {
-              var arr=site.posts;
-              if (!obj) return;
-              // var count = $(obj).attr('data-count') || 6;
-              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
-              arr = arr.slice(0, random_count);
-              var html = '<ul>';
-            
-              for(var j=0;j<arr.length;j++){
-                var item=arr[j];
-                html += '<li><strong>' + 
-                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
-                (item.title || item.uri) + '</a></strong>';
-                if(item.excerpt){
-                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
-                }
-                html +='</li>';
-                
-              }
-              $(obj).html(html + '</ul>');
-          }
-          $('.random_posts_ul').each(function () {
-              var c = this;
-              if (!site.posts || !site.posts.length){
-                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
-              } 
-               else{
-                load_random_posts(c);
-              }
-          });
-      </script>
-    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
 
-    
-<nav id="article-nav">
-  
-    <a href="/year/03/22/情感附加值/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          情感附加值
-        
-      </div>
-    </a>
-  
-  
-    <a href="/year/03/20/武志红的心理学/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">武志红的心理学</div>
-    </a>
-  
-</nav>
 
-  
-</article>
- 
-     
-  <div class="comments" id="comments">
-    
-     
-    <section id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-      </section>
-      
-       
-       
-      
-      
-  </div>
- 
-  
-
-</section>
-           
-    <aside id="sidebar">
-  
     
 
-  
-    
-
-  
-    
-    <div class="widget-wrap">
-    
-      <div class="widget" id="toc-widget-fixed">
-      
-        <strong class="toc-title">文章目录</strong>
-        <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、概述"><span class="toc-number">1.</span> <span class="toc-text">一、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特征"><span class="toc-number">1.1.</span> <span class="toc-text">基本特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-并发"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 并发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-共享"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 共享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-虚拟"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 虚拟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-异步"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 异步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本功能"><span class="toc-number">1.2.</span> <span class="toc-text">基本功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进程管理"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 进程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-内存管理"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-文件管理"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 文件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-设备管理"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 设备管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统调用"><span class="toc-number">1.3.</span> <span class="toc-text">系统调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#大内核和微内核"><span class="toc-number">1.4.</span> <span class="toc-text">大内核和微内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-大内核"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 大内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-微内核"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 微内核</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中断分类"><span class="toc-number">1.5.</span> <span class="toc-text">中断分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-外中断"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 外中断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-异常"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-陷入"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 陷入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、进程管理"><span class="toc-number">2.</span> <span class="toc-text">二、进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程与线程"><span class="toc-number">2.1.</span> <span class="toc-text">进程与线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进程"><span class="toc-number">2.1.1.</span> <span class="toc-text">1. 进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-线程"><span class="toc-number">2.1.2.</span> <span class="toc-text">2. 线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-区别"><span class="toc-number">2.1.3.</span> <span class="toc-text">3. 区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程状态的切换"><span class="toc-number">2.2.</span> <span class="toc-text">进程状态的切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程调度算法"><span class="toc-number">2.3.</span> <span class="toc-text">进程调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-批处理系统"><span class="toc-number">2.3.1.</span> <span class="toc-text">1. 批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-交互式系统"><span class="toc-number">2.3.2.</span> <span class="toc-text">2. 交互式系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-实时系统"><span class="toc-number">2.3.3.</span> <span class="toc-text">3. 实时系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程同步"><span class="toc-number">2.4.</span> <span class="toc-text">进程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-临界区"><span class="toc-number">2.4.1.</span> <span class="toc-text">1. 临界区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-同步与互斥"><span class="toc-number">2.4.2.</span> <span class="toc-text">2. 同步与互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-信号量"><span class="toc-number">2.4.3.</span> <span class="toc-text">3. 信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-管程"><span class="toc-number">2.4.4.</span> <span class="toc-text">4. 管程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典同步问题"><span class="toc-number">2.5.</span> <span class="toc-text">经典同步问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-读者-写者问题"><span class="toc-number">2.5.1.</span> <span class="toc-text">1. 读者-写者问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-哲学家进餐问题"><span class="toc-number">2.5.2.</span> <span class="toc-text">2. 哲学家进餐问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程通信"><span class="toc-number">2.6.</span> <span class="toc-text">进程通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-管道"><span class="toc-number">2.6.1.</span> <span class="toc-text">1. 管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-FIFO"><span class="toc-number">2.6.2.</span> <span class="toc-text">2. FIFO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-消息队列"><span class="toc-number">2.6.3.</span> <span class="toc-text">3. 消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-信号量"><span class="toc-number">2.6.4.</span> <span class="toc-text">4. 信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-共享存储"><span class="toc-number">2.6.5.</span> <span class="toc-text">5. 共享存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-套接字"><span class="toc-number">2.6.6.</span> <span class="toc-text">6. 套接字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、死锁"><span class="toc-number">3.</span> <span class="toc-text">三、死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#必要条件"><span class="toc-number">3.1.</span> <span class="toc-text">必要条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理方法"><span class="toc-number">3.2.</span> <span class="toc-text">处理方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鸵鸟策略"><span class="toc-number">3.3.</span> <span class="toc-text">鸵鸟策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁检测与死锁恢复"><span class="toc-number">3.4.</span> <span class="toc-text">死锁检测与死锁恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-每种类型一个资源的死锁检测"><span class="toc-number">3.4.1.</span> <span class="toc-text">1. 每种类型一个资源的死锁检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-每种类型多个资源的死锁检测"><span class="toc-number">3.4.2.</span> <span class="toc-text">2. 每种类型多个资源的死锁检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-死锁恢复"><span class="toc-number">3.4.3.</span> <span class="toc-text">3. 死锁恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁预防"><span class="toc-number">3.5.</span> <span class="toc-text">死锁预防</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-破坏互斥条件"><span class="toc-number">3.5.1.</span> <span class="toc-text">1. 破坏互斥条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-破坏占有和等待条件"><span class="toc-number">3.5.2.</span> <span class="toc-text">2. 破坏占有和等待条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-破坏不可抢占条件"><span class="toc-number">3.5.3.</span> <span class="toc-text">3. 破坏不可抢占条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-破坏环路等待"><span class="toc-number">3.5.4.</span> <span class="toc-text">4. 破坏环路等待</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁避免"><span class="toc-number">3.6.</span> <span class="toc-text">死锁避免</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安全状态"><span class="toc-number">3.6.1.</span> <span class="toc-text">1. 安全状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-单个资源的银行家算法"><span class="toc-number">3.6.2.</span> <span class="toc-text">2. 单个资源的银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-多个资源的银行家算法"><span class="toc-number">3.6.3.</span> <span class="toc-text">3. 多个资源的银行家算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、内存管理"><span class="toc-number">4.</span> <span class="toc-text">四、内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟内存"><span class="toc-number">4.1.</span> <span class="toc-text">虚拟内存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页系统地址映射"><span class="toc-number">4.2.</span> <span class="toc-text">分页系统地址映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面置换算法"><span class="toc-number">4.3.</span> <span class="toc-text">页面置换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-最佳"><span class="toc-number">4.3.1.</span> <span class="toc-text">1. 最佳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-最近最久未使用"><span class="toc-number">4.3.2.</span> <span class="toc-text">2. 最近最久未使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-最近未使用"><span class="toc-number">4.3.3.</span> <span class="toc-text">3. 最近未使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-先进先出"><span class="toc-number">4.3.4.</span> <span class="toc-text">4. 先进先出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-第二次机会算法"><span class="toc-number">4.3.5.</span> <span class="toc-text">5. 第二次机会算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-时钟"><span class="toc-number">4.3.6.</span> <span class="toc-text">6. 时钟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分段"><span class="toc-number">4.4.</span> <span class="toc-text">分段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#段页式"><span class="toc-number">4.5.</span> <span class="toc-text">段页式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页与分段的比较"><span class="toc-number">4.6.</span> <span class="toc-text">分页与分段的比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、设备管理"><span class="toc-number">5.</span> <span class="toc-text">五、设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘结构"><span class="toc-number">5.1.</span> <span class="toc-text">磁盘结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘调度算法"><span class="toc-number">5.2.</span> <span class="toc-text">磁盘调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-先来先服务"><span class="toc-number">5.2.1.</span> <span class="toc-text">1. 先来先服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-最短寻道时间优先"><span class="toc-number">5.2.2.</span> <span class="toc-text">2. 最短寻道时间优先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-电梯算法"><span class="toc-number">5.2.3.</span> <span class="toc-text">3. 电梯算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、链接"><span class="toc-number">6.</span> <span class="toc-text">六、链接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#编译系统"><span class="toc-number">6.1.</span> <span class="toc-text">编译系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态链接"><span class="toc-number">6.2.</span> <span class="toc-text">静态链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标文件"><span class="toc-number">6.3.</span> <span class="toc-text">目标文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态链接"><span class="toc-number">6.4.</span> <span class="toc-text">动态链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">7.</span> <span class="toc-text">参考资料</span></a></li></ol>
-          </div>
-      </div>
-    </div>
-
-  
-    
-
-  
-    
-  
-    
-  
-    
-
-  
-    
-  
-    <!--微信公众号二维码-->
 
 
-  
-</aside>
 
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-left">
-      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
-      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
-    </div>
-     <div id="footer-right">
-      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
     </div>
   </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"/>
+        </svg>
+        </a>
+        © XXX 20xx-2017
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
- <script src="/jquery/jquery.min.js"></script>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
-  
-    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
-  
-    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
-  
-    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
-  
-    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
-  
-    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
-  
-    <a href="/board" class="mobile-nav-link">留言板</a>
-  
-    <a href="/atom.xml" class="mobile-nav-link">rss</a>
-  
-</nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png">
-<script>
-// Elevator script included on the page, already.
-window.onload = function() {
-  var elevator = new Elevator({
-    selector:'.back-to-top-btn',
-    element: document.querySelector('.back-to-top-btn'),
-    duration: 1000 // milliseconds
-  });
-}
-</script>
-      
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
 
-<script>
-  var disqus_shortname = 'yuehan';
-  
-  var disqus_url = 'http://wangyuehan.github.io/year/03/20/计算机操作系统-大纲/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
 
-
-
-
-
-
-
-<!-- author:forvoid begin -->
-<!-- author:forvoid begin -->
-
-<!-- author:forvoid end -->
-
-<!-- author:forvoid end -->
-
-
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      })
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      })
-    </script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
- <script src="/js/is.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-<script src="/js/elevator.js"></script>
-  </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>
