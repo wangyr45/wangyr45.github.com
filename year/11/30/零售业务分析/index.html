@@ -1,39 +1,439 @@
-extends includes/layout
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>零售业务分析 | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文简单研究了下零售业务的一些规则。">
+<meta name="keywords" content="业务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零售业务分析">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/零售业务分析/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="本文简单研究了下零售业务的一些规则。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-30T09:33:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="零售业务分析">
+<meta name="twitter:description" content="本文简单研究了下零售业务的一些规则。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block content
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
+        
+          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
+        
+          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
+        
+          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
+        
+          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
+        
+          <a class="main-nav-link" href="/board">留言板</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-零售业务分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/11/30/零售业务分析/" class="article-date">
+  <time datetime="2018-11-30T09:32:14.000Z" itemprop="datePublished">2018-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      零售业务分析
+    </h1>
+  
 
-    section#wrapper.post
-        article
-            header
-                h1!=page.title
-                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
-                    |·
-                    |#{wordcount(page.content)} words
-                    |·
-                    |#{min2read(page.content)} minutes read
-                    span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>本文简单研究了下零售业务的一些规则。<br><a id="more"></a></p>
+<h2 id="1-优惠规则5要素"><a href="#1-优惠规则5要素" class="headerlink" title="1 优惠规则5要素"></a>1 优惠规则5要素</h2><h3 id="1-1-满足优惠条件的动作"><a href="#1-1-满足优惠条件的动作" class="headerlink" title="1.1 满足优惠条件的动作"></a>1.1 满足优惠条件的动作</h3><p>这个要素，是指触发优惠规则的动作，主要包括买和满两种。</p>
+<p><strong>注</strong>：</p>
+<ul>
+<li>在数学上，买是满的一种特殊情况，只不过做文本串分析时，要同时考虑到这两种文本描述。</li>
+<li>在电商行业，触发优惠的动作还包括：晒单、微博分享、微信关注、给好评、收藏、新用户注册、手机下单等行为，这里我只叙述与商品和订单相关的，与其它行为（注册、营销、手机下单等）相关的暂忽略。</li>
+<li>抽奖，中奖要看运气，所以这时也暂不讨论</li>
+</ul>
+<h4 id="1-1-1-买"><a href="#1-1-1-买" class="headerlink" title="1.1.1 买"></a>1.1.1 买</h4><p>只要买就优惠，如买赠（买1送1）、买立减（买此商品立减5元）</p>
+<h4 id="1-1-2-满"><a href="#1-1-2-满" class="headerlink" title="1.1.2 满"></a>1.1.2 满</h4><p>如满88减18</p>
+<h3 id="1-2-优惠条件作用对象"><a href="#1-2-优惠条件作用对象" class="headerlink" title="1.2 优惠条件作用对象"></a>1.2 优惠条件作用对象</h3><p>这个要素，是指满的对象（上文已解释，买其实是满的一种特殊情况，故此处叙述时合并），满什么条件，主要有三种：</p>
+<h4 id="1-2-1-订单金额（抵扣前金额）"><a href="#1-2-1-订单金额（抵扣前金额）" class="headerlink" title="1.2.1 订单金额（抵扣前金额）"></a>1.2.1 订单金额（抵扣前金额）</h4><p>如满88元减18元</p>
+<h4 id="1-2-2-实付金额（抵扣后金额）"><a href="#1-2-2-实付金额（抵扣后金额）" class="headerlink" title="1.2.2 实付金额（抵扣后金额）"></a>1.2.2 实付金额（抵扣后金额）</h4><p>如实付100元再返20元代金券</p>
+<h4 id="1-2-3-商品数量"><a href="#1-2-3-商品数量" class="headerlink" title="1.2.3 商品数量"></a>1.2.3 商品数量</h4><p>如买二送三，满2件每件165元，39元任选三件</p>
+<h3 id="1-3-优惠方式"><a href="#1-3-优惠方式" class="headerlink" title="1.3 优惠方式"></a>1.3 优惠方式</h3><p>这个要素是指，商家以什么方式给予消费者优惠。</p>
+<h4 id="1-3-1-减"><a href="#1-3-1-减" class="headerlink" title="1.3.1 减"></a>1.3.1 减</h4><p>在订单金额中减去部分金额，如满减，买立减，实付减</p>
+<h4 id="1-3-2-折"><a href="#1-3-2-折" class="headerlink" title="1.3.2 折"></a>1.3.2 折</h4><p>订单金额或者商品单价打个折扣。如满188打8折，第二件半价。</p>
+<p>折其实也是减的一种特殊情况，做文本串分析时当两种情况</p>
+<h4 id="1-3-3-送-赠"><a href="#1-3-3-送-赠" class="headerlink" title="1.3.3 送/赠"></a>1.3.3 送/赠</h4><p>订单中赠送，或者订单完成后再赠送。如买1送1，买奶粉送奶瓶，买奶粉送京券</p>
+<h4 id="1-3-4-换购"><a href="#1-3-4-换购" class="headerlink" title="1.3.4 换购"></a>1.3.4 换购</h4><p>满99元即可加1元换购超值礼品</p>
+<h3 id="1-4-回馈内容"><a href="#1-4-回馈内容" class="headerlink" title="1.4 回馈内容"></a>1.4 回馈内容</h3><h4 id="1-4-1-现金"><a href="#1-4-1-现金" class="headerlink" title="1.4.1 现金"></a>1.4.1 现金</h4><ul>
+<li>满减、满折就是减了现金</li>
+</ul>
+<h4 id="1-4-2-可折算成现金几无使用限制的卡-券-积分"><a href="#1-4-2-可折算成现金几无使用限制的卡-券-积分" class="headerlink" title="1.4.2 可折算成现金几无使用限制的卡/券/积分"></a>1.4.2 可折算成现金几无使用限制的卡/券/积分</h4><ul>
+<li>赠送天猫积分、集分宝也等于赠送现金</li>
+<li>京券、京东积分也等于现金</li>
+</ul>
+<h4 id="1-4-3-同主体商品"><a href="#1-4-3-同主体商品" class="headerlink" title="1.4.3 同主体商品"></a>1.4.3 同主体商品</h4><p>这条是指，赠送的商品与消费者购买的商品是同一个商品（可能保质期和生产批次略有不同，但总体上价值是一样的）</p>
+<p>如一号店的德运全脂牛奶，买一升，赠一升，属于赠送同主体的商品。</p>
+<h4 id="1-4-4-其它小赠品"><a href="#1-4-4-其它小赠品" class="headerlink" title="1.4.4 其它小赠品"></a>1.4.4 其它小赠品</h4><p>如买鞋送袜子，买奶粉送奶粉勺。</p>
+<p>把同主体商品拿出来单独说，和其它小赠品区分开，是因为同主体商品有利于计算实际到手价，德运全指牛奶买1送1，就等于是5折了，但如果买1升德运牛奶送5克奥利奥饼干，就不方便衡量饼干的价值进而计算到手价。</p>
+<h4 id="1-4-5-不可折算成现金的卡-券-积分"><a href="#1-4-5-不可折算成现金的卡-券-积分" class="headerlink" title="1.4.5 不可折算成现金的卡/券/积分"></a>1.4.5 不可折算成现金的卡/券/积分</h4><ul>
+<li>送有限制条件的满减券、折扣券</li>
+<li>送一号店积分</li>
+<li>送淘金币</li>
+<li>送航空公司里程等等</li>
+</ul>
+<p>这类回馈有的价值较高（如有限制条件的券），有的如同鸡肋（如淘金币、一号店积分）不好统一衡量价值，也不能拿来参与到手价计算</p>
+<h3 id="1-5-是否有限制"><a href="#1-5-是否有限制" class="headerlink" title="1.5 是否有限制"></a>1.5 是否有限制</h3><p>是否有限制也影响到手价的计算</p>
+<h4 id="1-5-1-有限制"><a href="#1-5-1-有限制" class="headerlink" title="1.5.1 有限制"></a>1.5.1 有限制</h4><ul>
+<li>满150减15，每个订单仅限使用一次</li>
+<li>买1送1，每个收货地址仅限5件</li>
+<li>实付200再返10元，最高返200元</li>
+</ul>
+<h4 id="1-5-2-无限制"><a href="#1-5-2-无限制" class="headerlink" title="1.5.2 无限制"></a>1.5.2 无限制</h4><p>这个不多解释了</p>
+<h2 id="2-常用优惠规则"><a href="#2-常用优惠规则" class="headerlink" title="2 常用优惠规则"></a>2 常用优惠规则</h2><p>上述5个因素，排列组合最多超过200种，但考虑到有些组合不可能存在，如“回馈内容”中的两种“赠品”只可能和“优惠方式”中的“送赠”组合，而不可能和“折、减”组合，实际常用的优惠方式约为几十种（有无限制我就不一一罗列了，读者朋友自行把下面优惠规则总数乘以二）：</p>
+<h3 id="2-1-减折类（6种）"><a href="#2-1-减折类（6种）" class="headerlink" title="2.1 减折类（6种）"></a>2.1 减折类（6种）</h3><p>满折类的优惠条件主要是满N件和满N元，一般不会跟“实付xx元”搭配：</p>
+<ul>
+<li>买立减（买一件）</li>
+<li>买立折（买一件）</li>
+<li>满N件减x元</li>
+<li>满N件打x折</li>
+<li>满N元减x元</li>
+<li>满N元打x折</li>
+</ul>
+<h4 id="2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><a href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）" class="headerlink" title="2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）"></a>2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</h4><ul>
+<li>买即送（买一件）</li>
+<li>满N件送xx</li>
+<li>满N元送xx</li>
+<li>实付N元送xx</li>
+</ul>
+<p>在有的促销文案里，送虚拟卡券积分也叫满返。</p>
+<p>以上四种场景乘以赠送的三种东西，就是12种。</p>
+<h4 id="2-3-换购（4种）"><a href="#2-3-换购（4种）" class="headerlink" title="2.3 换购（4种）"></a>2.3 换购（4种）</h4><ul>
+<li>买此商品即享换购资格</li>
+<li>满N件即享换购资格</li>
+<li>满N元即享换购资格</li>
+<li>实付N元即享换购资格</li>
+</ul>
+<h4 id="2-4-送同主体商品（3种）"><a href="#2-4-送同主体商品（3种）" class="headerlink" title="2.4 送同主体商品（3种）"></a>2.4 送同主体商品（3种）</h4><ul>
+<li>买N送M</li>
+<li>满N元再送M件</li>
+<li>实付N元再送M件</li>
+</ul>
 
-            if toc(page.content)
-                div#toc!=toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/11/30/零售业务分析/" data-id="cjx5l5ep9004xn37bqgi54at7" class="article-share-link">分享</a>
+      
+      
+        <a href="http://wangyuehan.github.io/year/11/30/零售业务分析/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/业务/">业务</a></li></ul>
 
-            section#post-body!=page.content
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav#post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+    
+<nav id="article-nav">
+  
+    <a href="/year/12/09/算法思维导图/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          算法思维导图
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/11/30/移动设备怎样定位/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">移动设备怎样定位</div>
+    </a>
+  
+</nav>
 
-            include includes/comment.pug
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-number">1.</span> <span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-number">1.4.5.</span> <span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-number">2.</span> <span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
+      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
+  
+    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
+  
+    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
+  
+    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
+  
+    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
+  
+    <a href="/board" class="mobile-nav-link">留言板</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+<script>
+  var disqus_shortname = 'yuehan';
+  
+  var disqus_url = 'http://wangyuehan.github.io/year/11/30/零售业务分析/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
 
 
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
+</html>

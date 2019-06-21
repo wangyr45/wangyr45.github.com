@@ -1,39 +1,414 @@
-extends includes/layout
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Docker学习笔记 | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker学习笔记">
+<meta property="og:url" content="http://wangyuehan.github.io/year/03/11/Docker学习笔记/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0xp4fle6mj30sg09n0tc.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0xpiew7etj31k70u07wi.jpg">
+<meta property="og:updated_time" content="2019-03-11T06:26:38.048Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker学习笔记">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0xp4fle6mj30sg09n0tc.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block content
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
+        
+          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
+        
+          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
+        
+          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
+        
+          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
+        
+          <a class="main-nav-link" href="/board">留言板</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Docker学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/03/11/Docker学习笔记/" class="article-date">
+  <time datetime="2019-03-11T06:26:14.000Z" itemprop="datePublished">2019-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Docker学习笔记
+    </h1>
+  
 
-    section#wrapper.post
-        article
-            header
-                h1!=page.title
-                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
-                    |·
-                    |#{wordcount(page.content)} words
-                    |·
-                    |#{min2read(page.content)} minutes read
-                    span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g0xp4fle6mj30sg09n0tc.jpg" alt></p>
+<a id="more"></a>
+<h2 id="1-Docker概念"><a href="#1-Docker概念" class="headerlink" title="1.Docker概念"></a>1.Docker概念</h2><p>Docker是一个基于LXC（linux container，linux容器）技术搭建的容器引擎，基于go语言开发，遵循apache2.0协议开源。</p>
+<p>可以理解为：docker把一台服务器隔离成一个个的容器，每个容器内运行一个应用，不同容器相互隔离。</p>
+<p>容器<strong>创建</strong>和<strong>停止</strong>都是秒级的，容器自身对资源需求有限，所以远比虚拟机本身占用的资源少。</p>
+<h2 id="2-Docker和虚拟机"><a href="#2-Docker和虚拟机" class="headerlink" title="2.Docker和虚拟机"></a>2.Docker和虚拟机</h2><p>Docker的运行机制则是使用Daemon完成了对虚拟机结构中虚拟机系统层+虚拟机操作系统层的简化。</p>
+<p>Daemon基于LXC技术共享宿主机操作系统内核，并将宿主机空间进行隔离，形成一个个独立的容器。每个容器看起来就是一个个单独的服务器，可以有自己独立的应用程序、进程、空间等，却不需要内部安装操作系统。</p>
+<h2 id="3-Docker-Container（容器）"><a href="#3-Docker-Container（容器）" class="headerlink" title="3.Docker Container（容器）"></a>3.Docker Container（容器）</h2><h2 id="4-Docker-image（镜像）"><a href="#4-Docker-image（镜像）" class="headerlink" title="4.Docker image（镜像）"></a>4.Docker image（镜像）</h2><h2 id="5-Docker-Registry（记录中心）"><a href="#5-Docker-Registry（记录中心）" class="headerlink" title="5.Docker Registry（记录中心）"></a>5.Docker Registry（记录中心）</h2><p>Docker官方或者第三方提供镜像的地方。</p>
+<h2 id="6-Docker运行原理"><a href="#6-Docker运行原理" class="headerlink" title="6.Docker运行原理"></a>6.Docker运行原理</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g0xpiew7etj31k70u07wi.jpg" alt></p>
+<ul>
+<li>pull：用户通过客户端从registry下载镜像。</li>
+<li>run：用户通过运行本地镜像，成为容器。</li>
+<li>build：用户可以通过dockerfile文件构建新的镜像。</li>
+</ul>
+<p>##7. Docker容器IP和端口映射</p>
+<p>docker中四种网络模式：</p>
+<ol>
+<li>host模式，使用 —net=host指定。</li>
+<li>container模式，使用 —net=container:NAME or ID指定。</li>
+<li>none模式，使用 —net=none指定。</li>
+<li>bridge模式，使用 —net=bridge指定。</li>
+</ol>
+<p>​    bridge模式是docker默认的网络设置，此模式会为每一个容器分配一个未占用的IP使用。但在此模式下，如果容器停止，重新启动时IP会重新分配，这样新的IP很可能会与之前的IP不同。在实际工作中，服务一般需要固定的IP，所以在使用docker的时候通常会为每个容器设置固定的IP。如果需要启动的docker容器比较多，则需要提前规划好IP设置，以确保需要通信的docker容器在相同的网段，并且考虑到扩展性，一般会预留一些IP以供未来扩充使用。</p>
+<p>​    端口映射是docker容器中特别重要的一个概念。容器由于自身的隔离性，使得外界没有办法访问容器内部的服务（如在容器中启动tomcat，外界是无法直接访问到该tomcat的）。docker的端口映射机制，可以将容器内部端口映射到宿主机，用户通过访问宿主机端口即可实现对容器的访问。（docker run中-p参数即指定容器对宿主机的端口映射。）</p>
+<h2 id="8-Docker集群"><a href="#8-Docker集群" class="headerlink" title="8.Docker集群"></a>8.Docker集群</h2><h2 id="9-Docker安装"><a href="#9-Docker安装" class="headerlink" title="9.Docker安装"></a>9.Docker安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">获取docker安装并安装：</span><br><span class="line">apt-get install -y docker.io</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">启动docker服务：</span><br><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker --version</span><br></pre></td></tr></table></figure>
+<h2 id="10-Docker命令"><a href="#10-Docker命令" class="headerlink" title="10.Docker命令"></a>10.Docker命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像查看：</span><br><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像搜索：</span><br><span class="line">docker search &quot;镜像关键词&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像拉取：</span><br><span class="line">docker pull [opthions] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像删除：</span><br><span class="line">docker rmi 镜像 ID 或镜像名称</span><br></pre></td></tr></table></figure>
+<h2 id="11-Docker容器操作命令"><a href="#11-Docker容器操作命令" class="headerlink" title="11.Docker容器操作命令"></a>11.Docker容器操作命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">生产容器：</span><br><span class="line">  docker run -d -p 8888:8080 --name tomcat-test tomcat</span><br><span class="line">生产容器</span><br><span class="line">  docker run -d -p 8888:8080 --name tomcat-test tomcat</span><br><span class="line">  说明:-d：后台运行 -p：端口映射 8888:宿主机端口.8080:docker容器端口，tomcat-test:容器名字，tomcat:镜像名称</span><br><span class="line">查看容器(查看正在运行的容器)</span><br><span class="line">  docker ps|grep 容器关键字</span><br><span class="line">查询全部（包括已停止）的容器</span><br><span class="line">  docker ps -a|grep 容器关键字</span><br><span class="line">进入容器</span><br><span class="line">  docker exec -it containerId/containerName /bin/bash</span><br><span class="line">退出容器</span><br><span class="line">  exit</span><br><span class="line">停止容器</span><br><span class="line">  docker stop containerId/containerName</span><br><span class="line">启动容器</span><br><span class="line">  docker start containerId/containerName</span><br><span class="line">删除容器</span><br><span class="line">  docker rm containerId/containerName</span><br><span class="line">拷贝文件</span><br><span class="line">  docker cp 宿主机目录及文件 容器名称：容器目录</span><br></pre></td></tr></table></figure>
+<p>问题总结1:</p>
+<blockquote>
+<p>部署安装tomcat容器</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:/home/docker# docker pull registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27</span><br><span class="line">Using default tag: latest</span><br><span class="line">latest: Pulling from shuodao/tomcat-8.5.27</span><br><span class="line">8f7c85c2269a: Pull complete </span><br><span class="line">9e72e494a6dd: Pull complete </span><br><span class="line">3009ec50c887: Pull complete </span><br><span class="line">9d5ffccbec91: Pull complete </span><br><span class="line">e872a2642ce1: Pull complete </span><br><span class="line">558a041b7256: Pull complete </span><br><span class="line">5bd2d92394a5: Pull complete </span><br><span class="line">Digest: sha256:05fa942790b8d42bfd4f5a16527609c9e9ddb4a45a04a8d31e5750c3a2b7c1bd</span><br><span class="line">Status: Downloaded newer image for registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27:latest</span><br><span class="line">root@ubuntu:/home/docker# docker images</span><br><span class="line">REPOSITORY                                                TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27   latest              d07ca8aba782        2 months ago        369 MB</span><br><span class="line">root@ubuntu:/home/docker# docker run -d -p 8888:8080 --name mytomcat registry.cn-hangzhou.aliyuncs.com/shuodao/tomcat-8.5.27</span><br><span class="line">8e195d1630b7875b1ab2fde17b4cba1a7bc407d70c332b021d18eb16662ec066</span><br><span class="line">root@ubuntu:/home/docker# docker exec -it mytomcat /bin/bash</span><br><span class="line">root@8e195d1630b7:/# ls</span><br><span class="line">bin   dev  home  lib64  mnt  proc  run   srv  tmp  var</span><br><span class="line">boot  etc  lib   media  opt  root  sbin  sys  usr</span><br><span class="line">root@8e195d1630b7:/# cd usr</span><br><span class="line">root@8e195d1630b7:/usr# ls</span><br><span class="line">bin  games  include  java  lib  local  sbin  share  src  tomcat</span><br><span class="line">root@8e195d1630b7:/usr# exit</span><br><span class="line">exit</span><br><span class="line">root@ubuntu:/home/docker#</span><br></pre></td></tr></table></figure>
+<p><a href="http://localhost:8888" target="_blank" rel="noopener">http://localhost:8888</a> 访问tomcat服务器页面</p>
+<p>docker stop mytomcat 停止容器运行，在访问网址，已经无法登陆。</p>
+<p>问题总结2:</p>
+<p>做一个index.html通过tomcat运行它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker@ubuntu:~$ docker cp /home/docker/Desktop/bg.html mytomcat:/usr/tomcat/webapps/ROOT</span><br></pre></td></tr></table></figure>
+<p>打开浏览器，输入网址：<a href="http://localhost:8888/index/.html" target="_blank" rel="noopener">http://localhost:8888/index/.html</a> 访问。</p>
+<p>问题总结3：</p>
+<p>删除images时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker@ubuntu:~$ docker rmi registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat</span><br><span class="line">Error response from daemon: conflict: unable to remove repository reference &quot;registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat&quot; (must force) - container af06eabfa3bb is using its referenced image ba886ec36feciej</span><br></pre></td></tr></table></figure>
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">docker ps -a -q(af06eabfa3bb)</span><br><span class="line"></span><br><span class="line">docker stop af06eabfa3bb</span><br><span class="line">docker rm af06eabfa3bb</span><br><span class="line">docker images</span><br><span class="line">——&gt;registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat   latest              ba886ec36fec        15 months ago       1.62 GB</span><br><span class="line"></span><br><span class="line">docker rmi registry.cn-beijing.aliyuncs.com/wz-web/sd-tomcat</span><br></pre></td></tr></table></figure>
+<p>(未完待续…)</p>
 
-            if toc(page.content)
-                div#toc!=toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/03/11/Docker学习笔记/" data-id="cjx5l5eno000fn37bdj6f36a0" class="article-share-link">分享</a>
+      
+      
+        <a href="http://wangyuehan.github.io/year/03/11/Docker学习笔记/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
 
-            section#post-body!=page.content
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav#post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+    
+<nav id="article-nav">
+  
+    <a href="/year/03/13/git命令上传码云，新手向/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          git命令上传码云，新手向~
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/03/10/影响力六大原则/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">影响力六大原则</div>
+    </a>
+  
+</nav>
 
-            include includes/comment.pug
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Docker概念"><span class="toc-number">1.</span> <span class="toc-text">1.Docker概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Docker和虚拟机"><span class="toc-number">2.</span> <span class="toc-text">2.Docker和虚拟机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Docker-Container（容器）"><span class="toc-number">3.</span> <span class="toc-text">3.Docker Container（容器）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Docker-image（镜像）"><span class="toc-number">4.</span> <span class="toc-text">4.Docker image（镜像）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Docker-Registry（记录中心）"><span class="toc-number">5.</span> <span class="toc-text">5.Docker Registry（记录中心）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Docker运行原理"><span class="toc-number">6.</span> <span class="toc-text">6.Docker运行原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Docker集群"><span class="toc-number">7.</span> <span class="toc-text">8.Docker集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Docker安装"><span class="toc-number">8.</span> <span class="toc-text">9.Docker安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Docker命令"><span class="toc-number">9.</span> <span class="toc-text">10.Docker命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Docker容器操作命令"><span class="toc-number">10.</span> <span class="toc-text">11.Docker容器操作命令</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
+      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
+  
+    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
+  
+    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
+  
+    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
+  
+    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
+  
+    <a href="/board" class="mobile-nav-link">留言板</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+<script>
+  var disqus_shortname = 'yuehan';
+  
+  var disqus_url = 'http://wangyuehan.github.io/year/03/11/Docker学习笔记/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
 
 
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
+</html>

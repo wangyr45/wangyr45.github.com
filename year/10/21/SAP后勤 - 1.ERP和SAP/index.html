@@ -1,39 +1,490 @@
-extends includes/layout
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>SAP后勤模块实施攻略——1.ERP和SAP | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="近日接到任务，看完乐立骏老师的SAP后勤模块实施攻略这本书，现在把第一章内容简单整理。第一章讲的是关于ERP和SAP的介绍。">
+<meta name="keywords" content="SAP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAP后勤模块实施攻略——1.ERP和SAP">
+<meta property="og:url" content="http://wangyuehan.github.io/year/10/21/SAP后勤 - 1.ERP和SAP/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="近日接到任务，看完乐立骏老师的SAP后勤模块实施攻略这本书，现在把第一章内容简单整理。第一章讲的是关于ERP和SAP的介绍。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/wangyr45/Blog-Back-Up/blob/master/Blog-use-pic/Snipaste_2018-10-21_00-25-36.png">
+<meta property="og:image" content="c:/Users/17392/AppData/Roaming/Typora/typora-user-images/1540052592893.png">
+<meta property="og:updated_time" content="2018-10-20T16:29:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SAP后勤模块实施攻略——1.ERP和SAP">
+<meta name="twitter:description" content="近日接到任务，看完乐立骏老师的SAP后勤模块实施攻略这本书，现在把第一章内容简单整理。第一章讲的是关于ERP和SAP的介绍。">
+<meta name="twitter:image" content="https://github.com/wangyr45/Blog-Back-Up/blob/master/Blog-use-pic/Snipaste_2018-10-21_00-25-36.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block content
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
+        
+          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
+        
+          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
+        
+          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
+        
+          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
+        
+          <a class="main-nav-link" href="/board">留言板</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SAP后勤 - 1.ERP和SAP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/10/21/SAP后勤 - 1.ERP和SAP/" class="article-date">
+  <time datetime="2018-10-20T16:18:05.000Z" itemprop="datePublished">2018-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SAP后勤模块实施攻略——1.ERP和SAP
+    </h1>
+  
 
-    section#wrapper.post
-        article
-            header
-                h1!=page.title
-                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
-                    |·
-                    |#{wordcount(page.content)} words
-                    |·
-                    |#{min2read(page.content)} minutes read
-                    span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>近日接到任务，看完乐立骏老师的SAP后勤模块实施攻略这本书，现在把第一章内容简单整理。第一章讲的是关于ERP和SAP的介绍。</p>
+<a id="more"></a>
+<ul>
+<li><h1 id="1-ERP"><a href="#1-ERP" class="headerlink" title="1.ERP"></a>1.ERP</h1><p><strong>E</strong>：Enterprise / 企业<br><strong>R</strong>：Resource / 资源<br><strong>P</strong>：Planning / 计划<br><strong>ERP</strong>是企业资源计划的缩写。<strong>ERP</strong>是针对物资资源管理(物流)、人力资源管理（人流）、财务资源管理（资金流）、信息资源管理（信息流）集成一体化的企业管理软件。</p>
+<p><strong>企业理解：</strong></p>
+<ol>
+<li>企业级软件</li>
+<li>传统企业和公共服务行业</li>
+<li>企业之间的应用</li>
+</ol>
+<p><strong>资源理解：</strong><br>内部资源对应模块<br>- <strong>人力资源</strong> 》 人力资源管理（HCM）》SAP ERP中HR模块<br>- <strong>财力资源</strong> 》 财务管理（Finance）》SAP ERP中FI（财务）和 CO（控制）<br>- <strong>物料资源</strong> 》 后勤管理（Logistics） 》 SAP ERP中 PP（生产计划与执行） 和 MM（采购和库存管理） 和 SD（销售和分销管理） 和 QM（质量管理）。</p>
+<ul>
+<li>物料分类</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 概念上的物料
 
-            if toc(page.content)
-                div#toc!=toc(page.content,{list_number:false})
+- 生产性物料
 
-            section#post-body!=page.content
-
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav#post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
-
-            include includes/comment.pug
+- 非生产性物料
 
 
 
+  - 设备、厂房、生产用工具（对应PM（工厂维护/设备管理模块）、复杂的话扩展为EAM（企业资源管理））
+  - 服务性物料
+</code></pre><p>  <strong>计划理解：</strong></p>
+<ul>
+<li>事前对资源的计划（是否有计划）</li>
+<li>事中对资源的控制（计划的形成）</li>
+<li><p>事后对资源的评估（计划的执行效果）<br>（具体就是系统很多功能如信用管理、批次管理、发料管理等都要事前做好计划，事中控制，事后评估。）</p>
+<h1 id="2-ERP市场参与者和厂商"><a href="#2-ERP市场参与者和厂商" class="headerlink" title="2.ERP市场参与者和厂商"></a>2.ERP市场参与者和厂商</h1><h2 id="ERP市场参与者"><a href="#ERP市场参与者" class="headerlink" title="ERP市场参与者"></a>ERP市场参与者</h2></li>
+<li><p>ERP产品厂商：SAP、Oracle、用友等。</p>
+</li>
+<li>ERP实施公司：SAP，其他由大大小小合作伙伴提供（IBM、Accenture、HP等等）</li>
+<li>ERP运行所需要的硬件配套供应商（服务器及软硬件、机房等）。</li>
+<li><p>ERP运行所需要的软件配套产品。</p>
+<h2 id="ERP市场厂商"><a href="#ERP市场厂商" class="headerlink" title="ERP市场厂商"></a>ERP市场厂商</h2><p><img src="https://github.com/wangyr45/Blog-Back-Up/blob/master/Blog-use-pic/Snipaste_2018-10-21_00-25-36.png" alt="1540052558643"></p>
+<h2 id="ERP公司的过去"><a href="#ERP公司的过去" class="headerlink" title="ERP公司的过去"></a>ERP公司的过去</h2><p><img src="C:\Users\17392\AppData\Roaming\Typora\typora-user-images\1540052592893.png" alt="1540052592893"></p>
+<h1 id="3-SAP产品"><a href="#3-SAP产品" class="headerlink" title="3.SAP产品"></a>3.SAP产品</h1></li>
+<li><p>ERP（旗舰型产品）</p>
+</li>
+<li><p>SAP商务套件</p>
+</li>
+</ul>
+<pre><code>- SAP PLM（Project Life Management/产品生命周期软件）
 
+
+
+  - 通过接口接受各种设计软件中设计图。
+  - 通过项目管理功能。
+  - 通过变更功能、工作流功能。
+  - 通过文档管理功能。
+  - 通过Cfolder和Cproject功能，基于web与供应商、客户协同产品的设计、开发工作。
+  - 通过配方管理，管理企业开发的配方。
+
+- SAP SCM（Supply Chain Management/供应链管理软件）
+
+
+
+  - SAP APO 用于提高供应链预测、计划水准，实现高级排程的工具。
+  - SAP F&amp;R 用于零售业中预测与补货
+  - SAP EWM 进一步扩展了ERP中 WM功能，进一步加强仓库的收货、发货、内部调拨功能，对RF设备的支持，丰富上架下架策略。
+  - SAM SNC（供应网络协作）企业之间将信息互相共享的方式。如预测、订单、库存信息。
+
+- SAP CRM（Custom Relationship Management/客户关系管理软件）：提高客户满意度、忠诚度，提高机会达成率。
+
+
+
+  - 销售过程的管理。
+  - 营销过程的管理。
+  - 售后服务管理。
+  - 利用Web Channel（网上商店）功能，扩展销售渠道。
+
+- SAP SRM（Supplier Relationship Management/供应商关系管理软件）：持续节约成本，确保合同合规性和缩短实现价值的时间为企业带来价值。
+
+
+
+  - 电子目录功能
+  - 货源确定
+  - 供应商协作功能
+</code></pre><ul>
+<li><p>SAP特性行业应用产品</p>
+</li>
+<li><p>SAP Net weaver技术平台</p>
+</li>
+<li><p>商务智能分析软件BI/BW/BO</p>
+</li>
+<li><p>移动应用产品</p>
+<h1 id="4-SAP-ERP概览"><a href="#4-SAP-ERP概览" class="headerlink" title="4.SAP ERP概览"></a>4.SAP ERP概览</h1><h2 id="产品历史"><a href="#产品历史" class="headerlink" title="产品历史"></a>产品历史</h2><p>第一代产品原名RF，针对财务模块。后增加R1.<br>第二代产品为R2，包含RF、RA、RK、RP等等模块。<br>第三代产品为R3，SAP经典之作。<br>最新产品为ECC6.0（2005发布）。</p>
+<h2 id="SAP-ERP-产品概览"><a href="#SAP-ERP-产品概览" class="headerlink" title="SAP ERP 产品概览"></a>SAP ERP 产品概览</h2></li>
+</ul>
+<ol>
+<li>SAP ERP产品类型说明。</li>
+</ol>
+<pre><code>1. ECC6.0（**主力产品**）
+2. SAP B1（Business One，针对小企业）
+3. SAP A1 （All in One，针对中型企业，CC6基础上针对不同行业不同场景进行预配置。）
+4. SAP BYD（Business ByDesign ，针对中小企业） 
+   （注：SAP定义的中型企业是年收入10亿元（左右）以下的企业。）
+</code></pre><ol start="2">
+<li>模块化管理。</li>
+</ol>
+<pre><code>1. 后勤模块（主要模块）
+2. 财务模块（主要模块）
+3. 人力资源模块（主要模块）
+4. 跨模块应用（文档管理、EDI应用等等）
+</code></pre><ol start="3">
+<li>功能升级。</li>
+</ol>
+<pre><code>1. 发布增强包安装添加新功能（升级期间不准用户提交任何开发、配置更改请求）。
+</code></pre><ol start="4">
+<li>功能增强包与业务管理。</li>
+</ol>
+<pre><code>1. 行业特有的业务功能集合
+2. 企业扩展
+3. 特定模块的企业业务扩展
+4. 激活业务功能
+</code></pre><h2 id="SAP-ERP发展方向"><a href="#SAP-ERP发展方向" class="headerlink" title="SAP ERP发展方向"></a>SAP ERP发展方向</h2><ul>
+<li>SAP ERP On Sevice（移动应用），依靠收购Sybase移动技术，已经推出数十款应用。</li>
+<li>SAP HANA：使用内存计算机技术实现实时数据分析的产品。2013年推出。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/10/21/SAP后勤 - 1.ERP和SAP/" data-id="cjx5l5enw0014n37b8xtzaam8" class="article-share-link">分享</a>
+      
+      
+        <a href="http://wangyuehan.github.io/year/10/21/SAP后勤 - 1.ERP和SAP/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SAP/">SAP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/year/10/21/运营 - 用6000字为你精读《卖轮子》这本有趣的市场营销寓言书，带你俯视营销的全貌/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          《卖轮子》这本有趣的市场营销寓言书，带你俯视营销的全貌
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/10/18/计算机网络-大纲/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">计算机网络-大纲</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-ERP"><span class="toc-number">1.</span> <span class="toc-text">1.ERP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-ERP市场参与者和厂商"><span class="toc-number">2.</span> <span class="toc-text">2.ERP市场参与者和厂商</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ERP市场参与者"><span class="toc-number">2.1.</span> <span class="toc-text">ERP市场参与者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERP市场厂商"><span class="toc-number">2.2.</span> <span class="toc-text">ERP市场厂商</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERP公司的过去"><span class="toc-number">2.3.</span> <span class="toc-text">ERP公司的过去</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-SAP产品"><span class="toc-number">3.</span> <span class="toc-text">3.SAP产品</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-SAP-ERP概览"><span class="toc-number">4.</span> <span class="toc-text">4.SAP ERP概览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#产品历史"><span class="toc-number">4.1.</span> <span class="toc-text">产品历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SAP-ERP-产品概览"><span class="toc-number">4.2.</span> <span class="toc-text">SAP ERP 产品概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SAP-ERP发展方向"><span class="toc-number">4.3.</span> <span class="toc-text">SAP ERP发展方向</span></a></li></ol></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
+      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
+  
+    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
+  
+    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
+  
+    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
+  
+    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
+  
+    <a href="/board" class="mobile-nav-link">留言板</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+<script>
+  var disqus_shortname = 'yuehan';
+  
+  var disqus_url = 'http://wangyuehan.github.io/year/10/21/SAP后勤 - 1.ERP和SAP/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
+</html>

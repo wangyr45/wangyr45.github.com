@@ -1,39 +1,380 @@
-extends includes/layout
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>小黄鸭调试法 | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="小黄鸭调试法，又称橡皮鸭调试法、黄鸭除虫法（Rubber Duck Debugging）是可在软件工程中使用的一种调试代码的方法。方法就是在程序的调试、除错或测试过程中，操作人耐心地向小黄鸭解释每一行程序的作用，以此来激发灵感与发现矛盾。">
+<meta name="keywords" content="软件工程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小黄鸭调试法">
+<meta property="og:url" content="http://wangyuehan.github.io/year/05/10/小黄鸭调试法/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="小黄鸭调试法，又称橡皮鸭调试法、黄鸭除虫法（Rubber Duck Debugging）是可在软件工程中使用的一种调试代码的方法。方法就是在程序的调试、除错或测试过程中，操作人耐心地向小黄鸭解释每一行程序的作用，以此来激发灵感与发现矛盾。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1g2w7hmp4bij30m80ciq3i.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1g2wgjnxvmxj30m80ci74u.jpg">
+<meta property="og:updated_time" content="2019-05-10T11:44:07.635Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小黄鸭调试法">
+<meta name="twitter:description" content="小黄鸭调试法，又称橡皮鸭调试法、黄鸭除虫法（Rubber Duck Debugging）是可在软件工程中使用的一种调试代码的方法。方法就是在程序的调试、除错或测试过程中，操作人耐心地向小黄鸭解释每一行程序的作用，以此来激发灵感与发现矛盾。">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1g2w7hmp4bij30m80ciq3i.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block content
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
+        
+          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
+        
+          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
+        
+          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
+        
+          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
+        
+          <a class="main-nav-link" href="/board">留言板</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-小黄鸭调试法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/05/10/小黄鸭调试法/" class="article-date">
+  <time datetime="2019-05-10T06:24:46.000Z" itemprop="datePublished">2019-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      小黄鸭调试法
+    </h1>
+  
 
-    section#wrapper.post
-        article
-            header
-                h1!=page.title
-                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
-                    |·
-                    |#{wordcount(page.content)} words
-                    |·
-                    |#{min2read(page.content)} minutes read
-                    span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><strong>小黄鸭调试法</strong>，又称<strong>橡皮鸭调试法</strong>、<strong>黄鸭除虫法</strong>（Rubber Duck Debugging）是可在<a href="https://www.wikiwand.com/zh-hans/软件工程" target="_blank" rel="noopener">软件工程</a>中使用的一种<a href="https://www.wikiwand.com/zh-hans/调试" target="_blank" rel="noopener">调试</a>代码的方法。方法就是在<a href="https://www.wikiwand.com/zh-hans/计算机程序" target="_blank" rel="noopener">程序</a>的调试、除错或测试过程中，操作人耐心地向<a href="https://www.wikiwand.com/zh-hans/小黄鸭" target="_blank" rel="noopener">小黄鸭</a>解释每一行程序的作用，以此来激发灵感与发现矛盾。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1g2w7hmp4bij30m80ciq3i.jpg" alt></p>
+<a id="more"></a>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1g2wgjnxvmxj30m80ci74u.jpg" alt></p>
+<h2 id="名称由来"><a href="#名称由来" class="headerlink" title="名称由来"></a>名称由来</h2><p>此概念是参照于一个故事。故事中程序大师随身携带一只小黄鸭，在调试代码的时候会在桌上放上这只小黄鸭，然后详细地向鸭子解释每行代码。</p>
+<p>许多程序员都有向别人提问及解释编程问题的经历，而目标甚至可能是完全不懂编程的人。而就在解释的过程中，程序员可能就发觉了问题的解决方案。一边阐述代码的意图，一边观察它实际上的意图并做调试，两者间的任何不协调都会变得更明显，使人更容易发现错误所在。<a href="https://www.wikiwand.com/zh-hans/小黄鸭调试法#citenotecardboarddog2" target="_blank" rel="noopener">[2]</a>如果没有玩具小鸭，操作人也可以向其他任何东西倾诉，比如桌上的<a href="https://www.wikiwand.com/zh-hans/盆栽" target="_blank" rel="noopener">盆栽</a>、<a href="https://www.wikiwand.com/zh-hans/键盘" target="_blank" rel="noopener">键盘</a>及<a href="https://www.wikiwand.com/zh-hans/鼠标" target="_blank" rel="noopener">鼠标</a>等。</p>
+<h2 id="流行文化"><a href="#流行文化" class="headerlink" title="流行文化"></a>流行文化</h2><p>2018年4月1日<a href="https://www.wikiwand.com/zh-hans/愚人节" target="_blank" rel="noopener">愚人节</a>当天，问答网站<a href="https://www.wikiwand.com/zh-hans/Stack_Exchange" target="_blank" rel="noopener">Stack Exchange</a>推出了名为“呱呱叫溢出”的功能：一个小黄鸭形象会从网页右下方冒出来，它会倾听使用者的想法，并尝试给出解决方案。实际上，这个小黄鸭形象会看起来在思考并且尝试以文字回应，但最后只会以“呱呱”（quack quack）的叫声来回应使用者。Stack Exchange宣称这一功能与小黄鸭调试法有关。<a href="https://www.wikiwand.com/zh-hans/小黄鸭调试法#citenote3" target="_blank" rel="noopener">[3]</a>不过一些用户在看到这个小黄鸭形象时，以为是恶意软件的结果，没有意识到这是一个愚人节玩笑。</p>
+<h2 id="参见"><a href="#参见" class="headerlink" title="参见"></a>参见</h2><ul>
+<li><a href="https://www.wikiwand.com/zh-hans/代码审查" target="_blank" rel="noopener">代码审查</a></li>
+<li><a href="https://www.wikiwand.com/zh-hans/结对编程" target="_blank" rel="noopener">结对编程</a></li>
+<li><a href="https://www.wikiwand.com/zh-hans/货物崇拜编程" target="_blank" rel="noopener">货物崇拜编程</a></li>
+</ul>
 
-            if toc(page.content)
-                div#toc!=toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/05/10/小黄鸭调试法/" data-id="cjx5l5eof002un37b3i3qx7gm" class="article-share-link">分享</a>
+      
+      
+        <a href="http://wangyuehan.github.io/year/05/10/小黄鸭调试法/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件工程/">软件工程</a></li></ul>
 
-            section#post-body!=page.content
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav#post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+    
+<nav id="article-nav">
+  
+    <a href="/year/05/10/撸猫指南/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          撸猫指南
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/05/10/macos把任意网站变成桌面软件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">macos把任意网站变成桌面软件</div>
+    </a>
+  
+</nav>
 
-            include includes/comment.pug
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#名称由来"><span class="toc-number">1.</span> <span class="toc-text">名称由来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流行文化"><span class="toc-number">2.</span> <span class="toc-text">流行文化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参见"><span class="toc-number">3.</span> <span class="toc-text">参见</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
+      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
+  
+    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
+  
+    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
+  
+    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
+  
+    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
+  
+    <a href="/board" class="mobile-nav-link">留言板</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+<script>
+  var disqus_shortname = 'yuehan';
+  
+  var disqus_url = 'http://wangyuehan.github.io/year/05/10/小黄鸭调试法/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
 
 
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
+</html>

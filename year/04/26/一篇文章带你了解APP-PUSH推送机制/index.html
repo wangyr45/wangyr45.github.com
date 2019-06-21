@@ -1,39 +1,402 @@
-extends includes/layout
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>一篇文章带你了解APP PUSH推送机制 | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="写作目的： 本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。">
+<meta name="keywords" content="好文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一篇文章带你了解APP PUSH推送机制">
+<meta property="og:url" content="http://wangyuehan.github.io/year/04/26/一篇文章带你了解APP-PUSH推送机制/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="写作目的： 本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img.pmcaff.com/FlfolmCf7jnGE5r8yUCqPV5a3Tr--picture">
+<meta property="og:image" content="https://img.pmcaff.com/FrJy5X0myRMYsO-9THXFWibGrGGs-picture">
+<meta property="og:updated_time" content="2019-04-26T06:41:52.238Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一篇文章带你了解APP PUSH推送机制">
+<meta name="twitter:description" content="写作目的： 本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。">
+<meta name="twitter:image" content="https://img.pmcaff.com/FlfolmCf7jnGE5r8yUCqPV5a3Tr--picture">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block content
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
+        
+          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
+        
+          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
+        
+          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
+        
+          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
+        
+          <a class="main-nav-link" href="/board">留言板</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-一篇文章带你了解APP-PUSH推送机制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/04/26/一篇文章带你了解APP-PUSH推送机制/" class="article-date">
+  <time datetime="2019-04-26T06:39:38.000Z" itemprop="datePublished">2019-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      一篇文章带你了解APP PUSH推送机制
+    </h1>
+  
 
-    section#wrapper.post
-        article
-            header
-                h1!=page.title
-                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
-                    |·
-                    |#{wordcount(page.content)} words
-                    |·
-                    |#{min2read(page.content)} minutes read
-                    span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><strong>写作目的：</strong></p>
+<p>本文主要讲解关于APP PUSH的流程、机制及相关经验，一是为了方便各位可以针对APP迅速制定PUSH消息推送方案，实现0到1的推送功能搭建，二是可以了解下PUSH流程，对各个环节针对性地提高触达率。</p>
+<a id="more"></a>
+<h1 id="一-APP-PUSH定义与价值"><a href="#一-APP-PUSH定义与价值" class="headerlink" title="一 APP PUSH定义与价值"></a>一 APP PUSH定义与价值</h1><p>APP PUSH的定义为在手机终端锁屏状态下通知栏展示或在操作前台顶端弹出的消息通知，点击后可唤起对应的APP，并在APP内跳转到指定页面。</p>
+<p>push消息是通知用户，引导用户进行参与活动、购买产品的重要手段，而且PUSH消息也可以引导用户查看消息，唤起APP提高日活，是一块重要的流量。</p>
+<h1 id="二-APP-推送分类"><a href="#二-APP-推送分类" class="headerlink" title="二 APP 推送分类"></a>二 APP 推送分类</h1><p>从应用的功能来划分，主要分为三类应用，第一类是IM类APP，如微信、QQ等；第二类是新闻资讯类，如华尔街见闻等；其余暂归为为工具类，比如支付宝、美团等。</p>
+<p>每种类型APP对PUSH的需求也不同，IM类APP追求实时、稳定的触达，此类APP一般通过自己的长连接进行消息推送，保证用户在收到消息的时候能够实时地接收消息消息。另外，一些安卓厂商也会给予头部APP的进程一定保护，对相关的进程纳入白名单，在清理进程的时候予以忽略。</p>
+<p>新闻资讯类的APP与工具类APP的PUSH推送机制基本一致，仅在频率控制上有差异，新闻资讯类由于新闻资讯较多，需要将突发新闻及时推送给用户。</p>
+<p>由于目前工具类的APP占大多数，本文将主要讲解工具类APP的常见推送机制。</p>
+<h1 id="三-PUSH-流程"><a href="#三-PUSH-流程" class="headerlink" title="三 PUSH 流程"></a>三 PUSH 流程</h1><p><img src="https://img.pmcaff.com/FlfolmCf7jnGE5r8yUCqPV5a3Tr--picture" alt="PUSH流程.JPG"></p>
+<p>PUSH消息在消息系统创建好后进入发送阶段，服务端需要根据用户终端信息进行路由，如果是IOS系统，那么会调用苹果自身的推送通知服务（APNs）,如果用户的手机是安卓系统，那么根据不同的厂商去调用不同的厂商SDK。</p>
+<p>对于不同的系统版本，支持的消息展示形式也是不同，比如IOS10之后，当APP在前台时，是否通知栏展示；此样式可以根据产品需求来选择，有服务端传输相应通知方式的值即可。如果用户的手机非五大厂商内的手机，可以通过自己搭建的长连接或者使用第三方服务进行推送。</p>
+<p>如果不是自己直接对接厂商通道，那么内部的服务端可能无需做过多较为复杂繁琐的开发工作，通过接入第三方消息推送平台来实现消息的推送，比如信鸽、个推等。多数的通道会将消息是否成功推送到客户端SDK的回执数据反馈给发送方，需要提供回调地址。</p>
+<h1 id="四-底层通道说明"><a href="#四-底层通道说明" class="headerlink" title="四 底层通道说明"></a>四 底层通道说明</h1><h2 id="4-1推送方式"><a href="#4-1推送方式" class="headerlink" title="4.1推送方式"></a>4.1推送方式</h2><p>通道类型一般分为三类：厂商通道、第三方推送服务平台、长连接。</p>
+<p>厂商通道是手机终端厂商推出的推送服务，通过接入厂商SDK，内部服务端可以将消息推送到手机系统的服务端,再下发至客户端内部的厂商SDK，由操作系统进行相应展示，点击后唤起相应APP，这样可以避免APP进程被杀死后消息无法触达用户，因此触达率较高。</p>
+<p>第三方推送平台是推送服务公司自己搭建相关的消息服务。并且各个APP使用了同一个平台的推送服务时，客户端都是集成同一个第三方推送平台的SDK，因此形成了一个推送联盟，当联盟中的其中一个APP的消息进程没有被杀死的时候，其他的APP也可以利用进行通知用户，形成了相互唤起，提高触达率。经过一些场景的测试，相互唤起的成功率并不是很高，需谨慎结合自身场景评估。为了提高触达率，第三方推送平台也会集成各大厂商的SDK进行推送。</p>
+<p>长连接就是建立手机与服务端的一条链路进行消息数据推送，通过长连接也可以进行APP状态监控，但完全由长连接推送且保证触达的稳定，需要投入的研发资源较多,且需尽量避免自己的长连接进程不要被操作系统杀死。</p>
+<h2 id="4-2优劣势对比"><a href="#4-2优劣势对比" class="headerlink" title="4.2优劣势对比"></a>4.2优劣势对比</h2><p><img src="https://img.pmcaff.com/FrJy5X0myRMYsO-9THXFWibGrGGs-picture" alt="push优劣势对比.JPG"></p>
+<p>APP push功能的搭建需要依据产品自身的情况和公司可投入的资源成本为主，在不同的阶段应该追逐不同的目标。</p>
+<h1 id="五-下发推送"><a href="#五-下发推送" class="headerlink" title="五 下发推送"></a>五 下发推送</h1><h2 id="5-1-推送账号"><a href="#5-1-推送账号" class="headerlink" title="5.1 推送账号"></a>5.1 推送账号</h2><p>推送时客户端的PUSH SDK均会根据用户的设备号生成一个对应关系的TOKEN。在SDK内部，如果使用的是第三方推送服务，则去第三方的SDK注册；如果是厂商，则去商城SDK注册；如果使用自己长连接，则去自己的SDK进行注册，作为后续推送的标识用户的唯一ID。</p>
+<h2 id="5-2-消息路由"><a href="#5-2-消息路由" class="headerlink" title="5.2 消息路由"></a>5.2 消息路由</h2><p>消息路主要见上述推送流程的讲解，此处主要讲解根据不同的业务场景，可能会定向推送给不同版本APP的用户。因此服务端在通道能力路由的时候，不仅需要能够区分通道，还要进一步能够针对用户的手机终端进行更加精细化的差异推送。</p>
+<p>此外，消息通道并一定是100%稳定，如果下游通道出现问题，服务端需能够将由于通道问题导致的消息路由到备用通道去发送，以保证业务稳定触达。</p>
+<h2 id="5-3-全量推送"><a href="#5-3-全量推送" class="headerlink" title="5.3 全量推送"></a>5.3 全量推送</h2><p>一般来说，对于公司内部运营或公司的相关数据均是以产品的customer id为准，用户数据系统对接消息系统时也多为customer id，因此需建立customer id与推送TOKEN的关系，便于运营针对用户进行推送。但对于一些场景会需要针对未登录的用户也进行推送，即全量推送；比如突发重大新闻资讯、大促等活动，所以运营系统需要提供全量推送功能，针对所有TOKEN进行推送。</p>
+<h1 id="六-数据上报"><a href="#六-数据上报" class="headerlink" title="六 数据上报"></a>六 数据上报</h1><p>上报数据包括触达 点击 关闭 退出 注册等数据。</p>
+<p>对于所有方式的触达消息，都离不开触达与点击，触达的数据通过厂商的需要厂商回调上报，点击数据可以由SDK上报服务端。对于push的关闭，也是需要进行考量的，来评估push是否过度发送，打扰到了用户。关闭数据有两部分，一部分为app内部的关闭，sdk直接上报给服务端即可；另一部分为用户在手机操作系统上关闭了对应app的push，需要APP在前台时，sdk调用手机终端相关方法获取该用户是否关闭了系统通知，然后上报至服务端。</p>
+<p>注册数据即用户首次启动APP时，去相关sdk注册token。</p>
+<p>一般来说，用户退出账号时，sdk需要上报服务端，解除token与customer id的绑定关系。</p>
+<h1 id="七-PUSH特点"><a href="#七-PUSH特点" class="headerlink" title="七 PUSH特点"></a>七 PUSH特点</h1><h2 id="7-1-强提醒-不留痕"><a href="#7-1-强提醒-不留痕" class="headerlink" title="7.1 强提醒 不留痕"></a>7.1 强提醒 不留痕</h2><p>push由于是app自己的通知渠道，是运营的一个重要工具。如果用户未关闭PUSH通知的话，push可以从通知栏弹出进行消息显示，具有一定的强提醒性，但PUSH点击跳转后便消失，没有痕迹，因此针对于重点的通知消息，需要在APP内设置消息中心，在PUSH的同时留下通知记录。</p>
+<h2 id="7-2-消息样式"><a href="#7-2-消息样式" class="headerlink" title="7.2 消息样式"></a>7.2 消息样式</h2><p>对于各家PUSH来说，一些营销消息会加入EMOJI表情来吸引用户点击，这也是一个吸引用户点击的一个小方法，只要服务支持传输约定好的EMOJI码就可以了。</p>
+<p>目前安卓系统也支持富媒体推送，推送包含图片、语音等形式，对于资讯类的APP可以增加缩略图，吸引用户点击。目前来看，语音场景还有点挖掘。</p>
+<h2 id="7-3-IOS和安卓"><a href="#7-3-IOS和安卓" class="headerlink" title="7.3 IOS和安卓"></a>7.3 IOS和安卓</h2><p>由于APP是基于手机操作系统，因此对于IOS和安卓的推送的流程及功能基本相同，只不过细节和方法上略有不同，且国内安卓产商都在安卓系统上进行了一定改造，导致国内安卓厂商标准各不相同，需要开发同学仔细对接各个厂商。</p>
+<h1 id="八触达率的提升"><a href="#八触达率的提升" class="headerlink" title="八触达率的提升"></a>八触达率的提升</h1><p>触达率的提升需要从消息创建到实际通知到用户的建立完整流程，细化每一个交互环节，发现影响触达率的主要瓶颈，并针对性地进行解决或优化方案。除此之外，未采用厂商通道的消息也可以采用自己的长连接和其他推送平台服务同时多条推送，在客户端的SDK内增加针对同一罅隙流水号的去重，这样可以也可以提高一部分消息的触达率。</p>
+<p>以上内容为个人经验总结，欢迎讨论指正。</p>
+<p>转自PMCAFF<a href="https://www.pmcaff.com/user/profile/7PQA50xdQw" target="_blank" rel="noopener">卓别木</a>,学习拜读！</p>
 
-            if toc(page.content)
-                div#toc!=toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/04/26/一篇文章带你了解APP-PUSH推送机制/" data-id="cjx5l5epy0076n37bndbfglne" class="article-share-link">分享</a>
+      
+      
+        <a href="http://wangyuehan.github.io/year/04/26/一篇文章带你了解APP-PUSH推送机制/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/好文章/">好文章</a></li></ul>
 
-            section#post-body!=page.content
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav#post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+    
+<nav id="article-nav">
+  
+    <a href="/year/05/05/欢迎访问新博客-www-wangyurui-top/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          欢迎访问新博客-www.wangyurui.top
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/04/25/hexo博客微博图床失效解决办法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">hexo博客微博图床失效解决办法</div>
+    </a>
+  
+</nav>
 
-            include includes/comment.pug
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-APP-PUSH定义与价值"><span class="toc-number">1.</span> <span class="toc-text">一 APP PUSH定义与价值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-APP-推送分类"><span class="toc-number">2.</span> <span class="toc-text">二 APP 推送分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-PUSH-流程"><span class="toc-number">3.</span> <span class="toc-text">三 PUSH 流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-底层通道说明"><span class="toc-number">4.</span> <span class="toc-text">四 底层通道说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1推送方式"><span class="toc-number">4.1.</span> <span class="toc-text">4.1推送方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2优劣势对比"><span class="toc-number">4.2.</span> <span class="toc-text">4.2优劣势对比</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-下发推送"><span class="toc-number">5.</span> <span class="toc-text">五 下发推送</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-推送账号"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 推送账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-消息路由"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 消息路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-全量推送"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 全量推送</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六-数据上报"><span class="toc-number">6.</span> <span class="toc-text">六 数据上报</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七-PUSH特点"><span class="toc-number">7.</span> <span class="toc-text">七 PUSH特点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-强提醒-不留痕"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 强提醒 不留痕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-消息样式"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 消息样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-IOS和安卓"><span class="toc-number">7.3.</span> <span class="toc-text">7.3 IOS和安卓</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八触达率的提升"><span class="toc-number">8.</span> <span class="toc-text">八触达率的提升</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
+      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
+  
+    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
+  
+    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
+  
+    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
+  
+    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
+  
+    <a href="/board" class="mobile-nav-link">留言板</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+<script>
+  var disqus_shortname = 'yuehan';
+  
+  var disqus_url = 'http://wangyuehan.github.io/year/04/26/一篇文章带你了解APP-PUSH推送机制/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
 
 
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
+</html>

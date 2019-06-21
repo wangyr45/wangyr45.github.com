@@ -1,39 +1,444 @@
-extends includes/layout
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Git | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Git属于分布式版本控制系统。">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/04/Git/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="Git属于分布式版本控制系统。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/a1198642-9159-4d88-8aec-c3b04e7a2563.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/46f66e88-e65a-4ad0-a060-3c63fe22947c.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/17976404-95f5-480e-9cb4-250e6aa1d55f.png">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/fb546e12-e1fb-4b72-a1fb-8a7f5000dce6.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/bc775758-89ab-4805-9f9c-78b8739cf780.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/5292faa6-0141-4638-bf0f-bb95b081dcba.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/1164a71f-413d-494a-9cc8-679fb6a2613d.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/58e57a21-6b6b-40b6-af85-956dd4e0f55a.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/dd78a1fe-1ff3-4bcf-a56f-8c003995beb6.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/245fd2fb-209c-4ad5-bc5e-eb5664966a0e.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg">
+<meta property="og:updated_time" content="2018-11-04T06:07:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git">
+<meta name="twitter:description" content="Git属于分布式版本控制系统。">
+<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/a1198642-9159-4d88-8aec-c3b04e7a2563.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block content
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
+        
+          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
+        
+          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
+        
+          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
+        
+          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
+        
+          <a class="main-nav-link" href="/board">留言板</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/11/04/Git/" class="article-date">
+  <time datetime="2018-11-04T06:06:07.000Z" itemprop="datePublished">2018-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git
+    </h1>
+  
 
-    section#wrapper.post
-        article
-            header
-                h1!=page.title
-                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
-                    |·
-                    |#{wordcount(page.content)} words
-                    |·
-                    |#{min2read(page.content)} minutes read
-                    span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>Git属于分布式版本控制系统。</p>
+<a id="more"></a>
+<h1 id="集中式与分布式"><a href="#集中式与分布式" class="headerlink" title="集中式与分布式"></a>集中式与分布式</h1><p>Git 属于分布式版本控制系统，而 SVN 属于集中式。</p>
+<p>集中式版本控制只有中心服务器拥有一份代码，而分布式版本控制每个人的电脑上就有一份完整的代码。</p>
+<p>集中式版本控制有安全性问题，当中心服务器挂了所有人都没办法工作了。</p>
+<p>集中式版本控制需要连网才能工作，如果网速过慢，那么提交一个文件的会慢的无法让人忍受。而分布式版本控制不需要连网就能工作。</p>
+<p>分布式版本控制新建分支、合并分支操作速度非常快，而集中式版本控制新建一个分支相当于复制一份完整代码。</p>
+<h1 id="中心服务器"><a href="#中心服务器" class="headerlink" title="中心服务器"></a>中心服务器</h1><p>中心服务器用来交换每个用户的修改，没有中心服务器也能工作，但是中心服务器能够 24 小时保持开机状态，这样就能更方便的交换修改。</p>
+<p>Github 就是一个中心服务器。</p>
+<h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/a1198642-9159-4d88-8aec-c3b04e7a2563.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/a1198642-9159-4d88-8aec-c3b04e7a2563.jpg" alt="img"></a></p>
+<p>新建一个仓库之后，当前目录就成为了工作区，工作区下有一个隐藏目录 .git，它属于 Git 的版本库。</p>
+<p>Git 版本库有一个称为 stage 的暂存区，还有自动创建的 master 分支以及指向分支的 HEAD 指针。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/46f66e88-e65a-4ad0-a060-3c63fe22947c.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/46f66e88-e65a-4ad0-a060-3c63fe22947c.png" alt="img"></a></p>
+<ul>
+<li>git add files 把文件的修改添加到暂存区</li>
+<li>git commit 把暂存区的修改提交到当前分支，提交之后暂存区就被清空了</li>
+<li>git reset – files 使用当前分支上的修改覆盖暂缓区，用来撤销最后一次 git add files</li>
+<li>git checkout – files 使用暂存区的修改覆盖工作目录，用来撤销本地修改</li>
+</ul>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/17976404-95f5-480e-9cb4-250e6aa1d55f.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/17976404-95f5-480e-9cb4-250e6aa1d55f.png" alt="img"></a></p>
+<p>可以跳过暂存区域直接从分支中取出修改，或者直接提交修改到分支中。</p>
+<ul>
+<li>git commit -a 直接把所有文件的修改添加到暂缓区然后执行提交</li>
+<li>git checkout HEAD – files 取出最后一次修改，可以用来进行回滚操作</li>
+</ul>
+<h1 id="分支实现"><a href="#分支实现" class="headerlink" title="分支实现"></a>分支实现</h1><p>使用指针将每个提交连接成一条时间线，HEAD 指针指向当前分支指针。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/fb546e12-e1fb-4b72-a1fb-8a7f5000dce6.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/fb546e12-e1fb-4b72-a1fb-8a7f5000dce6.jpg" alt="img"></a></p>
+<p>新建分支是新建一个指针指向时间线的最后一个节点，并让 HEAD 指针指向新分支表示新分支成为当前分支。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/bc775758-89ab-4805-9f9c-78b8739cf780.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/bc775758-89ab-4805-9f9c-78b8739cf780.jpg" alt="img"></a></p>
+<p>每次提交只会让当前分支指针向前移动，而其它分支指针不会移动。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/5292faa6-0141-4638-bf0f-bb95b081dcba.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/5292faa6-0141-4638-bf0f-bb95b081dcba.jpg" alt="img"></a></p>
+<p>合并分支也只需要改变指针即可。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/1164a71f-413d-494a-9cc8-679fb6a2613d.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/1164a71f-413d-494a-9cc8-679fb6a2613d.jpg" alt="img"></a></p>
+<h1 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h1><p>当两个分支都对同一个文件的同一行进行了修改，在分支合并时就会产生冲突。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/58e57a21-6b6b-40b6-af85-956dd4e0f55a.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/58e57a21-6b6b-40b6-af85-956dd4e0f55a.jpg" alt="img"></a></p>
+<p>Git 会使用 &lt;&lt;&lt;&lt;&lt;&lt;&lt; ，======= ，&gt;&gt;&gt;&gt;&gt;&gt;&gt; 标记出不同分支的内容，只需要把不同分支中冲突部分修改成一样就能解决冲突。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">Creating a new branch is quick &amp; simple.</span><br><span class="line">=======</span><br><span class="line">Creating a new branch is quick AND simple.</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature1</span><br></pre></td></tr></table></figure>
+<h1 id="Fast-forward"><a href="#Fast-forward" class="headerlink" title="Fast forward"></a>Fast forward</h1><p>“快进式合并”（fast-farward merge），会直接将 master 分支指向合并的分支，这种模式下进行分支合并会丢失分支信息，也就不能在分支历史上看出分支信息。</p>
+<p>可以在合并时加上 –no-ff 参数来禁用 Fast forward 模式，并且加上 -m 参数让合并时产生一个新的 commit。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/dd78a1fe-1ff3-4bcf-a56f-8c003995beb6.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/dd78a1fe-1ff3-4bcf-a56f-8c003995beb6.jpg" alt="img"></a></p>
+<h1 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h1><p>master 分支应该是非常稳定的，只用来发布新版本；</p>
+<p>日常开发在开发分支 dev 上进行。</p>
+<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/245fd2fb-209c-4ad5-bc5e-eb5664966a0e.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/245fd2fb-209c-4ad5-bc5e-eb5664966a0e.jpg" alt="img"></a></p>
+<h1 id="储藏（Stashing）"><a href="#储藏（Stashing）" class="headerlink" title="储藏（Stashing）"></a>储藏（Stashing）</h1><p>在一个分支上操作之后，如果还没有将修改提交到分支上，此时进行切换分支，那么另一个分支上也能看到新的修改。这是因为所有分支都共用一个工作区的缘故。</p>
+<p>可以使用 git stash 将当前分支的修改储藏起来，此时当前工作区的所有修改都会被存到栈上，也就是说当前工作区是干净的，没有任何未提交的修改。此时就可以安全的切换到其它分支上了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git stash</span><br><span class="line">Saved working directory and index state \ &quot;WIP on master: 049d078 added the index file&quot;</span><br><span class="line">HEAD is now at 049d078 added the index file (To restore them type &quot;git stash apply&quot;)</span><br></pre></td></tr></table></figure>
+<p>该功能可以用于 bug 分支的实现。如果当前正在 dev 分支上进行开发，但是此时 master 上有个 bug 需要修复，但是 dev 分支上的开发还未完成，不想立即提交。在新建 bug 分支并切换到 bug 分支之前就需要使用 git stash 将 dev 分支的未提交修改储藏起来。</p>
+<h1 id="SSH-传输设置"><a href="#SSH-传输设置" class="headerlink" title="SSH 传输设置"></a>SSH 传输设置</h1><p>Git 仓库和 Github 中心仓库之间的传输是通过 SSH 加密。</p>
+<p>如果工作区下没有 .ssh 目录，或者该目录下没有 id_rsa 和 id_rsa.pub 这两个文件，可以通过以下命令来创建 SSH Key：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure>
+<p>然后把公钥 id_rsa.pub 的内容复制到 Github “Account settings” 的 SSH Keys 中。</p>
+<h1 id="gitignore-文件"><a href="#gitignore-文件" class="headerlink" title=".gitignore 文件"></a>.gitignore 文件</h1><p>忽略以下文件：</p>
+<ul>
+<li>操作系统自动生成的文件，比如缩略图；</li>
+<li>编译生成的中间文件，比如 Java 编译产生的 .class 文件；</li>
+<li>自己的敏感信息，比如存放口令的配置文件。</li>
+</ul>
+<p>不需要全部自己编写，可以到 <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a> 中进行查询。</p>
+<h1 id="Git-命令一览"><a href="#Git-命令一览" class="headerlink" title="Git 命令一览"></a>Git 命令一览</h1><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg" alt="img"></a></p>
+<p>比较详细的地址：<a href="http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf" target="_blank" rel="noopener">http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">Git - 简明指南</a></li>
+<li><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="noopener">图解 Git</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰 : Git 教程</a></li>
+<li><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">Learn Git Branching</a></li>
+</ul>
 
-            if toc(page.content)
-                div#toc!=toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/11/04/Git/" data-id="cjx5l5enp000hn37bnecdc7gw" class="article-share-link">分享</a>
+      
+      
+        <a href="http://wangyuehan.github.io/year/11/04/Git/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
-            section#post-body!=page.content
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav#post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+    
+<nav id="article-nav">
+  
+    <a href="/year/11/15/面试计算机网络问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          面试计算机网络问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/11/04/Docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Docker</div>
+    </a>
+  
+</nav>
 
-            include includes/comment.pug
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#集中式与分布式"><span class="toc-number">1.</span> <span class="toc-text">集中式与分布式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#中心服务器"><span class="toc-number">2.</span> <span class="toc-text">中心服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工作流"><span class="toc-number">3.</span> <span class="toc-text">工作流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支实现"><span class="toc-number">4.</span> <span class="toc-text">分支实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#冲突"><span class="toc-number">5.</span> <span class="toc-text">冲突</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fast-forward"><span class="toc-number">6.</span> <span class="toc-text">Fast forward</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支管理策略"><span class="toc-number">7.</span> <span class="toc-text">分支管理策略</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#储藏（Stashing）"><span class="toc-number">8.</span> <span class="toc-text">储藏（Stashing）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSH-传输设置"><span class="toc-number">9.</span> <span class="toc-text">SSH 传输设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gitignore-文件"><span class="toc-number">10.</span> <span class="toc-text">.gitignore 文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-命令一览"><span class="toc-number">11.</span> <span class="toc-text">Git 命令一览</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">12.</span> <span class="toc-text">参考资料</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
+      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
+  
+    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
+  
+    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
+  
+    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
+  
+    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
+  
+    <a href="/board" class="mobile-nav-link">留言板</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+<script>
+  var disqus_shortname = 'yuehan';
+  
+  var disqus_url = 'http://wangyuehan.github.io/year/11/04/Git/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
 
 
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
+</html>

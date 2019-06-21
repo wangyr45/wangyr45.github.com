@@ -1,39 +1,408 @@
-extends includes/layout
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>分布式架构下的负载均衡 | 王约翰的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是负载均衡？百度词条里的解释是：负载均衡，英文叫Load Balance，意思就是将请求或者数据分摊到多个操作单元上进行执行，共同完成工作任务。它的目的就通过调度集群，达到最佳化资源使用，最大化吞吐率，最小化响应时间，避免单点过载的问题。">
+<meta name="keywords" content="分布式,负载均衡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分布式架构下的负载均衡">
+<meta property="og:url" content="http://wangyuehan.github.io/year/05/09/分布式架构下的负载均衡/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="什么是负载均衡？百度词条里的解释是：负载均衡，英文叫Load Balance，意思就是将请求或者数据分摊到多个操作单元上进行执行，共同完成工作任务。它的目的就通过调度集群，达到最佳化资源使用，最大化吞吐率，最小化响应时间，避免单点过载的问题。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1hobsrsj30me0kbdh3.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1i3pm1gj30u00o4js5.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1g2v1iix10bj30pq0loaaq.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1g2v1jjk953j30u00jw74l.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1g2v1jqvzk4j30u00ismxh.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1g2v1k0gks0j30u00jft98.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1k9lghvj30u00jvmxi.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1kh1qe7j30u00iydg8.jpg">
+<meta property="og:updated_time" content="2019-05-09T06:20:56.226Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="分布式架构下的负载均衡">
+<meta name="twitter:description" content="什么是负载均衡？百度词条里的解释是：负载均衡，英文叫Load Balance，意思就是将请求或者数据分摊到多个操作单元上进行执行，共同完成工作任务。它的目的就通过调度集群，达到最佳化资源使用，最大化吞吐率，最小化响应时间，避免单点过载的问题。">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1hobsrsj30me0kbdh3.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block content
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangyuehan.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories/每周琢磨/">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/读书笔记/">读书</a>
+        
+          <a class="main-nav-link" href="/categories/玩物志/">玩物志</a>
+        
+          <a class="main-nav-link" href="/categories/心理学/">心理学</a>
+        
+          <a class="main-nav-link" href="/categories/专业知识/">计算机</a>
+        
+          <a class="main-nav-link" href="/categories/产品分析/">产品运营</a>
+        
+          <a class="main-nav-link" href="/board">留言板</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">王约翰的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你敲代码好像cxk啊！</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-分布式架构下的负载均衡" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/year/05/09/分布式架构下的负载均衡/" class="article-date">
+  <time datetime="2019-05-09T06:16:11.000Z" itemprop="datePublished">2019-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      分布式架构下的负载均衡
+    </h1>
+  
 
-    section#wrapper.post
-        article
-            header
-                h1!=page.title
-                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
-                    |·
-                    |#{wordcount(page.content)} words
-                    |·
-                    |#{min2read(page.content)} minutes read
-                    span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="什么是负载均衡？"><a href="#什么是负载均衡？" class="headerlink" title="什么是负载均衡？"></a>什么是负载均衡？</h3><p>百度词条里的解释是：负载均衡，英文叫Load Balance，意思就是将请求或者数据分摊到多个操作单元上进行执行，共同完成工作任务。<br>它的目的就通过调度集群，达到最佳化资源使用，最大化吞吐率，最小化响应时间，避免单点过载的问题。</p>
+<a id="more"></a>
+<h2 id="分布式架构下的负载均衡"><a href="#分布式架构下的负载均衡" class="headerlink" title="分布式架构下的负载均衡"></a>分布式架构下的负载均衡</h2><h3 id="负载均衡分类"><a href="#负载均衡分类" class="headerlink" title="负载均衡分类"></a>负载均衡分类</h3><p>负载均衡可以根据网络协议的层数进行分类，我们这里以ISO模型为准，从下到上分为：<br><strong>物理层，数据链路层，网络层，传输层，会话层，表示层，应用层。</strong><br>当客户端发起请求，会经过层层的封装，发给服务器，服务器收到请求后经过层层的解析，获取到对应的内容。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1hobsrsj30me0kbdh3.jpg" alt></p>
+<h4 id="二层负载均衡"><a href="#二层负载均衡" class="headerlink" title="二层负载均衡"></a>二层负载均衡</h4><p>二层负债均衡是基于数据链路层的负债均衡，即让负债均衡服务器和业务服务器绑定同一个虚拟IP（即VIP），客户端直接通过这个VIP进行请求，那么如何区分相同IP下的不同机器呢？没错，通过MAC物理地址，每台机器的MAC物理地址都不一样，当负载均衡服务器接收到请求之后，通过改写HTTP报文中以太网首部的MAC地址，按照某种算法将请求转发到目标机器上，实现负载均衡。<br>这种方式负载方式虽然控制粒度比较粗，但是优点是负载均衡服务器的压力会比较小，负载均衡服务器只负责请求的进入，不负责请求的响应（响应是有后端业务服务器直接响应给客户端），吞吐量会比较高。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1i3pm1gj30u00o4js5.jpg" alt></p>
+<h4 id="三层负载均衡"><a href="#三层负载均衡" class="headerlink" title="三层负载均衡"></a>三层负载均衡</h4><p>三层负载均衡是基于网络层的负载均衡，通俗的说就是按照不同机器不同IP地址进行转发请求到不同的机器上。<br>这种方式虽然比二层负载多了一层，但从控制的颗粒度上看，并没有比二层负载均衡更有优势，并且，由于请求的进出都要经过负载均衡服务器，会对其造成比较大的压力，性能也比二层负载均衡要差。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1g2v1iix10bj30pq0loaaq.jpg" alt></p>
+<h4 id="四层负载均衡"><a href="#四层负载均衡" class="headerlink" title="四层负载均衡"></a>四层负载均衡</h4><p>四层负载均衡是基于传输层的负载均衡，传输层的代表协议就是TCP/UDP协议，除了包含IP之外，还有区分了端口号，通俗的说就是基于IP+端口号进行请求的转发。相对于上面两种，控制力度缩小到了端口，可以针对同一机器上的不用服务进行负载。<br>这一层以LVS为代表。</p>
+<h4 id="七层负载均衡"><a href="#七层负载均衡" class="headerlink" title="七层负载均衡"></a>七层负载均衡</h4><p>七层负载均衡是基于应用层的负载均衡，应用层的代表协议有HTTP，DNS等，可以根据请求的url进行转发负载，比起四层负载，会更加的灵活，所控制到的粒度也是最细的，使得整个网络更”智能化”。例如访问一个网站的用户流量，可以通过七层的方式，将对图片类的请求转发到特定的图片服务器并可以使用缓存技术；将对文字类的请求可以转发到特定的文字服务器并可以使用压缩技术。可以说功能是非常强大的负载。</p>
+<p>这一层以Nginx为代表。</p>
+<p>在普通的应用架构中，使用Nginx完全可以满足需求，对于一些大型应用，一般会采用DNS+LVS+Nginx的方式进行多层次负债均衡，以上这些说明都是基于软件层面的负载均衡，在一些超大型的应用中，还会在前面多加一层物理负载均衡，比如知名的F5。</p>
+<h3 id="负载均衡算法"><a href="#负载均衡算法" class="headerlink" title="负载均衡算法"></a>负载均衡算法</h3><p>负载均衡算法分为两类：<br><strong>一种是静态负载均衡，一种是动态负载均衡。</strong></p>
+<h4 id="静态均衡算法："><a href="#静态均衡算法：" class="headerlink" title="静态均衡算法："></a>静态均衡算法：</h4><p><strong>1、轮询法</strong><br>将请求按顺序轮流地分配到每个节点上，不关心每个节点实际的连接数和当前的系统负载。<br>优点：简单高效，易于水平扩展，每个节点满足字面意义上的均衡；<br>缺点：没有考虑机器的性能问题，根据木桶最短木板理论，集群性能瓶颈更多的会受性能差的服务器影响。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1g2v1jjk953j30u00jw74l.jpg" alt></p>
+<p>轮询</p>
+<p><strong>2、随机法</strong><br>将请求随机分配到各个节点。由概率统计理论得知，随着客户端调用服务端的次数增多，其实际效果越来越接近于平均分配，也就是轮询的结果。<br>优缺点和轮询相似。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1g2v1jqvzk4j30u00ismxh.jpg" alt></p>
+<p>随机</p>
+<p><strong>3、源地址哈希法</strong><br>源地址哈希的思想是根据客户端的IP地址，通过哈希函数计算得到一个数值，用该数值对服务器节点数进行取模，得到的结果便是要访问节点序号。采用源地址哈希法进行负载均衡，同一IP地址的客户端，当后端服务器列表不变时，它每次都会落到到同一台服务器进行访问。<br>优点：相同的IP每次落在同一个节点，可以人为干预客户端请求方向，例如灰度发布；<br>缺点：如果某个节点出现故障，会导致这个节点上的客户端无法使用，无法保证高可用。当某一用户成为热点用户，那么会有巨大的流量涌向这个节点，导致冷热分布不均衡，无法有效利用起集群的性能。所以当热点事件出现时，一般会将源地址哈希法切换成轮询法。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1g2v1k0gks0j30u00jft98.jpg" alt></p>
+<p>哈希法</p>
+<p><strong>4、加权轮询法</strong><br>不同的后端服务器可能机器的配置和当前系统的负载并不相同，因此它们的抗压能力也不相同。给配置高、负载低的机器配置更高的权重，让其处理更多的请；而配置低、负载高的机器，给其分配较低的权重，降低其系统负载，加权轮询能很好地处理这一问题，并将请求顺序且按照权重分配到后端。<br>加权轮询算法要生成一个服务器序列，该序列中包含n个服务器。n是所有服务器的权重之和。在该序列中，每个服务器的出现的次数，等于其权重值。并且，生成的序列中，服务器的分布应该尽可能的均匀。比如序列{a, a, a, a, a, b, c}中，前五个请求都会分配给服务器a，这就是一种不均匀的分配方法，更好的序列应该是：{a, a, b, a, c, a, a}。<br>优点：可以将不同机器的性能问题纳入到考量范围，集群性能最优最大化；<br>缺点：生产环境复杂多变，服务器抗压能力也无法精确估算，静态算法导致无法实时动态调整节点权重，只能粗糙优化。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1k9lghvj30u00jvmxi.jpg" alt></p>
+<p>加权轮询</p>
+<p><strong>5、加权随机法</strong><br>与加权轮询法一样，加权随机法也根据后端机器的配置，系统的负载分配不同的权重。不同的是，它是按照权重随机请求后端服务器，而非顺序。</p>
+<p><strong>6、键值范围法</strong><br>根据键的范围进行负债，比如0到10万的用户请求走第一个节点服务器，10万到20万的用户请求走第二个节点服务器……以此类推。<br>优点：容易水平扩展，随着用户量增加，可以增加节点而不影响旧数据；<br>缺点：容易负债不均衡，比如新注册的用户活跃度高，旧用户活跃度低，那么压力就全在新增的服务节点上，旧服务节点性能浪费。而且也容易单点故障，无法满足高可用。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1g2v1kh1qe7j30u00iydg8.jpg" alt></p>
+<p>键值范围法</p>
+<p>（注：以上所提到的单点故障，都可以用主从方式来解决，从节点监听主节点心跳，当发现主节点死亡，从节点切换成主节点顶替上去。这里可以思考一个问题，怎么设计集群主从可以最大程度上降低成本）</p>
+<h4 id="动态负债均衡算法："><a href="#动态负债均衡算法：" class="headerlink" title="动态负债均衡算法："></a>动态负债均衡算法：</h4><p><strong>1、最小连接数法</strong><br>根据每个节点当前的连接情况，动态地选取其中当前积压连接数最少的一个节点处理当前请求，尽可能地提高后端服务的利用效率，将请求合理地分流到每一台服务器。俗称闲的人不能闲着，大家一起动起来。<br>优点：动态，根据节点状况实时变化；<br>缺点：提高了复杂度，每次连接断开需要进行计数；<br>实现：将连接数的倒数当权重值。</p>
+<p><strong>2、最快响应速度法</strong><br>根据请求的响应时间，来动态调整每个节点的权重，将响应速度快的服务节点分配更多的请求，响应速度慢的服务节点分配更少的请求，俗称能者多劳，扶贫救弱。<br>优点：动态，实时变化，控制的粒度更细，跟灵敏；<br>缺点：复杂度更高，每次需要计算请求的响应速度；<br>实现：可以根据响应时间进行打分，计算权重。</p>
+<p><strong>3、观察模式法</strong><br>观察者模式是综合了最小连接数和最快响应度，同时考量这两个指标数，进行一个权重的分配。</p>
+<p>转自it一刻钟</p>
 
-            if toc(page.content)
-                div#toc!=toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangyuehan.github.io/year/05/09/分布式架构下的负载均衡/" data-id="cjx5l5eq3007kn37bd2elxs99" class="article-share-link">分享</a>
+      
+      
+        <a href="http://wangyuehan.github.io/year/05/09/分布式架构下的负载均衡/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式/">分布式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/负载均衡/">负载均衡</a></li></ul>
 
-            section#post-body!=page.content
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav#post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+    
+<nav id="article-nav">
+  
+    <a href="/year/05/10/macos把任意网站变成桌面软件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          macos把任意网站变成桌面软件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/year/05/06/微信公众号学习日志/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">微信公众号学习日志</div>
+    </a>
+  
+</nav>
 
-            include includes/comment.pug
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是负载均衡？"><span class="toc-number">1.</span> <span class="toc-text">什么是负载均衡？</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式架构下的负载均衡"><span class="toc-number"></span> <span class="toc-text">分布式架构下的负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#负载均衡分类"><span class="toc-number">1.</span> <span class="toc-text">负载均衡分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二层负载均衡"><span class="toc-number">1.1.</span> <span class="toc-text">二层负载均衡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三层负载均衡"><span class="toc-number">1.2.</span> <span class="toc-text">三层负载均衡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四层负载均衡"><span class="toc-number">1.3.</span> <span class="toc-text">四层负载均衡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七层负载均衡"><span class="toc-number">1.4.</span> <span class="toc-text">七层负载均衡</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#负载均衡算法"><span class="toc-number">2.</span> <span class="toc-text">负载均衡算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#静态均衡算法："><span class="toc-number">2.1.</span> <span class="toc-text">静态均衡算法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态负债均衡算法："><span class="toc-number">2.2.</span> <span class="toc-text">动态负债均衡算法：</span></a></li></ol></li></ol>
+          </li></div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2017 - 2019 &nbsp;|&nbsp; John Wang
+      <!--主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>-->
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wangyuehanw1y2r3@163.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories/每周琢磨/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/读书笔记/" class="mobile-nav-link">读书</a>
+  
+    <a href="/categories/玩物志/" class="mobile-nav-link">玩物志</a>
+  
+    <a href="/categories/心理学/" class="mobile-nav-link">心理学</a>
+  
+    <a href="/categories/专业知识/" class="mobile-nav-link">计算机</a>
+  
+    <a href="/categories/产品分析/" class="mobile-nav-link">产品运营</a>
+  
+    <a href="/board" class="mobile-nav-link">留言板</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+<script>
+  var disqus_shortname = 'yuehan';
+  
+  var disqus_url = 'http://wangyuehan.github.io/year/05/09/分布式架构下的负载均衡/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
 
 
 
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
+</html>
