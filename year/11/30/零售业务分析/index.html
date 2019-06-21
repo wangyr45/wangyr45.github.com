@@ -1,87 +1,177 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang=zh>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="google-site-verification" content>
-  
-  <title>零售业务分析</title>
-  <meta name="author" content="John Wang">
-  <meta name="description" content="本文简单研究了下零售业务的一些规则。">
-  
-  
-  <meta property="og:title" content="零售业务分析">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:site_name" content="王约翰的博客">
-  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
-  <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/m.min.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="本文简单研究了下零售业务的一些规则。">
+<meta name="keywords" content="业务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零售业务分析">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/零售业务分析/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="本文简单研究了下零售业务的一些规则。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-30T09:33:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="零售业务分析">
+<meta name="twitter:description" content="本文简单研究了下零售业务的一些规则。">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>零售业务分析</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
 </head>
-</html>
-<body>
-  <a id="top"></a>
-  <div id="main">
-    <div class="behind">
-      <a href="/" class="back black-color">
-        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M2 30 L30 2 M30 30 L2 2"></path>
-        </svg>
-      </a>
-      <div class="description">
-        &nbsp;你敲代码好像cxk啊！
-      </div>
-    </div>
-    <div class="main-ctnr">
-      
 
-  <article class="standard post">
-    <div class="title">
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">王约翰的博客</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
       
-  
-    <h1 class="page-title center">
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/year/12/09/算法思维导图/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/year/11/30/移动设备怎样定位/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://wangyuehan.github.io/year/11/30/零售业务分析/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&text=零售业务分析"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&is_video=false&description=零售业务分析"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=零售业务分析&body=Check out this article: http://wangyuehan.github.io/year/11/30/零售业务分析/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&name=零售业务分析&description=&lt;p&gt;本文简单研究了下零售业务的一些规则。&lt;br&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-number">1.</span> <span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-number">1.4.5.</span> <span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-number">2.</span> <span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
         零售业务分析
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">王约翰的博客</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-11-30T09:32:14.000Z" itemprop="datePublished">2018-11-30</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/业务/">业务</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-
-    </div>
-    <div class="meta center">
-      
-<time datetime="2018-11-30T09:32:14.000Z">
-<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
-  </svg>
-  &nbsp;
-  2018-11-30
-</time>
-
-
-
-
-
-
-    
-    &nbsp;
-    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-      <circle cx="24" cy="8" r="2"/>
-      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
-    </svg>
-    &nbsp;
-    <a href="/tags/业务/">业务</a>
-
-
-    </div>
-    <hr>
-    
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
-    
-    <div class="picture-container">
-      
-    </div>
+  <div class="content" itemprop="articleBody">
     <p>本文简单研究了下零售业务的一些规则。<br><a id="more"></a></p>
 <h2 id="1-优惠规则5要素"><a href="#1-优惠规则5要素" class="headerlink" title="1 优惠规则5要素"></a>1 优惠规则5要素</h2><h3 id="1-1-满足优惠条件的动作"><a href="#1-1-满足优惠条件的动作" class="headerlink" title="1.1 满足优惠条件的动作"></a>1.1 满足优惠条件的动作</h3><p>这个要素，是指触发优惠规则的动作，主要包括买和满两种。</p>
 <p><strong>注</strong>：</p>
@@ -157,66 +247,91 @@
 <li>实付N元再送M件</li>
 </ul>
 
-
-  </article>
-  
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <div class="busuanzi center">
-    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
-
-
-    
+</article>
 
 
 
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-优惠规则5要素"><span class="toc-number">1.</span> <span class="toc-text">1 优惠规则5要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-满足优惠条件的动作"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 满足优惠条件的动作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-买"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-满"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 满</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-优惠条件作用对象"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 优惠条件作用对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-订单金额（抵扣前金额）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 订单金额（抵扣前金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-实付金额（抵扣后金额）"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 实付金额（抵扣后金额）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-商品数量"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3 商品数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-优惠方式"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 优惠方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-减"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-折"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 折</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-送-赠"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.3.3 送/赠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-换购"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.3.4 换购</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-回馈内容"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 回馈内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-现金"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 现金</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-可折算成现金几无使用限制的卡-券-积分"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 可折算成现金几无使用限制的卡/券/积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-同主体商品"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 同主体商品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-其它小赠品"><span class="toc-number">1.4.4.</span> <span class="toc-text">1.4.4 其它小赠品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-不可折算成现金的卡-券-积分"><span class="toc-number">1.4.5.</span> <span class="toc-text">1.4.5 不可折算成现金的卡/券/积分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-是否有限制"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 是否有限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-有限制"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 有限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-无限制"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 无限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用优惠规则"><span class="toc-number">2.</span> <span class="toc-text">2 常用优惠规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-减折类（6种）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 减折类（6种）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-送（可折算现金）卡-券-积分、不可折算现金的卡-券-积分、其它小赠品（12种）"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.2 送（可折算现金）卡/券/积分、不可折算现金的卡/券/积分、其它小赠品（12种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-换购（4种）"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.3 换购（4种）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-送同主体商品（3种）"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.4 送同主体商品（3种）</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://wangyuehan.github.io/year/11/30/零售业务分析/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&text=零售业务分析"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&is_video=false&description=零售业务分析"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=零售业务分析&body=Check out this article: http://wangyuehan.github.io/year/11/30/零售业务分析/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&title=零售业务分析"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wangyuehan.github.io/year/11/30/零售业务分析/&name=零售业务分析&description=&lt;p&gt;本文简单研究了下零售业务的一些规则。&lt;br&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
   </div>
-  <footer class="page-footer"><div class="clearfix">
 </div>
-<div class="right-foot">
-    <div class="firstrow">
-        <a href="#top" target="_self">
-        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M10 30 L26 16 10 2 Z"/>
-        </svg>
-        </a>
-        © XXX 20xx-2017
-    </div>
-    <div class="secondrow">
-        <a href="https://github.com/gaoryrt/hexo-theme-pln">
-        Theme Pln
-        </a>
-    </div>
-</div>
-<div class="clearfix">
-</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 John Wang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
-  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="/js/search.min.js"></script>
-<script type="text/javascript">
 
-// disqus scripts
+      <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
 
 
-// dropdown scripts
-$(".dropdown").click(function(event) {
-  var current = $(this);
-  event.stopPropagation();
-  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
-});
-$(document).click(function(){
-    $(".dropdown-content").removeClass("open");
-})
-
-var path = "/search.xml";
-searchFunc(path, 'local-search-input', 'local-search-result');
-
-</script>
-
+    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

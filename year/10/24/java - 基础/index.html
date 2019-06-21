@@ -1,97 +1,181 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang=zh>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="google-site-verification" content>
-  
-  <title>java基础知识</title>
-  <meta name="author" content="John Wang">
-  <meta name="description" content="java基础知识。
-包括数据类型/字符串/运算/继承/反射/异常/泛型/注解/特性等等。">
-  
-  
-  <meta property="og:title" content="java基础知识">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:site_name" content="王约翰的博客">
-  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
-  <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/m.min.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="java基础知识。 包括数据类型/字符串/运算/继承/反射/异常/泛型/注解/特性等等。">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础知识">
+<meta property="og:url" content="http://wangyuehan.github.io/year/10/24/java - 基础/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="java基础知识。 包括数据类型/字符串/运算/继承/反射/异常/泛型/注解/特性等等。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f76067a5-7d5f-4135-9549-8199c77d8f1c.jpg">
+<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/PPjwP.png">
+<meta property="og:updated_time" content="2019-03-09T08:25:56.900Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java基础知识">
+<meta name="twitter:description" content="java基础知识。 包括数据类型/字符串/运算/继承/反射/异常/泛型/注解/特性等等。">
+<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/pics/f76067a5-7d5f-4135-9549-8199c77d8f1c.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>java基础知识</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
 </head>
-</html>
-<body>
-  <a id="top"></a>
-  <div id="main">
-    <div class="behind">
-      <a href="/" class="back black-color">
-        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M2 30 L30 2 M30 30 L2 2"></path>
-        </svg>
-      </a>
-      <div class="description">
-        &nbsp;你敲代码好像cxk啊！
-      </div>
-    </div>
-    <div class="main-ctnr">
-      
 
-  <article class="standard post">
-    <div class="title">
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">王约翰的博客</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
       
-  
-    <h1 class="page-title center">
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/year/10/25/数据库系统原理/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/year/10/21/产品 - 产品运营笔记/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://wangyuehan.github.io/year/10/24/java - 基础/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://wangyuehan.github.io/year/10/24/java - 基础/&text=java基础知识"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://wangyuehan.github.io/year/10/24/java - 基础/&is_video=false&description=java基础知识"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=java基础知识&body=Check out this article: http://wangyuehan.github.io/year/10/24/java - 基础/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wangyuehan.github.io/year/10/24/java - 基础/&name=java基础知识&description=&lt;p&gt;java基础知识。&lt;/p&gt;
+&lt;p&gt;包括数据类型/字符串/运算/继承/反射/异常/泛型/注解/特性等等。&lt;/p&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、数据类型"><span class="toc-number">1.</span> <span class="toc-text">一、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类型"><span class="toc-number">1.1.</span> <span class="toc-text">包装类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存池"><span class="toc-number">1.2.</span> <span class="toc-text">缓存池</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、String"><span class="toc-number">2.</span> <span class="toc-text">二、String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概览"><span class="toc-number">2.1.</span> <span class="toc-text">概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不可变的好处"><span class="toc-number">2.2.</span> <span class="toc-text">不可变的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-and-StringBuilder"><span class="toc-number">2.3.</span> <span class="toc-text">String, StringBuffer and StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-Pool"><span class="toc-number">2.4.</span> <span class="toc-text">String Pool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-String-“abc”"><span class="toc-number">2.5.</span> <span class="toc-text">new String(“abc”)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、运算"><span class="toc-number">3.</span> <span class="toc-text">三、运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数传递"><span class="toc-number">3.1.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#float-与-double"><span class="toc-number">3.2.</span> <span class="toc-text">float 与 double</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#隐式类型转换"><span class="toc-number">3.3.</span> <span class="toc-text">隐式类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">3.4.</span> <span class="toc-text">switch</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、继承"><span class="toc-number">4.</span> <span class="toc-text">四、继承</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#访问权限"><span class="toc-number">4.1.</span> <span class="toc-text">访问权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与接口"><span class="toc-number">4.2.</span> <span class="toc-text">抽象类与接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super"><span class="toc-number">4.3.</span> <span class="toc-text">super</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重写与重载"><span class="toc-number">4.4.</span> <span class="toc-text">重写与重载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Object-通用方法"><span class="toc-number">5.</span> <span class="toc-text">五、Object 通用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概览-1"><span class="toc-number">5.1.</span> <span class="toc-text">概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals"><span class="toc-number">5.2.</span> <span class="toc-text">equals()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hashCode"><span class="toc-number">5.3.</span> <span class="toc-text">hashCode()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#toString-NaN"><span class="toc-number">5.4.</span> <span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clone"><span class="toc-number">5.5.</span> <span class="toc-text">clone()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、关键字"><span class="toc-number">6.</span> <span class="toc-text">六、关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#final"><span class="toc-number">6.1.</span> <span class="toc-text">final</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static"><span class="toc-number">6.2.</span> <span class="toc-text">static</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、反射"><span class="toc-number">7.</span> <span class="toc-text">七、反射</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、异常"><span class="toc-number">8.</span> <span class="toc-text">八、异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、泛型"><span class="toc-number">9.</span> <span class="toc-text">九、泛型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、注解"><span class="toc-number">10.</span> <span class="toc-text">十、注解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、特性"><span class="toc-number">11.</span> <span class="toc-text">十一、特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-各版本的新特性"><span class="toc-number">11.1.</span> <span class="toc-text">Java 各版本的新特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-与-C-的区别"><span class="toc-number">11.2.</span> <span class="toc-text">Java 与 C++ 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JRE-or-JDK"><span class="toc-number">11.3.</span> <span class="toc-text">JRE or JDK</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">12.</span> <span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
         java基础知识
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">王约翰的博客</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-10-24T08:50:05.000Z" itemprop="datePublished">2018-10-24</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-
-    </div>
-    <div class="meta center">
-      
-<time datetime="2018-10-24T08:50:05.000Z">
-<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
-  </svg>
-  &nbsp;
-  2018-10-24
-</time>
-
-
-
-    
-    &nbsp;
-    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-      <circle cx="24" cy="8" r="2"/>
-      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
-    </svg>
-    &nbsp;
-    <a href="/categories/专业知识/">专业知识</a>
-
-
-
-
-    
-    &nbsp;
-    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-      <circle cx="24" cy="8" r="2"/>
-      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
-    </svg>
-    &nbsp;
-    <a href="/tags/java/">java</a>
-
-
-    </div>
-    <hr>
-    
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、数据类型"><span class="toc-text">一、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类型"><span class="toc-text">包装类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存池"><span class="toc-text">缓存池</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、String"><span class="toc-text">二、String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概览"><span class="toc-text">概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不可变的好处"><span class="toc-text">不可变的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-and-StringBuilder"><span class="toc-text">String, StringBuffer and StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-Pool"><span class="toc-text">String Pool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-String-“abc”"><span class="toc-text">new String(“abc”)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、运算"><span class="toc-text">三、运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数传递"><span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#float-与-double"><span class="toc-text">float 与 double</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#隐式类型转换"><span class="toc-text">隐式类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-text">switch</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、继承"><span class="toc-text">四、继承</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#访问权限"><span class="toc-text">访问权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与接口"><span class="toc-text">抽象类与接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super"><span class="toc-text">super</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重写与重载"><span class="toc-text">重写与重载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Object-通用方法"><span class="toc-text">五、Object 通用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概览-1"><span class="toc-text">概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals"><span class="toc-text">equals()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hashCode"><span class="toc-text">hashCode()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#toString-NaN"><span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clone"><span class="toc-text">clone()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、关键字"><span class="toc-text">六、关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#final"><span class="toc-text">final</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static"><span class="toc-text">static</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、反射"><span class="toc-text">七、反射</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、异常"><span class="toc-text">八、异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、泛型"><span class="toc-text">九、泛型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、注解"><span class="toc-text">十、注解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、特性"><span class="toc-text">十一、特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-各版本的新特性"><span class="toc-text">Java 各版本的新特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-与-C-的区别"><span class="toc-text">Java 与 C++ 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JRE-or-JDK"><span class="toc-text">JRE or JDK</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
-    
-    <div class="picture-container">
-      
-    </div>
+  <div class="content" itemprop="articleBody">
     <p>java基础知识。</p>
 <p>包括数据类型/字符串/运算/继承/反射/异常/泛型/注解/特性等等。</p>
 <a id="more"></a>
@@ -456,66 +540,92 @@
 <li>Bloch J. Effective java[M]. Addison-Wesley Professional, 2017.</li>
 </ul>
 
-
-  </article>
-  
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <div class="busuanzi center">
-    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
-
-
-    
+</article>
 
 
 
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、数据类型"><span class="toc-number">1.</span> <span class="toc-text">一、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类型"><span class="toc-number">1.1.</span> <span class="toc-text">包装类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存池"><span class="toc-number">1.2.</span> <span class="toc-text">缓存池</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、String"><span class="toc-number">2.</span> <span class="toc-text">二、String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概览"><span class="toc-number">2.1.</span> <span class="toc-text">概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不可变的好处"><span class="toc-number">2.2.</span> <span class="toc-text">不可变的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-and-StringBuilder"><span class="toc-number">2.3.</span> <span class="toc-text">String, StringBuffer and StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-Pool"><span class="toc-number">2.4.</span> <span class="toc-text">String Pool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-String-“abc”"><span class="toc-number">2.5.</span> <span class="toc-text">new String(“abc”)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、运算"><span class="toc-number">3.</span> <span class="toc-text">三、运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数传递"><span class="toc-number">3.1.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#float-与-double"><span class="toc-number">3.2.</span> <span class="toc-text">float 与 double</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#隐式类型转换"><span class="toc-number">3.3.</span> <span class="toc-text">隐式类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">3.4.</span> <span class="toc-text">switch</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、继承"><span class="toc-number">4.</span> <span class="toc-text">四、继承</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#访问权限"><span class="toc-number">4.1.</span> <span class="toc-text">访问权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与接口"><span class="toc-number">4.2.</span> <span class="toc-text">抽象类与接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super"><span class="toc-number">4.3.</span> <span class="toc-text">super</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重写与重载"><span class="toc-number">4.4.</span> <span class="toc-text">重写与重载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Object-通用方法"><span class="toc-number">5.</span> <span class="toc-text">五、Object 通用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概览-1"><span class="toc-number">5.1.</span> <span class="toc-text">概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals"><span class="toc-number">5.2.</span> <span class="toc-text">equals()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hashCode"><span class="toc-number">5.3.</span> <span class="toc-text">hashCode()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#toString-NaN"><span class="toc-number">5.4.</span> <span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clone"><span class="toc-number">5.5.</span> <span class="toc-text">clone()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、关键字"><span class="toc-number">6.</span> <span class="toc-text">六、关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#final"><span class="toc-number">6.1.</span> <span class="toc-text">final</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static"><span class="toc-number">6.2.</span> <span class="toc-text">static</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、反射"><span class="toc-number">7.</span> <span class="toc-text">七、反射</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、异常"><span class="toc-number">8.</span> <span class="toc-text">八、异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、泛型"><span class="toc-number">9.</span> <span class="toc-text">九、泛型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、注解"><span class="toc-number">10.</span> <span class="toc-text">十、注解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、特性"><span class="toc-number">11.</span> <span class="toc-text">十一、特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-各版本的新特性"><span class="toc-number">11.1.</span> <span class="toc-text">Java 各版本的新特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-与-C-的区别"><span class="toc-number">11.2.</span> <span class="toc-text">Java 与 C++ 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JRE-or-JDK"><span class="toc-number">11.3.</span> <span class="toc-text">JRE or JDK</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">12.</span> <span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://wangyuehan.github.io/year/10/24/java - 基础/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://wangyuehan.github.io/year/10/24/java - 基础/&text=java基础知识"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://wangyuehan.github.io/year/10/24/java - 基础/&is_video=false&description=java基础知识"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=java基础知识&body=Check out this article: http://wangyuehan.github.io/year/10/24/java - 基础/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://wangyuehan.github.io/year/10/24/java - 基础/&title=java基础知识"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wangyuehan.github.io/year/10/24/java - 基础/&name=java基础知识&description=&lt;p&gt;java基础知识。&lt;/p&gt;
+&lt;p&gt;包括数据类型/字符串/运算/继承/反射/异常/泛型/注解/特性等等。&lt;/p&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
   </div>
-  <footer class="page-footer"><div class="clearfix">
 </div>
-<div class="right-foot">
-    <div class="firstrow">
-        <a href="#top" target="_self">
-        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M10 30 L26 16 10 2 Z"/>
-        </svg>
-        </a>
-        © XXX 20xx-2017
-    </div>
-    <div class="secondrow">
-        <a href="https://github.com/gaoryrt/hexo-theme-pln">
-        Theme Pln
-        </a>
-    </div>
-</div>
-<div class="clearfix">
-</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 John Wang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
-  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="/js/search.min.js"></script>
-<script type="text/javascript">
 
-// disqus scripts
+      <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
 
 
-// dropdown scripts
-$(".dropdown").click(function(event) {
-  var current = $(this);
-  event.stopPropagation();
-  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
-});
-$(document).click(function(){
-    $(".dropdown-content").removeClass("open");
-})
-
-var path = "/search.xml";
-searchFunc(path, 'local-search-input', 'local-search-result');
-
-</script>
-
+    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>

@@ -1,87 +1,182 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang=zh>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="google-site-verification" content>
-  
-  <title>HashMap源码学习</title>
-  <meta name="author" content="John Wang">
-  <meta name="description" content="整理的关于HashMap源码相关知识。">
-  
-  
-  <meta property="og:title" content="HashMap源码学习">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:site_name" content="王约翰的博客">
-  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
-  <link rel="alternate" href="/atom.xml" title="王约翰的博客" type="application/atom+xml">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/m.min.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="整理的关于HashMap源码相关知识。">
+<meta name="keywords" content="java,源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HashMap源码学习">
+<meta property="og:url" content="http://wangyuehan.github.io/year/11/30/HashMap源码学习/index.html">
+<meta property="og:site_name" content="王约翰的博客">
+<meta property="og:description" content="整理的关于HashMap源码相关知识。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://camo.githubusercontent.com/eec1c575aa5ff57906dd9c9130ec7a82e212c96a/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f32302f313632343064626363333033643837323f773d33343826683d34323726663d706e6726733d3130393931">
+<meta property="og:image" content="https://camo.githubusercontent.com/20de7e465cac279842851258ec4d1ec1c4d3d7d1/687474703a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f31382d382d32322f36373233333736342e6a7067">
+<meta property="og:image" content="https://camo.githubusercontent.com/92080ad04a1674bfa2e389d3beb0c09c3ebad4b1/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f32302f313632343130643931326132653065313f773d33333626683d393026663d6a70656726733d3236373434">
+<meta property="og:image" content="https://camo.githubusercontent.com/725bb9953df54438fadb74a1bea180ed817b9e27/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f392f322f313635393862663735386337343765363f773d39393926683d36373926663d706e6726733d3534343836">
+<meta property="og:updated_time" content="2018-11-30T06:20:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HashMap源码学习">
+<meta name="twitter:description" content="整理的关于HashMap源码相关知识。">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/eec1c575aa5ff57906dd9c9130ec7a82e212c96a/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f332f32302f313632343064626363333033643837323f773d33343826683d34323726663d706e6726733d3130393931">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>HashMap源码学习</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
 </head>
-</html>
-<body>
-  <a id="top"></a>
-  <div id="main">
-    <div class="behind">
-      <a href="/" class="back black-color">
-        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M2 30 L30 2 M30 30 L2 2"></path>
-        </svg>
-      </a>
-      <div class="description">
-        &nbsp;你敲代码好像cxk啊！
-      </div>
-    </div>
-    <div class="main-ctnr">
-      
 
-  <article class="standard post">
-    <div class="title">
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">王约翰的博客</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
       
-  
-    <h1 class="page-title center">
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/year/11/30/从产品到设计到运营需要关注的网站整理/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$("#i-prev").toggle();" onmouseout="$("#i-prev").toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/year/11/30/LinkedList源码分析/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://wangyuehan.github.io/year/11/30/HashMap源码学习/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&text=HashMap源码学习"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&is_video=false&description=HashMap源码学习"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HashMap源码学习&body=Check out this article: http://wangyuehan.github.io/year/11/30/HashMap源码学习/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&name=HashMap源码学习&description=&lt;p&gt;整理的关于HashMap源码相关知识。&lt;br&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap-简介"><span class="toc-number">1.</span> <span class="toc-text">HashMap 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#底层数据结构分析"><span class="toc-number">2.</span> <span class="toc-text">底层数据结构分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK1-8之前"><span class="toc-number">2.1.</span> <span class="toc-text">JDK1.8之前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK1-8之后"><span class="toc-number">2.2.</span> <span class="toc-text">JDK1.8之后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap源码分析"><span class="toc-number">3.</span> <span class="toc-text">HashMap源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造方法"><span class="toc-number">3.1.</span> <span class="toc-text">构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#put方法"><span class="toc-number">3.2.</span> <span class="toc-text">put方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get方法"><span class="toc-number">3.3.</span> <span class="toc-text">get方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resize方法"><span class="toc-number">3.4.</span> <span class="toc-text">resize方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap常用方法测试"><span class="toc-number">4.</span> <span class="toc-text">HashMap常用方法测试</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
         HashMap源码学习
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">王约翰的博客</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-11-30T06:18:14.000Z" itemprop="datePublished">2018-11-30</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/源码/">源码</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-
-    </div>
-    <div class="meta center">
-      
-<time datetime="2018-11-30T06:18:14.000Z">
-<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
-  </svg>
-  &nbsp;
-  2018-11-30
-</time>
-
-
-
-
-
-
-    
-    &nbsp;
-    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-      <circle cx="24" cy="8" r="2"/>
-      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
-    </svg>
-    &nbsp;
-    <a href="/tags/java/">java</a>·<a href="/tags/源码/">源码</a>
-
-
-    </div>
-    <hr>
-    
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap-简介"><span class="toc-text">HashMap 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#底层数据结构分析"><span class="toc-text">底层数据结构分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK1-8之前"><span class="toc-text">JDK1.8之前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK1-8之后"><span class="toc-text">JDK1.8之后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap源码分析"><span class="toc-text">HashMap源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造方法"><span class="toc-text">构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#put方法"><span class="toc-text">put方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get方法"><span class="toc-text">get方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resize方法"><span class="toc-text">resize方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap常用方法测试"><span class="toc-text">HashMap常用方法测试</span></a></li></ol>
-    
-    <div class="picture-container">
-      
-    </div>
+  <div class="content" itemprop="articleBody">
     <p>整理的关于HashMap源码相关知识。<br><a id="more"></a></p>
 <h2 id="HashMap-简介"><a href="#HashMap-简介" class="headerlink" title="HashMap 简介"></a>HashMap 简介</h2><p>HashMap 主要用来存放键值对，它基于哈希表的Map接口实现，是常用的Java集合之一。</p>
 <p>JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）.JDK1.8 以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）时，将链表转化为红黑树，以减少搜索时间。</p>
@@ -135,66 +230,91 @@
 <h3 id="resize方法"><a href="#resize方法" class="headerlink" title="resize方法"></a>resize方法</h3><p>进行扩容，会伴随着一次重新hash分配，并且会遍历hash表中所有的元素，是非常耗时的。在编写程序中，要尽量避免resize。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">final Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] oldTab = table;</span><br><span class="line">    int oldCap = (oldTab == null) ? 0 : oldTab.length;</span><br><span class="line">    int oldThr = threshold;</span><br><span class="line">    int newCap, newThr = 0;</span><br><span class="line">    if (oldCap &gt; 0) &#123;</span><br><span class="line">        // 超过最大值就不再扩充了，就只好随你碰撞去吧</span><br><span class="line">        if (oldCap &gt;= MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            return oldTab;</span><br><span class="line">        &#125;</span><br><span class="line">        // 没超过最大值，就扩充为原来的2倍</span><br><span class="line">        else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp; oldCap &gt;= DEFAULT_INITIAL_CAPACITY)</span><br><span class="line">            newThr = oldThr &lt;&lt; 1; // double threshold</span><br><span class="line">    &#125;</span><br><span class="line">    else if (oldThr &gt; 0) // initial capacity was placed in threshold</span><br><span class="line">        newCap = oldThr;</span><br><span class="line">    else &#123; </span><br><span class="line">        signifies using defaults</span><br><span class="line">        newCap = DEFAULT_INITIAL_CAPACITY;</span><br><span class="line">        newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);</span><br><span class="line">    &#125;</span><br><span class="line">    // 计算新的resize上限</span><br><span class="line">    if (newThr == 0) &#123;</span><br><span class="line">        float ft = (float)newCap * loadFactor;</span><br><span class="line">        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (float)MAXIMUM_CAPACITY ? (int)ft : Integer.MAX_VALUE);</span><br><span class="line">    &#125;</span><br><span class="line">    threshold = newThr;</span><br><span class="line">    @SuppressWarnings(&#123;&quot;rawtypes&quot;,&quot;unchecked&quot;&#125;)</span><br><span class="line">        Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];</span><br><span class="line">    table = newTab;</span><br><span class="line">    if (oldTab != null) &#123;</span><br><span class="line">        // 把每个bucket都移动到新的buckets中</span><br><span class="line">        for (int j = 0; j &lt; oldCap; ++j) &#123;</span><br><span class="line">            Node&lt;K,V&gt; e;</span><br><span class="line">            if ((e = oldTab[j]) != null) &#123;</span><br><span class="line">                oldTab[j] = null;</span><br><span class="line">                if (e.next == null)</span><br><span class="line">                    newTab[e.hash &amp; (newCap - 1)] = e;</span><br><span class="line">                else if (e instanceof TreeNode)</span><br><span class="line">                    ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);</span><br><span class="line">                else &#123; </span><br><span class="line">                    Node&lt;K,V&gt; loHead = null, loTail = null;</span><br><span class="line">                    Node&lt;K,V&gt; hiHead = null, hiTail = null;</span><br><span class="line">                    Node&lt;K,V&gt; next;</span><br><span class="line">                    do &#123;</span><br><span class="line">                        next = e.next;</span><br><span class="line">                        // 原索引</span><br><span class="line">                        if ((e.hash &amp; oldCap) == 0) &#123;</span><br><span class="line">                            if (loTail == null)</span><br><span class="line">                                loHead = e;</span><br><span class="line">                            else</span><br><span class="line">                                loTail.next = e;</span><br><span class="line">                            loTail = e;</span><br><span class="line">                        &#125;</span><br><span class="line">                        // 原索引+oldCap</span><br><span class="line">                        else &#123;</span><br><span class="line">                            if (hiTail == null)</span><br><span class="line">                                hiHead = e;</span><br><span class="line">                            else</span><br><span class="line">                                hiTail.next = e;</span><br><span class="line">                            hiTail = e;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; while ((e = next) != null);</span><br><span class="line">                    // 原索引放到bucket里</span><br><span class="line">                    if (loTail != null) &#123;</span><br><span class="line">                        loTail.next = null;</span><br><span class="line">                        newTab[j] = loHead;</span><br><span class="line">                    &#125;</span><br><span class="line">                    // 原索引+oldCap放到bucket里</span><br><span class="line">                    if (hiTail != null) &#123;</span><br><span class="line">                        hiTail.next = null;</span><br><span class="line">                        newTab[j + oldCap] = hiHead;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return newTab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="HashMap常用方法测试"><a href="#HashMap常用方法测试" class="headerlink" title="HashMap常用方法测试"></a>HashMap常用方法测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">package map;</span><br><span class="line"></span><br><span class="line">import java.util.Collection;</span><br><span class="line">import java.util.HashMap;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">public class HashMapDemo &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();</span><br><span class="line">        // 键不能重复，值可以重复</span><br><span class="line">        map.put(&quot;san&quot;, &quot;张三&quot;);</span><br><span class="line">        map.put(&quot;si&quot;, &quot;李四&quot;);</span><br><span class="line">        map.put(&quot;wu&quot;, &quot;王五&quot;);</span><br><span class="line">        map.put(&quot;wang&quot;, &quot;老王&quot;);</span><br><span class="line">        map.put(&quot;wang&quot;, &quot;老王2&quot;);// 老王被覆盖</span><br><span class="line">        map.put(&quot;lao&quot;, &quot;老王&quot;);</span><br><span class="line">        System.out.println(&quot;-------直接输出hashmap:-------&quot;);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">        /**</span><br><span class="line">         * 遍历HashMap</span><br><span class="line">         */</span><br><span class="line">        // 1.获取Map中的所有键</span><br><span class="line">        System.out.println(&quot;-------foreach获取Map中所有的键:------&quot;);</span><br><span class="line">        Set&lt;String&gt; keys = map.keySet();</span><br><span class="line">        for (String key : keys) &#123;</span><br><span class="line">            System.out.print(key+&quot;  &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();//换行</span><br><span class="line">        // 2.获取Map中所有值</span><br><span class="line">        System.out.println(&quot;-------foreach获取Map中所有的值:------&quot;);</span><br><span class="line">        Collection&lt;String&gt; values = map.values();</span><br><span class="line">        for (String value : values) &#123;</span><br><span class="line">            System.out.print(value+&quot;  &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();//换行</span><br><span class="line">        // 3.得到key的值的同时得到key所对应的值</span><br><span class="line">        System.out.println(&quot;-------得到key的值的同时得到key所对应的值:-------&quot;);</span><br><span class="line">        Set&lt;String&gt; keys2 = map.keySet();</span><br><span class="line">        for (String key : keys2) &#123;</span><br><span class="line">            System.out.print(key + &quot;：&quot; + map.get(key)+&quot;   &quot;);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        /**</span><br><span class="line">         * 另外一种不常用的遍历方式</span><br><span class="line">         */</span><br><span class="line">        // 当我调用put(key,value)方法的时候，首先会把key和value封装到</span><br><span class="line">        // Entry这个静态内部类对象中，把Entry对象再添加到数组中，所以我们想获取</span><br><span class="line">        // map中的所有键值对，我们只要获取数组中的所有Entry对象，接下来</span><br><span class="line">        // 调用Entry对象中的getKey()和getValue()方法就能获取键值对了</span><br><span class="line">        Set&lt;java.util.Map.Entry&lt;String, String&gt;&gt; entrys = map.entrySet();</span><br><span class="line">        for (java.util.Map.Entry&lt;String, String&gt; entry : entrys) &#123;</span><br><span class="line">            System.out.println(entry.getKey() + &quot;--&quot; + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * HashMap其他常用方法</span><br><span class="line">         */</span><br><span class="line">        System.out.println(&quot;after map.size()：&quot;+map.size());</span><br><span class="line">        System.out.println(&quot;after map.isEmpty()：&quot;+map.isEmpty());</span><br><span class="line">        System.out.println(map.remove(&quot;san&quot;));</span><br><span class="line">        System.out.println(&quot;after map.remove()：&quot;+map);</span><br><span class="line">        System.out.println(&quot;after map.get(si)：&quot;+map.get(&quot;si&quot;));</span><br><span class="line">        System.out.println(&quot;after map.containsKey(si)：&quot;+map.containsKey(&quot;si&quot;));</span><br><span class="line">        System.out.println(&quot;after containsValue(李四)：&quot;+map.containsValue(&quot;李四&quot;));</span><br><span class="line">        System.out.println(map.replace(&quot;si&quot;, &quot;李四2&quot;));</span><br><span class="line">        System.out.println(&quot;after map.replace(si, 李四2):&quot;+map);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-  </article>
-  
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <div class="busuanzi center">
-    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
-
-
-    
+</article>
 
 
 
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap-简介"><span class="toc-number">1.</span> <span class="toc-text">HashMap 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#底层数据结构分析"><span class="toc-number">2.</span> <span class="toc-text">底层数据结构分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK1-8之前"><span class="toc-number">2.1.</span> <span class="toc-text">JDK1.8之前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK1-8之后"><span class="toc-number">2.2.</span> <span class="toc-text">JDK1.8之后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap源码分析"><span class="toc-number">3.</span> <span class="toc-text">HashMap源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造方法"><span class="toc-number">3.1.</span> <span class="toc-text">构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#put方法"><span class="toc-number">3.2.</span> <span class="toc-text">put方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get方法"><span class="toc-number">3.3.</span> <span class="toc-text">get方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resize方法"><span class="toc-number">3.4.</span> <span class="toc-text">resize方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap常用方法测试"><span class="toc-number">4.</span> <span class="toc-text">HashMap常用方法测试</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://wangyuehan.github.io/year/11/30/HashMap源码学习/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&text=HashMap源码学习"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&is_video=false&description=HashMap源码学习"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HashMap源码学习&body=Check out this article: http://wangyuehan.github.io/year/11/30/HashMap源码学习/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&title=HashMap源码学习"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wangyuehan.github.io/year/11/30/HashMap源码学习/&name=HashMap源码学习&description=&lt;p&gt;整理的关于HashMap源码相关知识。&lt;br&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
   </div>
-  <footer class="page-footer"><div class="clearfix">
 </div>
-<div class="right-foot">
-    <div class="firstrow">
-        <a href="#top" target="_self">
-        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M10 30 L26 16 10 2 Z"/>
-        </svg>
-        </a>
-        © XXX 20xx-2017
-    </div>
-    <div class="secondrow">
-        <a href="https://github.com/gaoryrt/hexo-theme-pln">
-        Theme Pln
-        </a>
-    </div>
-</div>
-<div class="clearfix">
-</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 John Wang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
-  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="/js/search.min.js"></script>
-<script type="text/javascript">
 
-// disqus scripts
+      <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
 
 
-// dropdown scripts
-$(".dropdown").click(function(event) {
-  var current = $(this);
-  event.stopPropagation();
-  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
-});
-$(document).click(function(){
-    $(".dropdown-content").removeClass("open");
-})
-
-var path = "/search.xml";
-searchFunc(path, 'local-search-input', 'local-search-result');
-
-</script>
-
+    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true},"react":{"opacityDefault":0.6,"opacityOnHover":0.6},"log":false});</script></body>
 </html>
